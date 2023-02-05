@@ -34,13 +34,13 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
-						<a class="nav-link nav_link_menu" href="#">Home</a>
-						<a class="nav-link nav_link_menu" href="#">Donation List</a>
-						<a class="nav-link nav_link_menu" href="#">About Us</a>
+						<a class="nav-link nav_link_menu" href="<?= base_url(); ?>">Home</a>
+						<a class="nav-link nav_link_menu" href="<?= base_url('donation_list'); ?>">Donation List</a>
+						<a class="nav-link nav_link_menu" href="<?= base_url('about'); ?>">About Us</a>
 					</ul>
 					<ul class="navbar-nav mr0">
-						<a class="nav-link nav_link_menu" href="#">Register</a>
-						<a class="nav-link nav_link_menu" href="#">Login</a>
+					<a class="nav-link nav_link_menu" href="<?= base_url('auth/register'); ?>">Register</a>
+						<a class="nav-link nav_link_menu" href="<?= base_url('auth/login'); ?>">Login</a>
 					</ul>
 				</div>
 			</nav>
