@@ -20,11 +20,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['title'] = 'Home';
+		$this->load->view('landingpage', $data);
 	}
 	
 	public function slicing() 
 	{
-		$this->load->view('slicing');
 	}
 }
