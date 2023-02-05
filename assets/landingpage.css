@@ -119,10 +119,11 @@
 }
 
 .row_list_donasi {
+    /* background-color: #E2632B; */
     display: flex;
-    justify-content: space-between;
-    margin-left: 0px;
-    margin-right: 0px;
+    /* justify-content: space-between; */
+    /* margin-left: 0px; */
+    /* margin-right: 0px; */
 }
 
 .col_list_donasi {
@@ -137,4 +138,8 @@
     height: 100%;
     border-radius: 20px;
     object-fit: cover;
+}
+
+.card_img_donasi {
+    border-radius: unset;
 }
