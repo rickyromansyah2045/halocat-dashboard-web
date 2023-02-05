@@ -25,8 +25,8 @@
 	
   </head>
   <body>
-	<header class="header_box">
-		<div class='container'>
+  	<header class="header_box">
+		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand" href="#"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,10 +61,94 @@
 					<button class="btn_header">take me to goodness</button>
 				</div>
 				<div class="jumbotron_header_right">
+					<img src="<?= base_url('assets/test-img.png')?>" style="" class="img_landing_page">
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<div class="container">
+		<div class="headline_donasi">
+			<p class="txt_list_donasi">List Donasi</p>
+			<span class="txt_sub_list_donasi">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+		</div>
+		<div class="list_donasi">
+			<div class="row row_list_donasi">
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="col-md-4 col_list_donasi">
+					<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+					<div class="card-body">
+					  <h5 class="card-title">Card title</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Optional JavaScript; choose one of the two! -->
 
