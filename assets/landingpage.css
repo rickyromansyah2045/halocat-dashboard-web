@@ -160,7 +160,8 @@
 }
 
 .progres_box_donasi {
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .txt_progres_percent {
@@ -172,7 +173,7 @@
     color: #222222;
 }
 
-.txt_progres_nominal{
+.txt_progres_nominal {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -205,10 +206,10 @@
 }
 
 .jumbotron_ringkasan_donasi {
-    color:white;
+    color: white;
     padding-top: 50px;
     height: 350px;
-    background-color:#1B254E;
+    background-color: #1B254E;
     background: #1B254E;
     border-radius: unset;
 }
@@ -252,7 +253,7 @@
     font-size: 13px;
     line-height: 150%;
     color: #FFFFFF;
-    margin:auto;
+    margin: auto;
     display: block;
     text-transform: uppercase;
     width: 274px;
@@ -334,4 +335,9 @@
     left: 0px;
     top: 1743px;
     background: #1B254E;
+}
+
+.ctr_about {
+    padding-top: 80px;
+    display: flex;
 }

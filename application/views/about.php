@@ -1,9 +1,9 @@
 
 <div class="container">
 		<div class="jumbotron jumbotron_header_about">
-				<div class="container dflex">
+				<div class="container ctr_about">
 				<div class="jumbotron_left_about">
-						<img src="<?= base_url('assets/test-img.png')?>" style="" class="img_landing_page">
+						<img src="<?= base_url('assets/test-img.png')?>" class="img_landing_page">
 					</div>
 					<div class="jumbotron_right_about">
 						
