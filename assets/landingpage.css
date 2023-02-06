@@ -44,6 +44,7 @@
 }
 
 .jumbotron_header {
+    padding:50px;
     border-radius: 0px;
     height: 500px;
     background-color: transparent;
@@ -56,6 +57,10 @@
 
 .padl45 {
     padding-left: 45px;
+}
+
+.padt100 {
+    padding-top: 100px !important;
 }
 
 .pad0 {
@@ -285,9 +290,16 @@
 }
 
 /* About */
+.jhabout {
+/*    padding:50px;*/
+    border-radius: 0px;
+    height: 250px;
+    background-color: transparent;
+    color: white;
+}
 
 .header_about {
-    height: 350px;
+    height: 300px;
     width: 100%;
     text-align: center;
     background-color: #1b254e;

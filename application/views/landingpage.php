@@ -7,7 +7,7 @@
 			<div class="jumbotron jumbotron_header">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 maxw564">
+						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">
 							<p class="txt_header1">Spend Your Money to Help Others Who Need Help</p>
 							<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 							Phasellus varius rutrum turpis, nec convallis elit ornare quis. 
