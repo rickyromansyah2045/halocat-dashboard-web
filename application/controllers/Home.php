@@ -5,22 +5,20 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('slicing');
-		$this->load->view('template/footer_home');
+		$data['title'] = 'Home';
+		$this->load->view('landingpage', $data);
 	}
 
 	public function about()
 	{
-		$this->load->view('template/header_home');
-		$this->load->view('about');
-		$this->load->view('template/footer_home');
+		$data['title'] = "About";
+		$this->load->view('about', $data);
 	}
 
 	public function donation_list()
 	{
-		$this->load->view('template/header_home');
-		$this->load->view('donation_list');
-		$this->load->view('template/footer_home');
+		$data['title'] = "Donation List";
+		$this->load->view('donation_list', $data);
 	}
 
 }
