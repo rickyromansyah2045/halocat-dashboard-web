@@ -1,4 +1,4 @@
-
+<?php $this->load->view('auth/header_auth'); ?>
 
     <div class="container">
 
@@ -57,3 +57,6 @@
         </div>
 
     </div>
+
+
+    <?php $this->load->view('auth/footer_auth'); ?>

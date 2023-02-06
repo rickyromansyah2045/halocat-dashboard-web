@@ -6,23 +6,23 @@ class Auth extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('auth/header_auth');
-		$this->load->view('auth/login');
-		$this->load->view('auth/footer_auth');
+		$data['title'] = "Login";
+
+		$this->load->view('auth/login', $data);
 	}
 	
 	public function register()
 	{
-		$this->load->view('auth/header_auth');
-		$this->load->view('auth/register');
-		$this->load->view('auth/footer_auth');
+		$data['title'] = "Register";
+
+		$this->load->view('auth/register', $data);
 	}
 
 	public function forgot_password()
 	{
-		$this->load->view('auth/header_auth');
-		$this->load->view('auth/forgot_password');
-		$this->load->view('auth/footer_auth');
+		$data['title'] = "Forgot Password";
+
+		$this->load->view('auth/forgot_password', $data);
 	}
     
 }
