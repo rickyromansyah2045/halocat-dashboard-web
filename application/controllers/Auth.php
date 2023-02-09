@@ -184,5 +184,40 @@ class Auth extends CI_Controller {
 		$this->load->view('dashboard/dashboard', $data);
 
 	}
+
+	public function dashboardAdmin()
+	{
+		$this->load->library('session');
+		$data = $this->input->post();
+
+		if(!isset($_SESSION)) 
+		{ 
+			session_start(); 
+		} 
+
+		if (empty($_SESSION)) {
+            echo '<script type="text/javascript">'; 
+            echo 'window.location.href="'. base_url() .'auth/login";';
+            echo '</script>';
+			exit;
+        }
+
+		$data['title'] = "Dashboard";
+
+		$this->load->view('dashboardAdmin/dashboardAdmin', $data);
+
+	}
+
+	public function logout()
+	{
+		$this->load->library('session');
+ 
+		unset($_SESSION);
+		echo '<script type="text/javascript">'; 
+		echo 'window.location.href="'. base_url() .'auth/login";';
+		echo '</script>';
+		exit;
+
+	}
     
 }
