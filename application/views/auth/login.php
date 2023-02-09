@@ -20,12 +20,12 @@
                                     <form class="user">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                id="email" name="email" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="password" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -34,10 +34,16 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <a name="btn_login" onclick="verifikasi_data()" id="btn_login" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
+                                    </form>
+                                    <form action="<?= base_url('auth/dashboard'); ?>" method="post" id="dashboard">
+                                        <input value="" id="dataEmail" name="dataEmail" type="hidden">
+                                        <input value="" id="token" name="token" type="hidden">
+                                        <input value="" id="name" name="name" type="hidden">
+                                        <input value="" id="id" name="id" type="hidden">
                                     </form>
                                     <hr>
                                     <div class="text-center">
@@ -58,5 +64,87 @@
 
     </div>
 
-
     <?php $this->load->view('auth/footer_auth'); ?>
+
+    <script>
+        function verifikasi_data()
+        {
+            var email = $('#email').val();
+            var password = $('#password').val();
+            
+            if(email != "" && password != ""){
+                proses_login(email, password)
+            }else{
+
+                if (email == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("Email Tidak Boleh Kosong")
+                            })
+                        }
+                        // email.focus();
+                }
+
+                if (password == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("Password Tidak Boleh Kosong")
+                            })
+                        }
+                        // password.focus();
+                }
+            }
+        }
+
+        function proses_login(email, password) {
+
+            $.ajax({
+
+                type    : 'POST',
+                url     : '<?= base_url("auth/proses_login")?>',
+                dataType: 'JSON',
+
+                beforeSend: function(){
+                    $('#btn_login').prop('disabled', true);
+                    $('#btn_login').html('Prosess');
+                },
+                complete: function() {
+                    $('#btn_login').prop('disabled', false);
+                    $('$btn_login').html('Login');
+                },
+                data    : {
+                    email        : email,
+                    password     : password
+                },
+                success: function (result) {
+                    // console.log(result);
+                    if (result.status == true) {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Login Success',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        $('#dataEmail').val(result.email);
+                        $('#token').val(result.token);
+                        $('#name').val(result.name);
+                        $('#id').val(result.id);
+                        $("#dashboard").submit();
+
+                    } else {
+                        {
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: (result.error)
+                        })
+                        }
+                    }
+                    
+                }
+            });
+         }
+    </script>

@@ -15,29 +15,29 @@
                             <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input type="text" class="form-control form-control-user" id="firstname" name="firstname"
                                             placeholder="First Name">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                        <input type="text" class="form-control form-control-user" id="lastname" name="lastname"
                                             placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user" id="email"
                                         placeholder="Email Address">
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="password" name="password" placeholder="Password">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <!-- <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
+                                            id="passwordRepeat" name="passwordRepeat" placeholder="Repeat Password">
+                                    </div> -->
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <a name="btn_register" id="btn_register" onclick="verifikasi_data()" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a>
                                 <hr>
@@ -58,3 +58,100 @@
     </div>
 
     <?php $this->load->view('auth/footer_auth'); ?>
+
+    <script>
+        function verifikasi_data()
+        {
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            
+            if(email != "" && password != "" && firstname != "" && lastname != ""){
+                proses_register(firstname, lastname, email, password)
+            }else{
+
+                if (firstname == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("First Name Tidak Boleh Kosong")
+                            })
+                        }
+                }
+                if (lastname == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("Last Name Tidak Boleh Kosong")
+                            })
+                        }
+                }
+                if (email == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("Email Tidak Boleh Kosong")
+                            })
+                        }
+                }
+
+                if (password == "") {
+                        {
+                                Swal.fire({
+                                icon: 'error',
+                                text: ("Password Tidak Boleh Kosong")
+                            })
+                        }
+                }
+            }
+        }
+
+        function proses_register(firstname, lastname, email, password) {
+
+            $.ajax({
+
+                type    : 'POST',
+                url     : '<?= base_url("auth/proses_register")?>',
+                dataType: 'JSON',
+
+                beforeSend: function(){
+                    $('#btn_register').prop('disabled', true);
+                    $('#btn_register').html('Prosess');
+                },
+                complete: function() {
+                    $('#btn_login').prop('disabled', false);
+                    $('#btn_register').html('Login');
+                },
+                data    : {
+                    firstname    : firstname,
+                    lastname     : lastname,
+                    email        : email,
+                    password     : password
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.status == true) {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Register Success',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(3000);
+                        window.location.href='<?= base_url("auth/login")?>'
+                    } else {
+                        {
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: (result.error)
+                        })
+                        }
+                    }
+                    
+                }
+            });
+         }
+    </script>
