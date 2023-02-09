@@ -116,12 +116,12 @@
                 dataType: 'JSON',
 
                 beforeSend: function(){
-                    $('.btn_register').prop('disabled', true);
-                    $('.btn_register').html('Prosess');
+                    $('#btn_register').prop('disabled', true);
+                    $('#btn_register').html('Prosess');
                 },
                 complete: function() {
-                    $('.btn_login').prop('disabled', false);
-                    $('.btn_register').html('Login');
+                    $('#btn_login').prop('disabled', false);
+                    $('#btn_register').html('Login');
                 },
                 data    : {
                     firstname    : firstname,
@@ -141,12 +141,6 @@
                         });
                         setTimeout(3000);
                         window.location.href='<?= base_url("auth/login")?>'
-                        // $('#dataEmail').val(result.email);
-                        // $('#token').val(result.token);
-                        // $('#name').val(result.name);
-                        // $('#id').val(result.id);
-                        // $("#dashboard").submit();
-
                     } else {
                         {
                             Swal.fire({

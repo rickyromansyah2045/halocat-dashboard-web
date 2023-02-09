@@ -156,11 +156,23 @@ class Auth extends CI_Controller {
 
 	}
 
+	public function alive($data) {
+		echo "<pre>";
+		print_r($data);
+		echo "</pre>";
+	}
+
 	public function dashboard()
 	{
+		$this->load->library('session');
 		$data = $this->input->post();
 
-		if (empty($data['token'])) {
+		if(!isset($_SESSION)) 
+		{ 
+			session_start(); 
+		} 
+
+		if (empty($_SESSION)) {
             echo '<script type="text/javascript">'; 
             echo 'window.location.href="'. base_url() .'auth/login";';
             echo '</script>';

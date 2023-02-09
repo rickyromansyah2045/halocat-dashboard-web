@@ -107,12 +107,12 @@
                 dataType: 'JSON',
 
                 beforeSend: function(){
-                    $('.btn_login').prop('disabled', true);
-                    $('.btn_login').html('Prosess');
+                    $('#btn_login').prop('disabled', true);
+                    $('#btn_login').html('Prosess');
                 },
                 complete: function() {
-                    $('.btn_login').prop('disabled', false);
-                    $('.btn_login').html('Login');
+                    $('#btn_login').prop('disabled', false);
+                    $('$btn_login').html('Login');
                 },
                 data    : {
                     email        : email,
