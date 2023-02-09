@@ -298,12 +298,19 @@
     color: white;
 }
 
-.header_about {
+/*.header_about {
     height: 300px;
     width: 100%;
     text-align: center;
     background-color: #1b254e;
-}
+}*/
+
+/*.header_donation_list {
+    height: 453px;
+    width: 100%;
+    text-align: center;
+    background-color: #1b254e;
+}*/
 
 
 .jumbotron_header_about {
@@ -353,3 +360,111 @@
     padding-top: 80px;
     display: flex;
 }
+
+/*### all ###*/
+.padding0 {
+    padding: 0px;
+}
+
+.mxh125 {
+    max-height: 125px !important;
+}
+
+.mt190 {
+    margin-top: 190px;
+}
+
+.all_judul_header {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 125%;
+    text-align: center;
+    color: #FFFFFF;
+}
+/*### end all ###*/
+
+
+
+/*### about ###*/
+.ab_header {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    background-color: #1b254e;
+}
+/*### end about ###*/
+
+
+
+/*### donation list ###*/
+.dl_header {
+    position: relative;
+    height: 453px;
+    width: 100%;
+    text-align: center;
+    background-color: #1b254e;
+}
+
+.dl_box_search {
+    position: absolute;
+    background-color: #C0C0C0;
+    border-radius: 20px;
+    top: 353px;
+    left: 0;
+    right: 0; 
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+}
+
+.dl_input_txt_header {
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+.dl_item_box_search1 {
+    padding: 25px 25px 25px 60px;
+}
+
+.dl_item_box_search2 {
+    padding: 25px 25px 60px 25px;
+}
+
+.dl_item_box_search3 {
+    padding: 25px 60px 25px 25px;
+}
+
+.dl_txt_header {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    color: #000000;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    padding:0px 0px 0px 25px;
+}
+
+.dl_box_btn_search {
+    padding: 5px 60px 5px 60px;
+}
+
+.dl_btn_search {
+    width: 100%;font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    background: #E2632B;
+    border-radius: 20px;
+    height: 40px;
+    text-transform: uppercase;
+    border: unset;
+}
+/*### end donation list ###*/

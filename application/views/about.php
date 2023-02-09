@@ -2,7 +2,7 @@
 <html lang="en">
 	<?php $this->load->view('template/head_landingpage'); ?>
 	<body>
-		<header class="header_box header_about">
+		<header class="header_box ab_header">
 			<?php $this->load->view('template/menu_landingpage'); ?>
 			<div class="jumbotron jhabout">
 				<p style="font-family: 'Source Sans Pro';font-style: normal;font-weight: 300;font-size: 50px;line-height: 125%;text-align: center;color: #FFFFFF;">About Us</p>

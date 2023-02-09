@@ -1,29 +1,42 @@
 <!doctype html>
 <html lang="en">
 	<?php $this->load->view('template/head_landingpage'); ?>
-  <body>
-	<header class="header_box header_about">
-	<?php $this->load->view('template/menu_landingpage'); ?>
-        <div class="jumbotron jumbotron_header">
-			<div class="container">
-					<p class="txt_header1">List Donation</p>
+  	<body>
+		<header class="header_box dl_header">
+			<?php $this->load->view('template/menu_landingpage'); ?>
+			<div class="jumbotron jhabout">
+				<p class="all_judul_header">List Donation</p>
 			</div>
-		</div>
-	</header>
 
-
-<!-- Isi -->
-<!-- card Search -->
-
-<!-- End Card Search -->
-
-
-
-	<div class="container">
-			<div class="headline_donasi">
-				<p class="txt_list_donasi">List Donasi</p>
-				<span class="txt_sub_list_donasi">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+			<div class="container dl_box_search">
+				<div class="row">
+					<div class="col-md-4 padding0 mxh125">
+						<div class="dl_item_box_search dl_item_box_search1">
+							<p class="dl_txt_header">search</p>
+    						<input type="text" class="form-control dl_input_txt_header" name="">
+						</div>
+					</div>
+					<div class="col-md-4 padding0 mxh125">
+						<div class="dl_item_box_search dl_item_box_search2">
+							<p class="dl_txt_header">category</p>
+    						<input type="text" class="form-control dl_input_txt_header" name="">
+						</div>
+					</div>
+					<div class="col-md-4 padding0 mxh125">
+						<div class="dl_item_box_search dl_item_box_search3">
+							<p class="dl_txt_header">sort by</p>
+    						<input type="text" class="form-control dl_input_txt_header" name="">
+						</div>
+					</div>
+				</div>
+				<div class="row dl_box_btn_search">
+					<button class="dl_btn_search">search</button>
+				</div>
 			</div>
+
+		</header>
+
+		<div class="container mt190">
 			<div class="list_donasi">
 				<div class="row">
 					<div class="col-md-4">
@@ -186,22 +199,21 @@
 			</div>
 		</div>
 
+		<!-- Akhir Isi -->
 
-<!-- Akhir Isi -->
+	    <?php $this->load->view('template/footer_landingpage'); ?>
 
-    <?php $this->load->view('template/footer_landingpage'); ?>
+	    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+	    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
-</body>
+	    <!-- Option 2: Separate Popper and Bootstrap JS -->
+	    <!--
+	    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+	    -->
+	</body>
 </html>
