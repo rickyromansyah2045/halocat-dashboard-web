@@ -15,10 +15,10 @@ class Home extends CI_Controller {
 		$this->load->view('about', $data);
 	}
 
-	public function donation_list()
+	public function donation()
 	{
 		$data['title'] = "Donation List";
-		$this->load->view('donation_list', $data);
+		$this->load->view('donation', $data);
 	}
 
 }
