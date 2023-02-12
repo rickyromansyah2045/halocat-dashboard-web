@@ -7,7 +7,7 @@ class Auth extends CI_Controller {
     {
         parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
-	}	
+	}
 
 
 	public function login()
@@ -16,7 +16,7 @@ class Auth extends CI_Controller {
 
 		$this->load->view('auth/login', $data);
 	}
-	
+
 	public function register()
 	{
 		$data['title'] = "Register";
@@ -65,7 +65,7 @@ class Auth extends CI_Controller {
 
 		$response = curl_exec($curl);
 
-		
+
 		curl_close($curl);
 
 		$curl = curl_init();
@@ -129,7 +129,7 @@ class Auth extends CI_Controller {
 
 		$response = curl_exec($curl);
 
-		
+
 		curl_close($curl);
 
 		$curl = curl_init();
@@ -162,62 +162,16 @@ class Auth extends CI_Controller {
 		echo "</pre>";
 	}
 
-	public function dashboard()
-	{
-		$this->load->library('session');
-		$data = $this->input->post();
-
-		if(!isset($_SESSION)) 
-		{ 
-			session_start(); 
-		} 
-
-		if (empty($_SESSION)) {
-            echo '<script type="text/javascript">'; 
-            echo 'window.location.href="'. base_url() .'auth/login";';
-            echo '</script>';
-			exit;
-        }
-
-		$data['title'] = "Dashboard";
-
-		$this->load->view('dashboard/dashboard', $data);
-
-	}
-
-	public function dashboardAdmin()
-	{
-		$this->load->library('session');
-		$data = $this->input->post();
-
-		if(!isset($_SESSION)) 
-		{ 
-			session_start(); 
-		} 
-
-		if (empty($_SESSION)) {
-            echo '<script type="text/javascript">'; 
-            echo 'window.location.href="'. base_url() .'auth/login";';
-            echo '</script>';
-			exit;
-        }
-
-		$data['title'] = "Dashboard";
-
-		$this->load->view('dashboardAdmin/dashboardAdmin', $data);
-
-	}
-
 	public function logout()
 	{
 		$this->load->library('session');
- 
+
 		unset($_SESSION);
-		echo '<script type="text/javascript">'; 
+		echo '<script type="text/javascript">';
 		echo 'window.location.href="'. base_url() .'auth/login";';
 		echo '</script>';
 		exit;
 
 	}
-    
+
 }

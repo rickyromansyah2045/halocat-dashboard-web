@@ -38,8 +38,8 @@
 						<a class="nav-link nav_link_menu" href="<?= base_url('about'); ?>">About Us</a>
 					</ul>
 					<ul class="navbar-nav mr0">
-					<a class="nav-link nav_link_menu" href="<?= base_url('auth/register'); ?>">Register</a>
-						<a class="nav-link nav_link_menu" href="<?= base_url('auth/login'); ?>">Login</a>
+					<a class="nav-link nav_link_menu" href="<?= site_url('auth/register'); ?>">Register</a>
+						<a class="nav-link nav_link_menu" href="<?= site_url('auth/login'); ?>">Login</a>
 					</ul>
 				</div>
 			</nav>
