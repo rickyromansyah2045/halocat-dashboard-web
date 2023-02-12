@@ -143,20 +143,6 @@
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Dashboard
                             </a>
-                            
-                            <a class="nav-link" href="charts.html">
-                                <div class="nav-link-icon">
-                                    <i data-feather="gift"></i>
-                                </div>
-                                Users
-                            </a>
-
-                            <a class="nav-link" href="charts.html">
-                                <div class="nav-link-icon">
-                                    <i data-feather="gift"></i>
-                                </div>
-                                Categories
-                            </a>
 
                             <a class="nav-link" href="charts.html">
                                 <div class="nav-link-icon">
@@ -169,13 +155,6 @@
                             <a class="nav-link collapsed" href="<?= base_url('auth/dashboard'); ?>" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Transactions
-                            </a>
-                            
-                            <div class="sidenav-menu-heading">Account</div>
-                            <!-- Sidenav Accordion (Flows)-->
-                            <a class="nav-link collapsed" href="<?= base_url('auth/dashboard'); ?>" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                                Settings
                             </a>
                         </div>
                     </div>
