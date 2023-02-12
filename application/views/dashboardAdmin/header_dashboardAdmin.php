@@ -267,62 +267,12 @@
 
                             <!-- Donation -->
                             <!-- Sidenav Accordion (Components)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
-                                <div class="nav-link-icon"><i data-feather="package"></i></div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="nav-link-icon">
+                                    <i data-feather="gift"></i>
+                                </div>
                                 Donation
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseComponents" data-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                        Detail
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="account-profile.html">History Transaction</a>
-                                            <a class="nav-link" href="account-billing.html">Get Money</a>
-                                        </nav>
-                                    </div>
-                                    <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
-                                    <a class="nav-link collapsed" href="#">
-                                        List
-                                        <div class="sidenav-collapse-arrow"><i></i></div>
-                                    </a>
-                                    <!-- Nested Sidenav Accordion (Pages -> Error)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" >
-                                        Create
-                                        <div class="sidenav-collapse-arrow"><i></i></div>
-                                    </a>
-                                    <!-- Nested Sidenav Accordion (Pages -> Knowledge Base)-->
-                                    <a class="nav-link collapsed" href="# data-target="#pagesCollapseKnowledgeBase" aria-expanded="false" aria-controls="pagesCollapseKnowledgeBase">
-                                        Update
-                                        <div class="sidenav-collapse-arrow"></div>
-                                    </a>
-                                    <a class="nav-link" href="pricing.html">Delete</a>
-                                    <a class="nav-link" href="invoice.html">Bulk Insert</a>
-                                    <a class="nav-link" href="invoice.html">Report</a>
-                                </nav>
-                            </div>
-
-                            <!-- Users -->
-                            <!-- Sidenav Accordion (Utilities)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                                <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                                Users
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="animations.html">List</a>
-                                    <a class="nav-link" href="background.html">Create</a>
-                                    <a class="nav-link" href="borders.html">Update</a>
-                                    <a class="nav-link" href="lift.html">Delete</a>
-                                    <a class="nav-link" href="shadows.html">Bulk Insert</a>
-                                    <a class="nav-link" href="typography.html">Report</a>
-                                </nav>
-                            </div>
 
                             <!-- Sidenav Accordion (Flows)-->
                             <a class="nav-link collapsed" href="#" data-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
