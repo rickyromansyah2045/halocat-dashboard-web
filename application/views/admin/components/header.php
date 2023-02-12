@@ -143,7 +143,7 @@
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Dashboard
                             </a>
-                            
+
                             <a class="nav-link" href="charts.html">
                                 <div class="nav-link-icon">
                                     <i data-feather="gift"></i>
@@ -158,13 +158,13 @@
                                 Categories
                             </a>
 
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="<?= site_url('admin/campaigns') ?>">
                                 <div class="nav-link-icon">
                                     <i data-feather="gift"></i>
                                 </div>
                                 Campaigns
                             </a>
-                            
+
                             <!-- Sidenav Accordion (Layout)-->
                             <a class="nav-link collapsed" href="<?= base_url('auth/dashboard'); ?>" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>

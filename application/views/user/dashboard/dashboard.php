@@ -1,4 +1,4 @@
-<?php $this->load->view('dashboardAdmin/header_dashboardAdmin') ?>
+<?php $this->load->view('dashboard/header_dashboard') ?>
 <div id="layoutSidenav_content">
     <main>
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
@@ -12,17 +12,11 @@
                             </h1>
                             <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                         </div>
-                        <div class="col-12 col-xl-auto mt-4">
-                            <button class="btn btn-white p-3" id="reportrange">
-                                <i class="mr-2 text-primary" data-feather="calendar"></i>
-                                <span></span>
-                                <i class="ml-1" data-feather="chevron-down"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- Main page content-->
         <div class="container mt-n10">
             <div class="row">
                 <div class="col-xxl-4 col-xl-12 mb-4">
