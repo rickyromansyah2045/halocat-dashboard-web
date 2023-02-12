@@ -52,7 +52,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -69,7 +69,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -103,7 +103,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -120,7 +120,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -154,7 +154,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -171,7 +171,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>
@@ -188,7 +188,7 @@
 									<p class="txt_progres_percent">75%</p>
 									<p class="txt_progres_nominal">Rp 40.000.000</p>
 								</div>
-								<button class="btn_submit_donasi">donate</button>
+								<a class="btn_submit_donasi btn_donate" href="<?= base_url('donation/detail/testingdetail') ?>">donate</a>
 							</div>
 						</div>
 					</div>

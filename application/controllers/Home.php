@@ -21,4 +21,10 @@ class Home extends CI_Controller {
 		$this->load->view('donation_list', $data);
 	}
 
+	public function donation_detail($test)
+	{
+		$data['title'] = "Donation Detail";
+		$this->load->view('donation_detail', $data);
+	}
+
 }

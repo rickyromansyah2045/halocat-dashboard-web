@@ -34,7 +34,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<a class="nav-link nav_link_menu" href="<?= base_url(); ?>">Home</a>
-						<a class="nav-link nav_link_menu" href="<?= base_url('donation_list'); ?>">Donation List</a>
+						<a class="nav-link nav_link_menu" href="<?= base_url('alldonation'); ?>">Donation List</a>
 						<a class="nav-link nav_link_menu" href="<?= base_url('about'); ?>">About Us</a>
 					</ul>
 					<ul class="navbar-nav mr0">

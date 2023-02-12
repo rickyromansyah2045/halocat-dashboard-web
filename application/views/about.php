@@ -2,14 +2,14 @@
 <html lang="en">
 	<?php $this->load->view('template/head_landingpage'); ?>
 	<body>
-		<header class="header_box ab_header">
+		<header class="header_box hh300">
 			<?php $this->load->view('template/menu_landingpage'); ?>
-			<div class="jumbotron jhabout">
+			<div class="jumbotron jh200">
 				<p style="font-family: 'Source Sans Pro';font-style: normal;font-weight: 300;font-size: 50px;line-height: 125%;text-align: center;color: #FFFFFF;">About Us</p>
 			</div>
 		</header>
 
-		<div class="container" style="padding-top: 100px;">
+		<div class="container paddingt100">
 			<div class="row">
 				<div class="col-md-5" style="max-width: 400px;margin-right: 55px;">
 					<img src="<?= base_url('assets/test-img.png')?>" class="img_landing_page">

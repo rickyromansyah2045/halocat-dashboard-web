@@ -362,8 +362,20 @@
 }
 
 /*### all ###*/
+.mt30 {
+    margin-top: 30px;
+}
+
 .padding0 {
     padding: 0px;
+}
+
+.paddingt100 {
+    padding-top: 100px;
+}
+
+.pb20 {
+    padding-bottom:20px;
 }
 
 .mxh125 {
@@ -383,22 +395,73 @@
     text-align: center;
     color: #FFFFFF;
 }
+
+.jh200 {
+    border-radius: 0px;
+    height: 200px;
+    background-color: transparent;
+    color: white;
+}
+
+.hh300 {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    background-color: #1b254e;   
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb25 {
+    margin-bottom: 25px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb0 {
+    margin-bottom: 0px;
+}
+
+.h120 {
+    height: 120px !important;
+}
+
+.clr_btn_donate {
+    background-color: #FF872E !important;
+}
 /*### end all ###*/
 
 
 
 /*### about ###*/
-.ab_header {
+/* .ab_header {
     height: 300px;
     width: 100%;
     text-align: center;
     background-color: #1b254e;
-}
+} */
 /*### end about ###*/
 
 
 
 /*### donation list ###*/
+.btn_donate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn_donate:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .dl_header {
     position: relative;
     height: 453px;
@@ -468,3 +531,87 @@
     border: unset;
 }
 /*### end donation list ###*/
+
+
+
+/*### donation detail ###*/
+.dd_highlight_img {
+    background: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    border-radius: 20px;
+    padding: 7px;
+    height: 360px;
+    display: flex;
+}
+
+.highlight_img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.dd_container {
+    position: relative;
+    top: -135px;
+}
+
+.box_list_highlight {
+    padding: 5px;
+    border: 1px solid #BFBFBF;
+    border-radius: 20px;
+}
+
+.dd_title_description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    color: #222222;
+}
+
+.dd_sub_title_description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+}
+
+.description_donasi {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: justify;
+    color: #222222;
+}
+
+.dd_textarea {
+    background: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    border-radius: 20px;
+    padding: 20px 20px;
+    overflow: hidden;
+}
+
+.box_donation {
+    /* background-color: white; */
+    /* border-radius: 10px; */
+    padding: 20px 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    border-radius: 20px;
+}
+
+.lbl_form_donation {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #222222;
+}
