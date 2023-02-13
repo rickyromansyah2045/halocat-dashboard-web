@@ -18,7 +18,6 @@ class User extends CI_Controller
 
     public function dashboard()
 	{
-        $data = $this->input->post();
 		$data['title'] = "Dashboard";
 
 		$this->load->view('user/dashboard/index', $data);
