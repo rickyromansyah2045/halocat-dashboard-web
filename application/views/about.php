@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-	<?php $this->load->view('template/head_landingpage'); ?>
+	<?php $this->load->view('template/landing_head'); ?>
 	<body>
 		<header class="header_box hh300">
-			<?php $this->load->view('template/menu_landingpage'); ?>
+			<?php $this->load->view('template/landing_menu'); ?>
 			<div class="jumbotron jh200">
 				<p style="font-family: 'Source Sans Pro';font-style: normal;font-weight: 300;font-size: 50px;line-height: 125%;text-align: center;color: #FFFFFF;">About Us</p>
 			</div>
@@ -20,7 +20,7 @@
 					<p style="margin-bottom: 18px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 15px;line-height: 125%;text-align: justify;color: #000000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et dui eget felis tincidunt lacinia sit amet non orci. Nullam consectetur velit sed sodales malesuada. Donec nec elementum magna, lacinia feugiat turpis. Morbi vitae posuere turpis. Cras sed nisl pretium, auctor est vitae, egestas erat. Duis imperdiet magna ac tellus aliquet, sed ultricies leo varius. Phasellus porta accumsan posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur molestie varius blandit. Pellentesque et nunc laoreet, pulvinar ipsum et.</p>
 				</div>
 			</div>
-			
+
 			<div class="headline_donasi" style="margin-top: 100px;height: 83px;padding: 0px;">
 				<p class="txt_list_donasi">Meet Our Team</p>
 				<span class="txt_sub_list_donasi">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
@@ -103,7 +103,7 @@
 				</div>
 			</div>
 		</div>
-		<?php $this->load->view('template/footer_landingpage'); ?>
+		<?php $this->load->view('template/landing_footer'); ?>
 
 		<!-- Optional JavaScript; choose one of the two! -->
 
@@ -119,5 +119,3 @@
 		-->
 	</body>
 </html>
-
-

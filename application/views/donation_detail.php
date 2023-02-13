@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-	<?php $this->load->view('template/head_landingpage'); ?>
+	<?php $this->load->view('template/landing_head'); ?>
 	<body>
 		<header class="header_box hh300">
-			<?php $this->load->view('template/menu_landingpage'); ?>
+			<?php $this->load->view('template/landing_menu'); ?>
 			<div class="jumbotron jh200">
 
 			</div>
@@ -81,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-		<?php $this->load->view('template/footer_landingpage'); ?>
+		<?php $this->load->view('template/landing_footer'); ?>
 
 		<!-- Optional JavaScript; choose one of the two! -->
 
@@ -97,5 +97,3 @@
 		-->
 	</body>
 </html>
-
-

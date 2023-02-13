@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-	<?php $this->load->view('template/head_landingpage'); ?>
+	<?php $this->load->view('template/landing_head'); ?>
   	<body>
 		<header class="header_box dl_header">
-			<?php $this->load->view('template/menu_landingpage'); ?>
+			<?php $this->load->view('template/landing_menu'); ?>
 			<div class="jumbotron jhabout">
 				<p class="all_judul_header">List Donation</p>
 			</div>
@@ -201,7 +201,7 @@
 
 		<!-- Akhir Isi -->
 
-	    <?php $this->load->view('template/footer_landingpage'); ?>
+	    <?php $this->load->view('template/landing_footer'); ?>
 
 	    <!-- Optional JavaScript; choose one of the two! -->
 

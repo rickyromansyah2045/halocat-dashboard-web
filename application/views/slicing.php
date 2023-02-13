@@ -19,7 +19,7 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-		<link rel="stylesheet" href="<?= base_url('assets/landingpage.css')?>">
+		<link rel="stylesheet" href="<?= base_url('assets/landing.css')?>">
 
 		<title><?= $title; ?></title>
 	</head>
@@ -49,12 +49,12 @@
 				<div class="row">
 					<div class="col-md-6 mw564">
 						<p class="txt_header1">Spend Your Money to Help Others Who Need Help</p>
-						<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Phasellus varius rutrum turpis, nec convallis elit ornare quis. 
-						Curabitur et fringilla lacus. 
-						Etiam id metus non sapien egestas viverra. 
+						<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Phasellus varius rutrum turpis, nec convallis elit ornare quis.
+						Curabitur et fringilla lacus.
+						Etiam id metus non sapien egestas viverra.
 						Nam interdum libero ligula,
-						ut lacinia sapien  porttitor ac. 
+						ut lacinia sapien  porttitor ac.
 						Praesent vel orci lectus. Etiam et nulla odio.</p>
 						<button class="btn_header">take me to goodness</button>
 					</div>

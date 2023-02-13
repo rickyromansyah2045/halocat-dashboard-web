@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
-	<?php $this->load->view('template/head_landingpage'); ?>
+	<?php $this->load->view('template/landing_head'); ?>
 	<body>
 		<header class="header_box">
-			<?php $this->load->view('template/menu_landingpage'); ?>
+			<?php $this->load->view('template/landing_menu'); ?>
 			<div class="jumbotron jumbotron_header">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">
 							<p class="txt_header1">Spend Your Money to Help Others Who Need Help</p>
-							<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-							Phasellus varius rutrum turpis, nec convallis elit ornare quis. 
-							Curabitur et fringilla lacus. 
-							Etiam id metus non sapien egestas viverra. 
+							<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Phasellus varius rutrum turpis, nec convallis elit ornare quis.
+							Curabitur et fringilla lacus.
+							Etiam id metus non sapien egestas viverra.
 							Nam interdum libero ligula,
-							ut lacinia sapien  porttitor ac. 
+							ut lacinia sapien  porttitor ac.
 							Praesent vel orci lectus. Etiam et nulla odio.</p>
 							<button class="btn_header">take me to goodness</button>
 						</div>
@@ -219,7 +219,7 @@
 				</div>
 			</div>
 		</div>
-		<?php $this->load->view('template/footer_landingpage'); ?>
+		<?php $this->load->view('template/landing_footer'); ?>
 
 		<!-- Optional JavaScript; choose one of the two! -->
 

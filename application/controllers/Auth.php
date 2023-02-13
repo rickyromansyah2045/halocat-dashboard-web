@@ -6,7 +6,6 @@ class Auth extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		date_default_timezone_set('Asia/Jakarta');
 	}
 
 
@@ -164,8 +163,6 @@ class Auth extends CI_Controller {
 
 	public function logout()
 	{
-		$this->load->library('session');
-
 		unset($_SESSION);
 		echo '<script type="text/javascript">';
 		echo 'window.location.href="'. base_url() .'auth/login";';
