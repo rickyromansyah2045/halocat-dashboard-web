@@ -1,7 +1,7 @@
 <?php $this->load->view('auth/header_auth'); ?>
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div class="col-xl-10 col-lg-12 col-md-9">
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">

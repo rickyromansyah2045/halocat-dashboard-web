@@ -1,6 +1,7 @@
 <?php $this->load->view('auth/header_auth'); ?>
+
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div class="col-xl-10 col-lg-12 col-md-9">
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
@@ -9,7 +10,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back, Please Login!</h1>
                                 </div>
                                 <form class="user" id="form-login">
                                     <div class="form-group">
