@@ -1,11 +1,10 @@
 <?php $this->load->view('auth/header_auth'); ?>
 
-    <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
                     <div class="row">
                         <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                         <div class="col-lg-7">
@@ -43,7 +42,6 @@
                                     </a>
                                     <hr>
                                 </form>
-                                <hr>
                                 <div class="text-center">
                                     <a class="small" href="<?= base_url('auth/forgot_password'); ?>">Forgot Password?</a>
                                 </div>
@@ -57,104 +55,103 @@
             </div>
         </div>
     </div>
+</div>
 
-    </div>
+<?php $this->load->view('auth/footer_auth'); ?>
 
-    <?php $this->load->view('auth/footer_auth'); ?>
+<script>
+    function verifikasi_data()
+    {
+        var firstname = $('#firstname').val();
+        var lastname = $('#lastname').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
 
-    <script>
-        function verifikasi_data()
-        {
-            var firstname = $('#firstname').val();
-            var lastname = $('#lastname').val();
-            var email = $('#email').val();
-            var password = $('#password').val();
-            
-            if(email != "" && password != "" && firstname != "" && lastname != ""){
-                proses_register(firstname, lastname, email, password)
-            }else{
+        if(email != "" && password != "" && firstname != "" && lastname != ""){
+            proses_register(firstname, lastname, email, password)
+        }else{
 
-                if (firstname == "") {
-                        {
-                                Swal.fire({
-                                icon: 'error',
-                                text: ("First Name Tidak Boleh Kosong")
-                            })
-                        }
-                }
-                if (lastname == "") {
-                        {
-                                Swal.fire({
-                                icon: 'error',
-                                text: ("Last Name Tidak Boleh Kosong")
-                            })
-                        }
-                }
-                if (email == "") {
-                        {
-                                Swal.fire({
-                                icon: 'error',
-                                text: ("Email Tidak Boleh Kosong")
-                            })
-                        }
-                }
-
-                if (password == "") {
-                        {
-                                Swal.fire({
-                                icon: 'error',
-                                text: ("Password Tidak Boleh Kosong")
-                            })
-                        }
-                }
-            }
-        }
-
-        function proses_register(firstname, lastname, email, password) {
-
-            $.ajax({
-
-                type    : 'POST',
-                url     : '<?= base_url("auth/proses_register")?>',
-                dataType: 'JSON',
-
-                beforeSend: function(){
-                    $('#btn_register').prop('disabled', true);
-                    $('#btn_register').html('Prosess');
-                },
-                complete: function() {
-                    $('#btn_login').prop('disabled', false);
-                    $('#btn_register').html('Login');
-                },
-                data    : {
-                    firstname    : firstname,
-                    lastname     : lastname,
-                    email        : email,
-                    password     : password
-                },
-                success: function (result) {
-                    console.log(result);
-                    if (result.status == true) {
-                        Swal.fire({
-                            position: 'top-center',
-                            icon: 'success',
-                            title: 'Register Success',
-                            showConfirmButton: false,
-                            timer: 3000
-                        });
-                        setTimeout(3000);
-                        window.location.href='<?= base_url("auth/login")?>'
-                    } else {
-                        {
+            if (firstname == "") {
+                    {
                             Swal.fire({
                             icon: 'error',
-                            title: 'Oops...',
-                            text: (result.error)
+                            text: ("First Name Tidak Boleh Kosong")
                         })
-                        }
                     }
-                    
+            }
+            if (lastname == "") {
+                    {
+                            Swal.fire({
+                            icon: 'error',
+                            text: ("Last Name Tidak Boleh Kosong")
+                        })
+                    }
+            }
+            if (email == "") {
+                    {
+                            Swal.fire({
+                            icon: 'error',
+                            text: ("Email Tidak Boleh Kosong")
+                        })
+                    }
+            }
+
+            if (password == "") {
+                    {
+                            Swal.fire({
+                            icon: 'error',
+                            text: ("Password Tidak Boleh Kosong")
+                        })
+                    }
+            }
+        }
+    }
+
+    function proses_register(firstname, lastname, email, password) {
+
+        $.ajax({
+
+            type    : 'POST',
+            url     : '<?= base_url("auth/proses_register")?>',
+            dataType: 'JSON',
+
+            beforeSend: function(){
+                $('#btn_register').prop('disabled', true);
+                $('#btn_register').html('Prosess');
+            },
+            complete: function() {
+                $('#btn_login').prop('disabled', false);
+                $('#btn_register').html('Login');
+            },
+            data    : {
+                firstname    : firstname,
+                lastname     : lastname,
+                email        : email,
+                password     : password
+            },
+            success: function (result) {
+                console.log(result);
+                if (result.status == true) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Register Success',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    setTimeout(3000);
+                    window.location.href='<?= base_url("auth/login")?>'
+                } else {
+                    {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: (result.error)
+                    })
+                    }
                 }
-            });
-         }
-    </script>
+
+            }
+        });
+        }
+</script>

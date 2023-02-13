@@ -27,13 +27,6 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="password" name="password" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
                                         <a name="btn_login" onclick="verifikasi_data()" id="btn_login" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
@@ -45,7 +38,6 @@
                                         <input value="" id="name" name="name" type="hidden">
                                         <input value="" id="id" name="id" type="hidden">
                                     </form>
-                                    <hr>
                                     <div class="text-center">
                                         <a class="small" href="<?= base_url('auth/forgot_password'); ?>">Forgot Password?</a>
                                     </div>
@@ -71,7 +63,7 @@
         {
             var email = $('#email').val();
             var password = $('#password').val();
-            
+
             if(email != "" && password != ""){
                 proses_login(email, password)
             }else{
@@ -143,7 +135,7 @@
                         })
                         }
                     }
-                    
+
                 }
             });
          }
