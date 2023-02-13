@@ -12,7 +12,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" id="form-register">
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <input type="text" class="form-control form-control-user" id="firstname" name="firstname" placeholder="First Name">
@@ -29,9 +29,9 @@
                                             <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                                         </div>
                                     </div>
-                                    <a name="btn_register" id="btn_register" onclick="verifikasi_data()" class="btn btn-primary btn-user btn-block">
+                                    <button type="submit" name="btn_register" id="btn_register" class="btn btn-primary btn-user btn-block">
                                         Register Account
-                                    </a>
+                                    </button>
                                 </form>
                                 <hr>
                                 <div class="text-center">
@@ -52,6 +52,11 @@
 <?php $this->load->view('auth/footer_auth'); ?>
 
 <script>
+    $("#form-register").submit(function(e){
+        e.preventDefault();
+        verifikasi_data();
+    });
+
     function verifikasi_data() {
         var firstname = $('#firstname').val();
         var lastname = $('#lastname').val();
@@ -95,11 +100,11 @@
             dataType: 'JSON',
             beforeSend: function() {
                 $('#btn_register').prop('disabled', true);
-                $('#btn_register').html('Prosess');
+                $('#btn_register').html('Processing...');
             },
             complete: function() {
-                $('#btn_login').prop('disabled', false);
-                $('#btn_register').html('Login');
+                $('#btn_register').prop('disabled', false);
+                $('#btn_register').html('Register Account');
             },
             data: {
                 firstname: firstname,
@@ -108,7 +113,6 @@
                 password: password
             },
             success: function (result) {
-                console.log(result);
                 if (result.status == true) {
                     Swal.fire({
                         position: 'top-center',

@@ -31,7 +31,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url('auth/register'); ?>">Create an Account!</a>
+                                        <a class="small" href="<?= base_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="<?= base_url('auth/login'); ?>">Already have an account? Login!</a>

@@ -11,16 +11,16 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" id="form-login">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                                     </div>
-                                    <a name="btn_login" onclick="verifikasi_data()" id="btn_login" class="btn btn-primary btn-user btn-block">
+                                    <button name="btn_login" type="submit" id="btn_login" class="btn btn-primary btn-user btn-block">
                                         Login
-                                    </a>
+                                    </button>
                                 </form>
                                 <hr>
                                 <form action="<?= base_url('auth/dashboard'); ?>" method="post" id="dashboard">
@@ -33,7 +33,7 @@
                                     <a class="small" href="<?= base_url('auth/forgot_password'); ?>">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/register'); ?>">Create an Account!</a>
+                                    <a class="small" href="<?= base_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
                                 </div>
                             </div>
                         </div>
@@ -47,6 +47,11 @@
 <?php $this->load->view('auth/footer_auth'); ?>
 
 <script>
+    $("#form-login").submit(function(e) {
+        e.preventDefault();
+        verifikasi_data();
+    });
+
     function verifikasi_data() {
         var email = $('#email').val();
         var password = $('#password').val();
@@ -76,11 +81,11 @@
             dataType: 'JSON',
             beforeSend: function() {
                 $('#btn_login').prop('disabled', true);
-                $('#btn_login').html('Prosess');
+                $('#btn_login').html('Processing...');
             },
             complete: function() {
                 $('#btn_login').prop('disabled', false);
-                $('$btn_login').html('Login');
+                $('#btn_login').html('Login');
             },
             data: {
                 email: email,
