@@ -21,8 +21,8 @@
                                     <a name="btn_login" onclick="verifikasi_data()" id="btn_login" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </a>
-                                    <hr>
                                 </form>
+                                <hr>
                                 <form action="<?= base_url('auth/dashboard'); ?>" method="post" id="dashboard">
                                     <input value="" id="dataEmail" name="dataEmail" type="hidden">
                                     <input value="" id="token" name="token" type="hidden">
