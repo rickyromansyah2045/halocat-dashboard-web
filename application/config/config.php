@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+date_default_timezone_set('Asia/Jakarta');
+
+ini_set('max_execution_time', 0);
+ini_set('memory_limit', '2048M');
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$prot = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http"; // protocol
+$base = "{$prot}://".getenv("BASE_URL");
+$link = "{$prot}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$burl = substr($link,0,strlen($base)); // base url
+$burl = $base == $burl ? $burl : ''; // base url
+
+$config['base_url'] = $burl;
 
 /*
 |--------------------------------------------------------------------------
