@@ -38,8 +38,8 @@
                         <h6 class="dropdown-header d-flex align-items-center">
                             <img class="dropdown-user-img" src="<?= base_url() ?>/assets/test-img.png" />
                             <div class="dropdown-user-details">
-                                <div class="dropdown-user-details-name">Ricky Romansyah</div>
-                                <div class="dropdown-user-details-email">ricky@hm.com</div>
+                                <div class="dropdown-user-details-name"><?= $this->session->userdata('name'); ?></div>
+                                <div class="dropdown-user-details-email"><?= $this->session->userdata('email'); ?></div>
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
@@ -108,7 +108,7 @@
                     <div class="sidenav-footer">
                         <div class="sidenav-footer-content">
                             <div class="sidenav-footer-subtitle">Logged in as:</div>
-                            <div class="sidenav-footer-title">Ricky Romansyah</div>
+                            <div class="sidenav-footer-title"><?= $this->session->userdata('name'); ?></div>
                         </div>
                     </div>
                 </nav>
