@@ -64,7 +64,7 @@
         var password = $('#password').val();
 
         if (email != "" && password != "" && firstname != "" && lastname != "") {
-            proses_register(firstname, lastname, email, password)
+            proses_register(firstname, lastname, email, password);
         } else {
             if (firstname == "") {
                 Swal.fire({
@@ -118,11 +118,13 @@
                         position: 'top-center',
                         icon: 'success',
                         title: 'Register Success',
+                        text: 'Please wait, you will be redirect to Dashboard.',
                         showConfirmButton: false,
                         timer: 3000
                     });
-                    setTimeout(3000);
-                    window.location.href='<?= base_url("auth/login")?>'
+                    setTimeout(() => {
+                        location.href = '<?= site_url("user/dashboard"); ?>';
+                    }, 2500);
                 } else {
                     Swal.fire({
                         icon: 'error',

@@ -92,10 +92,13 @@
                         position: 'top-center',
                         icon: 'success',
                         title: 'Login Success',
+                        text: 'Please wait, you will be redirect.',
                         showConfirmButton: false,
                         timer: 3000
                     });
-                    location.href = "<?= site_url('user/dashboard'); ?>";
+                    setTimeout(() => {
+                        location.href = "<?= site_url('user/dashboard'); ?>";
+                    }, 1000);
                 } else {
                     Swal.fire({
                         icon: 'error',
