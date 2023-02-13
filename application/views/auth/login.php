@@ -24,12 +24,6 @@
                                     </button>
                                 </form>
                                 <hr>
-                                <form action="<?= base_url('auth/dashboard'); ?>" method="post" id="dashboard">
-                                    <input value="" id="dataEmail" name="dataEmail" type="hidden">
-                                    <input value="" id="token" name="token" type="hidden">
-                                    <input value="" id="name" name="name" type="hidden">
-                                    <input value="" id="id" name="id" type="hidden">
-                                </form>
                                 <div class="text-center">
                                     <a class="small" href="<?= base_url('auth/forgot_password'); ?>">Forgot Password?</a>
                                 </div>
@@ -101,11 +95,7 @@
                         showConfirmButton: false,
                         timer: 3000
                     });
-                    $('#dataEmail').val(result.email);
-                    $('#token').val(result.token);
-                    $('#name').val(result.name);
-                    $('#id').val(result.id);
-                    $("#dashboard").submit();
+                    location.href = "<?= site_url('user/dashboard'); ?>";
                 } else {
                     Swal.fire({
                         icon: 'error',

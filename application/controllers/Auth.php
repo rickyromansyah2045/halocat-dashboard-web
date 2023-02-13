@@ -32,11 +32,10 @@ class Auth extends CI_Controller {
 
 	public function proses_login()
 	{
-
 		$data = $this->input->post();
 
-		$email 		= $data['email'];
-		$password 	= $data['password'];
+		$email = $data['email'];
+		$password = $data['password'];
 
 		$post_field = [
 			"email" => $email,
@@ -47,30 +46,29 @@ class Auth extends CI_Controller {
 		$curl = curl_init();
 		$url = "{$_ENV['API_URL']}/users/login";
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => $url,
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => '',
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 0,
-		CURLOPT_FOLLOWLOCATION => true,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => 'POST',
-		CURLOPT_POSTFIELDS => $post_field,
-		CURLOPT_HTTPHEADER => array(
-			'Content-Type: application/json'
-		),
-		));
+		curl_setopt_array($curl, [
+			CURLOPT_URL => $url,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'POST',
+			CURLOPT_POSTFIELDS => $post_field,
+			CURLOPT_HTTPHEADER => [
+					'Content-Type: application/json'
+			],
+		]);
 
 		$response = curl_exec($curl);
-
 
 		curl_close($curl);
 
 		$curl = curl_init();
 		$result = json_decode($response, true);
 
-		if($result['success'] == true){
+		if ($result['success']) {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success'],
@@ -80,7 +78,7 @@ class Auth extends CI_Controller {
 				'token' => $result['data']['token']
 			];
 			echo json_encode($data_response);
-		}else{
+		} else {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success'],
@@ -111,20 +109,20 @@ class Auth extends CI_Controller {
 		$curl = curl_init();
 		$url = "{$_ENV['API_URL']}/users/register";
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => $url,
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => '',
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 0,
-		CURLOPT_FOLLOWLOCATION => true,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => 'POST',
-		CURLOPT_POSTFIELDS => $post_field,
-		CURLOPT_HTTPHEADER => array(
-			'Content-Type: application/json'
-		),
-		));
+		curl_setopt_array($curl, [
+			CURLOPT_URL => $url,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'POST',
+			CURLOPT_POSTFIELDS => $post_field,
+			CURLOPT_HTTPHEADER => [
+				'Content-Type: application/json'
+			],
+		]);
 
 		$response = curl_exec($curl);
 
@@ -134,7 +132,7 @@ class Auth extends CI_Controller {
 		$curl = curl_init();
 		$result = json_decode($response, true);
 
-		if($result['success'] == true){
+		if ($result['success']) {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success'],
@@ -144,7 +142,7 @@ class Auth extends CI_Controller {
 				'token' => $result['data']['token']
 			];
 			echo json_encode($data_response);
-		}else{
+		} else {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success'],
