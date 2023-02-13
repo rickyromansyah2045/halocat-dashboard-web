@@ -39,7 +39,7 @@
                         lengthMenu: "_MENU_"
                     },
                     ajax: {
-                        url: `http://localhost:1315/api/v1/admin/datatables/campaigns`,
+                        url: `https://thecloud.lets.cyou/api/v1/admin/datatables/campaigns`,
                         type: 'GET',
                         beforeSend: function() {}
                     },

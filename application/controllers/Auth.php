@@ -46,7 +46,7 @@ class Auth extends CI_Controller {
 
 		$post_field = json_encode($post_field);
 		$curl = curl_init();
-		$url = 'http://localhost:1315/api/v1/users/login';
+		$url = 'https://thecloud.lets.cyou/api/v1/users/login';
 
 		curl_setopt_array($curl, array(
 		CURLOPT_URL => $url,
@@ -110,7 +110,7 @@ class Auth extends CI_Controller {
 
 		$post_field = json_encode($post_field);
 		$curl = curl_init();
-		$url = 'http://localhost:1315/api/v1/users/register';
+		$url = 'https://thecloud.lets.cyou/api/v1/users/register';
 
 		curl_setopt_array($curl, array(
 		CURLOPT_URL => $url,
