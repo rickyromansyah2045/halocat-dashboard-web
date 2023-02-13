@@ -23,7 +23,7 @@
                 <div class="card-header">Data Campaigns</div>
                 <div class="card-body">
                     <div class="datatable">
-                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered table-hover" id="dataTable_test" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -36,15 +36,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>No</td>
-                                    <td>Title</td>
-                                    <td>Goal Amount</td>
-                                    <td>Current Amount</td>
-                                    <td>Is Exclusive?</td>
-                                    <td>Donor Count</td>
-                                    <td>Actions</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
