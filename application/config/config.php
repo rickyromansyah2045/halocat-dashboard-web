@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require_once 'vendor/autoload.php';
+
+$dotenv = \Dotenv\Dotenv::create(APPPATH . "../");
+$dotenv->load();
+
 date_default_timezone_set('Asia/Jakarta');
 
 ini_set('max_execution_time', 0);
@@ -28,8 +33,9 @@ ini_set('memory_limit', '2048M');
 | a PHP script and you can easily do that on your own.
 |
 */
+
 $prot = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http"; // protocol
-$base = "{$prot}://".getenv("BASE_URL");
+$base = "{$prot}://{$_ENV['BASE_URL']}";
 $link = "{$prot}://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 $burl = substr($link,0,strlen($base)); // base url
 $burl = $base == $burl ? $burl : ''; // base url
@@ -149,7 +155,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
