@@ -1,13 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
-
+class Auth extends CI_Controller
+{
 	public function __construct()
     {
         parent::__construct();
-	}
 
+		if ($this->session->has_userdata('id') && $this->uri->segment(2) != "logout") {
+			redirect('user/dashboard');
+		}
+	}
 
 	public function login()
 	{
@@ -71,12 +74,19 @@ class Auth extends CI_Controller {
 		if ($result['success']) {
 			$data_response = [
 				'message' => $result['message'],
-				'status' => $result['success'],
+				'status' => $result['success']
+			];
+
+			$session = [
 				'id' => $result['data']['id'],
 				'name' => $result['data']['name'],
 				'email' => $result['data']['email'],
-				'token' => $result['data']['token']
+				'token' => $result['data']['token'],
+				'role' => @$result['data']['role'] == "" ? "user" : @$result['data']['role']
 			];
+
+			$this->session->set_userdata($session);
+
 			echo json_encode($data_response);
 		} else {
 			$data_response = [
@@ -86,21 +96,19 @@ class Auth extends CI_Controller {
 			];
 			echo json_encode($data_response);
 		}
-
 	}
 
 	public function proses_register()
 	{
-
 		$data = $this->input->post();
 
 		$first_name = $data['firstname'];
-		$last_name 	= $data['lastname'];
-		$email 		= $data['email'];
-		$password 	= $data['password'];
+		$last_name = $data['lastname'];
+		$email = $data['email'];
+		$password = $data['password'];
 
 		$post_field = [
-			"name" 	=> $first_name." ".$last_name,
+			"name" 	=> "{$first_name} {$last_name}",
 			"email" => $email,
 			"password" => $password
 		];
@@ -126,7 +134,6 @@ class Auth extends CI_Controller {
 
 		$response = curl_exec($curl);
 
-
 		curl_close($curl);
 
 		$curl = curl_init();
@@ -135,12 +142,19 @@ class Auth extends CI_Controller {
 		if ($result['success']) {
 			$data_response = [
 				'message' => $result['message'],
-				'status' => $result['success'],
+				'status' => $result['success']
+			];
+
+			$session = [
 				'id' => $result['data']['id'],
 				'name' => $result['data']['name'],
 				'email' => $result['data']['email'],
-				'token' => $result['data']['token']
+				'token' => $result['data']['token'],
+				'role' => @$result['data']['role'] == "" ? "user" : @$result['data']['role']
 			];
+
+			$this->session->set_userdata($session);
+
 			echo json_encode($data_response);
 		} else {
 			$data_response = [
@@ -150,23 +164,11 @@ class Auth extends CI_Controller {
 			];
 			echo json_encode($data_response);
 		}
-
-	}
-
-	public function alive($data) {
-		echo "<pre>";
-		print_r($data);
-		echo "</pre>";
 	}
 
 	public function logout()
 	{
-		unset($_SESSION);
-		echo '<script type="text/javascript">';
-		echo 'window.location.href="'. base_url() .'auth/login";';
-		echo '</script>';
-		exit;
-
+		$this->session->sess_destroy();
+		redirect('auth/login');
 	}
-
 }
