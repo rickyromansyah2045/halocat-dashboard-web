@@ -14,7 +14,11 @@
             ajax: {
                 url: "<?= $_ENV['API_URL']; ?>/admin/datatables/users",
                 type: 'GET',
-                beforeSend: function() {}
+                beforeSend: function() {},
+                error: function(xhr, error, code) {
+                    $('#dataTable_test_processing').hide();
+                    $('#dataTable_test > tbody').html(`<tr><td colspan="6" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
+                }
             },
             columnDefs: [{
                 targets: [0, 5],
