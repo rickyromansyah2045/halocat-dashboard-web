@@ -68,8 +68,9 @@ class Admin extends CI_Controller
 
 	public function logs_activity()
 	{
-		$data['title'] = "Logs Activity";
+		$data['title'] = "Activity Logs";
 		$data['content'] = $this->load->view('admin/logs/activity', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('admin/logs/activity_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
