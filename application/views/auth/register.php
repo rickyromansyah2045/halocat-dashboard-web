@@ -35,9 +35,6 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= site_url('auth/forgot_password'); ?>">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
                                     <a class="small" href="<?= site_url('auth/login'); ?>">Already have an account? Login!</a>
                                 </div>
                                 <hr>
