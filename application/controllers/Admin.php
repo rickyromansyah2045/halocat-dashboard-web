@@ -32,6 +32,7 @@ class Admin extends CI_Controller
 	public function users()
 	{
 		$data['title'] = "Users";
+		$data['content'] = $this->load->view('admin/users/index', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
@@ -39,6 +40,7 @@ class Admin extends CI_Controller
 	public function categories()
 	{
 		$data['title'] = "Categories";
+		$data['content'] = $this->load->view('admin/categories/index', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
@@ -56,6 +58,7 @@ class Admin extends CI_Controller
 	public function transactions()
 	{
 		$data['title'] = "Transactions";
+		$data['content'] = $this->load->view('admin/transactions/index', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
@@ -63,6 +66,7 @@ class Admin extends CI_Controller
 	public function logs_activity()
 	{
 		$data['title'] = "Logs Activity";
+		$data['content'] = $this->load->view('admin/logs/activity', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
