@@ -54,7 +54,7 @@ $route['404_override'] = 'pages/e404';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['about'] = "home/about";
-$route['list-donation'] = "home/donation";
-$route['donation/detail/(:any)'] = "home/donation_detail/$1";
+$route['donations'] = "home/donation";
+$route['donate/(:any)'] = "home/donation_detail/$1";
 
 $route['admin/logs/activity'] = "admin/logs_activity";

@@ -17,7 +17,7 @@ class Home extends CI_Controller {
 
 	public function donation()
 	{
-		$data['title'] = "Donation List";
+		$data['title'] = "List of Donations";
 		$this->load->view('donation', $data);
 	}
 

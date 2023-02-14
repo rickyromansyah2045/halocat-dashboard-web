@@ -25,10 +25,14 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/forgot_password'); ?>">Forgot Password?</a>
+                                    <a class="small" href="<?= site_url('auth/forgot_password'); ?>">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
+                                    <a class="small" href="<?= site_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
+                                </div>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="<?= site_url(); ?>">← Or Back to Home Page</a>
                                 </div>
                             </div>
                         </div>
