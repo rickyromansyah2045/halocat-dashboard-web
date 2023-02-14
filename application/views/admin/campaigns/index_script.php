@@ -26,8 +26,8 @@
                 orderable: false
             }],
             lengthMenu: [
-                [20, 50, 100, 200, 1000],
-                [20, 50, 100, 200, 1000]
+                [10, 20, 50, 100, 200, 500],
+                [10, 20, 50, 100, 200, 500]
             ],
             drawCallback: function(_) {},
             initComplete: function(_, _) {},
