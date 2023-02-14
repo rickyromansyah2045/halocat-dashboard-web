@@ -11,20 +11,20 @@
 				<div class="row">
 					<div class="col-md-4 padding0 mxh125">
 						<div class="dl_item_box_search dl_item_box_search1">
-							<p class="dl_txt_header">search</p>
+							<p class="dl_txt_header">Search</p>
     						<input type="text" class="form-control dl_input_txt_header" name="">
 						</div>
 					</div>
 					<div class="col-md-4 padding0 mxh125">
 						<div class="dl_item_box_search dl_item_box_search2">
-							<p class="dl_txt_header">category</p>
-    						<input type="text" class="form-control dl_input_txt_header" name="">
+							<p class="dl_txt_header">Category</p>
+							<select class="form-control dl_input_txt_header" name="" id=""></select>
 						</div>
 					</div>
 					<div class="col-md-4 padding0 mxh125">
 						<div class="dl_item_box_search dl_item_box_search3">
-							<p class="dl_txt_header">sort by</p>
-    						<input type="text" class="form-control dl_input_txt_header" name="">
+							<p class="dl_txt_header">Sort By</p>
+    						<select class="form-control dl_input_txt_header" name="" id=""></select>
 						</div>
 					</div>
 				</div>
