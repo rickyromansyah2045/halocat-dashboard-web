@@ -42,6 +42,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = "Categories";
 		$data['content'] = $this->load->view('admin/categories/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('admin/categories/index_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
