@@ -9,13 +9,6 @@
                     </h1>
                     <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                 </div>
-                <div class="col-12 col-xl-auto mt-4">
-                    <button class="btn btn-white p-3" id="reportrange">
-                        <i class="mr-2 text-primary" data-feather="calendar"></i>
-                        <span></span>
-                        <i class="ml-1" data-feather="chevron-down"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
