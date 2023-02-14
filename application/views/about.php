@@ -4,7 +4,7 @@
 	<body>
 		<header class="header_box hh300">
 			<?php $this->load->view('template/landing_menu'); ?>
-			<div class="jumbotron jh200">
+			<div class="jumbotron jh200" style="padding-top: 150px;">
 				<p style="font-family: 'Source Sans Pro';font-style: normal;font-weight: 300;font-size: 50px;line-height: 125%;text-align: center;color: #FFFFFF;">About Us</p>
 			</div>
 		</header>

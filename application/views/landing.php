@@ -4,7 +4,7 @@
 	<body>
 		<header class="header_box">
 			<?php $this->load->view('template/landing_menu'); ?>
-			<div class="jumbotron jumbotron_header">
+			<div class="jumbotron jumbotron_header" style="padding-top: 150px;">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">

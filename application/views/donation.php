@@ -4,7 +4,7 @@
   	<body>
 		<header class="header_box dl_header">
 			<?php $this->load->view('template/landing_menu'); ?>
-			<div class="jumbotron jhabout">
+			<div class="jumbotron jhabout" style="padding-top: 150px;">
 				<p class="all_judul_header">List of Donations</p>
 			</div>
 			<div class="container dl_box_search">
