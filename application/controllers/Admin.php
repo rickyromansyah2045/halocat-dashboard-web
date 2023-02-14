@@ -16,6 +16,11 @@ class Admin extends CI_Controller
         }
 	}
 
+	public function index()
+	{
+		redirect('admin/dashboard');
+	}
+
     public function dashboard()
 	{
 		$data['title'] = "Dashboard";

@@ -16,6 +16,11 @@ class User extends CI_Controller
         }
 	}
 
+    public function index()
+	{
+		redirect('user/dashboard');
+	}
+
     public function dashboard()
 	{
 		$data['title'] = "Dashboard";
