@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
+                            <th>Campaign</th>
                             <th>Goal Amount</th>
                             <th>Current Amount</th>
                             <th>Is Exclusive?</th>
