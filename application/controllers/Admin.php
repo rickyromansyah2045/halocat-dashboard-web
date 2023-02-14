@@ -24,12 +24,40 @@ class Admin extends CI_Controller
 		$this->load->view('admin/base', $data);
 	}
 
+	public function users()
+	{
+		$data['title'] = "Users";
+
+		$this->load->view('admin/base', $data);
+	}
+
+	public function categories()
+	{
+		$data['title'] = "Categories";
+
+		$this->load->view('admin/base', $data);
+	}
+
     public function campaigns()
 	{
 		$data['title'] = "Campaigns";
 		$data['content'] = $this->load->view('admin/campaigns/index', NULL, TRUE);
 		$data['custom_script'] = $this->load->view('admin/campaigns/index_script', NULL, TRUE);
 
+
+		$this->load->view('admin/base', $data);
+	}
+
+	public function transactions()
+	{
+		$data['title'] = "Transactions";
+
+		$this->load->view('admin/base', $data);
+	}
+
+	public function logs_activity()
+	{
+		$data['title'] = "Logs Activity";
 
 		$this->load->view('admin/base', $data);
 	}

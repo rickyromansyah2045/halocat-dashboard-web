@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['about'] = "home/about";
 $route['list-donation'] = "home/donation";
 $route['donation/detail/(:any)'] = "home/donation_detail/$1";
+
+$route['admin/logs/activity'] = "admin/logs_activity";

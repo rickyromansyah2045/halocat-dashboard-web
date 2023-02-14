@@ -2,31 +2,20 @@
     <nav class="sidenav shadow-right sidenav-light">
         <div class="sidenav-menu">
             <div class="nav accordion" id="accordionSidenav">
-                <div class="sidenav-menu-heading d-sm-none">Account</div>
-                <a class="nav-link d-sm-none" href="#!">
-                    <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                    Alerts
-                    <span class="badge badge-warning-soft text-warning ml-auto">4 New!</span>
-                </a>
-                <a class="nav-link d-sm-none" href="#!">
-                    <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                    Messages
-                    <span class="badge badge-success-soft text-success ml-auto">2 New!</span>
-                </a>
                 <div class="sidenav-menu-heading">Main Menu</div>
-                <a class="nav-link collapsed" href="<?= base_url('admin/dashboard'); ?>" aria-controls="collapseDashboards">
-                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                <a class="nav-link" href="<?= base_url('admin/dashboard'); ?>">
+                    <div class="nav-link-icon"><i data-feather="home"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('admin/users'); ?>">
                     <div class="nav-link-icon">
-                        <i data-feather="gift"></i>
+                        <i data-feather="users"></i>
                     </div>
                     Users
                 </a>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?= base_url('admin/categories'); ?>">
                     <div class="nav-link-icon">
-                        <i data-feather="gift"></i>
+                        <i data-feather="tag"></i>
                     </div>
                     Categories
                 </a>
@@ -36,11 +25,11 @@
                     </div>
                     Campaigns
                 </a>
-                <a class="nav-link collapsed" href="<?= base_url('admin/dashboard'); ?>" aria-controls="collapseDashboards">
-                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                <a class="nav-link" href="<?= base_url('admin/transactions'); ?>">
+                    <div class="nav-link-icon"><i data-feather="dollar-sign"></i></div>
                     Transactions
                 </a>
-                <a class="nav-link collapsed" href="<?= base_url('admin/dashboard'); ?>" aria-controls="collapseDashboards">
+                <a class="nav-link" href="<?= base_url('admin/logs/activity'); ?>">
                     <div class="nav-link-icon"><i data-feather="activity"></i></div>
                     Activity Logs
                 </a>

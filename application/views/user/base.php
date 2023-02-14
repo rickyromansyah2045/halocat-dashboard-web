@@ -7,7 +7,7 @@
             <?php $this->load->view('user/components/side_navigation'); ?>
             <div id="layoutSidenav_content">
                 <main>
-                    <?= $content; ?>
+                    <?= @$content; ?>
                 </main>
                 <?php $this->load->view('user/components/footer'); ?>
             </div>

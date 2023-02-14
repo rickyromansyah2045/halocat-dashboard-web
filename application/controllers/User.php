@@ -23,4 +23,18 @@ class User extends CI_Controller
 
 		$this->load->view('user/base', $data);
 	}
+
+    public function campaigns()
+	{
+		$data['title'] = "Campaigns";
+
+		$this->load->view('user/base', $data);
+	}
+
+    public function transactions()
+	{
+		$data['title'] = "Transactions";
+
+		$this->load->view('user/base', $data);
+	}
 }
