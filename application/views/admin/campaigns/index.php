@@ -28,6 +28,7 @@
                             <th>Current Amount</th>
                             <th>Is Exclusive?</th>
                             <th>Donor Count</th>
+                            <th>Total Image</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

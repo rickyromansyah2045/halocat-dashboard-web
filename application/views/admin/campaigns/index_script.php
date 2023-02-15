@@ -19,11 +19,11 @@
                 },
                 error: function(xhr, error, code) {
                     $('#dataTable_test_processing').hide();
-                    $('#dataTable_test > tbody').html(`<tr><td colspan="7" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
+                    $('#dataTable_test > tbody').html(`<tr><td colspan="8" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
                 }
             },
             columnDefs: [{
-                targets: [0, 6],
+                targets: [0, 7],
                 searchable: false,
                 orderable: false
             }],
@@ -68,6 +68,12 @@
                     data: "donor_count",
                     render: function(data, type, row) {
                         return data;
+                    }
+                },
+                {
+                    data: "total_image",
+                    render: function(data, type, row) {
+                        return `${data} image`;
                     }
                 },
                 {
