@@ -6,7 +6,7 @@
             processing: true,
             serverSide: true,
             responsive: true,
-            pageLength: 50,
+            pageLength: 20,
             searchDelay: 500,
             language: {
                 lengthMenu: "_MENU_"
