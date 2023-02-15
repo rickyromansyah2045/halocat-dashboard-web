@@ -23,7 +23,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 7],
+                targets: [0, 5],
                 searchable: false,
                 orderable: false
             }],
@@ -59,20 +59,11 @@
                     }
                 },
                 {
-                    data: "is_exclusive",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "donor_count",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
                     data: "total_image",
                     render: function(data, type, row) {
+                        if (data == 0) {
+                            return "-";
+                        }
                         return `${data} image`;
                     }
                 },
