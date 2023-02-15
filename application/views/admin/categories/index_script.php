@@ -14,7 +14,9 @@
             ajax: {
                 url: "<?= $_ENV['API_URL']; ?>/admin/datatables/categories",
                 type: 'GET',
-                beforeSend: function() {},
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                },
                 error: function(xhr, error, code) {
                     $('#dataTable_test_processing').hide();
                     $('#dataTable_test > tbody').html(`<tr><td colspan="3" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
