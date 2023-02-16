@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">
-                    <button class="btn btn-orange p-3">
+                    <button class="btn btn-orange p-3" type="button" data-toggle="modal" data-target="#modal-create">
                         <i class="fa fa-plus fa-fw"></i>&nbsp;Create New User
                     </button>
                 </div>
@@ -43,7 +43,7 @@
 </div>
 
 <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="modal-create-label" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Create New User</h5>
@@ -51,12 +51,37 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form id="form-create">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" id="name" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" id="email" type="email" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="password" type="password" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control" id="role">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="e_money">E-Money Balance</label>
+                        <input class="form-control" id="e_money" type="number" placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-create-submit" class="btn btn-orange" type="submit">Create User</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
