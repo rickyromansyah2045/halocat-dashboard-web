@@ -121,5 +121,40 @@
                 }
             }
         });
+
+        $.ajax({
+            url: "<?= $_ENV['API_URL']; ?>/users",
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    let data = response.data;
+                    for (let i = 0; i < data.length; i++) {
+                        $("#user_id").append(`<option value="${data[i].id}">${data[i].name} (${data[i].email})</option>`);
+                    }
+                }
+            },
+            error: function(xhr, error, code) {
+                console.log(xhr, error, code);
+            }
+        });
+
+        $.ajax({
+            url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    let data = response.data;
+                    for (let i = 0; i < data.length; i++) {
+                        $("#category_id").append(`<option value="${data[i].id}">${data[i].category}</option>`);
+                    }
+                }
+            },
+            error: function(xhr, error, code) {
+                console.log(xhr, error, code);
+            }
+        });
     });
 </script>
