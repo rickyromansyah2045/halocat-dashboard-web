@@ -51,7 +51,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form action="">
+            <form id="form-create">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -64,28 +64,28 @@
                                 <select class="form-control" name="category_id" id="category_id"></select>
                             </div>
                             <div class="form-group">
-                                <label for="">Campaign Title</label>
-                                <input class="form-control" id="" type="text" placeholder="">
+                                <label for="title">Campaign Title</label>
+                                <input class="form-control" id="title" type="text" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">Goal Amount</label>
-                                <input class="form-control" id="" type="text" placeholder="">
+                                <input class="form-control" id="goal_amount" type="number" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Short Description</label>
-                                <input class="form-control" id="" type="text" placeholder="">
+                                <input class="form-control" id="short_description" type="text" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">Long Description</label>
-                                <textarea class="form-control" id="" rows="14" style="padding-bottom: 16px;"></textarea>
+                                <textarea class="form-control" id="description" rows="14" style="padding-bottom: 16px;"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-orange" type="button" data-dismiss="modal">Create Campaign</button>
+                    <button id="btn-create-submit" class="btn btn-orange" type="submit">Create Campaign</button>
                     <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
                 </div>
             </form>

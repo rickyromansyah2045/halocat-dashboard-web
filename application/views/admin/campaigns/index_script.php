@@ -156,5 +156,59 @@
                 console.log(xhr, error, code);
             }
         });
+
+        $('#form-create').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: "<?= $_ENV['API_URL']; ?>/campaigns",
+                type: 'POST',
+                data: JSON.stringify({
+                    user_id: parseInt($('#user_id').val()),
+                    category_id: parseInt($('#category_id').val()),
+                    title: $('#title').val(),
+                    short_description: $('#short_description').val(),
+                    description: $('#description').val(),
+                    goal_amount: parseInt($('#goal_amount').val())
+                }),
+                contentType: "application/json",
+                dataType: 'json',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    $('#btn-create-submit').html('Processing...');
+                    $('#btn-create-submit').prop('disabled', true);
+                },
+                success: function(response) {
+                    if (response.success) {
+                        tabel.ajax.reload(null, false);
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: response.message,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            $('#modal-create').modal('hide');
+                            $('#form-create').trigger('reset');
+                        }, 2500);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            text: response.error
+                        });
+                    }
+                },
+                error: function(xhr, error, code) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                    });
+                },
+                complete: function() {
+                    $('#btn-create-submit').prop('disabled', false);
+                    $('#btn-create-submit').html('Create Campaign');
+                }
+            });
+        });
     });
 </script>
