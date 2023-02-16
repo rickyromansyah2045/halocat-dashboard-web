@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">
-                    <button class="btn btn-orange p-3">
+                    <button class="btn btn-orange p-3" type="button" data-toggle="modal" data-target="#modal-create">
                         <i class="fa fa-plus fa-fw"></i>&nbsp;Create New Campaign
                     </button>
                 </div>
@@ -51,12 +51,44 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user_id">Select User</label>
+                                <select class="form-control" name="user_id" id="user_id"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="category_id">Select Category</label>
+                                <select class="form-control" name="category_id" id="category_id"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Campaign Title</label>
+                                <input class="form-control" id="" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Goal Amount</label>
+                                <input class="form-control" id="" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Short Description</label>
+                                <input class="form-control" id="" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Long Description</label>
+                                <textarea class="form-control" id="" rows="14" style="padding-bottom: 16px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-orange" type="button" data-dismiss="modal">Create Campaign</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
