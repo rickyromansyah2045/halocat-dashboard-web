@@ -88,5 +88,54 @@
                 }
             }
         });
+
+        $('#form-create').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+                type: 'POST',
+                data: JSON.stringify({
+                    category: $('#category').val()
+                }),
+                contentType: "application/json",
+                dataType: 'json',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    $('#btn-create-submit').html('Processing...');
+                    $('#btn-create-submit').prop('disabled', true);
+                },
+                success: function(response) {
+                    if (response.success) {
+                        tabel.ajax.reload(null, false);
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: response.message,
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            $('#modal-create').modal('hide');
+                            $('#form-create').trigger('reset');
+                        }, 2500);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            text: response.error
+                        });
+                    }
+                },
+                error: function(xhr, error, code) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                    });
+                },
+                complete: function() {
+                    $('#btn-create-submit').prop('disabled', false);
+                    $('#btn-create-submit').html('Create Category');
+                }
+            });
+        });
     });
 </script>
