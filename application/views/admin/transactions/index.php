@@ -7,8 +7,13 @@
                         Transactions
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, similique expedita nulla unde assumenda tempora amet earum? Molestiae magni officia, quibusdam quas alias corrupti voluptas voluptatem. Rerum quidem dolorem ut.
+                        Lorem ipsum dolor sit amet.
                     </div>
+                </div>
+                <div class="col-12 col-xl-auto mt-4">
+                    <button class="btn btn-orange p-3">
+                        <i class="fa fa-plus fa-fw"></i>&nbsp;Create New Transaction
+                    </button>
                 </div>
             </div>
         </div>
