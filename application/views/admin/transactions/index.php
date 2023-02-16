@@ -10,11 +10,6 @@
                         Lorem ipsum dolor sit amet.
                     </div>
                 </div>
-                <div class="col-12 col-xl-auto mt-4">
-                    <button class="btn btn-orange p-3">
-                        <i class="fa fa-plus fa-fw"></i>&nbsp;Create New Transaction
-                    </button>
-                </div>
             </div>
         </div>
     </div>
