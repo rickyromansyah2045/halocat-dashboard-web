@@ -6,5 +6,6 @@
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" crossorigin="anonymous"></script>
+<script src="<?= base_url('assets/js/sweetalert/sweetalert2.all.min.js'); ?>"></script>
 
 <?= @$custom_script; ?>
