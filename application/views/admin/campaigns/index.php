@@ -22,16 +22,15 @@
                 <table class="table table-bordered table-hover" id="dataTable_test" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th style="width: 45px;">No</th>
                             <th>Campaign</th>
                             <th>Goal Amount</th>
                             <th>Current Amount</th>
-                            <th>Total Image</th>
-                            <th>Actions</th>
+                            <th style="width: 85px;">Total Image</th>
+                            <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
