@@ -22,11 +22,11 @@
                 <table class="table table-bordered table-hover" id="dataTable_test" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th style="width: 45px;">No</th>
                             <th>Content</th>
                             <th>User Agent</th>
                             <th>IP Address</th>
-                            <th>Date and Time</th>
+                            <th style="width: 116px;">Date and Time</th>
                         </tr>
                     </thead>
                     <tbody></tbody>

@@ -22,9 +22,9 @@
                 <table class="table table-bordered table-hover" id="dataTable_test" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th style="width: 45px;">No</th>
                             <th>Category</th>
-                            <th>Actions</th>
+                            <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
