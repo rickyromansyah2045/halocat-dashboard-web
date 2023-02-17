@@ -367,7 +367,7 @@
                         for (let i = 0; i < images.length; i++) {
                             $('#wrapper-button-images').append(`
                                 <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#imgCollapse-${i+1}">
-                                    Images ${i+1}
+                                    Image ${i+1}
                                 </button>
                             `);
                             $('#images-collapse').append(`
