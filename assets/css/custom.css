@@ -24,3 +24,9 @@
 .wrapper-button-images::-webkit-scrollbar-thumb:hover {
     background: none;
 }
+
+.wrapper-campaign-image {
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}

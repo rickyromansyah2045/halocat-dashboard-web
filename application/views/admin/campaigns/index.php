@@ -113,7 +113,7 @@
 </div>
 
 <div class="modal fade" id="modal-manage-images" tabindex="-1" role="dialog" aria-labelledby="modal-manage-images-label" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Manage Campaign Images</h5>
@@ -132,16 +132,16 @@
                 </div>
                 <div id="images-collapse">
                     <div class="collapse" id="collapseExample1">
-                        <div style="border: 1px solid #333; border-radius: 15px; overflow: hidden;">
-                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="" style="max-width: 100%;">
+                        <div class="wrapper-campaign-image">
+                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="campaign image" class="mw-100">
                         </div>
                         <div class="mt-2">
                             <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
                         </div>
                     </div>
                     <div class="collapse" id="collapseExample2">
-                        <div style="border: 1px solid #333; border-radius: 15px; overflow: hidden;">
-                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="" style="max-width: 100%;">
+                        <div class="wrapper-campaign-image">
+                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="campaign image" class="mw-100">
                         </div>
                         <div class="mt-2">
                             <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
@@ -150,6 +150,25 @@
                 </div>
                 <hr>
                 <button class="btn btn-orange btn-sm btn-block" type="button">Add New Image</button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-add-image" tabindex="-1" role="dialog" aria-labelledby="modal-add-image-label" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Image</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
