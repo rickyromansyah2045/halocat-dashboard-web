@@ -1,6 +1,8 @@
 <script>
+    var tabel;
+
     $(document).ready(function() {
-        var tabel = $('#dataTable_test').DataTable({
+        tabel = $('#dataTable_test').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -88,13 +90,13 @@
                                         </div>
                                         Manage Images
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openFormUpdateCampaign(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-pen fa-fw"></i>
                                         </div>
                                         Edit Data
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:deleteCampaign(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
                                         </div>
@@ -148,7 +150,7 @@
                 if (response.success) {
                     let data = response.data;
                     for (let i = 0; i < data.length; i++) {
-                        $("#category_id").append(`<option value="${data[i].id}">${data[i].category}</option>`);
+                        $("#category_id, #edit-category_id").append(`<option value="${data[i].id}">${data[i].category}</option>`);
                     }
                 }
             },
@@ -211,4 +213,138 @@
             });
         });
     });
+
+    function openFormUpdateCampaign(id) {
+        $('#modal-edit').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $("#edit-id").val(response?.data?.id || "");
+                    $("#edit-user_id").val(response?.data?.user_id || "");
+                    $("#edit-category_id").val(response?.data?.category_id || "");
+                    $("#edit-title").val(response?.data?.title || "");
+                    $("#edit-goal_amount").val(response?.data?.goal_amount || "");
+                    $("#edit-short_description").val(response?.data?.short_description || "");
+                    $("#edit-description").val(response?.data?.description || "");
+                } else {
+                    $('#modal-edit').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    $('#form-edit').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/${$('#edit-id').val()}`,
+            type: 'PUT',
+            data: JSON.stringify({
+                user_id: parseInt($('#edit-user_id').val()),
+                category_id: parseInt($('#edit-category_id').val()),
+                title: $('#edit-title').val(),
+                short_description: $('#edit-short_description').val(),
+                description: $('#edit-description').val(),
+                goal_amount: parseInt($('#edit-goal_amount').val()),
+            }),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-edit-submit').html('Processing...');
+                $('#btn-edit-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    tabel.ajax.reload(null, false);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    $('#modal-edit').modal('hide');
+                    setTimeout(() => {
+                        $('#form-edit').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-edit-submit').prop('disabled', false);
+                $('#btn-edit-submit').html('Update');
+            }
+        });
+    });
+
+    function deleteCampaign(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: (login) => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            tabel.ajax.reload(null, false);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
+    }
 </script>

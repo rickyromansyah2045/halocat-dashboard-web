@@ -57,11 +57,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user_id">Select User</label>
-                                <select class="form-control" name="user_id" id="user_id"></select>
+                                <select class="form-control" id="user_id"></select>
                             </div>
                             <div class="form-group">
                                 <label for="category_id">Select Category</label>
-                                <select class="form-control" name="category_id" id="category_id"></select>
+                                <select class="form-control" id="category_id"></select>
                             </div>
                             <div class="form-group">
                                 <label for="title">Campaign Title</label>
@@ -140,12 +140,42 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form id="form-edit">
+                <input id="edit-id" type="hidden">
+                <input id="edit-user_id" type="hidden">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="category_id">Select Category</label>
+                                <select class="form-control" id="edit-category_id"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Campaign Title</label>
+                                <input class="form-control" id="edit-title" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Goal Amount</label>
+                                <input class="form-control" id="edit-goal_amount" type="number" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Short Description</label>
+                                <input class="form-control" id="edit-short_description" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Long Description</label>
+                                <textarea class="form-control" id="edit-description" rows="7" style="padding-bottom: 22px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-edit-submit" class="btn btn-orange" type="submit">Update</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
