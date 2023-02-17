@@ -122,6 +122,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <input type="hidden" id="manage-images-campaign-id">
                 <div class="wrapper-button-images mb-2">
                     <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample1">
                         Images 1 (Primary)
@@ -149,7 +150,7 @@
                     </div>
                 </div>
                 <hr>
-                <button class="btn btn-orange btn-sm btn-block" type="button">Add New Image</button>
+                <button class="btn btn-orange btn-sm btn-block" type="button" onclick="openModalAddNewImage()">Add New Image</button>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
@@ -167,12 +168,26 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form id="form-add-image">
+                <input type="hidden" name="campaign_id" id="add-image-campaign_id">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="file">Image</label>
+                        <input class="form-control" name="file" id="file" type="file">
+                    </div>
+                    <div class="form-group">
+                        <label for="is_primary">Is Primary?</label>
+                        <select class="form-control" name="is_primary" id="is_primary">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-add-image-submit" class="btn btn-orange" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

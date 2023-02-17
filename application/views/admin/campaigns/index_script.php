@@ -1,5 +1,6 @@
 <script>
     var tabel;
+    var showModalManageImage = true;
 
     $(document).ready(function() {
         tabel = $('#dataTable_test').DataTable({
@@ -355,6 +356,7 @@
             type: 'GET',
             success: function(response) {
                 if (response.success) {
+                    $('#manage-images-campaign-id').val(id);
                     console.log(response?.data?.images || {});
                 } else {
                     $('#modal-manage-images').modal('hide');
@@ -377,5 +379,70 @@
     var ic = $('#images-collapse');
     ic.on('show.bs.collapse', function() {
         ic.find('.collapse.show').collapse('hide');
+    });
+
+    function openModalAddNewImage() {
+        $('#modal-manage-images').modal('hide');
+        $('#modal-add-image').modal('show');
+        $('#add-image-campaign_id').val($('#manage-images-campaign-id').val());
+    }
+
+    $('#modal-add-image').on('hide.bs.modal', function(){
+        if (showModalManageImage) {
+            $('#modal-manage-images').modal('show');
+        } else {
+            showModalManageImage = true;
+        }
+    });
+
+    $('#form-add-image').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/images`,
+            type: "POST",
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-add-image-submit').html('Processing...');
+                $('#btn-add-image-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    showModalManageImage = false;
+                    tabel.ajax.reload();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                    $('#modal-add-image').modal('hide');
+                    $('#modal-manage-images').modal('hide');
+                    setTimeout(() => {
+                        openFormManageImages($('#manage-images-campaign-id').val());
+                        $('#form-add-image').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-add-image-submit').prop('disabled', false);
+                $('#btn-add-image-submit').html('Submit');
+            }
+        });
     });
 </script>
