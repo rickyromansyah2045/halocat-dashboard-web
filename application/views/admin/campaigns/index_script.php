@@ -187,8 +187,8 @@
                             showConfirmButton: false,
                             timer: 3000
                         });
+                        $('#modal-create').modal('hide');
                         setTimeout(() => {
-                            $('#modal-create').modal('hide');
                             $('#form-create').trigger('reset');
                         }, 2500);
                     } else {

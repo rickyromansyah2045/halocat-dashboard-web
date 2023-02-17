@@ -1,6 +1,8 @@
 <script>
+    var tabel;
+
     $(document).ready(function() {
-        var tabel = $('#dataTable_test').DataTable({
+        tabel = $('#dataTable_test').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -55,13 +57,13 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openFormUpdateCategory(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-pen fa-fw"></i>
                                         </div>
                                         Edit Data
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:deleteCategory(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
                                         </div>
@@ -79,8 +81,8 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel.search(this.value).draw();
-                    empty = true;
+                        tabel.search(this.value).draw();
+                        empty = true;
                     }
                 }else{
                     tabel.search(this.value).draw();
@@ -114,8 +116,8 @@
                             showConfirmButton: false,
                             timer: 3000
                         });
+                        $('#modal-create').modal('hide');
                         setTimeout(() => {
-                            $('#modal-create').modal('hide');
                             $('#form-create').trigger('reset');
                         }, 2500);
                     } else {
@@ -138,4 +140,128 @@
             });
         });
     });
+
+    function openFormUpdateCategory(id) {
+        $('#modal-edit').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $("#edit-id").val(response?.data?.id || "");
+                    $("#edit-category").val(response?.data?.category || "");
+                } else {
+                    $('#modal-edit').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    $('#form-edit').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${$('#edit-id').val()}`,
+            type: 'PUT',
+            data: JSON.stringify({
+                category: $('#edit-category').val()
+            }),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-edit-submit').html('Processing...');
+                $('#btn-edit-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    tabel.ajax.reload(null, false);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    $('#modal-edit').modal('hide');
+                    setTimeout(() => {
+                        $('#form-edit').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-edit-submit').prop('disabled', false);
+                $('#btn-edit-submit').html('Update');
+            }
+        });
+    });
+
+    function deleteCategory(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: (login) => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            tabel.ajax.reload(null, false);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
+    }
 </script>

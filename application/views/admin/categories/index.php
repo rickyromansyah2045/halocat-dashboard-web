@@ -73,12 +73,19 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form id="form-edit">
+                <input id="edit-id" type="hidden">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-category">Category</label>
+                        <input class="form-control" id="edit-category" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-edit-submit" class="btn btn-orange" type="submit">Update</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
