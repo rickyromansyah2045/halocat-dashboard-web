@@ -33,7 +33,9 @@
                 [10, 20, 50, 100, 200, 500],
                 [10, 20, 50, 100, 200, 500]
             ],
-            drawCallback: function(_) {},
+            drawCallback: function(_) {
+                $('.dataTables_filter input').attr('placeholder','Type and enter...');
+            },
             initComplete: function(_, _) {},
             columns: [
                 {
