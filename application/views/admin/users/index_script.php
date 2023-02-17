@@ -1,6 +1,8 @@
 <script>
+    var tabel;
+
     $(document).ready(function() {
-        var tabel = $('#dataTable_test').DataTable({
+        tabel = $('#dataTable_test').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -73,13 +75,13 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openFormUpdateUser(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-pen fa-fw"></i>
                                         </div>
                                         Edit Data
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:deleteUser(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
                                         </div>
@@ -160,4 +162,144 @@
             });
         });
     });
+
+    function openFormUpdateUser(id) {
+        $('#modal-edit').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/users/${id}`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#edit-id").val(response?.data?.id || "");
+                    $("#edit-email").val(response?.data?.email || "");
+                    $("#edit-name").val(response?.data?.name || "");
+                    $("#edit-role").val(response?.data?.role || "");
+                    $("#edit-e_money").val(response?.data?.e_money || 0);
+                } else {
+                    $('#modal-edit').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    $('#form-edit').submit(function(e){
+        e.preventDefault();
+
+        let object = {
+            email: $('#edit-email').val(),
+            name: $('#edit-name').val(),
+            e_money: parseFloat($('#edit-e_money').val()),
+            role: $('#edit-role').val()
+        };
+
+        if ($('#edit-password').val() != "") {
+            object.password = $('#edit-password').val();
+        }
+
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/users/${$('#edit-id').val()}`,
+            type: 'PUT',
+            data: JSON.stringify(object),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-edit-submit').html('Processing...');
+                $('#btn-edit-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    tabel.ajax.reload(null, false);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    $('#modal-edit').modal('hide');
+                    setTimeout(() => {
+                        $('#form-edit').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-edit-submit').prop('disabled', false);
+                $('#btn-edit-submit').html('Update');
+            }
+        });
+    });
+
+    function deleteUser(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: (login) => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/users/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            tabel.ajax.reload(null, false);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
+    }
 </script>

@@ -87,7 +87,7 @@
 </div>
 
 <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="modal-edit-label" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Edit User</h5>
@@ -95,12 +95,39 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
-            </div>
+            <form id="form-edit">
+                <input id="edit-id" type="hidden">
+                <div class="modal-body">
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                        <input class="form-control" id="edit-email" type="email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" id="edit-name" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="edit-password" type="password" placeholder="">
+                        <small class="form-text text-muted">Leave blank if you don't want to change.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control" id="edit-role">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="e_money">E-Money Balance</label>
+                        <input class="form-control" id="edit-e_money" type="number" placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-edit-submit" class="btn btn-orange" type="submit">Update</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
