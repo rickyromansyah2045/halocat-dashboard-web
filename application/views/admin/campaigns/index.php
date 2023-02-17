@@ -123,32 +123,8 @@
             </div>
             <div class="modal-body">
                 <input type="hidden" id="manage-images-campaign-id">
-                <div class="wrapper-button-images mb-2">
-                    <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample1">
-                        Images 1 (Primary)
-                    </button>
-                    <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample2">
-                        Images 2
-                    </button>
-                </div>
-                <div id="images-collapse">
-                    <div class="collapse" id="collapseExample1">
-                        <div class="wrapper-campaign-image">
-                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="campaign image" class="mw-100">
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="collapseExample2">
-                        <div class="wrapper-campaign-image">
-                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="campaign image" class="mw-100">
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
-                        </div>
-                    </div>
-                </div>
+                <div id="wrapper-button-images" class="wrapper-button-images mb-2"></div>
+                <div id="images-collapse"></div>
                 <hr>
                 <button class="btn btn-orange btn-sm btn-block" type="button" onclick="openModalAddNewImage()">Add New Image</button>
             </div>
