@@ -357,7 +357,25 @@
             success: function(response) {
                 if (response.success) {
                     $('#manage-images-campaign-id').val(id);
-                    console.log(response?.data?.images || {});
+                    let images = response?.data?.images || {};
+                    $('#wrapper-button-images, #images-collapse').html('');
+                    for (let i = 0; i < images.length; i++) {
+                        $('#wrapper-button-images').append(`
+                            <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#imgCollapse-${i+1}">
+                                Images ${i+1}
+                            </button>
+                        `);
+                        $('#images-collapse').append(`
+                            <div class="collapse${(i == 0 ? ' show' : '')}" id="imgCollapse-${i+1}">
+                                <div class="wrapper-campaign-image">
+                                    <img src="<?= str_replace('/api/v1', '', $_ENV['API_URL']); ?>/${images[i].file_location}" alt="campaign image" class="mw-100">
+                                </div>
+                                <div class="mt-2">
+                                    <button class="btn btn-danger btn-sm btn-block" type="button" onclick="deleteImage(${images[i].id})">Delete This Image</button>
+                                </div>
+                            </div>
+                        `);
+                    }
                 } else {
                     $('#modal-manage-images').modal('hide');
                     Swal.fire({
@@ -445,4 +463,59 @@
             }
         });
     });
+
+    function deleteImage(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: (login) => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/campaigns/images/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            showModalManageImage = false;
+                            tabel.ajax.reload();
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 2500
+                            });
+                            $('#modal-add-image').modal('hide');
+                            $('#modal-manage-images').modal('hide');
+                            setTimeout(() => {
+                                openFormManageImages($('#manage-images-campaign-id').val());
+                                $('#form-add-image').trigger('reset');
+                            }, 2500);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
+    }
 </script>
