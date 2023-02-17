@@ -84,7 +84,7 @@
                                         </div>
                                         View More
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-image fa-fw"></i>
                                         </div>
@@ -347,4 +347,35 @@
             if (result.isConfirmed) {}
         })
     }
+
+    function openFormManageImages(id) {
+        $('#modal-manage-images').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    console.log(response?.data?.images || {});
+                } else {
+                    $('#modal-manage-images').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    var ic = $('#images-collapse');
+    ic.on('show.bs.collapse', function() {
+        ic.find('.collapse.show').collapse('hide');
+    });
 </script>

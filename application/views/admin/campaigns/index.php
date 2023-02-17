@@ -122,7 +122,34 @@
                 </button>
             </div>
             <div class="modal-body">
-
+                <div class="wrapper-button-images mb-2">
+                    <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample1">
+                        Images 1 (Primary)
+                    </button>
+                    <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample2">
+                        Images 2
+                    </button>
+                </div>
+                <div id="images-collapse">
+                    <div class="collapse" id="collapseExample1">
+                        <div style="border: 1px solid #333; border-radius: 15px; overflow: hidden;">
+                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="" style="max-width: 100%;">
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseExample2">
+                        <div style="border: 1px solid #333; border-radius: 15px; overflow: hidden;">
+                            <img src="https://www.linkpicture.com/q/15329611_1905.i126.005_programmer-work.jpg" alt="" style="max-width: 100%;">
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-danger btn-sm btn-block" type="button">Delete This Image</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <button class="btn btn-orange btn-sm btn-block" type="button">Add New Image</button>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
