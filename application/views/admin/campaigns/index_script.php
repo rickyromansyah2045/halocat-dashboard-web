@@ -359,22 +359,26 @@
                     $('#manage-images-campaign-id').val(id);
                     let images = response?.data?.images || {};
                     $('#wrapper-button-images, #images-collapse').html('');
-                    for (let i = 0; i < images.length; i++) {
-                        $('#wrapper-button-images').append(`
-                            <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#imgCollapse-${i+1}">
-                                Images ${i+1}
-                            </button>
-                        `);
-                        $('#images-collapse').append(`
-                            <div class="collapse${(i == 0 ? ' show' : '')}" id="imgCollapse-${i+1}">
-                                <div class="wrapper-campaign-image">
-                                    <img src="<?= str_replace('/api/v1', '', $_ENV['API_URL']); ?>/${images[i].file_location}" alt="campaign image" class="mw-100">
+                    if (images.length == 0) {
+                        $('#wrapper-button-images').append(`This campaign does not have any images yet.`);
+                    } else {
+                        for (let i = 0; i < images.length; i++) {
+                            $('#wrapper-button-images').append(`
+                                <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#imgCollapse-${i+1}">
+                                    Images ${i+1}
+                                </button>
+                            `);
+                            $('#images-collapse').append(`
+                                <div class="collapse${(i == 0 ? ' show' : '')}" id="imgCollapse-${i+1}">
+                                    <div class="wrapper-campaign-image">
+                                        <img src="<?= str_replace('/api/v1', '', $_ENV['API_URL']); ?>/${images[i].file_location}" alt="campaign image" class="mw-100">
+                                    </div>
+                                    <div class="mt-2">
+                                        <button class="btn btn-danger btn-sm btn-block" type="button" onclick="deleteImage(${images[i].id})">Delete This Image</button>
+                                    </div>
                                 </div>
-                                <div class="mt-2">
-                                    <button class="btn btn-danger btn-sm btn-block" type="button" onclick="deleteImage(${images[i].id})">Delete This Image</button>
-                                </div>
-                            </div>
-                        `);
+                            `);
+                        }
                     }
                 } else {
                     $('#modal-manage-images').modal('hide');
