@@ -87,6 +87,12 @@
                                         </div>
                                         View More
                                     </a>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-icon">
+                                            <i class="fa fa-gift fa-fw"></i>
+                                        </div>
+                                        Set To Exclusive
+                                    </a>
                                     <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-image fa-fw"></i>
