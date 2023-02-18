@@ -2,7 +2,7 @@
     var tabel;
 
     $(document).ready(function() {
-        tabel = $('#dataTable_test').DataTable({
+        tabel = $('#dataTable_theCloud').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -20,8 +20,8 @@
                     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
                 },
                 error: function(xhr, error, code) {
-                    $('#dataTable_test_processing').hide();
-                    $('#dataTable_test > tbody').html(`<tr><td colspan="8" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
+                    $('#dataTable_theCloud_processing').hide();
+                    $('#dataTable_theCloud > tbody').html(`<tr><td colspan="8" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
                 }
             },
             columnDefs: [{

@@ -19,7 +19,7 @@
         <div class="card-header">Data Activity Logs</div>
         <div class="card-body">
             <div class="datatable">
-                <table class="table table-bordered table-hover" id="dataTable_test" width="100%" cellspacing="0">
+                <table class="table table-bordered table-hover" id="dataTable_theCloud" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th style="width: 45px;">No</th>
