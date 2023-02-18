@@ -24,7 +24,6 @@
                         <tr>
                             <th style="width: 45px;">No</th>
                             <th>Campaign ID</th>
-                            <th>User ID</th>
                             <th>Amount</th>
                             <th>Status</th>
                             <th>Code</th>

@@ -25,7 +25,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 6, 7],
+                targets: [0, 5, 6],
                 searchable: false,
                 orderable: false
             }],
@@ -46,12 +46,6 @@
                 },
                 {
                     data: "campaign_id",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "user_id",
                     render: function(data, type, row) {
                         return data;
                     }
