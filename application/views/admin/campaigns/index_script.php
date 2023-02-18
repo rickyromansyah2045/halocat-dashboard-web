@@ -84,6 +84,15 @@
                 {
                     data: "status",
                     render: function(data, type, row) {
+                        if (data == "active") {
+                            if (row?.finished_at || "" != "") {
+                                return `active ~ ${moment(row?.finished_at).format('DD/MM/YY')}`
+                            }
+                            return `active`;
+                        }
+                        if (data == "") {
+                            return "-";
+                        }
                         return data;
                     }
                 },
@@ -215,7 +224,9 @@
                     title: $('#title').val(),
                     short_description: $('#short_description').val(),
                     description: $('#description').val(),
-                    goal_amount: parseInt($('#goal_amount').val())
+                    goal_amount: parseInt($('#goal_amount').val()),
+                    finished_at: "2023-05-01",
+                    status: "active"
                 }),
                 contentType: "application/json",
                 dataType: 'json',

@@ -32,8 +32,8 @@
                             <th>Goal</th>
                             <th>Collected</th>
                             <th style="width: 85px;">Images</th>
-                            <th>Exclusive</th>
-                            <th>Status</th>
+                            <th style="width: 65px;">Exclusive</th>
+                            <th style="width: 110px;">Status</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
