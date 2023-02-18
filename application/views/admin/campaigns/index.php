@@ -77,13 +77,13 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Select End of Campaign Date</label>
-                                <input class="form-control" id="finished_at" type="date" placeholder="">
+                                <label for="">End of Campaign Date</label>
+                                <input class="form-control" id="finished_at" min="<?= date('Y-m-d', strtotime("+1 month")); ?>" type="date" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="title">Campaign Title</label>
+                                <label for="title">Campaign Name</label>
                                 <input class="form-control" id="title" type="text" placeholder="">
                             </div>
                             <div class="form-group">
@@ -193,7 +193,6 @@
             <form id="form-edit">
                 <input id="edit-id" type="hidden">
                 <input id="edit-user_id" type="hidden">
-                <input id="edit-status" type="hidden">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -202,15 +201,26 @@
                                 <select class="form-control" id="edit-category_id"></select>
                             </div>
                             <div class="form-group">
-                                <label for="title">Campaign Title</label>
-                                <input class="form-control" id="edit-title" type="text" placeholder="">
-                            </div>
-                            <div class="form-group">
                                 <label for="">Goal Amount</label>
                                 <input class="form-control" id="edit-goal_amount" type="number" placeholder="">
                             </div>
+                            <div class="form-group">
+                                <label for="">Status</label>
+                                <select class="form-control" id="edit-status">
+                                    <option value="active">Active</option>
+                                    <option value="waiting confirmation">Waiting Confirmation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">End of Campaign Date</label>
+                                <input class="form-control" id="edit-finished_at" type="date" placeholder="">
+                            </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="title">Campaign Name</label>
+                                <input class="form-control" id="edit-title" type="text" placeholder="">
+                            </div>
                             <div class="form-group">
                                 <label for="">Short Description</label>
                                 <input class="form-control" id="edit-short_description" type="text" placeholder="">

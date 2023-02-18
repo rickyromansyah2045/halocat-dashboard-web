@@ -61,7 +61,7 @@
                                 <select class="form-control" id="category_id"></select>
                             </div>
                             <div class="form-group">
-                                <label for="title">Campaign Title</label>
+                                <label for="title">Campaign Name</label>
                                 <input class="form-control" id="title" type="text" placeholder="">
                             </div>
                             <div class="form-group">
@@ -185,7 +185,7 @@
                                 <select class="form-control" id="edit-category_id"></select>
                             </div>
                             <div class="form-group">
-                                <label for="title">Campaign Title</label>
+                                <label for="title">Campaign Name</label>
                                 <input class="form-control" id="edit-title" type="text" placeholder="">
                             </div>
                             <div class="form-group">
