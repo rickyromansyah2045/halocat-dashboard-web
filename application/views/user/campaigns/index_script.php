@@ -26,7 +26,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 5],
+                targets: [0, 7],
                 searchable: false,
                 orderable: false
             }],
@@ -63,12 +63,6 @@
                         return data;
                     }
                 },
-                // {
-                //     data: "status",
-                //     render: function(data, type, row) {
-                //         return data;
-                //     }
-                // },
                 {
                     data: "total_image",
                     render: function(data, type, row) {
@@ -76,6 +70,30 @@
                             return "-";
                         }
                         return `${data} images`;
+                    }
+                },
+                {
+                    data: "is_exclusive",
+                    render: function(data, type, row) {
+                        if (data == "1") {
+                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
+                        }
+                        return `<span class="badge badge-pill badge-dark">No</span>`;
+                    }
+                },
+                {
+                    data: "status",
+                    render: function(data, type, row) {
+                        if (data == "active") {
+                            if (row?.finished_at || "" != "") {
+                                return `active ~ ${moment(row?.finished_at).format('DD/MM/YY')}`
+                            }
+                            return `active`;
+                        }
+                        if (data == "") {
+                            return "-";
+                        }
+                        return data;
                     }
                 },
                 {
@@ -99,13 +117,13 @@
                                         </div>
                                         Manage Images
                                     </a>
-                                    <a class="dropdown-item" href="javascript:openFormUpdateCampaign(${data})">
+                                    <a class="dropdown-item" href="javascript:openFormUpdateCampaign(${data}, '${row.status}')">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-pen fa-fw"></i>
                                         </div>
                                         Edit Data
                                     </a>
-                                    <a class="dropdown-item" href="javascript:deleteCampaign(${data})">
+                                    <a class="dropdown-item" href="javascript:deleteCampaign(${data}, '${row.status}')">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
                                         </div>
@@ -130,25 +148,6 @@
                     tabel.search(this.value).draw();
                     empty = false;
                 }
-            }
-        });
-
-        $.ajax({
-            url: "<?= $_ENV['API_URL']; ?>/users",
-            type: 'GET',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-            },
-            success: function(response) {
-                if (response.success) {
-                    let data = response.data;
-                    for (let i = 0; i < data.length; i++) {
-                        $("#user_id").append(`<option value="${data[i].id}">${data[i].name} (${data[i].email})</option>`);
-                    }
-                }
-            },
-            error: function(xhr, error, code) {
-                console.log(xhr, error, code);
             }
         });
 
@@ -223,7 +222,14 @@
         });
     });
 
-    function openFormUpdateCampaign(id) {
+    function openFormUpdateCampaign(id, status) {
+        if (status == "active") {
+            Swal.fire({
+                icon: 'warning',
+                text: 'This campaign is in progress, you cannot change this campaign, if you want to change this campaign you can contact our team.'
+            });
+            return;
+        }
         $('#modal-edit').modal('show');
         $.ajax({
             url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
@@ -309,7 +315,14 @@
         });
     });
 
-    function deleteCampaign(id) {
+    function deleteCampaign(id, status) {
+        if (status == "active") {
+            Swal.fire({
+                icon: 'warning',
+                text: 'This campaign is in progress, you cannot delete this campaign, if you want to change this campaign you can contact our team.'
+            });
+            return;
+        }
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
