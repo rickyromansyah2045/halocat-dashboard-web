@@ -1,5 +1,5 @@
 <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
-    <a class="navbar-brand" href="<?= base_url('admin/dashboard'); ?>">The Cloud</a>
+    <a class="navbar-brand" href="<?= base_url('admin/dashboard'); ?>">The Cloud Donation</a>
     <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle"><i data-feather="menu"></i></button>
     <ul class="navbar-nav align-items-center ml-auto">
         <li class="nav-item dropdown no-caret mr-3 d-md-none">
