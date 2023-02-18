@@ -216,3 +216,36 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal-set-to-exclusive" tabindex="-1" role="dialog" aria-labelledby="modal-set-to-exclusive-label" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Set to Exclusive Campaign</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="form-set-to-exclusive">
+                <input type="hidden" id="set-to-exclusive-campaign_id">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="set-to-exclusive-is_reward_money">Reward is Money?</label>
+                        <select class="form-control" id="set-to-exclusive-is_reward_money">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="set-to-exclusive-reward">Reward</label>
+                        <input class="form-control" id="set-to-exclusive-reward" type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-set-to-exclusive-submit" class="btn btn-orange" type="submit">Set to Exclusive Campaign</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

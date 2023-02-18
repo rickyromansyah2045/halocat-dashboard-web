@@ -87,7 +87,7 @@
                                         </div>
                                         View More
                                     </a>
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openFormSetToExclusive(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-gift fa-fw"></i>
                                         </div>
@@ -530,4 +530,69 @@
             if (result.isConfirmed) {}
         })
     }
+
+    function openFormSetToExclusive(id) {
+        $('#modal-set-to-exclusive').modal('show');
+        $('#set-to-exclusive-campaign_id').val(id);
+        $('#set-to-exclusive-is_reward_money').trigger('change');
+    }
+
+    $('#form-set-to-exclusive').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "<?= $_ENV['API_URL']; ?>/campaigns/exclusive",
+            type: 'POST',
+            data: JSON.stringify({
+                campaign_id: parseInt($('#set-to-exclusive-campaign_id').val()),
+                is_reward_money: parseInt($('#set-to-exclusive-is_reward_money').val()),
+                reward: $('#set-to-exclusive-reward').val()
+            }),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-set-to-exclusive-submit').html('Processing...');
+                $('#btn-set-to-exclusive-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    tabel.ajax.reload(null, false);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    $('#modal-set-to-exclusive').modal('hide');
+                    setTimeout(() => {
+                        $('#form-set-to-exclusive').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-set-to-exclusive-submit').prop('disabled', false);
+                $('#btn-set-to-exclusive-submit').html('Set to Exclusive Campaign');
+            }
+        });
+    });
+
+    $('#set-to-exclusive-is_reward_money').change(function(){
+        if ($(this).val() == "1") {
+            $('#set-to-exclusive-reward').attr('type', 'number');
+        } else {
+            $('#set-to-exclusive-reward').attr('type', 'text');
+        }
+    });
 </script>
