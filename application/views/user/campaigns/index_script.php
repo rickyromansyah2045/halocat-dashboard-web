@@ -63,6 +63,12 @@
                         return data;
                     }
                 },
+                // {
+                //     data: "status",
+                //     render: function(data, type, row) {
+                //         return data;
+                //     }
+                // },
                 {
                     data: "total_image",
                     render: function(data, type, row) {
@@ -86,12 +92,6 @@
                                             <i class="fa fa-eye fa-fw"></i>
                                         </div>
                                         View More
-                                    </a>
-                                    <a class="dropdown-item" href="#!">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-gift fa-fw"></i>
-                                        </div>
-                                        Set To Exclusive
                                     </a>
                                     <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
                                         <div class="dropdown-item-icon">
