@@ -182,6 +182,7 @@
             <form id="form-edit">
                 <input id="edit-id" type="hidden">
                 <input id="edit-user_id" type="hidden">
+                <input id="edit-status" type="hidden">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
