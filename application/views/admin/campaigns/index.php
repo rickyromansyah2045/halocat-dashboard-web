@@ -249,3 +249,37 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal-edit-exclusive" tabindex="-1" role="dialog" aria-labelledby="modal-edit-exclusive-label" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Data Exclusive</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="form-edit-exclusive">
+                <input type="hidden" id="edit-exclusive-id">
+                <input type="hidden" id="edit-exclusive-campaign_id">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-exclusive-is_reward_money">Reward is Money?</label>
+                        <select class="form-control" id="edit-exclusive-is_reward_money">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-exclusive-reward">Reward</label>
+                        <input class="form-control" id="edit-exclusive-reward" type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-edit-exclusive-submit" class="btn btn-orange" type="submit">Edit Data Exclusive</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
