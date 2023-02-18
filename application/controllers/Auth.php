@@ -54,6 +54,7 @@ class Auth extends CI_Controller
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_FAILONERROR => true,
 			CURLOPT_TIMEOUT => 0,
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -66,9 +67,22 @@ class Auth extends CI_Controller
 
 		$response = curl_exec($curl);
 
+		if (curl_errno($curl)) {
+			$error_msg = strtolower(curl_error($curl));
+		}
+
 		curl_close($curl);
 
-		$curl = curl_init();
+		if (isset($error_msg)) {
+			$data_response = [
+				'message' => "CURL error, err: {$error_msg}",
+				'status' => false,
+				'error' => "CURL error, err: {$error_msg}"
+			];
+			echo json_encode($data_response);
+			exit;
+		}
+
 		$result = json_decode($response, true);
 
 		if ($result['success']) {
@@ -122,6 +136,7 @@ class Auth extends CI_Controller
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_FAILONERROR => true,
 			CURLOPT_TIMEOUT => 0,
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -134,9 +149,22 @@ class Auth extends CI_Controller
 
 		$response = curl_exec($curl);
 
+		if (curl_errno($curl)) {
+			$error_msg = strtolower(curl_error($curl));
+		}
+
 		curl_close($curl);
 
-		$curl = curl_init();
+		if (isset($error_msg)) {
+			$data_response = [
+				'message' => "CURL error, err: {$error_msg}",
+				'status' => false,
+				'error' => "CURL error, err: {$error_msg}"
+			];
+			echo json_encode($data_response);
+			exit;
+		}
+
 		$result = json_decode($response, true);
 
 		if ($result['success']) {
