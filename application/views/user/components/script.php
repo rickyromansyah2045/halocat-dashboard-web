@@ -19,6 +19,6 @@
                 dt.parent().addClass('table-responsive').css({'border': '1px solid #e9ecef', 'border-radius': '5px', 'padding': '0'});
                 dt.attr('style', "margin: 0 !important");
             });
-        }, 1500);
+        }, 500);
     });
 </script>
