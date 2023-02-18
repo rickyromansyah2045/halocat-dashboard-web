@@ -29,10 +29,11 @@
                         <tr>
                             <th style="width: 45px;">No</th>
                             <th>Campaign</th>
-                            <th>Goal Amount</th>
-                            <th>Current Amount</th>
-                            <!-- <th>Status</th> -->
-                            <th style="width: 85px;">Total Image</th>
+                            <th>Goal</th>
+                            <th>Collected</th>
+                            <th style="width: 85px;">Images</th>
+                            <th style="width: 65px;">Exclusive</th>
+                            <th style="width: 110px;">Status</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
