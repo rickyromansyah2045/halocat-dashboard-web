@@ -51,6 +51,9 @@
                 {
                     data: "user_agent",
                     render: function(data, type, row) {
+                        if (data == "") {
+                            return "-";
+                        }
                         return data;
                     }
                 },
