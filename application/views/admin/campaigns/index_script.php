@@ -79,7 +79,7 @@
 
                         if (row?.is_exclusive || false) {
                             html_exclusive = `<div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="javascript:openFormEditExclusive(${data})">
                                     <div class="dropdown-item-icon">
                                         <i class="fa fa-pen fa-fw"></i>
                                     </div>
@@ -672,7 +672,6 @@
                         if (result.isConfirmed) {}
                     })
                 } else {
-                    $('#modal-edit').modal('hide');
                     Swal.fire({
                         icon: 'error',
                         text: response.error
@@ -688,4 +687,100 @@
             complete: function() {}
         });
     }
+
+    function openFormEditExclusive(id) {
+        $('#modal-edit-exclusive').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearera <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#edit-exclusive-id").val(response?.data?.id || "");
+                    $("#edit-exclusive-campaign_id").val(response?.data?.campaign_id || "");
+                    $("#edit-exclusive-is_reward_money").val(response?.data?.is_reward_money?.toString() || "").trigger('change');
+                    $("#edit-exclusive-reward").val(response?.data?.reward || "");
+                    $("#edit-exclusive-winner_user_id").val(response?.data?.winner_user_id || "");
+                    $("#edit-exclusive-is_paid_off").val(response?.data?.is_paid_off || "");
+                } else {
+                    $('#modal-edit-exclusive').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                $('#modal-edit-exclusive').modal('hide');
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    $('#edit-exclusive-is_reward_money').change(function(){
+        if ($(this).val() == "1") {
+            $('#edit-exclusive-reward').attr('type', 'number');
+        } else {
+            $('#edit-exclusive-reward').attr('type', 'text');
+        }
+    });
+
+    $('#form-edit-exclusive').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${$('#edit-exclusive-id').val()}`,
+            type: 'PUT',
+            data: JSON.stringify({
+                campaign_id: parseInt($('#edit-exclusive-campaign_id').val()),
+                winner_user_id: parseInt($('#edit-exclusive-winner_user_id').val()),
+                is_reward_money: parseInt($('#edit-exclusive-is_reward_money').val()),
+                reward: $('#edit-exclusive-reward').val(),
+                is_paid_off: parseInt($('#edit-exclusive-is_paid_off').val())
+            }),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-edit-exclusive-submit').html('Processing...');
+                $('#btn-edit-exclusive-submit').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    tabel.ajax.reload(null, false);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    $('#modal-edit-exclusive').modal('hide');
+                    setTimeout(() => {
+                        $('#form-edit-exclusive').trigger('reset');
+                    }, 2500);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {
+                $('#btn-edit-exclusive-submit').prop('disabled', false);
+                $('#btn-edit-exclusive-submit').html('Edit Data Exclusive');
+            }
+        });
+    });
 </script>

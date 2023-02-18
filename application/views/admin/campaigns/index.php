@@ -262,6 +262,8 @@
             <form id="form-edit-exclusive">
                 <input type="hidden" id="edit-exclusive-id">
                 <input type="hidden" id="edit-exclusive-campaign_id">
+                <input type="hidden" id="edit-exclusive-winner_user_id">
+                <input type="hidden" id="edit-exclusive-is_paid_off">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="edit-exclusive-is_reward_money">Reward is Money?</label>
