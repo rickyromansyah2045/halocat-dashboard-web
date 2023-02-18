@@ -73,19 +73,9 @@ class Auth extends CI_Controller
 
 		curl_close($curl);
 
-		if (isset($error_msg)) {
-			$data_response = [
-				'message' => "CURL error, err: {$error_msg}",
-				'status' => false,
-				'error' => "CURL error, err: {$error_msg}"
-			];
-			echo json_encode($data_response);
-			exit;
-		}
-
 		$result = json_decode($response, true);
 
-		if ($result['success']) {
+		if (@$result['success']) {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success']
@@ -103,11 +93,27 @@ class Auth extends CI_Controller
 
 			echo json_encode($data_response);
 		} else {
-			$data_response = [
-				'message' => $result['message'],
-				'status' => $result['success'],
-				'error' => $result['error']
-			];
+			if (isset($result['message'])) {
+				$data_response = [
+					'message' => $result['message'],
+					'status' => $result['success'],
+					'error' => $result['error']
+				];
+			} else {
+				if (isset($error_msg)) {
+					$data_response = [
+						'message' => "CURL error, err: {$error_msg}",
+						'status' => false,
+						'error' => "CURL error, err: {$error_msg}"
+					];
+				} else {
+					$data_response = [
+						'message' => "unexpected error!",
+						'status' => false,
+						'error' => "unexpected error!"
+					];
+				}
+			}
 			echo json_encode($data_response);
 		}
 	}
@@ -155,19 +161,9 @@ class Auth extends CI_Controller
 
 		curl_close($curl);
 
-		if (isset($error_msg)) {
-			$data_response = [
-				'message' => "CURL error, err: {$error_msg}",
-				'status' => false,
-				'error' => "CURL error, err: {$error_msg}"
-			];
-			echo json_encode($data_response);
-			exit;
-		}
-
 		$result = json_decode($response, true);
 
-		if ($result['success']) {
+		if (@$result['success']) {
 			$data_response = [
 				'message' => $result['message'],
 				'status' => $result['success']
@@ -185,11 +181,27 @@ class Auth extends CI_Controller
 
 			echo json_encode($data_response);
 		} else {
-			$data_response = [
-				'message' => $result['message'],
-				'status' => $result['success'],
-				'error' => $result['error']
-			];
+			if (isset($result['message'])) {
+				$data_response = [
+					'message' => $result['message'],
+					'status' => $result['success'],
+					'error' => $result['error']
+				];
+			} else {
+				if (isset($error_msg)) {
+					$data_response = [
+						'message' => "CURL error, err: {$error_msg}",
+						'status' => false,
+						'error' => "CURL error, err: {$error_msg}"
+					];
+				} else {
+					$data_response = [
+						'message' => "unexpected error!",
+						'status' => false,
+						'error' => "unexpected error!"
+					];
+				}
+			}
 			echo json_encode($data_response);
 		}
 	}
