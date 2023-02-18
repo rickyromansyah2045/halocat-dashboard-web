@@ -20,8 +20,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-8 col-xxl-12">
                             <div class="text-center text-xl-left text-xxl-center px-4 mb-4 mb-xl-0 mb-xxl-4">
-                                <h1 class="text-primary">Welcome to SB Admin Pro!</h1>
-                                <p class="text-gray-700 mb-0">Browse our fully designed UI toolkit! Browse our prebuilt app pages, components, and utilites, and be sure to look at our full documentation!</p>
+                            <h1 class="text-primary">Welcome to The Cloud Donations!</h1>
+                                <p class="text-gray-700 mb-2">Set Aside Your Money to Help Others Who Are In Need!</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-xxl-12 text-center"></div>
