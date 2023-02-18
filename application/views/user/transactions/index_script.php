@@ -83,7 +83,7 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:showTransaction(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-eye fa-fw"></i>
                                         </div>
@@ -165,4 +165,8 @@
             if (result.isConfirmed) {}
         })
     }
+
+    function showTransaction() {
+        console.log("test");
+    } 
 </script>
