@@ -18,13 +18,23 @@
             <div class="card h-100">
                 <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
                     <div class="row align-items-center">
-                        <div class="col-xl-8 col-xxl-12">
+                        <div class="col-12">
                             <div class="text-center text-xl-left text-xxl-center px-4 mb-4 mb-xl-0 mb-xxl-4">
                                 <h1 class="text-primary">Welcome to The Cloud Donations!</h1>
-                                <p class="text-gray-700 mb-0">Set Aside Your Money to Help Others Who Are In Need!</p>
+                                <p class="text-gray-700 mb-2">Set Aside Your Money to Help Others Who Are In Need!</p>
+                                <hr>
+                                <p class="text-gray-700 mb-2">
+                                    If you want to see your campaign data, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/campaigns'); ?>"><?= site_url('user/campaigns'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-0">
+                                    If you want to see your transaction data or history, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/transactions'); ?>"><?= site_url('user/transactions'); ?></a>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-xxl-12 text-center"></div>
                     </div>
                 </div>
             </div>
