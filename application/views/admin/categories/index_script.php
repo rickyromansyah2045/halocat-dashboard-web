@@ -228,7 +228,7 @@
             showLoaderOnConfirm: true,
             confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
-            preConfirm: (login) => {
+            preConfirm: () => {
                 return $.ajax({
                     url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
                     type: 'DELETE',
