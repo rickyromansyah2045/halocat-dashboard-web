@@ -75,6 +75,32 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
+                        let html_exclusive = '';
+
+                        if (row?.is_exclusive || false) {
+                            html_exclusive = `<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="">
+                                    <div class="dropdown-item-icon">
+                                        <i class="fa fa-pen fa-fw"></i>
+                                    </div>
+                                    Edit Exclusive
+                                </a>
+                                <a class="dropdown-item" href="javascript:deleteExclusive(${data})">
+                                    <div class="dropdown-item-icon">
+                                        <i class="fa fa-trash fa-fw"></i>
+                                    </div>
+                                    Remove Exclusive
+                                </a>
+                            <div class="dropdown-divider"></div>`;
+                        } else {
+                            html_exclusive = `<a class="dropdown-item" href="javascript:openFormSetToExclusive(${data})">
+                                <div class="dropdown-item-icon">
+                                    <i class="fa fa-gift fa-fw"></i>
+                                </div>
+                                Set To Exclusive
+                            </a>`;
+                        }
+
                         return `
                             <span class="dropdown">
                                 <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -87,12 +113,7 @@
                                         </div>
                                         View More
                                     </a>
-                                    <a class="dropdown-item" href="javascript:openFormSetToExclusive(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-gift fa-fw"></i>
-                                        </div>
-                                        Set To Exclusive
-                                    </a>
+                                    ${html_exclusive}
                                     <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-image fa-fw"></i>
@@ -318,7 +339,7 @@
             showLoaderOnConfirm: true,
             confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
-            preConfirm: (login) => {
+            preConfirm: () => {
                 return $.ajax({
                     url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
                     type: 'DELETE',
@@ -485,7 +506,7 @@
             showLoaderOnConfirm: true,
             confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
-            preConfirm: (login) => {
+            preConfirm: () => {
                 return $.ajax({
                     url: `<?= $_ENV['API_URL']; ?>/campaigns/images/${id}`,
                     type: 'DELETE',
@@ -595,4 +616,76 @@
             $('#set-to-exclusive-reward').attr('type', 'text');
         }
     });
+
+    function deleteExclusive(id) {
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearera <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        showLoaderOnConfirm: true,
+                        confirmButtonColor: '#d33',
+                        confirmButtonText: 'Yes',
+                        preConfirm: () => {
+                            return $.ajax({
+                                url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${response?.data?.id || "0"}`,
+                                type: 'DELETE',
+                                beforeSend: function(xhr) {
+                                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                                },
+                                success: function(response) {
+                                    if (response.success) {
+                                        tabel.ajax.reload(null, false);
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Success',
+                                            text: response.message,
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        });
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            text: response.error
+                                        });
+                                    }
+                                },
+                                error: function(xhr, error, code) {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                                    });
+                                },
+                                complete: function() {}
+                            });
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    }).then((result) => {
+                        if (result.isConfirmed) {}
+                    })
+                } else {
+                    $('#modal-edit').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
 </script>
