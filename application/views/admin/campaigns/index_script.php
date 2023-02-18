@@ -225,8 +225,8 @@
                     short_description: $('#short_description').val(),
                     description: $('#description').val(),
                     goal_amount: parseInt($('#goal_amount').val()),
-                    finished_at: "2023-05-01",
-                    status: "active"
+                    finished_at: $('#finished_at').val(),
+                    status: $('#status').val()
                 }),
                 contentType: "application/json",
                 dataType: 'json',

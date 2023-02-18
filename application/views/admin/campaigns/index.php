@@ -66,15 +66,26 @@
                                 <select class="form-control" id="category_id"></select>
                             </div>
                             <div class="form-group">
-                                <label for="title">Campaign Title</label>
-                                <input class="form-control" id="title" type="text" placeholder="">
-                            </div>
-                            <div class="form-group">
                                 <label for="">Goal Amount</label>
                                 <input class="form-control" id="goal_amount" type="number" placeholder="">
                             </div>
+                            <div class="form-group">
+                                <label for="">Status</label>
+                                <select class="form-control" id="status">
+                                    <option value="active">Active</option>
+                                    <option value="waiting confirmation">Waiting Confirmation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Select End of Campaign Date</label>
+                                <input class="form-control" id="finished_at" type="date" placeholder="">
+                            </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="title">Campaign Title</label>
+                                <input class="form-control" id="title" type="text" placeholder="">
+                            </div>
                             <div class="form-group">
                                 <label for="">Short Description</label>
                                 <input class="form-control" id="short_description" type="text" placeholder="">
