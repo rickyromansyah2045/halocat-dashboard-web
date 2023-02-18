@@ -31,6 +31,7 @@
                             <th>Campaign</th>
                             <th>Goal Amount</th>
                             <th>Current Amount</th>
+                            <!-- <th>Status</th> -->
                             <th style="width: 85px;">Total Image</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
@@ -55,10 +56,6 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="user_id">Select User</label>
-                                <select class="form-control" id="user_id"></select>
-                            </div>
                             <div class="form-group">
                                 <label for="category_id">Select Category</label>
                                 <select class="form-control" id="category_id"></select>

@@ -25,7 +25,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 6, 7],
+                targets: [0, 5, 6],
                 searchable: false,
                 orderable: false
             }],
@@ -46,12 +46,6 @@
                 },
                 {
                     data: "campaign_id",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "user_id",
                     render: function(data, type, row) {
                         return data;
                     }
@@ -89,7 +83,7 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:showTransaction(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-eye fa-fw"></i>
                                         </div>
@@ -171,4 +165,8 @@
             if (result.isConfirmed) {}
         })
     }
+
+    function showTransaction() {
+        console.log("test");
+    } 
 </script>
