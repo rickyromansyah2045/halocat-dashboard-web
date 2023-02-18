@@ -280,6 +280,7 @@
                     $("#edit-id").val(response?.data?.id || "");
                     $("#edit-user_id").val(response?.data?.user_id || "");
                     $("#edit-status").val(response?.data?.status || "");
+                    $("#edit-finished_at").val(moment(response?.data?.finished_at || "").format("YYYY-MM-DD"));
                     $("#edit-category_id").val(response?.data?.category_id || "");
                     $("#edit-title").val(response?.data?.title || "");
                     $("#edit-goal_amount").val(response?.data?.goal_amount || "");
@@ -311,6 +312,7 @@
             data: JSON.stringify({
                 user_id: parseInt($('#edit-user_id').val()),
                 status: $('#edit-status').val(),
+                finished_at: $('#edit-finished_at').val(),
                 category_id: parseInt($('#edit-category_id').val()),
                 title: $('#edit-title').val(),
                 short_description: $('#edit-short_description').val(),
