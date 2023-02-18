@@ -32,6 +32,8 @@ class User extends CI_Controller
     public function campaigns()
 	{
 		$data['title'] = "Campaigns";
+		$data['content'] = $this->load->view('user/campaigns/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('user/campaigns/index_script', NULL, TRUE);
 
 		$this->load->view('user/base', $data);
 	}
@@ -39,6 +41,8 @@ class User extends CI_Controller
     public function transactions()
 	{
 		$data['title'] = "Transactions";
+		$data['content'] = $this->load->view('user/transactions/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('user/transactions/index_script', NULL, TRUE);
 
 		$this->load->view('user/base', $data);
 	}
