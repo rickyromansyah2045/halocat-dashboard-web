@@ -26,7 +26,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 5],
+                targets: [0, 7],
                 searchable: false,
                 orderable: false
             }],
@@ -70,6 +70,21 @@
                             return "-";
                         }
                         return `${data} images`;
+                    }
+                },
+                {
+                    data: "is_exclusive",
+                    render: function(data, type, row) {
+                        if (data == "1") {
+                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
+                        }
+                        return `<span class="badge badge-pill badge-dark">No</span>`;
+                    }
+                },
+                {
+                    data: "status",
+                    render: function(data, type, row) {
+                        return data;
                     }
                 },
                 {
