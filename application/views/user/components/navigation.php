@@ -26,9 +26,9 @@
                     </div>
                 </h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#!">
+                <a class="dropdown-item" href="<?= base_url('user/settings'); ?>">
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                    Account
+                    Account Setting
                 </a>
                 <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">
                     <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>

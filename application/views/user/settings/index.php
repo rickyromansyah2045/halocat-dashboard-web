@@ -19,8 +19,8 @@
         <div class="card-header">Update Your Account</div>
         <div class="card-body">
             <div class="col-10">
+                    <div class="form-group"><label for="email">Email Address</label><input disabled class="form-control" id="email" type="email" value="<?= $email ?>"></div>
                     <div class="form-group"><label for="name">Name</label><input class="form-control" id="name" type="text" value="<?= $name ?>"></div>
-                    <div class="form-group"><label for="email">Email Address</label><input class="form-control" id="email" type="email" value="<?= $email ?>"></div>
                     <div class="form-group"><label for="password">Password</label><input class="form-control" id="password" type="password" placeholder="**********"></div>
                     <button tipe="submit" onclick="verifikasi_data()" class="btn btn-primary">Update</button>
             </div>
