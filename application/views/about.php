@@ -29,8 +29,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">M Saleh Solahudin</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Full Stack Engineer</p>
 							</div>
 						</div>
 					</div>
@@ -38,8 +38,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">Ricky Romansyah</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Full Stack Engineer</p>
 							</div>
 						</div>
 					</div>
@@ -47,8 +47,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">M Rifki Hikmawan</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Front-End Engineer</p>
 							</div>
 						</div>
 					</div>
@@ -56,8 +56,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">John Doe</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Anonymous</p>
 							</div>
 						</div>
 					</div>
@@ -65,8 +65,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">Jane Doe</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Anonymous</p>
 							</div>
 						</div>
 					</div>
@@ -74,8 +74,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">Doe John</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Anonymous</p>
 							</div>
 						</div>
 					</div>
@@ -83,8 +83,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">Doe Jane</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Anonymous</p>
 							</div>
 						</div>
 					</div>
@@ -92,8 +92,8 @@
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
-							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">FULL NAME</p>
-							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">POSITION IN NAME</p>
+							  	<p style="margin-bottom: 3px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 700;font-size: 20px;line-height: 125%;text-align: center;color: #000000;">Jane John</p>
+							  	<p style="margin-bottom: 0px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 17px;line-height: 125%;text-align: center;color: #000000;">Anonymous</p>
 							</div>
 						</div>
 					</div>
