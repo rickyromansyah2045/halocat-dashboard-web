@@ -60,6 +60,9 @@
                 {
                     data: "ip_address",
                     render: function(data, type, row) {
+                        if (data == "127.0.0.1") {
+                            return "-";
+                        }
                         return data;
                     }
                 },
