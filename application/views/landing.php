@@ -25,7 +25,7 @@
 				<span class="txt_sub_list_donasi">Find a donation campaign for you today, spread kindness to them</span>
 			</div>
 			<div class="list_donasi">
-				<div class="row" id="wrapper-list_donation">
+				<div class="row display-flex" id="wrapper-list_donation">
 					<!-- <div class="col-md-4">
 						<div class="card col_list_donasi">
 							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
@@ -180,8 +180,12 @@
 						</div>
 					</div> -->
 				</div>
-				<div class="row row_show_all_donasi">
-					<button class="btn_see_all_donasi">see all donation list</button>
+				<div class="row row_show_all_donasi" style="margin-top: 10px;">
+					<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
+						<button class="btn_see_all_donasi">
+							see all donation list
+						</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -378,10 +382,11 @@
 					success: function(response) {
 						if (response.success) {
 							let data = response.data;
-							for (let i = 0; i < data.length; i++) {
-								let img = '';
-								let percentage = 0;
+							let img = '';
+							let percentage = 0;
+							let description = '';
 
+							for (let i = 0; i < data.length; i++) {
 								if (data[i].images.length > 0) {
 									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
 								} else {
@@ -391,12 +396,16 @@
 								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
 								percentage = percentage > 100 ? "100" : percentage;
 
-								$('#wrapper-list_donation').append(`<div class="col-md-4">
-									<div class="card col_list_donasi">
+								description = data[i].description.length > 150 ? `${data[i].description.substring(0, 150)}...` : data[i].description;
+
+								$('#wrapper-list_donation').append(`<div class="col-md-6 col-lg-4">
+									<div class="card col_list_donasi" style="height: 100%;">
 										${img}
 										<div class="card-body pad0">
 											<p class="txt_judul_donasi">${data[i].short_description}</p>
-											<p class="txt_sub_judul_donasi">${data[i].description}</p>
+											<p class="txt_sub_judul_donasi">${description}</p>
+										</div>
+										<div class="card-footer" style="background-color: transparent; margin: 0; padding: 0; padding-top: 10px;">
 											<div class="progress mb10">
 												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${percentage}%"></div>
 											</div>
@@ -404,6 +413,7 @@
 												<p class="txt_progres_percent">${percentage}%</p>
 												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
 											</div>
+											<hr style="margin-top: -5px;">
 											<button class="btn_submit_donasi">donate</button>
 										</div>
 									</div>
