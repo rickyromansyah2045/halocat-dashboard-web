@@ -200,7 +200,7 @@
 								<i class="fa fa-donate fa-fw"></i>
 							</div>
 						</div>
-						<p class="txt_judul_ringkas_donasi1">XXX</p>
+						<p class="txt_judul_ringkas_donasi1" id="statistics-total_donation">-</p>
 						<p class="txt_judul_ringkas_donasi2">total donation</p>
 					</div>
 					<div class="col-md-3">
@@ -209,7 +209,7 @@
 								<i class="fa fa-check-double fa-fw"></i>
 							</div>
 						</div>
-						<p class="txt_judul_ringkas_donasi1">XXX</p>
+						<p class="txt_judul_ringkas_donasi1" id="statistics-donation_completed">-</p>
 						<p class="txt_judul_ringkas_donasi2">donation completed</p>
 					</div>
 					<div class="col-md-3">
@@ -218,7 +218,7 @@
 								<i class="fa fa-handshake fa-fw"></i>
 							</div>
 						</div>
-						<p class="txt_judul_ringkas_donasi1">XXX</p>
+						<p class="txt_judul_ringkas_donasi1" id="statistics-total_transaction">-</p>
 						<p class="txt_judul_ringkas_donasi2">total transaction</p>
 					</div>
 					<div class="col-md-3">
@@ -227,7 +227,7 @@
 								<i class="fa fa-users fa-fw"></i>
 							</div>
 						</div>
-						<p class="txt_judul_ringkas_donasi1">XXX</p>
+						<p class="txt_judul_ringkas_donasi1" id="statistics-user_registered">-</p>
 						<p class="txt_judul_ringkas_donasi2">user registered</p>
 					</div>
 				</div>
@@ -316,7 +316,25 @@
 			</section>
 		</div>
 		<?php $this->load->view('template/landing_footer'); ?>
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+		<script>
+			$.ajax({
+				url: "<?= $_ENV['API_URL']; ?>/web/home/statistics",
+				type: 'GET',
+				success: function(response) {
+					if (response.success) {
+						let data = response.data;
+						$('#statistics-total_donation').html(data.total_donation);
+						$('#statistics-donation_completed').html(data.donation_completed);
+						$('#statistics-total_transaction').html(data.total_transaction);
+						$('#statistics-user_registered').html(data.user_registered);
+					}
+				},
+				error: function(xhr, error, code) {
+					console.log(xhr, error, code);
+				}
+			});
+		</script>
 	</body>
 </html>
