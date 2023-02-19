@@ -10,7 +10,9 @@
 						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">
 							<p class="txt_header1">Set Aside Your Money to Help Others Who Are In Need!</p>
 							<p class="txt_header2">Help others who need your help, make others happy with your help, show your kindness to others, always contribute to spreading goodness in this world! Lets make a change!</p>
-							<button class="btn_header">take me to goodness</button>
+							<a href="#list-donation" class="btn_header">
+								take me to goodness
+							</a>
 						</div>
 						<div class="col-md-6 padl45">
 							<img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_home_page">
@@ -19,22 +21,24 @@
 				</div>
 			</div>
 		</header>
-		<div class="container">
-			<div class="headline_donasi">
-				<p class="txt_list_donasi">List of Donations</p>
-				<span class="txt_sub_list_donasi">Find a donation campaign for you today, spread kindness to them</span>
-			</div>
-			<div class="list_donasi">
-				<div class="row display-flex" id="wrapper-list_donation"></div>
-				<div class="row row_show_all_donasi" style="margin-top: 10px;">
-					<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
-						<button class="btn_see_all_donasi">
-							see all donation list
-						</button>
-					</a>
+		<section id="list-donation">
+			<div class="container">
+				<div class="headline_donasi">
+					<p class="txt_list_donasi">List of Donations</p>
+					<span class="txt_sub_list_donasi">Find a donation campaign for you today, spread kindness to them</span>
+				</div>
+				<div class="list_donasi">
+					<div class="row display-flex" id="wrapper-list_donation"></div>
+					<div class="row row_show_all_donasi" style="margin-top: 10px;">
+						<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
+							<button class="btn_see_all_donasi">
+								see all donation list
+							</button>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<div class="jumbotron jumbotron_ringkasan_donasi">
 			<div class="container">
 				<div class="row">
