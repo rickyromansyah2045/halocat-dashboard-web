@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-	<?php $this->load->view('template/landing_head'); ?>
+	<?php $this->load->view('template/head'); ?>
 	<body>
 		<header class="header_box">
-			<?php $this->load->view('template/landing_menu'); ?>
+			<?php $this->load->view('template/menu'); ?>
 			<div class="jumbotron jumbotron_header" style="padding-top: 150px;">
 				<div class="container">
 					<div class="row">
@@ -13,7 +13,7 @@
 							<button class="btn_header">take me to goodness</button>
 						</div>
 						<div class="col-md-6 padl45">
-							<img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_landing_page">
+							<img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_home_page">
 						</div>
 					</div>
 				</div>
@@ -200,7 +200,7 @@
 				</div>
 			</section>
 		</div>
-		<?php $this->load->view('template/landing_footer'); ?>
+		<?php $this->load->view('template/footer'); ?>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 		<script>
