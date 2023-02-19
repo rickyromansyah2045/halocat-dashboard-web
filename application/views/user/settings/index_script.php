@@ -6,7 +6,7 @@
         var email = $('#email').val();
         var password = $('#password').val();
 
-        if (email != "" && password != "" && name != "") {
+        if (email != "" && name != "") {
             proses_update(name, email, password);
         } else {
             if (name == "") {
@@ -19,12 +19,6 @@
                 Swal.fire({
                     icon: 'error',
                     text: ("Email Cannot Be Empty")
-                });
-            }
-            if (password == "") {
-                Swal.fire({
-                    icon: 'error',
-                    text: ("Password Cannot Be Empty")
                 });
             }
         }
