@@ -212,7 +212,7 @@
 					<div class="col-md-3">
 						<div class="img_ringkas_donasi"></div>
 						<p class="txt_judul_ringkas_donasi1">XXX</p>
-						<p class="txt_judul_ringkas_donasi2">total donation</p>
+						<p class="txt_judul_ringkas_donasi2">user registered</p>
 					</div>
 				</div>
 			</div>
@@ -235,7 +235,7 @@
     color: #222222;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 			</section>
 			<section class="slider_review">
-			
+
 			</section>
 			<section class="box_faq">
 				<p style="font-family: 'Poppins';
