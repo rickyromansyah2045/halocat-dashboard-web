@@ -18,7 +18,14 @@
     <div class="card mb-4">
         <div class="card-header">Update Your Account</div>
         <div class="card-body">
-            
+            <div class="col-10">
+                <form>
+                    <div class="form-group"><label for="name">Name</label><input class="form-control" id="name" type="text" placeholder="Ricky Romansyah"></div>
+                    <div class="form-group"><label for="email">Email Address</label><input class="form-control" id="email" type="email" placeholder="name@example.com"></div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control" id="password" type="password" placeholder="**********"></div>
+                    <button class="btn btn-primary" type="button">Update</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
