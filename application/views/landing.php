@@ -8,14 +8,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">
-							<p class="txt_header1">Spend Your Money to Help Others Who Need Help</p>
-							<p class="txt_header2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Phasellus varius rutrum turpis, nec convallis elit ornare quis.
-							Curabitur et fringilla lacus.
-							Etiam id metus non sapien egestas viverra.
-							Nam interdum libero ligula,
-							ut lacinia sapien  porttitor ac.
-							Praesent vel orci lectus. Etiam et nulla odio.</p>
+							<p class="txt_header1">Set Aside Your Money to Help Others Who Are In Need!</p>
+							<p class="txt_header2">Help others who need your help, make others happy with your help, show your kindness to others, always contribute to spreading goodness in this world! Lets make a change!</p>
 							<button class="btn_header">take me to goodness</button>
 						</div>
 						<div class="col-md-6 padl45">
@@ -27,12 +21,12 @@
 		</header>
 		<div class="container">
 			<div class="headline_donasi">
-				<p class="txt_list_donasi">List Donasi</p>
-				<span class="txt_sub_list_donasi">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+				<p class="txt_list_donasi">List of Donations</p>
+				<span class="txt_sub_list_donasi">Find a donation campaign for you today, spread kindness to them</span>
 			</div>
 			<div class="list_donasi">
-				<div class="row">
-					<div class="col-md-4">
+				<div class="row" id="wrapper-list_donation">
+					<!-- <div class="col-md-4">
 						<div class="card col_list_donasi">
 							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
 							<div class="card-body pad0">
@@ -184,7 +178,7 @@
 								<button class="btn_submit_donasi">donate</button>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="row row_show_all_donasi">
 					<button class="btn_see_all_donasi">see all donation list</button>
@@ -319,21 +313,67 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 		<script>
-			$.ajax({
-				url: "<?= $_ENV['API_URL']; ?>/web/home/statistics",
-				type: 'GET',
-				success: function(response) {
-					if (response.success) {
-						let data = response.data;
-						$('#statistics-total_donation').html(data.total_donation);
-						$('#statistics-donation_completed').html(data.donation_completed);
-						$('#statistics-total_transaction').html(data.total_transaction);
-						$('#statistics-user_registered').html(data.user_registered);
+			$(function(){
+				$.ajax({
+					url: "<?= $_ENV['API_URL']; ?>/web/home/statistics",
+					type: 'GET',
+					success: function(response) {
+						if (response.success) {
+							let data = response.data;
+							$('#statistics-total_donation').html(data.total_donation);
+							$('#statistics-donation_completed').html(data.donation_completed);
+							$('#statistics-total_transaction').html(data.total_transaction);
+							$('#statistics-user_registered').html(data.user_registered);
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr, error, code);
 					}
-				},
-				error: function(xhr, error, code) {
-					console.log(xhr, error, code);
-				}
+				});
+
+				$.ajax({
+					url: "<?= $_ENV['API_URL']; ?>/campaigns?limit=8",
+					type: 'GET',
+					success: function(response) {
+						if (response.success) {
+							let data = response.data;
+							for (let i = 0; i < data.length; i++) {
+								let img = '';
+								let percentage = 0;
+
+								if (data[i].images.length > 0) {
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
+								} else {
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/img/default_image.png'); ?>" alt="">`;
+								}
+
+								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
+								percentage = percentage > 100 ? "100" : percentage;
+
+								$('#wrapper-list_donation').append(`<div class="col-md-4">
+									<div class="card col_list_donasi">
+										${img}
+										<div class="card-body pad0">
+											<p class="txt_judul_donasi">${data[i].short_description}</p>
+											<p class="txt_sub_judul_donasi">${data[i].description}</p>
+											<div class="progress mb10">
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${percentage}%"></div>
+											</div>
+											<div class="progres_box_donasi">
+												<p class="txt_progres_percent">${percentage}%</p>
+												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
+											</div>
+											<button class="btn_submit_donasi">donate</button>
+										</div>
+									</div>
+								</div>`);
+							}
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr, error, code);
+					}
+				});
 			});
 		</script>
 	</body>
