@@ -5,3 +5,7 @@ $(window).scroll(function(){
         $('nav').removeClass('navbar-shadow');
     }
 });
+
+function renderTooltip() {
+    $('[data-toggle="tooltip"]').tooltip()
+}

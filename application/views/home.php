@@ -228,6 +228,7 @@
 						if (response.success) {
 							let data = response.data;
 							let img = '';
+							let tooltip = '';
 							let percentage = 0;
 							let description = '';
 
@@ -243,11 +244,15 @@
 
 								description = data[i].description.length > 150 ? `${data[i].description.substring(0, 150)}...` : data[i].description;
 
+								if (data[i].short_description.length > 30) {
+									tooltip = ` data-toggle="tooltip" data-placement="top" title="${data[i].short_description}"`;
+								}
+
 								$('#wrapper-list_donation').append(`<div class="col-md-6 col-lg-4">
 									<div class="card col_list_donasi" style="height: 100%;">
 										${img}
 										<div class="card-body pad0">
-											<p class="txt_judul_donasi">${data[i].short_description}</p>
+											<p class="txt_judul_donasi" style="cursor: help;"${tooltip}>${data[i].short_description}</p>
 											<p class="txt_sub_judul_donasi">${description}</p>
 										</div>
 										<div class="card-footer" style="background-color: transparent; margin: 0; padding: 0; padding-top: 10px;">
@@ -264,6 +269,8 @@
 									</div>
 								</div>`);
 							}
+
+							renderTooltip();
 						}
 					},
 					error: function(xhr, error, code) {
