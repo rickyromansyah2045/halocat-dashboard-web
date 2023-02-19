@@ -697,7 +697,7 @@
     background: #FFFFFF;
     border: 1px solid #BFBFBF;
     border-radius: 20px;
-    padding: 7px;
+    padding: 15px 15px;
     height: 360px;
     display: flex;
 }
