@@ -191,7 +191,7 @@
 					</div>
 				</div>
 				<div class="row row_show_all_donasi">
-					<button class="btn_see_all_donasi">see all donation list</button>
+					<button class="btn_see_all_donasi">load more</button>
 				</div>
 			</div>
 		</div>
