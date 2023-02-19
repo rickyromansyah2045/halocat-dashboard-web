@@ -217,85 +217,84 @@
 				</div>
 			</div>
 		</div>
-		<div class="container" style="margin-top: 100px;">
-			<section class="head_review" style="text-align: center;">
-				<p style="font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 52px;
-    text-align: center;
-    color: #222222;
-    margin-bottom: 0px;">Heartwarming Stories</p>
-				<p style="    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #222222;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<div class="container mt100">
+			<section class="head_review tac">
+				<p class="headline_judul">Heartwarming Stories</p>
+				<p class="sub_headline_judul">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 			</section>
 			<section class="slider_review">
 			
 			</section>
 			<section class="box_faq">
-				<p style="font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 52px;
-    text-align: center;
-    color: #222222;
-    margin-bottom: 0px;">Frequently Asked Questions</p>
-				<div class="box_list_faq" style="width: 100%;
-    height: 80px;
-    background: #F5F5F5;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 0 40px;margin-bottom: 5px;">
-					<p style="font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 38px;
-    color: #000000;
-    margin: 0px;
-    text-transform: uppercase;">faq</p>
+				<p class="headline_judul mb20">Frequently Asked Questions</p>
+				<!-- <div class="box_list_faq">
+					<p class="txt_judul_faq">faq</p>
 				</div>
-				<div class="box_list_faq" style="width: 100%;
-    height: 80px;
-    background: #F5F5F5;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 0 40px;margin-bottom: 5px;">
-					<p style="font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 38px;
-    color: #000000;
-    margin: 0px;
-    text-transform: uppercase;">faq</p>
+				<div class="box_list_faq">
+					<p class="txt_judul_faq">faq</p>
 				</div>
-				<div class="box_list_faq" style="width: 100%;
-    height: 80px;
-    background: #F5F5F5;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 0 40px;margin-bottom: 5px;">
-					<p style="font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 38px;
-    color: #000000;
-    margin: 0px;
-    text-transform: uppercase;">faq</p>
+				<div class="box_list_faq">
+					<p class="txt_judul_faq">faq</p>
+				</div>
+				<div class="box_list_faq">
+					<p class="txt_judul_faq">faq</p>
+				</div>
+				<div class="box_list_faq">
+					<p class="txt_judul_faq">faq</p>
+				</div> -->
+
+				<div id="accordion">
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<p class="txt_judul_faq">faq</p>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+							<div class="card-body">
+								faq pertama
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<p class="txt_judul_faq">faq</p>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+							<div class="card-body">
+								faq kedua
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<p class="txt_judul_faq">faq</p>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+							<div class="card-body">
+								faq ketiga
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+							<p class="txt_judul_faq">faq</p>
+						</div>
+						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+							<div class="card-body">
+								faq keempat
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+							<p class="txt_judul_faq">faq</p>
+						</div>
+						<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+							<div class="card-body">
+								faq kelima
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
