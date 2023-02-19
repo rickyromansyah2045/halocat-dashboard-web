@@ -25,7 +25,7 @@
 			</div>
 			<div class="list_donasi" style="margin-top: 41px;">
 				<div class="row" style="">
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -34,7 +34,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -43,7 +43,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -61,7 +61,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -70,7 +70,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -79,7 +79,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
@@ -88,7 +88,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="margin-bottom: 30px;">
+					<div class="col-6 col-md-4 col-lg-3" style="margin-bottom: 30px;">
 						<div class="card" style="border: unset;border-radius: unset;align-items: center;">
 							<img class="card-img-top" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap" style="background: #F5F5F5;border: 1px solid #000000;border-radius: 20px;width: 225px;height: 225px;object-fit: cover;">
 							<div class="card-body" style="padding:10px">
