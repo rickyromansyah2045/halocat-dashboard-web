@@ -26,7 +26,7 @@
                             <th>Content</th>
                             <th>User Agent</th>
                             <th>IP Address</th>
-                            <th style="width: 116px;">Date and Time</th>
+                            <th style="width: 150px;">Date and Time</th>
                         </tr>
                     </thead>
                     <tbody></tbody>

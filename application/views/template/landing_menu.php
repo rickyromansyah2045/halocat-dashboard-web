@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="#">
 			<img class="logo_brand" src="<?= base_url('assets/img/logo_cloud2.png')?>">
@@ -13,8 +13,16 @@
 				<a class="nav-link nav_link_menu" href="<?= base_url('about'); ?>">About Us</a>
 			</ul>
 			<ul class="navbar-nav mr0">
-			<a class="nav-link nav_link_menu" href="<?= base_url('auth/register'); ?>">Register</a>
-				<a class="nav-link nav_link_menu" href="<?= base_url('auth/login'); ?>">Login</a>
+				<?php if ($this->session->has_userdata('id')): ?>
+					<?php if ($this->session->userdata('role') == "user"): ?>
+						<a class="nav-link nav_link_menu" href="<?= base_url('user/dashboard'); ?>" style="margin-right: 0; padding-right: 0;">User Area</a>
+					<?php else: ?>
+						<a class="nav-link nav_link_menu" href="<?= base_url('admin/dashboard'); ?>" style="margin-right: 0; padding-right: 0;">Admin Area</a>
+					<?php endif; ?>
+				<?php else: ?>
+					<a class="nav-link nav_link_menu" href="<?= base_url('auth/register'); ?>">Register</a>
+					<a class="nav-link nav_link_menu" href="<?= base_url('auth/login'); ?>" style="margin-right: 0; padding-right: 0;">Login</a>
+				<?php endif; ?>
 			</ul>
 		</div>
 	</div>

@@ -70,25 +70,25 @@
             if (firstname == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("First Name Tidak Boleh Kosong")
+                    text: ("First Name Cannot Be Empty")
                 });
             }
             if (lastname == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("Last Name Tidak Boleh Kosong")
+                    text: ("Last Name Cannot Be Empty")
                 });
             }
             if (email == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("Email Tidak Boleh Kosong")
+                    text: ("Email Cannot Be Empty")
                 });
             }
             if (password == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("Password Tidak Boleh Kosong")
+                    text: ("Password Cannot Be Empty")
                 });
             }
         }
