@@ -89,12 +89,6 @@
                                         </div>
                                         View More
                                     </a>
-                                    <a class="dropdown-item" href="javascript:deleteTransaction(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-trash fa-fw"></i>
-                                        </div>
-                                        Delete
-                                    </a>
                                 </div>
                             </span>
                         `;
