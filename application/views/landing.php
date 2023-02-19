@@ -230,10 +230,49 @@
 		<div class="container mt100">
 			<section class="head_review tac">
 				<p class="headline_judul">Heartwarming Stories</p>
-				<p class="sub_headline_judul">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p class="sub_headline_judul mb50">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 			</section>
-			<section class="slider_review">
+			<section class="slider_review mb50">
+				<div id="demo" class="carousel slide" data-ride="carousel">
+					<ul class="carousel-indicators">
+						<li data-target="#demo" data-slide-to="0" class="active"></li>
+						<li data-target="#demo" data-slide-to="1"></li>
+						<li data-target="#demo" data-slide-to="2"></li>
+					</ul>
 
+					<!-- The slideshow -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="<?= base_url('assets/img/test1.jpg')?>" alt="Los Angeles" width="1100" height="500">
+							<div class="carousel-caption">
+								<h3>Los Angeles</h3>
+								<p>We had such a great time in LA!</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="<?= base_url('assets/img/test2.jpg')?>" alt="Chicago" width="1100" height="500">
+							<div class="carousel-caption">
+								<h3>Los Angeles</h3>
+								<p>We had such a great time in LA!</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="<?= base_url('assets/img/test1.jpg')?>" alt="New York" width="1100" height="500">
+							<div class="carousel-caption">
+								<h3>Los Angeles</h3>
+								<p>We had such a great time in LA!</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#demo" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#demo" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
 			</section>
 			<section class="box_faq">
 				<p class="headline_judul mb20">Frequently Asked Questions</p>
