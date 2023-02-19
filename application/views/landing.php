@@ -230,7 +230,7 @@
 		<div class="container mt100">
 			<section class="head_review tac">
 				<p class="headline_judul">Heartwarming Stories</p>
-				<p class="sub_headline_judul mb50">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p class="sub_headline_judul mb50">Here are some heartwarming stories of those who were helped</p>
 			</section>
 			<section class="slider_review mb50">
 				<div id="demo" class="carousel slide" data-ride="carousel">
@@ -275,7 +275,10 @@
 				</div>
 			</section>
 			<section class="box_faq">
-				<p class="headline_judul mb20">Frequently Asked Questions</p>
+				<center>
+					<p class="headline_judul">Frequently Asked Questions</p>
+					<p class="sub_headline_judul mb50">Find useful information for you, and find out more about us</p>
+				</center>
 				<!-- <div class="box_list_faq">
 					<p class="txt_judul_faq">faq</p>
 				</div>
@@ -370,7 +373,7 @@
 				});
 
 				$.ajax({
-					url: "<?= $_ENV['API_URL']; ?>/campaigns?limit=8",
+					url: "<?= $_ENV['API_URL']; ?>/campaigns?limit=8&order_by=id&order_type=DESC",
 					type: 'GET',
 					success: function(response) {
 						if (response.success) {
