@@ -109,6 +109,9 @@
 }
 
 .btn_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     width: 221px;
     height: 57px;
@@ -122,6 +125,11 @@
     border-radius: 10px;
     color: white;
     margin-top: 10px;
+}
+
+.btn_header:hover {
+    text-decoration: none;
+    opacity: .75;
 }
 
 .headline_donasi {
@@ -225,9 +233,12 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 150%;
-    /* border: 1px solid; */
     border: transparent;
     color: #FFFFFF;
+}
+
+.btn_see_all_donasi:hover {
+    opacity: .75;
 }
 
 .jumbotron_ringkasan_donasi {
@@ -626,7 +637,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    height: 200px;
+    min-height: 200px;
     box-shadow: rgb(55 71 79 / 16%) 0 1px 4px, rgb(55 71 79 / 8%) 0 2px 8px;
 }
 

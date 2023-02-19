@@ -7,30 +7,22 @@
 			<div class="jumbotron jhabout" style="padding-top: 150px;">
 				<p class="all_judul_header">List of Donations</p>
 			</div>
-			<div class="container dl_box_search">
+			<div class="container dl_box_search" style="padding: 25px;">
 				<div class="row">
-					<div class="col-md-4 padding0 mxh125">
-						<div class="dl_item_box_search dl_item_box_search1">
-							<p class="dl_txt_header">Search</p>
-    						<input type="text" class="form-control dl_input_txt_header" name="">
-						</div>
+					<div class="col-md-4">
+						<p class="dl_txt_header">Search</p>
+						<input type="text" class="form-control dl_input_txt_header" name="">
 					</div>
-					<div class="col-md-4 padding0 mxh125">
-						<div class="dl_item_box_search dl_item_box_search2">
-							<p class="dl_txt_header">Category</p>
-							<select class="form-control dl_input_txt_header" name="" id=""></select>
-						</div>
+					<div class="col-md-4">
+						<p class="dl_txt_header">Category</p>
+						<select class="form-control dl_input_txt_header" name="" id=""></select>
 					</div>
-					<div class="col-md-4 padding0 mxh125">
-						<div class="dl_item_box_search dl_item_box_search3">
-							<p class="dl_txt_header">Sort By</p>
-    						<select class="form-control dl_input_txt_header" name="" id=""></select>
-						</div>
+					<div class="col-md-4">
+						<p class="dl_txt_header">Sort By</p>
+						<select class="form-control dl_input_txt_header" name="" id=""></select>
 					</div>
 				</div>
-				<div class="row dl_box_btn_search">
-					<button class="dl_btn_search">search</button>
-				</div>
+				<button class="dl_btn_search" style="margin-top: 25px;">search</button>
 			</div>
 		</header>
 		<div class="container mt190">
