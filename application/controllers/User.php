@@ -46,4 +46,13 @@ class User extends CI_Controller
 
 		$this->load->view('user/base', $data);
 	}
+
+    public function settings()
+	{
+		$data['title'] = "Account Setting";
+		$data['content'] = $this->load->view('user/settings/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('user/settings/index_script', NULL, TRUE);
+
+		$this->load->view('user/base', $data);
+	}
 }

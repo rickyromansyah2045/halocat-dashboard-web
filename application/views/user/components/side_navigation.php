@@ -17,6 +17,10 @@
                     <div class="nav-link-icon"><i data-feather="dollar-sign"></i></div>
                     Transactions
                 </a>
+                <a class="nav-link" href="<?= base_url('user/settings'); ?>">
+                    <div class="nav-link-icon"><i data-feather="settings"></i></div>
+                    Account Setting
+                </a>
             </div>
         </div>
         <div class="sidenav-footer">
