@@ -216,7 +216,7 @@
 .jumbotron_ringkasan_donasi {
     color: white;
     padding-top: 50px;
-    height: 350px;
+    min-height: 350px;
     background-color: #1B254E;
     background: #1B254E;
     border-radius: unset;
@@ -226,7 +226,7 @@
 .img_ringkas_donasi {
     width: 125px;
     height: 125px;
-    background: #F4BA40;
+    background: #E2632B;
     border-radius: 50%;
     display: block;
     margin: auto;

@@ -195,22 +195,38 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<div class="img_ringkas_donasi"></div>
+						<div class="d-flex justify-content-center" style="font-size: 55px;">
+							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
+								<i class="fa fa-donate fa-fw"></i>
+							</div>
+						</div>
 						<p class="txt_judul_ringkas_donasi1">XXX</p>
 						<p class="txt_judul_ringkas_donasi2">total donation</p>
 					</div>
 					<div class="col-md-3">
-						<div class="img_ringkas_donasi"></div>
+						<div class="d-flex justify-content-center" style="font-size: 55px;">
+							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
+								<i class="fa fa-check-double fa-fw"></i>
+							</div>
+						</div>
 						<p class="txt_judul_ringkas_donasi1">XXX</p>
 						<p class="txt_judul_ringkas_donasi2">donation completed</p>
 					</div>
 					<div class="col-md-3">
-						<div class="img_ringkas_donasi"></div>
+						<div class="d-flex justify-content-center" style="font-size: 55px;">
+							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
+								<i class="fa fa-handshake fa-fw"></i>
+							</div>
+						</div>
 						<p class="txt_judul_ringkas_donasi1">XXX</p>
 						<p class="txt_judul_ringkas_donasi2">total transaction</p>
 					</div>
 					<div class="col-md-3">
-						<div class="img_ringkas_donasi"></div>
+						<div class="d-flex justify-content-center" style="font-size: 55px;">
+							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
+								<i class="fa fa-users fa-fw"></i>
+							</div>
+						</div>
 						<p class="txt_judul_ringkas_donasi1">XXX</p>
 						<p class="txt_judul_ringkas_donasi2">user registered</p>
 					</div>
