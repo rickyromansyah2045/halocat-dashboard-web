@@ -8,186 +8,121 @@
 				<p class="all_judul_header">List of Donations</p>
 			</div>
 			<div class="container dl_box_search" style="padding: 25px;">
-				<div class="row">
-					<div class="col-md-4">
-						<p class="dl_txt_header">Search</p>
-						<input type="text" class="form-control dl_input_txt_header" name="">
+				<form id="form-filter">
+					<div class="row">
+						<div class="col-md-4">
+							<p class="dl_txt_header">Search</p>
+							<input type="text" class="form-control dl_input_txt_header" id="filter-search">
+						</div>
+						<div class="col-md-4">
+							<p class="dl_txt_header">Category</p>
+							<select class="form-control dl_input_txt_header" id="filter-category_id"></select>
+						</div>
+						<div class="col-md-4">
+							<p class="dl_txt_header">Sort By</p>
+							<select class="form-control dl_input_txt_header" id="filter-sort_by"></select>
+						</div>
 					</div>
-					<div class="col-md-4">
-						<p class="dl_txt_header">Category</p>
-						<select class="form-control dl_input_txt_header" name="" id=""></select>
-					</div>
-					<div class="col-md-4">
-						<p class="dl_txt_header">Sort By</p>
-						<select class="form-control dl_input_txt_header" name="" id=""></select>
-					</div>
-				</div>
-				<button class="dl_btn_search" style="margin-top: 25px;">search</button>
+					<button class="dl_btn_search" type="submit" style="margin-top: 25px;">search</button>
+				</form>
 			</div>
 		</header>
 		<div class="container mt190">
 			<div class="list_donasi">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card col_list_donasi">
-							<img class="card-img-top card_img_donasi" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							<div class="card-body pad0">
-								<p class="txt_judul_donasi">Wireboard</p>
-								<p class="txt_sub_judul_donasi">The new era of mechanical keyboard</p>
-								<div class="progress mb10">
-								 	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-								</div>
-								<div class="progres_box_donasi">
-									<p class="txt_progres_percent">75%</p>
-									<p class="txt_progres_nominal">Rp 40.000.000</p>
-								</div>
-								<a class="btn_submit_donasi btn_donate" href="<?= site_url('donate/testingdetail') ?>">donate</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row row_show_all_donasi">
-					<button class="btn_see_all_donasi">load more</button>
+				<div class="row display-flex" id="wrapper-list_donation"></div>
+				<div class="row row_show_all_donasi" style="margin-top: 10px;">
+					<button class="btn_see_all_donasi">
+						load more
+					</button>
 				</div>
 			</div>
 		</div>
 		<?php $this->load->view('template/footer'); ?>
 	    <?php $this->load->view('template/script'); ?>
+		<script>
+			$('#form-filter').submit(function(e){
+				e.preventDefault();
+
+				let search = $('#filter-search').val();
+				newRequest(search);
+			});
+
+			function newRequest(search = "", category_id = "", limit = "8", orderBy = "id", orderType = "DESC") {
+				let query = "?";
+
+				if (search != "") {
+					query += `search=${search}`;
+				}
+
+				if (category_id != "") {
+					query += query == "?" ? "" : "&" + `category_id=${category_id}`;
+				}
+
+				query += query == "?" ? "" : "&" + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
+
+				$('#wrapper-list_donation').html('');
+
+				$.ajax({
+					url: `<?= $_ENV['API_URL']; ?>/campaigns${query}`,
+					type: 'GET',
+					success: function(response) {
+						if (response.success) {
+							let data = response.data;
+							let img = '';
+							let tooltip = '';
+							let percentage = 0;
+							let description = '';
+
+							for (let i = 0; i < data.length; i++) {
+								if (data[i].images.length > 0) {
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
+								} else {
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/img/default_image.png'); ?>" alt="">`;
+								}
+
+								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
+								percentage = percentage > 100 ? "100" : percentage;
+
+								description = data[i].description.length > 150 ? `${data[i].description.substring(0, 150)}...` : data[i].description;
+
+								if (data[i].short_description.length > 30) {
+									tooltip = ` data-toggle="tooltip" data-placement="top" title="${data[i].short_description}"`;
+								}
+
+								$('#wrapper-list_donation').append(`<div class="col-md-6 col-lg-4">
+									<div class="card col_list_donasi" style="height: 100%;">
+										${img}
+										<div class="card-body pad0">
+											<p class="txt_judul_donasi" style="cursor: help;"${tooltip}>${data[i].short_description}</p>
+											<p class="txt_sub_judul_donasi">${description}</p>
+										</div>
+										<div class="card-footer" style="background-color: transparent; margin: 0; padding: 0; padding-top: 10px;">
+											<div class="progress mb10">
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${percentage}%"></div>
+											</div>
+											<div class="progres_box_donasi">
+												<p class="txt_progres_percent">${percentage}%</p>
+												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
+											</div>
+											<hr style="margin-top: -5px;">
+											<button class="btn_submit_donasi">donate</button>
+										</div>
+									</div>
+								</div>`);
+							}
+
+							renderTooltip();
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr, error, code);
+					}
+				});
+			}
+
+			$(function(){
+				newRequest();
+			});
+		</script>
 	</body>
 </html>
