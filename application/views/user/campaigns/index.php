@@ -105,7 +105,42 @@
                 </button>
             </div>
             <div class="modal-body">
-
+                <p>
+                    <b>Category:</b><br>
+                    <span id="view-more-category"></span>
+                </p>
+                <p>
+                    <b>Campaign Name:</b><br>
+                    <span id="view-more-title"></span>
+                </p>
+                <p>
+                    <b>Short Description:</b><br>
+                    <span id="view-more-short_description"></span>
+                </p>
+                <p>
+                    <b>Description:</b><br>
+                    <span id="view-more-description"></span>
+                </p>
+                <p>
+                    <b>Goal Amount:</b><br>
+                    <span id="view-more-goal_amount"></span>
+                </p>
+                <p>
+                    <b>Current Amount:</b><br>
+                    <span id="view-more-current_amount"></span>
+                </p>
+                <p>
+                    <b>Donor Count:</b><br>
+                    <span id="view-more-donor_count"></span>
+                </p>
+                <p>
+                    <b>Campaign End Date:</b><br>
+                    <span id="view-more-finished_at"></span>
+                </p>
+                <p class="mb-0">
+                    <b>Status:</b><br>
+                    <span id="view-more-status" class="text-capitalize"></span><span id="view-more-live-link"></span>
+                </p>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
