@@ -24,10 +24,10 @@
 							<p class="dl_txt_header">Sort By</p>
 							<select class="form-control dl_input_txt_header" id="filter-sort_by">
 								<option value=""></option>
-								<option value="newest">Newest</option>
-								<option value="oldest">Oldest</option>
-								<option value="biggest_income">Biggest Income</option>
-								<option value="smallest_income">Smallest Income</option>
+								<option value="oldest">Oldest Campaigns</option>
+								<option value="newest">Newest Campaigns</option>
+								<option value="smallest_income">Smallest Collection Amount</option>
+								<option value="biggest_income">Biggest Collection Amount</option>
 							</select>
 						</div>
 					</div>
@@ -51,6 +51,7 @@
 			let search = "";
 			let category_id = "";
 			let limit = "8";
+			let offset = "8";
 			let sortBy = "";
 			let orderBy = "id";
 			let orderType = "DESC";
@@ -88,7 +89,7 @@
 				newRequest(search, category_id, limit, orderBy, orderType);
 			});
 
-			function newRequest(search = "", category_id = "", limit = "8", orderBy = "id", orderType = "DESC") {
+			function newRequest(search = "", category_id = "", limit = "8", offset = "0", orderBy = "id", orderType = "DESC") {
 				let query = "?";
 
 				if (search != "") {
