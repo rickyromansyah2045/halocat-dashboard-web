@@ -12103,19 +12103,19 @@ a:focus {
 }
 
 .bg-login-image {
-  background-image: url("../Image-list-donasi.svg");
+  background-image: url("../img/default_image.png");
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background-image: url("../Image-list-donasi.svg");
+  background-image: url("../img/default_image.png");
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background-image: url("../Image-list-donasi.svg");
+  background-image: url("../img/default_image.png");
   background-position: center;
   background-size: cover;
 }
