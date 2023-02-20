@@ -99,6 +99,30 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
+                        if (row.status == "finished") {
+                            return `
+                                <span class="dropdown">
+                                    <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Actions&nbsp;
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
+                                        <a class="dropdown-item" href="#!">
+                                            <div class="dropdown-item-icon">
+                                                <i class="fa fa-eye fa-fw"></i>
+                                            </div>
+                                            View More
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
+                                            <div class="dropdown-item-icon">
+                                                <i class="fa fa-image fa-fw"></i>
+                                            </div>
+                                            Manage Images
+                                        </a>
+                                    </div>
+                                </span>
+                            `;
+                        }
+
                         return `
                             <span class="dropdown">
                                 <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
