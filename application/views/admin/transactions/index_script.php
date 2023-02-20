@@ -53,6 +53,9 @@
                 {
                     data: "user_id",
                     render: function(data, type, row) {
+                        if (data == "-1" || data == "0") {
+                            return "Anonymous";
+                        }
                         return data;
                     }
                 },
@@ -190,7 +193,11 @@
                     $("#view-more-payment_token").html(response?.data?.payment_token || "-");
 
                     setCampaign(response?.data?.campaign_id);
-                    setUser(response?.data?.user_id);
+                    if (response?.data?.user_id > 0) {
+                        setUser(response?.data?.user_id);
+                    } else {
+                        $("#view-more-user").html("Anonymous");
+                    }
                 } else {
                     $('#modal-view-more').modal('hide');
                     Swal.fire({
