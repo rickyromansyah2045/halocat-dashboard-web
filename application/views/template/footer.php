@@ -1,5 +1,5 @@
 <footer class="footer_home">
-    <div class="container" style="padding: 50px 15px 45px;">
+    <div class="container" style="padding: 100px 15px 100px;">
         <div class="row">
             <div class="col-md-6">
                 <div class="box_footer_description">
