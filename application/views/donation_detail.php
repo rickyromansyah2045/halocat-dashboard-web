@@ -71,6 +71,13 @@
 		<script>
 			$('#form-donate').submit(function(e){
 				e.preventDefault();
+				if ($('#donate-amount').val() == "") {
+					Swal.fire({
+						icon: 'warning',
+						text: "Donation amount can not be empty!"
+					});
+					return
+				}
 				$.ajax({
 					url: "<?= $_ENV['API_URL']; ?>/transactions",
 					method: 'POST',
