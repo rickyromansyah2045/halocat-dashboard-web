@@ -170,6 +170,10 @@
     box-shadow: rgb(55 71 79 / 16%) 0 1px 4px, rgb(55 71 79 / 8%) 0 2px 8px;
 }
 
+#wrapper-activity .card {
+    border-radius: 15px;
+}
+
 .img_home_page {
     width: 100%;
     min-height: 400px;
@@ -705,6 +709,7 @@
 .dd_container {
     position: relative;
     top: -135px;
+    margin-bottom: -135px;
 }
 
 .box_list_highlight {

@@ -46,18 +46,7 @@
 						</div>
 						<p class="description_donasi"><?= $data['description']; ?></p>
 						<p class="dd_title_description mt30 mb20">Activity</p>
-						<form>
-							<div class="form-group">
-								<textarea class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
-							</div>
-							<div class="form-group">
-								<textarea class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
-							</div>
-							<div class="form-group">
-								<textarea class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
-							</div>
-							<button class="dl_btn_search">load more</button>
-						</form>
+						<div id="wrapper-activity"></div>
 					</div>
 				</div>
 				<div class="col-md-5">
@@ -158,7 +147,19 @@
 				success: function(response) {
 					if (response.success) {
 						let data = response.data;
-						console.log(data);
+						for (let i = 0; i < data.length; i++) {
+							let words = '.';
+							if (data[i].comment.length > 0) {
+								words = ` and sent the words: ${data[i].comment}${data[i].comment[data[i].comment.length] == "." ? "" : "."}`;
+							}
+							$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
+								<div class="card-body">
+									<p class="card-text">
+										<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${data[i].amount}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+									</p>
+								</div>
+							</div>`);
+						}
 					}
 				},
 				error: function(xhr, error, code) {
