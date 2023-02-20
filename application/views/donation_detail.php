@@ -104,24 +104,33 @@
 						snap.pay(response.data.payment_token, {
 							skipOrderSummary: true,
 							onSuccess: function(result) {
+								$('#form-donate').trigger('reset');
 								Swal.fire({
 									icon: 'success',
-									text: result?.status_message || "transaction successfully"
+									text: result?.status_message || "transaction successfully",
+									showConfirmButton: false,
+									timer: 3000
 								});
+								setTimeout(() => {
+									location.reload();
+								}, 2500);
 							},
 							onPending: function(result) {
+								$('#form-donate').trigger('reset');
 								Swal.fire({
 									icon: 'info',
 									text: result?.status_message || "transaction pending"
 								});
 							},
 							onError: function(result) {
+								$('#form-donate').trigger('reset');
 								Swal.fire({
 									icon: 'error',
 									text: result?.status_message[0] || "transaction error"
 								});
 							},
 							onClose: function() {
+								$('#form-donate').trigger('reset');
 								Swal.fire({
 									icon: 'warning',
 									text: "The payment snap popup closes, the payment transaction is canceled..."
