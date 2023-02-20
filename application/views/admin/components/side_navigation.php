@@ -33,6 +33,10 @@
                     <div class="nav-link-icon"><i data-feather="activity"></i></div>
                     Activity Logs
                 </a>
+                <a class="nav-link" href="<?= base_url('admin/settings'); ?>">
+                    <div class="nav-link-icon"><i data-feather="settings"></i></div>
+                    Account Setting
+                </a>
             </div>
         </div>
         <div class="sidenav-footer">
