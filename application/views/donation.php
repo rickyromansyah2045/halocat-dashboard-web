@@ -102,6 +102,8 @@
 
 				query += (query == "?" ? "" : "&") + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
 
+				query += '&status=active';
+
 				$('#wrapper-list_donation').html('');
 
 				$.ajax({
@@ -147,7 +149,11 @@
 												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
 											</div>
 											<hr style="margin-top: -5px;">
-											<button class="btn_submit_donasi">donate</button>
+											<a href="<?= site_url('donate'); ?>/${data[i].id}" target="_blank">
+												<button class="btn_submit_donasi">
+													donate
+												</button>
+											</a>
 										</div>
 									</div>
 								</div>`);
