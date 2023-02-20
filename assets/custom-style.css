@@ -794,3 +794,43 @@
 .navbar-shadow {
     box-shadow: 0px 1px 5px rgba(0,0,0,.75);
 }
+
+#dd_images .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#dd_images #custCarousel .carousel-indicators {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#dd_images #custCarousel .carousel-indicators > li {
+    width: 300px;
+    height: auto;
+}
+
+#dd_images .carousel-indicators li {
+    opacity: 1;
+}
+
+#dd_images #custCarousel .carousel-indicators li img {
+    display: block;
+    opacity: 0.65;
+}
+
+#dd_images #custCarousel .carousel-indicators li.active img {
+    opacity: 1;
+}
+
+#dd_images #custCarousel .carousel-indicators li:hover img {
+    opacity: 0.85;
+}
+
+#dd_images .carousel-indicators {
+    justify-content: start;
+    margin-left: 0;
+    margin-right: 0;
+}

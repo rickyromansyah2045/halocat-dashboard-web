@@ -1,47 +1,6 @@
 <!doctype html>
 <html lang="en">
 	<?php $this->load->view('template/head'); ?>
-	<style>
-		.carousel-inner img {
-      width: 100%;
-      height: 100%;
-	  border-radius: 20px;
-  }
-
-#custCarousel .carousel-indicators {
-    position: static;
-    margin-top: 20px;
-	margin-bottom: 10px;
-}
-
-#custCarousel .carousel-indicators > li {
-  width: 300px;
-  height: auto;
-}
-
-.carousel-indicators li {
-	opacity: 1;
-}
-
- #custCarousel .carousel-indicators li img {
-    display: block;
-	opacity: 0.65;
- }
-
-  #custCarousel .carousel-indicators li.active img {
-    opacity: 1;
-  }
-
-  #custCarousel .carousel-indicators li:hover img {
-    opacity: 0.85;
-  }
-
-  .carousel-indicators {
-	justify-content: start;
-	margin-left: 0;
-	margin-right: 0;
-  }
-	</style>
 	<body>
 		<header class="header_box hh300">
 			<?php $this->load->view('template/menu'); ?>
@@ -49,77 +8,47 @@
 		</header>
 		<div class="container dd_container">
 			<div class="row">
-				<div class="col-md-7">
-					<!-- <div class="dd_highlight_img">
-						<img class="highlight_img" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-					</div>
-					<div class="row mt30">
-						<div class="col-md-3">
-							<div class="box_list_highlight">
-								<img class="highlight_img" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
+				<div class="col-md-7" id="dd_images">
+					<div id="custCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false" align="center">
+						<div class="carousel-inner dd_highlight_img">
+							<div class="carousel-item active">
+								<img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
+							</div>
+							<div class="carousel-item">
+								<img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
+							</div>
+							<div class="carousel-item">
+								<img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
+							</div>
+							<div class="carousel-item">
+								<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
+							</div>
+							<div class="carousel-item">
+								<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
 							</div>
 						</div>
-						<div class="col-md-3">
-							<div class="box_list_highlight">
-								<img class="highlight_img" src="<?= base_url('assets/wireboard-detail2.jpg')?>" alt="Card image cap">
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="box_list_highlight">
-								<img class="highlight_img" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="box_list_highlight">
-								<img class="highlight_img" src="<?= base_url('assets/Image-list-donasi.svg')?>" alt="Card image cap">
-							</div>
-						</div> -->
-						<div id="custCarousel" class="carousel slide carousel-fade" data-ride="carousel" align="center">
-							<!-- slides -->
-							<div class="carousel-inner dd_highlight_img">
-								<div class="carousel-item active">
-									<img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
-								</div>
-								<div class="carousel-item">
-									<img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
-								</div>
-								<div class="carousel-item">
-									<img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
-								</div>
-								<div class="carousel-item">
-									<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-								</div>
-								<div class="carousel-item">
-									<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-								</div>
-							</div>
-
-							<!-- Thumbnails -->
-							<ol class="carousel-indicators list-inline">
+						<ol class="carousel-indicators list-inline">
 							<li class="list-inline-item active">
 								<a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel">
 									<img src="https://i.imgur.com/weXVL8M.jpg" class="img-fluid box_list_highlight">
 								</a>
 							</li>
-
 							<li class="list-inline-item">
 								<a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel">
 									<img src="https://i.imgur.com/Rpxx6wU.jpg" class="img-fluid box_list_highlight">
 								</a>
 							</li>
-
 							<li class="list-inline-item">
 								<a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel">
 									<img src="https://i.imgur.com/83fandJ.jpg"  class="img-fluid box_list_highlight">
 								</a>
 							</li>
-
 							<li class="list-inline-item">
 								<a id="carousel-selector-2" data-slide-to="3" data-target="#custCarousel">
 									<img src="https://i.imgur.com/JiQ9Ppv.jpg"  class="img-fluid box_list_highlight">
 								</a>
 							</li>
-							</ol>
+						</ol>
 					</div>
 					<hr>
 					<div class="dd_description_donasi">
