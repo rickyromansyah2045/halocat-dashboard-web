@@ -19,7 +19,7 @@
 
 .navbar {
     padding: 0px;
-    height: 100px;
+    min-height: 100px;
     background-color: #1b254e !important;
 }
 
@@ -27,13 +27,8 @@
     margin-right: 0px;
     width: 50px;
     height: 50px;
-
-    background: #E2632B;
-    /* border: 2px solid #000000; */
     border-radius: 50%;
-    padding:0px !important;
-
-    /* background-image: url('img/logo_cloud2.png'); */
+    padding: 0px !important;
 }
 
 .headline_judul {
@@ -432,8 +427,9 @@
     font-size: 26px;
     line-height: 39px;
     color: #FFFFFF;
-    margin: 0px;padding: 0px 40px;
-    text-transform: capitalize;
+    margin: 0px;
+    padding-left: 20px;
+    text-transform: uppercase;
 }
 
 .footer_description {
@@ -471,7 +467,6 @@
     font-size: 18px;
     line-height: 27px;
     color: #FFFFFF;
-    margin: 10px 0px;
     text-transform: capitalize;
 }
 
@@ -489,7 +484,6 @@
     font-size: 18px;
     line-height: 27px;
     color: #FFFFFF;
-    margin: 10px 0px;
     text-transform: capitalize;
 }
 
@@ -833,4 +827,26 @@
     justify-content: start;
     margin-left: 0;
     margin-right: 0;
+}
+
+.link_socmed_footer {
+    margin: 12px 10px 12px 0;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    padding-top: 7px;
+    display: inline-block;
+    background-color: #E2632B;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.link_socmed_footer:hover {
+    opacity: .75;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav a {
+        text-align: center;
+    }
 }
