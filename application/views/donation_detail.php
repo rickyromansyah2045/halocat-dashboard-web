@@ -9,61 +9,42 @@
 		<div class="container dd_container">
 			<div class="row">
 				<div class="col-md-7" id="dd_images">
-					<div id="custCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false" align="center">
-						<div class="carousel-inner dd_highlight_img">
-							<div class="carousel-item active">
-								<img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
+					<?php if (count($data["images"]) > 1): ?>
+						<div id="custCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false" align="center">
+							<div class="carousel-inner dd_highlight_img">
+								<?php for ($i = 0; $i < count($data['images']); $i++): ?>
+									<div class="carousel-item<?= $i == 0 ? " active" : ""; ?>">
+										<img src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" alt="">
+									</div>
+								<?php endfor; ?>
 							</div>
-							<div class="carousel-item">
-								<img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
-							</div>
-							<div class="carousel-item">
-								<img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
-							</div>
-							<div class="carousel-item">
-								<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-							</div>
-							<div class="carousel-item">
-								<img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-							</div>
+							<ol class="carousel-indicators list-inline">
+								<?php for ($i = 0; $i < count($data['images']); $i++): ?>
+									<li class="list-inline-item<?= $i == 0 ? " active" : ""; ?>">
+										<a id="carousel-selector-<?= $i; ?>" class="selected" data-slide-to="<?= $i; ?>" data-target="#custCarousel">
+											<img src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" class="box_list_highlight">
+										</a>
+									</li>
+								<?php endfor; ?>
+							</ol>
 						</div>
-						<ol class="carousel-indicators list-inline">
-							<li class="list-inline-item active">
-								<a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel">
-									<img src="https://i.imgur.com/weXVL8M.jpg" class="img-fluid box_list_highlight">
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel">
-									<img src="https://i.imgur.com/Rpxx6wU.jpg" class="img-fluid box_list_highlight">
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel">
-									<img src="https://i.imgur.com/83fandJ.jpg"  class="img-fluid box_list_highlight">
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a id="carousel-selector-2" data-slide-to="3" data-target="#custCarousel">
-									<img src="https://i.imgur.com/JiQ9Ppv.jpg"  class="img-fluid box_list_highlight">
-								</a>
-							</li>
-						</ol>
-					</div>
-					<hr>
+						<hr>
+					<?php else: ?>
+						<div class="dd_highlight_img mb-4">
+							<img src="<?= count($data["images"]) == 0 ? base_url('assets/img/default_image_2.png') : "{$_ENV['API_BASE']}/{$data['images'][0]['file_location']}"; ?>" class="highlight_img" alt="">
+						</div>
+					<?php endif; ?>
 					<div class="dd_description_donasi">
-						<p class="dd_title_description">Wireboard Fortune</p>
-						<p class="dd_sub_title_description">Era terbaru untuk keyboard mekanik yang cocok untuk semua kalangan.</p>
+						<p class="dd_title_description"><?= $data['title']; ?></p>
+						<p class="dd_sub_title_description"><?= $data['short_description']; ?></p>
 						<div class="progress mb10">
-							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?= $percentage; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $percentage; ?>%"></div>
 						</div>
 						<div class="progres_box_donasi">
-							<p class="txt_progres_percent">75%</p>
-							<p class="txt_progres_nominal">Rp 40.000.000</p>
+							<p class="txt_progres_percent"><?= $percentage; ?>%</p>
+							<p class="txt_progres_nominal">Rp <?= $data["goal_amount"]; ?></p>
 						</div>
-						<p class="description_donasi">Designed to fit your dedicated typing experience. No matter what you like, linear, clicky or a little in between, we’ve got you covered with three Gateron switches options (Blue, Brown, Red). With a lifespan of 50 million keystroke lifespan we want to make sure that you experience same feedback for every keystroke.</p>
-						<p class="description_donasi">With N-key rollover (NKRO on wired mode only) you can register as many keys as you can press at once without missing out characters. It allows to use all the same media keys as conventional macOS. </p>
-						<p class="description_donasi mb0">This keyboard can last up to 72 hours typing, or up to 9 days of normal use (8 hrs/day) with a 4000 mAh big battery.</p>
+						<p class="description_donasi"><?= $data['description']; ?></p>
 						<p class="dd_title_description mt30 mb20">Activity</p>
 						<form>
 							<div class="form-group">
