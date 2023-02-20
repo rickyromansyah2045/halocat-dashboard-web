@@ -151,6 +151,20 @@
 					}
 				});
 			});
+
+			$.ajax({
+				url: "<?= $_ENV['API_URL']; ?>/transactions/campaigns/<?= $data['id']; ?>?status=paid",
+				type: 'GET',
+				success: function(response) {
+					if (response.success) {
+						let data = response.data;
+						console.log(data);
+					}
+				},
+				error: function(xhr, error, code) {
+					console.log(xhr, error, code);
+				}
+			});
 		</script>
 	</body>
 </html>
