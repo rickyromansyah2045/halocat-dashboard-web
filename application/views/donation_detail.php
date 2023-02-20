@@ -62,15 +62,15 @@
 				</div>
 				<div class="col-md-5">
 					<div class="box_donation">
-						<form>
+						<form id="form-donate">
 							<div class="form-group mb20">
 								<label class="lbl_form_donation mb0 pb20">Form Donation</label>
-								<textarea class="form-control dd_textarea h120" id="exampleFormControlTextarea1" rows="3"></textarea>
+								<textarea id="donate-comment" class="form-control dd_textarea h120" id="exampleFormControlTextarea1" rows="3" placeholder="Write words for fundraising, can be for encouragement or positive words"></textarea>
 							</div>
 							<div class="form-group mb20">
-								<input type="text" class="form-control form-control-lg">
+								<input id="donate-amount" type="text" class="form-control" placeholder="Enter the amount you want to donate">
 							</div>
-							<button class="dl_btn_search clr_btn_donate">DONATE NOW</button>
+							<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
 						</form>
 					</div>
 				</div>
@@ -78,5 +78,70 @@
 		</div>
 		<?php $this->load->view('template/footer'); ?>
 		<?php $this->load->view('template/script'); ?>
+		<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?= $_ENV['MIDTRANS_CLIENT_KEY']; ?>"></script>
+		<script>
+			$('#form-donate').submit(function(e){
+				e.preventDefault();
+				$.ajax({
+					url: "<?= $_ENV['API_URL']; ?>/transactions",
+					method: 'POST',
+					cache: false,
+					data: JSON.stringify({
+						"campaign_id": <?= $data['id']; ?>,
+						"user_id": <?= $this->session->userdata('id'); ?>,
+						"amount": parseInt($('#donate-amount').val()),
+						"comment": $('#donate-comment').val()
+					}),
+					contentType: "application/json",
+					dataType: 'json',
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+						$('#btn-donate').html('PROCESSING...');
+						$('#btn-donate').prop('disabled', true);
+					},
+					success: function(response) {
+						$('#btn-donate').fadeOut(500);
+						snap.pay(response.data.payment_token, {
+							skipOrderSummary: true,
+							onSuccess: function(result) {
+								Swal.fire({
+									icon: 'success',
+									text: result?.status_message || "transaction successfully"
+								});
+							},
+							onPending: function(result) {
+								Swal.fire({
+									icon: 'info',
+									text: result?.status_message || "transaction pending"
+								});
+							},
+							onError: function(result) {
+								Swal.fire({
+									icon: 'error',
+									text: result?.status_message[0] || "transaction error"
+								});
+							},
+							onClose: function() {
+								Swal.fire({
+									icon: 'warning',
+									text: "The payment snap popup closes, the payment transaction is canceled..."
+								});
+							}
+						});
+					},
+					error: function(xhr, error, code) {
+						Swal.fire({
+							icon: 'error',
+							text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+						});
+					},
+            		complete: function() {
+						$('#btn-donate').removeAttr("disabled").fadeIn(500);
+						$('#btn-donate').prop('disabled', false);
+						$('#btn-donate').html('DONATE NOW');
+					}
+				});
+			});
+		</script>
 	</body>
 </html>

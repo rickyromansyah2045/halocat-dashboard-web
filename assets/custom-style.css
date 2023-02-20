@@ -744,7 +744,7 @@
 .dd_textarea {
     background: #FFFFFF;
     border: 1px solid #BFBFBF;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px 20px;
     overflow: hidden;
 }
