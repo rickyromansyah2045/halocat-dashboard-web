@@ -849,6 +849,10 @@
     opacity: .75;
 }
 
+.col_list_donasi a:hover {
+    text-decoration: none;
+}
+
 @media (max-width: 992px) {
     .navbar-nav a {
         text-align: center;
