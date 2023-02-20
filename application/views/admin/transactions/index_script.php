@@ -77,6 +77,9 @@
                 {
                     data: "comment",
                     render: function(data, type, row) {
+                        if (data == "") {
+                            return "-";
+                        }
                         return data;
                     }
                 },

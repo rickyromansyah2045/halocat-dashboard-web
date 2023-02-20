@@ -24,7 +24,7 @@
                         <tr>
                             <th style="width: 45px;">No</th>
                             <th>Content</th>
-                            <th>User Agent</th>
+                            <th style="width: 250px;">User Agent</th>
                             <th>IP Address</th>
                             <th style="width: 150px;">Date and Time</th>
                         </tr>
