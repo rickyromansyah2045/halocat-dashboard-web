@@ -865,8 +865,6 @@
 
                     if (status == "active" || status == "finished") {
                         $('#view-more-live-link').html(`, click this link for see campaign live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see campaign live preview</a>.`);
-                    } else {
-
                     }
 
                     setUser(response?.data?.user_id);
