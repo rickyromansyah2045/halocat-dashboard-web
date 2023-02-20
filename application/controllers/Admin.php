@@ -76,14 +76,10 @@ class Admin extends CI_Controller
 	}
 
 	public function settings()
-	{	
-
-		$data['title'] 			= "Account Setting";
-		$data['name'] 			= $this->session->userdata('name');
-		$data['email'] 			= $this->session->userdata('email');
-		$data['id'] 			= $this->session->userdata('id');
-		$data['content'] 		= $this->load->view('admin/settings/index', $data, TRUE);
-		$data['custom_script'] 	= $this->load->view('admin/settings/index_script', NULL, TRUE);
+	{
+		$data['title'] = "Account Setting";
+		$data['content'] = $this->load->view('admin/settings/index', $data, TRUE);
+		$data['custom_script'] = $this->load->view('admin/settings/index_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
