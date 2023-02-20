@@ -30,11 +30,13 @@
 				<div class="list_donasi">
 					<div class="row display-flex" id="wrapper-list_donation"></div>
 					<div class="row row_show_all_donasi" style="margin-top: 10px;">
-						<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
-							<button class="btn_see_all_donasi">
-								see all donation list
-							</button>
-						</a>
+						<div id="btn-see-all" style="display: none;">
+							<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
+								<button class="btn_see_all_donasi">
+									see all donation list
+								</button>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -221,6 +223,10 @@
 							let percentage = 0;
 							let description = '';
 
+							if (data.length >= 8) {
+								$('#btn-see-all').show();
+							}
+
 							for (let i = 0; i < data.length; i++) {
 								if (data[i].images.length > 0) {
 									img = `<img data-source="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" alt="">`;
@@ -253,7 +259,11 @@
 												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
 											</div>
 											<hr style="margin-top: -5px;">
-											<button class="btn_submit_donasi">donate</button>
+											<a href="<?= site_url('donate'); ?>/${data[i].id}" target="_blank">
+												<button class="btn_submit_donasi">
+													donate
+												</button>
+											</a>
 										</div>
 									</div>
 								</div>`);
