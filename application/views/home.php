@@ -133,21 +133,6 @@
 					<p class="headline_judul">Frequently Asked Questions</p>
 					<p class="sub_headline_judul mb50">Find useful information for you, and find out more about us</p>
 				</center>
-				<!-- <div class="box_list_faq">
-					<p class="txt_judul_faq">faq</p>
-				</div>
-				<div class="box_list_faq">
-					<p class="txt_judul_faq">faq</p>
-				</div>
-				<div class="box_list_faq">
-					<p class="txt_judul_faq">faq</p>
-				</div>
-				<div class="box_list_faq">
-					<p class="txt_judul_faq">faq</p>
-				</div>
-				<div class="box_list_faq">
-					<p class="txt_judul_faq">faq</p>
-				</div> -->
 
 				<div id="accordion">
 					<div class="card mb5">
@@ -226,7 +211,7 @@
 				});
 
 				$.ajax({
-					url: "<?= $_ENV['API_URL']; ?>/campaigns?limit=8&order_by=id&order_type=DESC",
+					url: "<?= $_ENV['API_URL']; ?>/campaigns?status=active&limit=8&order_by=id&order_type=DESC",
 					type: 'GET',
 					success: function(response) {
 						if (response.success) {
