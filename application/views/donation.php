@@ -86,7 +86,7 @@
 					}
 				}
 
-				newRequest(search, category_id, limit, orderBy, orderType);
+				newRequest(search, category_id, limit, offset, orderBy, orderType);
 			});
 
 			function newRequest(search = "", category_id = "", limit = "8", offset = "0", orderBy = "id", orderType = "DESC") {
