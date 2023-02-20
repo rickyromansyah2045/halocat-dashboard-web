@@ -35,7 +35,7 @@
 						</div>
 					<?php endif; ?>
 					<div class="dd_description_donasi">
-						<p class="dd_title_description"><?= $data['title']; ?></p>
+						<h2 class="dd_title_description"><?= $data['title']; ?></h2>
 						<p class="dd_sub_title_description"><?= $data['short_description']; ?></p>
 						<div class="progress mb10">
 							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?= $percentage; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $percentage; ?>%"></div>
@@ -45,22 +45,41 @@
 							<p class="txt_progres_nominal">Rp <?= $data["goal_amount"]; ?></p>
 						</div>
 						<p class="description_donasi"><?= $data['description']; ?></p>
-						<p class="dd_title_description mt30 mb20">Activity</p>
+						<hr>
+						<h2 class="dd_title_description">Transaction Activity</h2>
 						<div id="wrapper-activity"></div>
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div class="box_donation">
-						<form id="form-donate">
-							<div class="form-group mb20">
-								<label class="lbl_form_donation mb0 pb20">Form Donation</label>
-								<textarea id="donate-comment" class="form-control dd_textarea h120" id="exampleFormControlTextarea1" rows="3" placeholder="Write words for fundraising, can be for encouragement or positive words"></textarea>
-							</div>
-							<div class="form-group mb20">
-								<input id="donate-amount" type="text" class="form-control" placeholder="Enter the amount you want to donate">
-							</div>
-							<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
-						</form>
+						<?php if ($data['status'] == 'finished'): ?>
+							<h2>Campaign Finished</h2>
+							<hr>
+							<p>
+								This donation campaign is over, thanks to all who have contributed to this donation campaign.
+							</p>
+							<hr>
+							<p>
+								Collected funds: <?= $data['current_amount']; ?>
+								<br>
+								The number of people who donated: <?= $data['donor_count']; ?>
+							</p>
+							<hr>
+							<p class="mb-0">
+								<b>Thank You All !!!</b>
+							</p>
+						<?php else: ?>
+							<form id="form-donate">
+								<div class="form-group mb20">
+									<label class="lbl_form_donation mb0 pb20">Form Donation</label>
+									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write words for fundraising, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
+								</div>
+								<div class="form-group mb20">
+									<input id="donate-amount" type="text" class="form-control" placeholder="Enter the amount you want to donate">
+								</div>
+								<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
+							</form>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
@@ -154,6 +173,10 @@
 				success: function(response) {
 					if (response.success) {
 						let data = response.data;
+						if (data.length == 0) {
+							$('#wrapper-activity').html("No transaction yet for this campaign donation.");
+							return
+						}
 						for (let i = 0; i < data.length; i++) {
 							let words = '.';
 							if (data[i].comment.length > 0) {
