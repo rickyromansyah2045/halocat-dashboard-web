@@ -72,7 +72,7 @@
 							<form id="form-donate">
 								<div class="form-group mb20">
 									<label class="lbl_form_donation mb0 pb20">Form Donation</label>
-									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write words for fundraising, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
+									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write your words, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
 								</div>
 								<div class="form-group mb20">
 									<input id="donate-amount" type="text" class="form-control" placeholder="Enter the amount you want to donate">
