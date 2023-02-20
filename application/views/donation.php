@@ -16,7 +16,9 @@
 						</div>
 						<div class="col-md-4">
 							<p class="dl_txt_header">Category</p>
-							<select class="form-control dl_input_txt_header" id="filter-category_id"></select>
+							<select class="form-control dl_input_txt_header" id="filter-category_id">
+								<option value=""></option>
+							</select>
 						</div>
 						<div class="col-md-4">
 							<p class="dl_txt_header">Sort By</p>
@@ -58,8 +60,7 @@
 
 				search = $('#filter-search').val();
 				sortBy = $('#filter-sort_by').val();
-
-				console.log(sortBy);
+				category_id = $('#filter-category_id').val();
 
 				if (sortBy != "") {
 					switch (sortBy) {
@@ -95,7 +96,7 @@
 				}
 
 				if (category_id != "") {
-					query += (query == "?" ? "" : "&") + `category_id=${category_id}`;
+					query += (query == "?" ? "" : "&") + `category=${category_id}`;
 				}
 
 				query += (query == "?" ? "" : "&") + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
@@ -162,6 +163,22 @@
 
 			$(function(){
 				newRequest();
+
+				$.ajax({
+					url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+					type: 'GET',
+					success: function(response) {
+						if (response.success) {
+							let data = response.data;
+							for (let i = 0; i < data.length; i++) {
+								$("#filter-category_id").append(`<option value="${data[i].id}">${data[i].category}</option>`);
+							}
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr, error, code);
+					}
+				});
 			});
 		</script>
 	</body>
