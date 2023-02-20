@@ -38,7 +38,7 @@
 		<div class="container mt190">
 			<div class="list_donasi">
 				<div class="row display-flex" id="wrapper-list_donation"></div>
-				<div class="row row_show_all_donasi" style="margin-top: 10px;">
+				<div id="wrapper-load-more" class="row row_show_all_donasi" style="margin-top: 10px; display: none;">
 					<button class="btn_see_all_donasi">
 						load more
 					</button>
@@ -116,6 +116,10 @@
 							let tooltip = '';
 							let percentage = 0;
 							let description = '';
+
+							if (data.length >= 8) {
+								$('#wrapper-load-more').show();
+							}
 
 							for (let i = 0; i < data.length; i++) {
 								if (data[i].images.length > 0) {
