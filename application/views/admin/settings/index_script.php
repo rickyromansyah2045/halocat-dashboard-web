@@ -1,7 +1,39 @@
 <script>
+    $(function(){
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/users/data`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#name").val(response?.data?.name || "");
+                    $("#email").val(response?.data?.email || "");
+                } else {
+                    $('#modal-edit').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    });
 
-    function verifikasi_data() 
-    {
+    $('#update-account').submit(function(e){
+        e.preventDefault();
+        verifikasi_data();
+    });
+
+    function verifikasi_data() {
         var name = $('#name').val();
         var email = $('#email').val();
         var password = $('#password').val();
@@ -24,53 +56,54 @@
         }
     }
 
-    function proses_update(name, email, password)
-    {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be update profile!",
-            icon: 'warning',
-            showCancelButton: true,
-            showLoaderOnConfirm: true,
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Yes',
-            preConfirm: (login) => {
-                return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/transactionss/${id}`,
-                    type: 'DELETE',
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            tabel.ajax.reload(null, false);
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: response.message,
-                                showConfirmButton: false,
-                                timer: 3000
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                text: response.error
-                            });
-                        }
-                    },
-                    error: function(xhr, error, code) {
-                        Swal.fire({
-                            icon: 'error',
-                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                        });
-                    },
-                    complete: function() {}
+    function proses_update(name, email, password) {
+        let object = {
+            email: $('#email').val(),
+            name: $('#name').val()
+        };
+
+        if ($('#password').val() != "") {
+            object.password = $('#password').val();
+        }
+
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/users/data/change`,
+            type: 'PUT',
+            data: JSON.stringify(object),
+            contentType: "application/json",
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                $('#btn-update').html('Processing...');
+                $('#btn-update').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.message,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
                 });
             },
-            allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-            if (result.isConfirmed) {}
-        })        
+            complete: function() {
+                $('#btn-update').prop('disabled', false);
+                $('#btn-update').html('Update');
+            }
+        });
     }
 
 </script>
