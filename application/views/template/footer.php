@@ -24,13 +24,13 @@
                             <a class="link_menu_footer" href="<?= site_url('donations'); ?>">Campaigns</a>
                             <a class="link_menu_footer" href="<?= site_url('about'); ?>">About Us</a>
                             <a class="link_menu_footer" href="<?= site_url('user/dashboard'); ?>">User Area</a>
-                            <a class="link_menu_footer" href="<?= site_url('logout'); ?>">Logout</a>
+                            <a class="link_menu_footer" href="<?= site_url('auth/logout'); ?>">Logout</a>
                         <?php else: ?>
                             <a class="link_menu_footer" href="<?= site_url(); ?>">Home</a>
                             <a class="link_menu_footer" href="<?= site_url('donations'); ?>">Campaigns</a>
                             <a class="link_menu_footer" href="<?= site_url('about'); ?>">About Us</a>
                             <a class="link_menu_footer" href="<?= site_url('admin/dashboard'); ?>">Admin Area</a>
-                            <a class="link_menu_footer" href="<?= site_url('logout'); ?>">Logout</a>
+                            <a class="link_menu_footer" href="<?= site_url('auth/logout'); ?>">Logout</a>
                         <?php endif; ?>
                     <?php else: ?>
                         <a class="link_menu_footer" href="<?= site_url(); ?>">Home</a>
