@@ -99,6 +99,36 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
+                        if (row.status == "finished") {
+                            return `
+                                <span class="dropdown">
+                                    <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Actions&nbsp;
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
+                                        <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
+                                            <div class="dropdown-item-icon">
+                                                <i class="fa fa-eye fa-fw"></i>
+                                            </div>
+                                            View More
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
+                                            <div class="dropdown-item-icon">
+                                                <i class="fa fa-image fa-fw"></i>
+                                            </div>
+                                            Manage Images
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:deleteCampaign(${data})">
+                                            <div class="dropdown-item-icon">
+                                                <i class="fa fa-trash fa-fw"></i>
+                                            </div>
+                                            Delete
+                                        </a>
+                                    </div>
+                                </span>
+                            `;
+                        }
+
                         let html_exclusive = '';
 
                         if (row?.is_exclusive || false) {
@@ -821,12 +851,12 @@
             type: 'GET',
             success: function(response) {
                 if (response.success) {
-                    let status = response?.data?.status || "";
+                    let status = response?.data?.status || "-";
                     let liveLink = "";
 
-                    $("#view-more-title").html(response?.data?.title || "");
-                    $("#view-more-short_description").html(response?.data?.short_description || "");
-                    $("#view-more-description").html(response?.data?.description || "");
+                    $("#view-more-title").html(response?.data?.title || "-");
+                    $("#view-more-short_description").html(response?.data?.short_description || "-");
+                    $("#view-more-description").html(response?.data?.description || "-");
                     $("#view-more-goal_amount").html(response?.data?.goal_amount || 0);
                     $("#view-more-current_amount").html(response?.data?.current_amount || 0);
                     $("#view-more-donor_count").html(response?.data?.donor_count || 0);
@@ -838,7 +868,6 @@
                     } else {
 
                     }
-
 
                     setUser(response?.data?.user_id);
                     setCategory(response?.data?.category_id);
