@@ -28,7 +28,7 @@
                             <th>Amount</th>
                             <th>Status</th>
                             <th>Code</th>
-                            <th>Comment</th>
+                            <th style="max-width: 200px;">Comment</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
