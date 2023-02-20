@@ -1,6 +1,6 @@
 let navOuterHeight = $('nav').outerHeight();
 
-$(window).scroll(function(){
+$(window).scroll(function() {
     if ($(window).scrollTop() > 10) {
         $('nav').addClass('navbar-shadow');
     } else {
@@ -11,10 +11,6 @@ $(window).scroll(function(){
 function renderTooltip() {
     $('[data-toggle="tooltip"]').tooltip()
 }
-
-$(function(){
-    renderTooltip();
-});
 
 $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event){
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname){
@@ -27,4 +23,42 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event){
             }, 1000);
         }
     }
+});
+
+var lazyLoadImages = document.querySelectorAll('img[data-source]');
+window.onscroll = function() {
+    runLazyLoading();
+}
+
+function lazyLoading() {
+    lazyLoadImages = document.querySelectorAll('img[data-source]');
+    runLazyLoading();
+}
+
+function runLazyLoading() {
+    for (var i=0; i < lazyLoadImages.length; i++) {
+        if (inView(lazyLoadImages[i])){
+            if (lazyLoadImages[i].getAttribute('data-source')) {
+                lazyLoadImages[i].src = lazyLoadImages[i].getAttribute('data-source');
+                lazyLoadImages[i].removeAttribute('data-source');
+            }
+        }
+    }
+    cli();
+}
+
+function inView(e) {
+    var r = e.getBoundingClientRect();
+    return (r.top >= 0 && r.left >= 0 && r.bottom <= ((window.innerHeight || document.documentElement.clientHeight)) && r.right <= (window.innerWidth || document.documentElement.clientWidth));
+}
+
+function cli() {
+    lazyLoadImages = Array.prototype.filter.call(lazyLoadImages, function(e){
+        return e.getAttribute('data-source');
+    });
+}
+
+$(function() {
+    renderTooltip();
+    lazyLoading();
 });

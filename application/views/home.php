@@ -15,7 +15,7 @@
 							</a>
 						</div>
 						<div class="col-md-6 padl45">
-							<img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_home_page">
+							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-source="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_home_page">
 						</div>
 					</div>
 				</div>
@@ -97,21 +97,21 @@
 					<!-- The slideshow -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<?= base_url('assets/img/test1.jpg')?>" alt="Los Angeles" width="1100" height="500">
+							<img data-source="<?= base_url('assets/img/test1.jpg')?>" alt="Los Angeles" width="1100" height="500">
 							<div class="carousel-caption">
 								<h3>Los Angeles</h3>
 								<p>We had such a great time in LA!</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="<?= base_url('assets/img/test2.jpg')?>" alt="Chicago" width="1100" height="500">
+							<img data-source="<?= base_url('assets/img/test2.jpg')?>" alt="Chicago" width="1100" height="500">
 							<div class="carousel-caption">
 								<h3>Los Angeles</h3>
 								<p>We had such a great time in LA!</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="<?= base_url('assets/img/test1.jpg')?>" alt="New York" width="1100" height="500">
+							<img data-source="<?= base_url('assets/img/test1.jpg')?>" alt="New York" width="1100" height="500">
 							<div class="carousel-caption">
 								<h3>Los Angeles</h3>
 								<p>We had such a great time in LA!</p>
@@ -238,9 +238,9 @@
 
 							for (let i = 0; i < data.length; i++) {
 								if (data[i].images.length > 0) {
-									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
+									img = `<img data-source="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" alt="">`;
 								} else {
-									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/img/default_image.png'); ?>" alt="">`;
+									img = `<img data-source="<?= base_url('assets/img/default_image.png'); ?>" class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" alt="">`;
 								}
 
 								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
@@ -274,6 +274,7 @@
 								</div>`);
 							}
 
+							lazyLoading();
 							renderTooltip();
 						}
 					},

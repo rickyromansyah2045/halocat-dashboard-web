@@ -177,6 +177,7 @@
 .img_home_page {
     width: 100%;
     min-height: 400px;
+    max-height: 435px;
     border-radius: 10px;
     object-fit: cover;
     border: 2px solid #E2632B;
