@@ -20,7 +20,13 @@
 						</div>
 						<div class="col-md-4">
 							<p class="dl_txt_header">Sort By</p>
-							<select class="form-control dl_input_txt_header" id="filter-sort_by"></select>
+							<select class="form-control dl_input_txt_header" id="filter-sort_by">
+								<option value=""></option>
+								<option value="newest">Newest</option>
+								<option value="oldest">Oldest</option>
+								<option value="biggest_income">Biggest Income</option>
+								<option value="smallest_income">Smallest Income</option>
+							</select>
 						</div>
 					</div>
 					<button class="dl_btn_search" type="submit" style="margin-top: 25px;">search</button>
@@ -40,11 +46,45 @@
 		<?php $this->load->view('template/footer'); ?>
 	    <?php $this->load->view('template/script'); ?>
 		<script>
+			let search = "";
+			let category_id = "";
+			let limit = "8";
+			let sortBy = "";
+			let orderBy = "id";
+			let orderType = "DESC";
+
 			$('#form-filter').submit(function(e){
 				e.preventDefault();
 
-				let search = $('#filter-search').val();
-				newRequest(search);
+				search = $('#filter-search').val();
+				sortBy = $('#filter-sort_by').val();
+
+				console.log(sortBy);
+
+				if (sortBy != "") {
+					switch (sortBy) {
+						case "newest":
+							orderBy = "id";
+							orderType = "DESC";
+							break;
+						case "oldest":
+							orderBy = "id";
+							orderType = "ASC";
+							break;
+						case "biggest_income":
+							orderBy = "current_amount";
+							orderType = "DESC";
+							break;
+						case "smallest_income":
+							orderBy = "current_amount";
+							orderType = "ASC";
+							break;
+						default:
+							break;
+					}
+				}
+
+				newRequest(search, category_id, limit, orderBy, orderType);
 			});
 
 			function newRequest(search = "", category_id = "", limit = "8", orderBy = "id", orderType = "DESC") {
@@ -55,10 +95,10 @@
 				}
 
 				if (category_id != "") {
-					query += query == "?" ? "" : "&" + `category_id=${category_id}`;
+					query += (query == "?" ? "" : "&") + `category_id=${category_id}`;
 				}
 
-				query += query == "?" ? "" : "&" + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
+				query += (query == "?" ? "" : "&") + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
 
 				$('#wrapper-list_donation').html('');
 
