@@ -92,7 +92,7 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-eye fa-fw"></i>
                                         </div>
@@ -173,5 +173,94 @@
         }).then((result) => {
             if (result.isConfirmed) {}
         })
+    }
+
+    function openModalViewMore(id) {
+        $('#modal-view-more').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/transactions/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $("#view-more-amount").html(response?.data?.amount || 0);
+                    $("#view-more-status").html(response?.data?.status || "-");
+                    $("#view-more-code").html(response?.data?.code || "-");
+                    $("#view-more-comment").html(response?.data?.comment || "-");
+                    $("#view-more-payment_url").html(`<a href="${(response?.data?.payment_url || "")}" target="_blank">${(response?.data?.payment_url || "-")}</a>`);
+                    $("#view-more-payment_token").html(response?.data?.payment_token || "-");
+
+                    setCampaign(response?.data?.campaign_id);
+                    setUser(response?.data?.user_id);
+                } else {
+                    $('#modal-view-more').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    function setUser(id) {
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/users/${id}`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#view-more-user").html(response?.data?.name);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                    $("#view-more-user").html("-");
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+                $("#view-more-user").html("-");
+            },
+            complete: function() {}
+        });
+    }
+
+    function setCampaign(id) {
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $("#view-more-campaign").html(response?.data?.title);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                    $("#view-more-campaign").html("-");
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+                $("#view-more-campaign").html("-");
+            },
+            complete: function() {}
+        });
     }
 </script>
