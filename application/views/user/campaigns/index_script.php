@@ -106,7 +106,7 @@
                                         Actions&nbsp;
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                        <a class="dropdown-item" href="#!">
+                                        <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
                                             <div class="dropdown-item-icon">
                                                 <i class="fa fa-eye fa-fw"></i>
                                             </div>
@@ -129,7 +129,7 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="#!">
+                                    <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-eye fa-fw"></i>
                                         </div>
@@ -572,5 +572,73 @@
         }).then((result) => {
             if (result.isConfirmed) {}
         })
+    }
+
+    function openModalViewMore(id) {
+        $('#modal-view-more').modal('show');
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    let status = response?.data?.status || "-";
+                    let liveLink = "";
+
+                    $("#view-more-title").html(response?.data?.title || "-");
+                    $("#view-more-short_description").html(response?.data?.short_description || "-");
+                    $("#view-more-description").html(response?.data?.description || "-");
+                    $("#view-more-goal_amount").html(response?.data?.goal_amount || 0);
+                    $("#view-more-current_amount").html(response?.data?.current_amount || 0);
+                    $("#view-more-donor_count").html(response?.data?.donor_count || 0);
+                    $("#view-more-finished_at").html(moment(response?.data?.finished_at || "").format('DD/MM/YYYY'));
+                    $("#view-more-status").html(status);
+
+                    if (status == "active" || status == "finished") {
+                        $('#view-more-live-link').html(`, click this link for see campaign live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see campaign live preview</a>.`);
+                    }
+
+                    setCategory(response?.data?.category_id);
+                } else {
+                    $('#modal-view-more').modal('hide');
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
+    }
+
+    function setCategory(id) {
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+            type: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $("#view-more-category").html(response?.data?.category);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                    $("#view-more-category").html("-");
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+                $("#view-more-category").html("-");
+            },
+            complete: function() {}
+        });
     }
 </script>
