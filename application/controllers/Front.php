@@ -18,6 +18,7 @@ class Front extends CI_Controller {
 	public function donation()
 	{
 		$data['title'] = "List of Donations";
+
 		$this->load->view('donation', $data);
 	}
 

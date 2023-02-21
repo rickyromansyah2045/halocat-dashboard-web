@@ -150,7 +150,7 @@
 											</div>
 											<div class="progres_box_donasi">
 												<p class="txt_progres_percent">${percentage}%</p>
-												<p class="txt_progres_nominal">Rp ${data[i].goal_amount}</p>
+												<p class="txt_progres_nominal">${formatRupiah(data[i].goal_amount)}</p>
 											</div>
 											<hr style="margin-top: -5px;">
 											<a href="<?= site_url('donate'); ?>/${data[i].id}" target="_blank">

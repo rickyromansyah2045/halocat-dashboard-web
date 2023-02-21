@@ -54,7 +54,7 @@
                 {
                     data: "goal_amount",
                     render: function(data, type, row) {
-                        return data;
+                        return formatRupiah(data);
                     }
                 },
                 {
@@ -587,8 +587,8 @@
                     $("#view-more-title").html(response?.data?.title || "-");
                     $("#view-more-short_description").html(response?.data?.short_description || "-");
                     $("#view-more-description").html(response?.data?.description || "-");
-                    $("#view-more-goal_amount").html(response?.data?.goal_amount || 0);
-                    $("#view-more-current_amount").html(response?.data?.current_amount || 0);
+                    $("#view-more-goal_amount").html(formatRupiah(response?.data?.goal_amount) || 0);
+                    $("#view-more-current_amount").html(formatRupiah(response?.data?.current_amount) || 0);
                     $("#view-more-donor_count").html(response?.data?.donor_count || 0);
                     $("#view-more-finished_at").html(moment(response?.data?.finished_at || "").format('DD/MM/YYYY'));
                     $("#view-more-status").html(status);
