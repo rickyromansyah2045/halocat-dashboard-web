@@ -28,11 +28,17 @@
                                     <br>
                                     <a href="<?= site_url('user/campaigns'); ?>"><?= site_url('user/campaigns'); ?></a>
                                 </p>
-                                <p class="text-gray-700 mb-0">
+                                <p class="text-gray-700 mb-2">
                                     If you want to see your transaction data or history, please go to the following link:
                                     <br>
                                     <a href="<?= site_url('user/transactions'); ?>"><?= site_url('user/transactions'); ?></a>
                                 </p>
+                                <p class="text-gray-700 mb-0">
+                                    If you want to setting your account, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/settings'); ?>"><?= site_url('user/settings'); ?></a>
+                                </p>
+                                
                             </div>
                         </div>
                     </div>
