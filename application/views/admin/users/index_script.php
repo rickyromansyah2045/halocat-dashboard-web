@@ -65,7 +65,7 @@
                 {
                     data: "e_money",
                     render: function(data, type, row) {
-                        return data;
+                        return formatRupiah(data);
                     }
                 },
                 {

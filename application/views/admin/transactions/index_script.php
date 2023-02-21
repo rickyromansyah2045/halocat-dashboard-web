@@ -62,7 +62,7 @@
                 {
                     data: "amount",
                     render: function(data, type, row) {
-                        return data;
+                        return formatRupiah(data);
                     }
                 },
                 {
@@ -185,7 +185,7 @@
             type: 'GET',
             success: function(response) {
                 if (response.success) {
-                    $("#view-more-amount").html(response?.data?.amount || 0);
+                    $("#view-more-amount").html(formatRupiah(response?.data?.amount) || 0);
                     $("#view-more-status").html(response?.data?.status || "-");
                     $("#view-more-code").html(response?.data?.code || "-");
                     $("#view-more-comment").html(response?.data?.comment || "-");
