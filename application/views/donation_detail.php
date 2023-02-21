@@ -44,7 +44,7 @@
 							<p class="txt_progres_percent"><?= $percentage; ?>%</p>
 							<p class="txt_progres_nominal">Rp <?= $data["goal_amount"]; ?></p>
 						</div>
-						<p class="description_donasi"><?= $data['description']; ?></p>
+						<p class="description_donasi"><?= nl2br($data['description']); ?></p>
 						<hr>
 						<h2 class="dd_title_description">Transaction Activity</h2>
 						<div id="wrapper-activity"></div>
