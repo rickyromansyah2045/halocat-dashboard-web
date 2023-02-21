@@ -83,4 +83,13 @@ class Admin extends CI_Controller
 
 		$this->load->view('admin/base', $data);
 	}
+
+	public function wallet()
+	{
+		$data['title'] = "Wallet Management";
+		$data['content'] = $this->load->view('admin/wallet/index', $data, TRUE);
+		$data['custom_script'] = $this->load->view('admin/wallet/index_script', NULL, TRUE);
+
+		$this->load->view('admin/base', $data);
+	}
 }
