@@ -1,5 +1,6 @@
 <script>
     var tabel;
+    var tabelWinnersExclusiveCampaigns;
     var showModalManageImage = true;
 
     $(document).ready(function() {
@@ -194,15 +195,127 @@
             ]
         });
 
-        $('.dataTables_filter input').unbind().bind('keyup',function(e) {
+        $('#dataTable_theCloud .dataTables_filter input').unbind().bind('keyup',function(e) {
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel.search(this.value).draw();
-                    empty = true;
+                        tabel.search(this.value).draw();
+                        empty = true;
                     }
-                }else{
+                } else {
                     tabel.search(this.value).draw();
+                    empty = false;
+                }
+            }
+        });
+
+        tabelWinnersExclusiveCampaigns = $('#dataTable_theCloud_exclusive_campaigns').DataTable({
+            order: [],
+            stateSave: false,
+            processing: true,
+            serverSide: true,
+            responsive: true,
+            pageLength: 20,
+            searchDelay: 500,
+            language: {
+                lengthMenu: "_MENU_"
+            },
+            ajax: {
+                url: "<?= $_ENV['API_URL']; ?>/admin/datatables/campaigns/exclusive",
+                type: 'GET',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                },
+                error: function(xhr, error, code) {
+                    $('#dataTable_theCloud_exclusive_campaigns_processing').hide();
+                    $('#dataTable_theCloud_exclusive_campaigns > tbody').html(`<tr><td colspan="6" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
+                }
+            },
+            columnDefs: [{
+                targets: [0, 5],
+                searchable: false,
+                orderable: false
+            }],
+            lengthMenu: [
+                [10, 20, 50, 100, 200, 500],
+                [10, 20, 50, 100, 200, 500]
+            ],
+            drawCallback: function(_) {
+                $('.dataTables_filter input').attr('placeholder','Type and enter...');
+            },
+            initComplete: function(_, _) {},
+            columns: [
+                {
+                    data: "no",
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                },
+                {
+                    data: "campaign_id",
+                    render: function(data, type, row) {
+                        return `(ID ${data}) ${row.campaign_name}`;
+                    }
+                },
+                {
+                    data: "winner_user_id",
+                    render: function(data, type, row) {
+                        return `(ID ${data}) ${row.winner_user_name}`;
+                    }
+                },
+                {
+                    data: "reward",
+                    render: function(data, type, row) {
+                        if ((row.is_reward_money)) {
+                            return `(Reward Are Money) ${data}`;
+                        }
+                        return `(Reward Are Not Money) ${data}`;
+                    }
+                },
+                {
+                    data: "is_paid_off",
+                    render: function(data, type, row) {
+                        if (data == "1") {
+                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
+                        }
+                        return `<span class="badge badge-pill badge-dark">No, Please Process!</span>`;
+                    }
+                },
+                {
+                    data: "id",
+                    render: function(data, type, row) {
+                        if (row.is_paid_off == "1") {
+                            return "-";
+                        }
+                        return `
+                            <span class="dropdown">
+                                <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Actions&nbsp;
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
+                                    <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
+                                        <div class="dropdown-item-icon">
+                                            <i class="fa fa-check fa-fw"></i>
+                                        </div>
+                                        Set as Paid Off
+                                    </a>
+                                </div>
+                            </span>
+                        `;
+                    }
+                }
+            ]
+        });
+
+        $('#dataTable_theCloud_exclusive_campaigns .dataTables_filter input').unbind().bind('keyup',function(e) {
+            if (e.keyCode == 13 || this.value == '') {
+                if (this.value == '') {
+                    if (!empty) {
+                        tabelWinnersExclusiveCampaigns.search(this.value).draw();
+                        empty = true;
+                    }
+                } else {
+                    tabelWinnersExclusiveCampaigns.search(this.value).draw();
                     empty = false;
                 }
             }
