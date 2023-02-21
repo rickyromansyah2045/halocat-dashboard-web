@@ -19,6 +19,7 @@
         </div>
     </div>
 </header>
+
 <div class="container mt-n10">
     <div class="card mb-4">
         <div class="card-header">Data Campaigns</div>
@@ -34,6 +35,29 @@
                             <th style="width: 85px;">Images</th>
                             <th style="width: 65px;">Exclusive</th>
                             <th style="width: 110px;">Status</th>
+                            <th style="width: 95px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header">Winners Exclusive Campaigns</div>
+        <div class="card-body">
+            <div class="datatable">
+                <table class="table table-bordered table-hover" id="dataTable_theCloud_exclusive_campaigns" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="width: 45px;">No</th>
+                            <th>Campaign</th>
+                            <th>User</th>
+                            <th>Reward</th>
+                            <th>Paid Off</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
