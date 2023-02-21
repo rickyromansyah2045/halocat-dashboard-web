@@ -55,4 +55,13 @@ class User extends CI_Controller
 
 		$this->load->view('user/base', $data);
 	}
+
+	public function wallet()
+	{
+		$data['title'] = "Wallet Management";
+		$data['content'] = $this->load->view('user/wallet/index', $data, TRUE);
+		$data['custom_script'] = $this->load->view('user/wallet/index_script', NULL, TRUE);
+
+		$this->load->view('user/base', $data);
+	}
 }

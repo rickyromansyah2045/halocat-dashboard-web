@@ -21,6 +21,10 @@
                     <div class="nav-link-icon"><i data-feather="settings"></i></div>
                     Account Setting
                 </a>
+                <a class="nav-link" href="<?= base_url('user/wallet'); ?>">
+                    <div class="nav-link-icon"><i data-feather="pocket"></i></div>
+                    Wallet Management
+                </a>
             </div>
         </div>
         <div class="sidenav-footer">
