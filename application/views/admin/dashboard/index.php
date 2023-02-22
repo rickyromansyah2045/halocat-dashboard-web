@@ -21,7 +21,8 @@
                         <div class="col-xl-8 col-xxl-12">
                             <div class="text-center text-xl-left text-xxl-center px-4 mb-4 mb-xl-0 mb-xxl-4">
                             <h1 class="text-primary">Welcome to The Cloud Donations!</h1>
-                                <p class="text-gray-700 mb-2">Set Aside Your Money to Help Others Who Are In Need!</p>
+                                <p class="text-gray-700 mb-0">Set Aside Your Money to Help Others Who Are In Need!</p>
+                                <div id="reward-notification"></div>
                             </div>
                         </div>
                         <div class="col-xl-4 col-xxl-12 text-center"></div>
