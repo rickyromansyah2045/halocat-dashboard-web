@@ -1068,7 +1068,91 @@
     }
 
     function setAsPaidOff(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: 'Yes',
+            preConfirm: () => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${id}`,
+                    type: 'GET',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            let set_id = response?.data?.id || "";
+                            let set_campaign_id = response?.data?.campaign_id || "";
+                            let set_is_reward_money = response?.data?.is_reward_money?.toString() || "";
+                            let set_reward = response?.data?.reward || "";
+                            let set_winner_user_id = response?.data?.winner_user_id || "";
 
+                            console.log(response?.data);
+
+                            $.ajax({
+                                url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${set_id}`,
+                                type: 'PUT',
+                                data: JSON.stringify({
+                                    campaign_id: parseInt(id),
+                                    winner_user_id: parseInt(set_winner_user_id),
+                                    is_reward_money: parseInt(set_is_reward_money),
+                                    reward: set_reward,
+                                    is_paid_off: parseInt(1)
+                                }),
+                                contentType: "application/json",
+                                dataType: 'json',
+                                beforeSend: function(xhr) {
+                                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                                },
+                                success: function(response) {
+                                    if (response.success) {
+                                        tabel.ajax.reload(null, false);
+                                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Success',
+                                            text: response.message,
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        });
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            text: response.error
+                                        });
+                                    }
+                                },
+                                error: function(xhr, error, code) {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                                    });
+                                },
+                                complete: function() {}
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
     }
 
     function deleteWinner(id) {
