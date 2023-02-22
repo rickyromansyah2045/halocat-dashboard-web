@@ -31,7 +31,7 @@
 							</select>
 						</div>
 					</div>
-					<button class="dl_btn_search" type="submit" style="margin-top: 25px;">search</button>
+					<button id="btn-search" class="dl_btn_search" type="submit" style="margin-top: 25px;">search</button>
 				</form>
 			</div>
 		</header>
@@ -59,6 +59,8 @@
 
 			$('#form-filter').submit(function(e){
 				e.preventDefault();
+
+				$('#btn-search').html('<i class="fa fa-spinner fa-pulse"></i> SEARCHING ...').addClass('disabled').attr('disabled', 'disabled').css("cursor", "wait");
 
 				// reset
 				gSearch = "";
@@ -199,6 +201,9 @@
 					},
 					complete: function() {
 						gIsProcessing = false;
+						if (gOffset == 0) {
+							$('#btn-search').removeAttr('disabled').removeClass('disabled').html("SEARCH").css("cursor", "pointer");
+						}
 					}
 				});
 			}
