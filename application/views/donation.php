@@ -35,7 +35,7 @@
 				</form>
 			</div>
 		</header>
-		<div class="container mt190">
+		<div class="container mt190" style="min-height: 80vh;">
 			<div class="list_donasi">
 				<div class="row display-flex" id="wrapper-list_donation"></div>
 				<div id="wrapper-load-more" class="row_show_all_donasi" style="margin-top: 10px; display: none;">
@@ -48,63 +48,88 @@
 		<?php $this->load->view('template/footer'); ?>
 	    <?php $this->load->view('template/script'); ?>
 		<script>
-			let search = "";
-			let category_id = "";
-			let limit = "9";
-			let offset = "0";
-			let sortBy = "";
-			let orderBy = "id";
-			let orderType = "DESC";
+			let gSearch = "";
+			let gCategory = "";
+			let gLimit = "9";
+			let gOffset = "0";
+			let gSortBy = "";
+			let gOrderBy = "id";
+			let gOrderType = "DESC";
+			let gIsProcessing = false;
 
 			$('#form-filter').submit(function(e){
 				e.preventDefault();
 
-				search = $('#filter-search').val();
-				sortBy = $('#filter-sort_by').val();
-				category_id = $('#filter-category_id').val();
+				// reset
+				gSearch = "";
+				gCategory = "";
+				gLimit = "9";
+				gOffset = "0";
+				gSortBy = "";
+				gOrderBy = "id";
+				gOrderType = "DESC";
 
-				if (sortBy != "") {
-					switch (sortBy) {
+				gSearch = $('#filter-search').val();
+				gSortBy = $('#filter-sort_by').val();
+				gCategory = $('#filter-category_id').val();
+
+				if (gSortBy != "") {
+					switch (gSortBy) {
 						case "newest":
-							orderBy = "id";
-							orderType = "DESC";
+							gOrderBy = "id";
+							gOrderType = "DESC";
 							break;
 						case "oldest":
-							orderBy = "id";
-							orderType = "ASC";
+							gOrderBy = "id";
+							gOrderType = "ASC";
 							break;
 						case "biggest_income":
-							orderBy = "current_amount";
-							orderType = "DESC";
+							gOrderBy = "current_amount";
+							gOrderType = "DESC";
 							break;
 						case "smallest_income":
-							orderBy = "current_amount";
-							orderType = "ASC";
+							gOrderBy = "current_amount";
+							gOrderType = "ASC";
 							break;
 						default:
 							break;
 					}
 				}
 
-				newRequest(search, category_id, limit, offset, orderBy, orderType);
+				$('#wrapper-load-more').hide();
+				newRequest(gSearch, gCategory, gLimit, gOffset, gOrderBy, gOrderType);
 			});
 
-			function newRequest(search = "", category_id = "", limit = "9", offset = "0", orderBy = "id", orderType = "DESC") {
+			function newRequest(search = "", category = "", limit = "9", offset = "0", orderBy = "id", orderType = "DESC") {
+				if (gIsProcessing) {
+					return
+				}
+
+				gIsProcessing = true;
+				gSearch = search;
+				gCategory = category;
+				gLimit = limit;
+				gOffset = offset;
+				gOrderBy = orderBy;
+				gOrderType = orderType;
+
 				let query = "?";
 
 				if (search != "") {
 					query += `search=${search}`;
 				}
 
-				if (category_id != "") {
-					query += (query == "?" ? "" : "&") + `category=${category_id}`;
+				if (category != "") {
+					query += (query == "?" ? "" : "&") + `category=${category}`;
 				}
 
-				query += (query == "?" ? "" : "&") + `limit=${limit}&order_by=${orderBy}&order_type=${orderType}`;
+				query += (query == "?" ? "" : "&") + `limit=${limit}&offset=${offset}&order_by=${orderBy}&order_type=${orderType}`;
 
 				query += '&status=active';
 
-				$('#wrapper-list_donation').html('');
+				if (offset == 0) {
+					$('#wrapper-list_donation').html('');
+				}
 
 				$.ajax({
 					url: `<?= $_ENV['API_URL']; ?>/campaigns${query}`,
@@ -117,8 +142,11 @@
 							let percentage = 0;
 							let description = '';
 
-							if (data.length >= 8) {
+							if (data.length >= limit) {
 								$('#wrapper-load-more').show();
+								$('#btn-load-more').removeAttr('disabled').removeClass('disabled').html("LOAD MORE").css("cursor", "pointer");
+							} else {
+								$('#wrapper-load-more').hide();
 							}
 
 							for (let i = 0; i < data.length; i++) {
@@ -168,6 +196,9 @@
 					},
 					error: function(xhr, error, code) {
 						console.log(xhr, error, code);
+					},
+					complete: function() {
+						gIsProcessing = false;
 					}
 				});
 			}
@@ -193,7 +224,8 @@
 			});
 
 			$('#btn-load-more').click(function(){
-
+				$('#btn-load-more').html('<i class="fa fa-spinner fa-pulse"></i> FETCHING DATA ...').addClass('disabled').attr('disabled', 'disabled').css("cursor", "wait");
+				newRequest(gSearch, gCategory, gLimit, parseInt(gOffset)+9, gOrderBy, gOrderType);
 			});
 		</script>
 	</body>
