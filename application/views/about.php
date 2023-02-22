@@ -10,18 +10,18 @@
 		</header>
 		<div class="container paddingt100">
 			<div class="row">
-				<div class="col-md-5">
-					<img src="https://i.pinimg.com/564x/75/78/c5/7578c533f1fef9d90d2e8eade020484b.jpg" style="max-width: 100%; border-radius: 10px;">
+				<div class="col-lg-5">
+					<img src="https://i.pinimg.com/564x/75/78/c5/7578c533f1fef9d90d2e8eade020484b.jpg" class="img-about-team">
 				</div>
-				<div class="col-md-7">
-					<p style="margin-bottom: 18px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 15px;line-height: 125%;text-align: justify;color: #000000;">Despite the growing popularity of web donations, the process of making a donation can still be cumbersome, particularly for those who prefer to donate anonymously. Additionally, many donation platforms require personal information such as name, email, and address, which may discourage potential donors who value their privacy. Furthermore, the current pandemic has led to an increase in online donations, which has put a strain on many non-profit organizations that lack the resources to manage and process these donations efficiently.</p>
-					<p style="margin-bottom: 18px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 15px;line-height: 125%;text-align: justify;color: #000000;">"The Cloud Donation" proposes a cloud-based donation platform that leverages the latest technologies to simplify the donation process and provide increased anonymity and security for donors. The platform will allow donors to make a donation anonymously without the need for personal information. Donors will be able to choose from various payment options, including credit card, bank transfer, or mobile payment. The platform will be designed to be user-friendly, secure, and easily accessible on any device.</p>
-					<p style="margin-bottom: 18px;font-family: 'Source Sans Pro';font-style: normal;font-weight: 400;font-size: 15px;line-height: 125%;text-align: justify;color: #000000;">"By leveraging cloud technologies and innovative features, the platform can help bridge the gap between donors and non-profit organizations, enabling more effective and efficient charitable giving.</p>
+				<div class="col-lg-7">
+					<p class="desc-about">Despite the growing popularity of web donations, the process of making a donation can still be cumbersome, particularly for those who prefer to donate anonymously. Additionally, many donation platforms require personal information such as name, email, and address, which may discourage potential donors who value their privacy. Furthermore, the current pandemic has led to an increase in online donations, which has put a strain on many non-profit organizations that lack the resources to manage and process these donations efficiently.</p>
+					<p class="desc-about">"The Cloud Donation" proposes a cloud-based donation platform that leverages the latest technologies to simplify the donation process and provide increased anonymity and security for donors. The platform will allow donors to make a donation anonymously without the need for personal information. Donors will be able to choose from various payment options, including credit card, bank transfer, or mobile payment. The platform will be designed to be user-friendly, secure, and easily accessible on any device.</p>
+					<p class="desc-about">"By leveraging cloud technologies and innovative features, the platform can help bridge the gap between donors and non-profit organizations, enabling more effective and efficient charitable giving.</p>
 				</div>
 			</div>
-			<div class="headline_donasi" style="margin-top: 100px;height: 83px;padding: 0px;">
+			<div class="headline_donasi meet-our-team-header">
 				<p class="txt_list_donasi">Meet Our Team</p>
-				<span class="txt_sub_list_donasi">
+				<span class="txt_sub_list_donasi txt_sub_meet_our_team">
 					Meet our professional team, our team is very solid and strong
 				</span>
 			</div>
