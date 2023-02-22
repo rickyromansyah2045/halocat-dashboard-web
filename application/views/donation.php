@@ -152,10 +152,18 @@
 							}
 
 							for (let i = 0; i < data.length; i++) {
+								let exclusive = '';
+
 								if (data[i].images.length > 0) {
 									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
 								} else {
 									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/img/default_image.png'); ?>" alt="">`;
+								}
+
+								if (data[i].is_exclusive) {
+									exclusive = `<hr><div style="font-size: 17px; margin-top: -7.5px !important;" class="mt-0 mb-2">
+										<span class="badge badge-dark" style="display: block;">EXCLUSIVE CAMPAIGN</span>
+									</div>`;
 								}
 
 								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
@@ -173,6 +181,7 @@
 										<div class="card-body pad0">
 											<p class="txt_judul_donasi" style="cursor: help;"${tooltip}>${data[i].short_description}</p>
 											<p class="txt_sub_judul_donasi">${description}</p>
+											${exclusive}
 										</div>
 										<div class="card-footer" style="background-color: transparent; margin: 0; padding: 0; padding-top: 10px;">
 											<div class="progress mb10">
