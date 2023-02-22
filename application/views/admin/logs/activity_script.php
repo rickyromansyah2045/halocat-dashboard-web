@@ -88,5 +88,7 @@
                 }
             }
         });
+
+        tabel.order([4, 'DESC']).draw();
     });
 </script>
