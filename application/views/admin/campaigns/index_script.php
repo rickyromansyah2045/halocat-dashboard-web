@@ -195,7 +195,7 @@
             ]
         });
 
-        $('#dataTable_theCloud .dataTables_filter input').unbind().bind('keyup',function(e) {
+        $('#dataTable_theCloud_wrapper .dataTables_filter input').unbind().bind('keyup',function(e) {
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
@@ -313,7 +313,7 @@
             ]
         });
 
-        $('#dataTable_theCloud_exclusive_campaigns .dataTables_filter input').unbind().bind('keyup',function(e) {
+        $('#dataTable_theCloud_exclusive_campaigns_wrapper .dataTables_filter input').unbind().bind('keyup',function(e) {
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
