@@ -42,7 +42,7 @@
 						</div>
 						<div class="progres_box_donasi">
 							<p class="txt_progres_percent"><?= $percentage; ?>%</p>
-							<p class="txt_progres_nominal">Rp <?= $data["goal_amount"]; ?></p>
+							<p class="txt_progres_nominal">Rp <?= nomor($data["goal_amount"]); ?></p>
 						</div>
 						<p class="description_donasi"><?= nl2br($data['description']); ?></p>
 						<hr>
@@ -291,7 +291,7 @@
 							$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
 								<div class="card-body">
 									<p class="card-text">
-										<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${data[i].amount}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+										<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
 									</p>
 								</div>
 							</div>`);
@@ -334,7 +334,7 @@
 								$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
 									<div class="card-body">
 										<p class="card-text">
-											<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${data[i].amount}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+											<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
 										</p>
 									</div>
 								</div>`);
