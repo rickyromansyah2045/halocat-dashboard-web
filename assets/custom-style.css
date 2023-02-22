@@ -859,6 +859,33 @@
     text-decoration: none;
 }
 
+@media (max-width: 1200px) {
+    .footer_home * {
+        text-align: center !important;
+    }
+    .box_footer_description {
+        display: block;
+    }
+    .txt_footer_brand {
+        margin-top: 20px;
+    }
+    .footer_description_2 {
+        margin-bottom: 0;
+        margin-right: 0 !important;
+    }
+    .head_menu_footer {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .wrapper-link_socmed_footer {
+        margin-top: 20px;
+    }
+    .footer_home > .container {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+}
+
 @media (max-width: 992px) {
     .navbar-nav a {
         text-align: center;

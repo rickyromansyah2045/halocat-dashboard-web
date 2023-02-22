@@ -1,7 +1,7 @@
 <footer class="footer_home">
     <div class="container" style="padding: 100px 15px 100px;">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <div class="box_footer_description">
                     <a class="navbar-brand" href="#">
                         <img class="logo_brand" src="<?= base_url('assets/img/logo_cloud2.png')?>">
@@ -11,11 +11,11 @@
                 <p class="footer_description">
                     Set Aside Your Money to Help Others Who Are In Need!
                 </p>
-                <p style="color: white; margin-right: 70px !important;">
+                <p style="color: white; margin-right: 70px" class="footer_description_2">
                     Help others who need your help, make others happy with your help, show your kindness to others, always contribute to spreading goodness in this world! Lets make a change!
                 </p>
             </div>
-            <div class="col-md-2">
+            <div class="col-xl-2">
                 <p class="head_menu_footer">EXPLORE</p>
                 <div class="box_sub_menu_footer">
                     <?php if ($this->session->has_userdata('id')): ?>
@@ -41,14 +41,14 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-xl-4">
                 <p class="head_menu_footer">OFFICE & SOCIAL MEDIA</p>
                 <div class="dflex">
                     <span class="address_footer">
                         Jl. Ardio, Ciwaringin Tanah Sewa RT 05 RW 01, Kel. Cibogor, Kec. Bogor Tengah, Jawa Barat, Indonesia 16124.
                     </span>
                 </div>
-                <div>
+                <div class="wrapper-link_socmed_footer">
                     <a class="link_socmed_footer" data-toggle="tooltip" data-placement="top" title="Saleh`s Linkedin" href="https://www.linkedin.com/in/muhammad-saleh-solahudin-8444171b2" targe="_blank">
                         <i class="fab fa-linkedin fa-fw" style="color: white;"></i>
                     </a>
