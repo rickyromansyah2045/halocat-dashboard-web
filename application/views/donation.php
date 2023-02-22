@@ -50,8 +50,8 @@
 		<script>
 			let search = "";
 			let category_id = "";
-			let limit = "8";
-			let offset = "8";
+			let limit = "9";
+			let offset = "0";
 			let sortBy = "";
 			let orderBy = "id";
 			let orderType = "DESC";
@@ -89,7 +89,7 @@
 				newRequest(search, category_id, limit, offset, orderBy, orderType);
 			});
 
-			function newRequest(search = "", category_id = "", limit = "8", offset = "0", orderBy = "id", orderType = "DESC") {
+			function newRequest(search = "", category_id = "", limit = "9", offset = "0", orderBy = "id", orderType = "DESC") {
 				let query = "?";
 
 				if (search != "") {
