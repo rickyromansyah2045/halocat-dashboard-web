@@ -48,6 +48,11 @@
 						<hr>
 						<h2 class="dd_title_description">Transaction Activity</h2>
 						<div id="wrapper-activity"></div>
+						<div id="wrapper-load-more" class="row_show_all_donasi" style="margin-top: 20px; margin-bottom: 0; display: none;">
+							<button id="btn-load-more" class="btn_see_all_donasi">
+								load more
+							</button>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-5">
@@ -88,6 +93,8 @@
 		<?php $this->load->view('template/script'); ?>
 		<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?= $_ENV['MIDTRANS_CLIENT_KEY']; ?>"></script>
 		<script>
+			let offset = 0;
+
 			<?php if ($this->session->has_userdata('id')): ?>
 				$('#form-donate').submit(function(e){
 					e.preventDefault();
@@ -247,7 +254,7 @@
 			<?php endif; ?>
 
 			$.ajax({
-				url: "<?= $_ENV['API_URL']; ?>/transactions/campaigns/<?= $data['id']; ?>?status=paid",
+				url: "<?= $_ENV['API_URL']; ?>/transactions/campaigns/<?= $data['id']; ?>?status=paid&limit=5&order_by=id&order_type=DESC",
 				type: 'GET',
 				success: function(response) {
 					if (response.success) {
@@ -256,6 +263,11 @@
 							$('#wrapper-activity').html("No transaction yet for this campaign donation.");
 							return
 						}
+
+						if (data.length >= 5) {
+							$('#wrapper-load-more').show();
+						}
+
 						for (let i = 0; i < data.length; i++) {
 							let words = '.';
 							if (data[i].comment.length > 0) {
@@ -269,11 +281,57 @@
 								</div>
 							</div>`);
 						}
+
+						offset += 5;
 					}
 				},
 				error: function(xhr, error, code) {
 					console.log(xhr, error, code);
 				}
+			});
+
+			$('#btn-load-more').click(function(){
+				$('#btn-load-more').html('<i class="fa fa-spinner fa-pulse"></i> FETCHING DATA ...').addClass('disabled').attr('disabled', 'disabled').css("cursor", "wait");
+				$.ajax({
+					url: `<?= $_ENV['API_URL']; ?>/transactions/campaigns/<?= $data['id']; ?>?status=paid&limit=5&offset=${offset}&order_by=id&order_type=DESC`,
+					type: 'GET',
+					success: function(response) {
+						if (response.success) {
+							let data = response.data;
+
+							if (data.length == 0 && offset == 0) {
+								$('#wrapper-activity').html("No transaction yet for this campaign donation.");
+								return
+							}
+
+							if (data.length >= 5) {
+								$('#wrapper-load-more').show();
+								$('#btn-load-more').removeAttr('disabled').removeClass('disabled').html("LOAD MORE").css("cursor", "pointer");
+							} else {
+								$('#wrapper-load-more').hide();
+							}
+
+							for (let i = 0; i < data.length; i++) {
+								let words = '.';
+								if (data[i].comment.length > 0) {
+									words = ` and sent the words: ${data[i].comment}${data[i].comment[data[i].comment.length] == "." ? "" : "."}`;
+								}
+								$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
+									<div class="card-body">
+										<p class="card-text">
+											<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${data[i].amount}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+										</p>
+									</div>
+								</div>`);
+							}
+
+							offset += 5;
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr, error, code);
+					}
+				});
 			});
 		</script>
 	</body>
