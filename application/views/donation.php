@@ -38,7 +38,7 @@
 		<div class="container mt190">
 			<div class="list_donasi">
 				<div class="row display-flex" id="wrapper-list_donation"></div>
-				<div id="wrapper-load-more" class="row row_show_all_donasi" style="margin-top: 10px; display: none;">
+				<div id="wrapper-load-more" class="row_show_all_donasi" style="margin-top: 10px; display: none;">
 					<button class="btn_see_all_donasi">
 						load more
 					</button>

@@ -29,7 +29,7 @@
 				</div>
 				<div class="list_donasi">
 					<div class="row display-flex" id="wrapper-list_donation"></div>
-					<div class="row row_show_all_donasi" style="margin-top: 10px;">
+					<div class="row_show_all_donasi" style="margin-top: 10px;">
 						<div id="btn-see-all" style="display: none;">
 							<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
 								<button class="btn_see_all_donasi">
@@ -213,7 +213,7 @@
 				});
 
 				$.ajax({
-					url: "<?= $_ENV['API_URL']; ?>/campaigns?status=active&limit=8&order_by=id&order_type=DESC",
+					url: "<?= $_ENV['API_URL']; ?>/campaigns?status=active&limit=9&order_by=id&order_type=DESC",
 					type: 'GET',
 					success: function(response) {
 						if (response.success) {
@@ -223,7 +223,7 @@
 							let percentage = 0;
 							let description = '';
 
-							if (data.length >= 8) {
+							if (data.length >= 9) {
 								$('#btn-see-all').show();
 							}
 
