@@ -16,7 +16,7 @@
                     if ((response?.data?.e_money || 0) > 0) {
                         $('#card-body-withdrawal').html(`<form id="form-withdraw"><div class="form-group">
                             <label for="amount">Amount</label>
-                            <input class="form-control" id="amount" type="number">
+                            <input class="form-control" id="amount" type="number" max="${response?.data?.e_money}">
                         </div>
                         <div class="form-group">
                             <label for="information">Withdrawal Information</label>
