@@ -14,7 +14,7 @@
 </header>
 <div class="container mt-n10">
     <div class="row">
-        <div class="col-xxl-4 col-xl-12 mb-4">
+        <div class="col-12 mb-4">
             <div class="card h-100">
                 <div class="card-body h-100 d-flex flex-column justify-content-center py-5 py-xl-4">
                     <div class="row align-items-center">
