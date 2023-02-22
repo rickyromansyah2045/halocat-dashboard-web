@@ -38,7 +38,7 @@
                                     <br>
                                     <a href="<?= site_url('user/settings'); ?>"><?= site_url('user/settings'); ?></a>
                                 </p>
-                                
+                                <div id="reward-notification"></div>
                             </div>
                         </div>
                     </div>

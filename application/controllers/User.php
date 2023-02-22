@@ -25,6 +25,7 @@ class User extends CI_Controller
 	{
 		$data['title'] = "Dashboard";
         $data['content'] = $this->load->view('user/dashboard/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('user/dashboard/index_script', NULL, TRUE);
 
 		$this->load->view('user/base', $data);
 	}
