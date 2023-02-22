@@ -15,7 +15,7 @@
 							</a>
 						</div>
 						<div class="col-md-6 padl45">
-							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-source="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="" class="img_home_page">
+							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-source="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="img_home_page">
 						</div>
 					</div>
 				</div>
@@ -90,43 +90,104 @@
 			</section>
 			<section class="slider_review mb50">
 				<div id="demo" class="carousel slide" data-ride="carousel">
-					<ul class="carousel-indicators">
-						<li data-target="#demo" data-slide-to="0" class="active"></li>
-						<li data-target="#demo" data-slide-to="1"></li>
-						<li data-target="#demo" data-slide-to="2"></li>
-					</ul>
-
 					<!-- The slideshow -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img data-source="<?= base_url('assets/img/test1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-							<div class="carousel-caption">
-								<h3>Los Angeles</h3>
-								<p>We had such a great time in LA!</p>
+							<div class="box_review">
+								<div class="sub_box_review">
+									<div class="box_review_left">
+										<div class="box_judul_review">
+											<p class="txt_judul_review">Berita tentang Sambo</p>
+										</div>
+										<div class="desription_review">
+											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
+rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
+Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
+rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
+Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+										</div>
+									</div>
+									<div class="box_review_right">
+										
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img data-source="<?= base_url('assets/img/test2.jpg')?>" alt="Chicago" width="1100" height="500">
-							<div class="carousel-caption">
-								<h3>Los Angeles</h3>
-								<p>We had such a great time in LA!</p>
+							<div class="box_review">
+								<div class="sub_box_review">
+									<div class="box_review_left">
+										<div class="box_judul_review">
+											<p class="txt_judul_review">Berita tentang Real Madrid</p>
+										</div>
+										<div class="desription_review">
+											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
+rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
+Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio. Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+										</div>
+									</div>
+									<div class="box_review_right">
+										
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img data-source="<?= base_url('assets/img/test1.jpg')?>" alt="New York" width="1100" height="500">
-							<div class="carousel-caption">
-								<h3>Los Angeles</h3>
-								<p>We had such a great time in LA!</p>
+							<div class="box_review">
+								<div class="sub_box_review">
+									<div class="box_review_left">
+										<div class="box_judul_review">
+											<p class="txt_judul_review">Berita tentang Liverpool</p>
+										</div>
+										<div class="desription_review">
+											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
+rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
+Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+										</div>
+									</div>
+									<div class="box_review_right">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="box_review">
+								<div class="sub_box_review">
+									<div class="box_review_left">
+										<div class="box_judul_review">
+											<p class="txt_judul_review">Berita tentang Hotelmurah</p>
+										</div>
+										<div class="desription_review">
+											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
+rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
+Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
+ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+										</div>
+									</div>
+									<div class="box_review_right">
+										
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#demo" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
+					<a class="carousel-control-prev" data-target="#demo" data-slide="prev" style="color: black;width: auto;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+						 	<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+						</svg>
 					</a>
-					<a class="carousel-control-next" href="#demo" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
+					<a class="carousel-control-next" data-target="#demo" data-slide="next" style="color: black;width: auto;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+						  	<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+						</svg>
 					</a>
 				</div>
 			</section>

@@ -152,6 +152,61 @@
     line-height: 30px;
 }
 
+.box_review {
+    width: 950px;
+    min-height: 410px;
+    margin: auto;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 35px;
+}
+
+.sub_box_review {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_review_left {
+    width: 500px;
+}
+
+.txt_judul_review {
+    margin: 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 52px;
+    color: #000000;
+}
+
+.txt_description_review {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: #9088A7;
+}
+
+.box_review_right {
+    width: 300px;
+    height: 302px;
+    background: #C0C0C0;
+    border: 1px solid #000000;
+    border-radius: 35px;
+}
+
+.box_judul_review {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px 0px;
+}
+
+.desription_review {
+    margin-top: 30px;
+}
+
 .row_list_donasi {
     /* background-color: #E2632B; */
     display: flex;
