@@ -39,7 +39,7 @@
 			<div class="list_donasi">
 				<div class="row display-flex" id="wrapper-list_donation"></div>
 				<div id="wrapper-load-more" class="row_show_all_donasi" style="margin-top: 10px; display: none;">
-					<button class="btn_see_all_donasi">
+					<button id="btn-load-more" class="btn_see_all_donasi">
 						load more
 					</button>
 				</div>
@@ -190,6 +190,10 @@
 						console.log(xhr, error, code);
 					}
 				});
+			});
+
+			$('#btn-load-more').click(function(){
+
 			});
 		</script>
 	</body>
