@@ -293,11 +293,17 @@
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
+                                    <a class="dropdown-item" href="javascript:setAsPaidOff(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-check fa-fw"></i>
                                         </div>
                                         Set as Paid Off
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:deleteWinner(${data})">
+                                        <div class="dropdown-item-icon">
+                                            <i class="fa fa-trash fa-fw"></i>
+                                        </div>
+                                        Delete
                                     </a>
                                 </div>
                             </span>
@@ -381,6 +387,7 @@
                 success: function(response) {
                     if (response.success) {
                         tabel.ajax.reload(null, false);
+                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                         Swal.fire({
                             icon: 'success',
                             title: 'Success',
@@ -472,6 +479,7 @@
             success: function(response) {
                 if (response.success) {
                     tabel.ajax.reload(null, false);
+                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -522,6 +530,7 @@
                     success: function(response) {
                         if (response.success) {
                             tabel.ajax.reload(null, false);
+                            tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',
@@ -751,6 +760,7 @@
             success: function(response) {
                 if (response.success) {
                     tabel.ajax.reload(null, false);
+                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -795,7 +805,7 @@
             url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
             type: 'GET',
             beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearera <?= $this->session->userdata('token'); ?>");
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
             },
             success: function(response) {
                 if (response.success) {
@@ -817,6 +827,7 @@
                                 success: function(response) {
                                     if (response.success) {
                                         tabel.ajax.reload(null, false);
+                                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                                         Swal.fire({
                                             icon: 'success',
                                             title: 'Success',
@@ -867,7 +878,7 @@
             url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
             type: 'GET',
             beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearera <?= $this->session->userdata('token'); ?>");
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
             },
             success: function(response) {
                 if (response.success) {
@@ -926,6 +937,7 @@
             success: function(response) {
                 if (response.success) {
                     tabel.ajax.reload(null, false);
+                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -1053,5 +1065,58 @@
             },
             complete: function() {}
         });
+    }
+
+    function setAsPaidOff(id) {
+
+    }
+
+    function deleteWinner(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: () => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            tabel.ajax.reload(null, false);
+                            tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
     }
 </script>
