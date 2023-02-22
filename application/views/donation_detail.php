@@ -76,7 +76,7 @@
 						<?php else: ?>
 							<form id="form-donate">
 								<div class="form-group mb20">
-									<label class="lbl_form_donation mb0 pb20">Form Donation</label>
+									<label class="lbl_form_donation mb0 pb20"><b>Form Donation</b></label>
 									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write your words, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
 								</div>
 								<div class="form-group mb20">
@@ -85,6 +85,21 @@
 								<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
 							</form>
 						<?php endif; ?>
+					</div>
+					<div class="box_donation mt-4">
+						<h5><b>Exclusive Campaign Information</b></h5>
+						<hr>
+						<p>
+							This campaign is an exclusive campaign, you can get a prize at the end of the campaign, the winner will be randomized by the system, the conditions for participating in order to get a prize are that you only need to donate any amount to this campaign.
+						</p>
+						<p>
+							<b>Reward:</b><br>
+							<span id="reward"></span>
+						</p>
+						<p class="mb-0">
+							<b>Winner:</b><br>
+							<span id="winner"></span>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -331,6 +346,54 @@
 					error: function(xhr, error, code) {
 						console.log(xhr, error, code);
 					}
+				});
+			});
+
+			$(function(){
+				$.ajax({
+					url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/<?= $this->uri->segment(2); ?>`,
+					type: 'GET',
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+					},
+					success: function(response) {
+						if (response.success) {
+							let winner = response.data.winner_user_id;
+
+							if (response.data.is_reward_money) {
+								// number format here
+								$("#reward").html(response.data.reward);
+							} else {
+								$("#reward").html(response.data.reward);
+							}
+
+							if (winner > 0) {
+								$.ajax({
+									url: `<?= $_ENV['API_URL']; ?>/users/name/${response.data.winner_user_id}`,
+									type: 'GET',
+									success: function(response) {
+										if (response.success) {
+											$('#winner').html(response.data.name);
+										} else {
+											console.log(response.error);
+										}
+									},
+									error: function(xhr, error, code) {
+										console.log(xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`);
+									},
+									complete: function() {}
+								});
+							} else {
+								$('#winner').html("Will be shown after the campaign is finished.");
+							}
+						} else {
+							console.log(response.error);
+						}
+					},
+					error: function(xhr, error, code) {
+						console.log(xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`);
+					},
+					complete: function() {}
 				});
 			});
 		</script>
