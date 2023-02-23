@@ -15,9 +15,7 @@
                                 </div>
                                 <form id="form-reset-password" class="user">
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address...">
+                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
                                     </div>
                                     <button class="btn btn-primary btn-user btn-block">
                                         Reset Password
