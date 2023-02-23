@@ -86,7 +86,7 @@
 							</form>
 						<?php endif; ?>
 					</div>
-					<div class="box_donation mt-4">
+					<div class="box_donation mt-4" id="card-exclusive-campaign-information" style="display: none;">
 						<h5><b>Exclusive Campaign Information</b></h5>
 						<hr>
 						<p>
@@ -358,6 +358,8 @@
 					},
 					success: function(response) {
 						if (response.success) {
+							$('#card-exclusive-campaign-information').show();
+
 							let winner = response.data.winner_user_id;
 
 							if (response.data.is_reward_money) {
