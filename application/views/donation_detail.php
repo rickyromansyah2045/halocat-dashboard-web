@@ -291,7 +291,7 @@
 							$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
 								<div class="card-body">
 									<p class="card-text">
-										<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+										<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
 									</p>
 								</div>
 							</div>`);
@@ -334,7 +334,7 @@
 								$('#wrapper-activity').append(`<div class="card${i == 0 ? "" : " mt-3"}">
 									<div class="card-body">
 										<p class="card-text">
-											<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated IDR ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
+											<span class="text-capitalize font-weight-bold">${data[i].user_name}</span> donated ${formatRupiah(data[i].amount)}${words} Thank you so much <span class="text-capitalize font-weight-bold">${data[i].user_name}</span>!
 										</p>
 									</div>
 								</div>`);
