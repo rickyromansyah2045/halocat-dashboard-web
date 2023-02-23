@@ -7,7 +7,7 @@
                         Activity Logs
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, similique expedita nulla unde assumenda tempora amet earum? Molestiae magni officia, quibusdam quas alias corrupti voluptas voluptatem. Rerum quidem dolorem ut.
+                        You can see all logs activity on this page.
                     </div>
                 </div>
             </div>
