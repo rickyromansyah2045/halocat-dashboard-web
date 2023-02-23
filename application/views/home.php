@@ -15,7 +15,7 @@
 							</a>
 						</div>
 						<div class="col-md-6 padl45">
-							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-source="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="img_home_page">
+							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-source="<?= base_url('assets/img/home-hero.jpeg'); ?>" class="img_home_page">
 						</div>
 					</div>
 				</div>
