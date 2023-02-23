@@ -60,7 +60,7 @@
                 {
                     data: "current_amount",
                     render: function(data, type, row) {
-                        return data;
+                        return formatRupiah(data);
                     }
                 },
                 {
