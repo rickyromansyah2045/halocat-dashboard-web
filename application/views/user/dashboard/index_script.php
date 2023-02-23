@@ -23,7 +23,7 @@
                             }
 
                             if (data[i].is_reward_money) {
-                                reward = `Rp ${data[i].reward}`;
+                                reward = `${formatRupiah(data[i].reward)}`;
                             } else {
                                 reward = data[i].reward;
                             }
