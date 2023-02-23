@@ -12,7 +12,7 @@
             success: function(response) {
                 if (response.success) {
                     userData = response?.data;
-                    $("#balance").html(response?.data?.e_money || 0);
+                    $("#balance").html(formatRupiah(response?.data?.e_money || 0));
                     if ((response?.data?.e_money || 0) > 0) {
                         $('#card-body-withdrawal').html(`<form id="form-withdraw"><div class="form-group">
                             <label for="amount">Amount</label>
