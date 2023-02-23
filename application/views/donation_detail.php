@@ -31,7 +31,7 @@
 						<hr>
 					<?php else: ?>
 						<div class="dd_highlight_img mb-4">
-							<img src="<?= count($data["images"]) == 0 ? base_url('assets/img/default_image_2.png') : "{$_ENV['API_BASE']}/{$data['images'][0]['file_location']}"; ?>" class="highlight_img" alt="">
+							<img src="<?= count($data["images"]) == 0 ? base_url('assets/img/default_image_small.png') : "{$_ENV['API_BASE']}/{$data['images'][0]['file_location']}"; ?>" class="highlight_img" alt="">
 						</div>
 					<?php endif; ?>
 					<div class="dd_description_donasi">

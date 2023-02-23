@@ -10,7 +10,7 @@
     <body>
         <section class="h-100 w-100" style="box-sizing: border-box; background-color: #1b254e">
             <div class="_404 container mx-auto d-flex align-items-center justify-content-center flex-column" style="font-family: 'Poppins', sans-serif;">
-                <img class="main-img img-fluid" src="<?= base_url('assets/img/empty-404.png'); ?>" alt="">
+                <img class="main-img img-fluid" src="<?= base_url('assets/img/404.png'); ?>" alt="">
                 <div class="text-center w-100">
                     <h1 class="title-text text-white">
                         Opss! Something Missing
