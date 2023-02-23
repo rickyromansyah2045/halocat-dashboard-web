@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</header>
-		<section id="list-donation">
+		<section id="list-donation" style="min-height: 2050px;">
 			<div class="container">
 				<div class="headline_donasi">
 					<p class="txt_list_donasi">List of Donations</p>
