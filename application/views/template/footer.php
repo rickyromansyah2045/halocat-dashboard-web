@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="box_footer_description">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="<?= site_url(); ?>">
                         <img class="logo_brand" src="<?= base_url('assets/img/logo_cloud2.png')?>">
                     </a>
                     <p class="txt_footer_brand">the cloud donation.</p>
