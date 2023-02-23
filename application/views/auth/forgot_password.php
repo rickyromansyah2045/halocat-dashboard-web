@@ -13,15 +13,15 @@
                                     <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
                                     <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
                                 </div>
-                                <form class="user">
+                                <form id="form-reset-password" class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
                                     </div>
-                                    <a href="<?= base_url('auth/login'); ?>" class="btn btn-primary btn-user btn-block">
+                                    <button class="btn btn-primary btn-user btn-block">
                                         Reset Password
-                                    </a>
+                                    </button>
                                 </form>
                                 <hr>
                                 <div class="text-center">
@@ -44,3 +44,12 @@
 </div>
 
 <?php $this->load->view('auth/footer_auth'); ?>
+<script>
+    $('#form-reset-password').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+            icon: 'info',
+            html: "Sorry, the password reset process hasn't been completed, if you really want to reset your password, you can contact the following WhatsApp (WhatsApp/text only): <a href='https://wa.me/628974848270' target='_blank'>+628974848270</a>.<br><br>Thank you very much for understanding!"
+        });
+    });
+</script>
