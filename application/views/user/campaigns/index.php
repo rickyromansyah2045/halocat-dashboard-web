@@ -7,7 +7,7 @@
                         Campaigns
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet.
+                        You can find and manage your campaigns on this page.
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">
