@@ -7,7 +7,7 @@
                         Transactions
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet.
+                        You can find all and manage user transactions on this page.
                     </div>
                 </div>
             </div>
