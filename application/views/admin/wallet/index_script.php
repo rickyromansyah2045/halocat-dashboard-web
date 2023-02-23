@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label for="information">Withdrawal Information</label>
-                            <textarea class="form-control" rows="10" id="information" placeholder="[EXAMPLE]
+                            <textarea class="form-control" rows="8" style="padding-bottom: 24px;" id="information" placeholder="[EXAMPLE]
 
 Hi, i want to make a withdrawal to my bank account, here is my bank account information:
 

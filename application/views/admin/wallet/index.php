@@ -28,6 +28,10 @@
                     <p>
                         You cannot deposit to get an E-Money Balance. E-Money Balance can only get if you become the winner in the exclusive campaign and if the prize is E-Money.
                     </p>
+                    <p>
+                        You will also get an E-Money balance from the campaign you created and if the campaign you created is finished or the target has been reached.
+                    </p>
+                    <hr>
                     <p class="mb-0">
                         E-Money Balance can be used for donations or can also be withdrawal/disbursed into cash.
                     </p>
