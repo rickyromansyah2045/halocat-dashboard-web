@@ -7,7 +7,7 @@
                         Campaigns
                     </h1>
                     <div class="page-header-subtitle">
-                        You can find all and manage campaigns on this page.
+                        You can find and manage campaigns on this page.
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">
