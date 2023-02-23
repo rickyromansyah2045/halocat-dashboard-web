@@ -65,7 +65,7 @@
 							</p>
 							<hr>
 							<p>
-								Collected funds: <?= $data['current_amount']; ?>
+								Collected funds: Rp <?= number_format($data['current_amount'], 0, ",", "."); ?>
 								<br>
 								The number of people who donated: <?= $data['donor_count']; ?>
 							</p>
