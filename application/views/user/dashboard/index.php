@@ -6,7 +6,6 @@
                     <h1 class="page-header-title">
                         Dashboard
                     </h1>
-                    <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                 </div>
             </div>
         </div>
