@@ -111,8 +111,36 @@
 			let offset = 0;
 
 			<?php if ($this->session->has_userdata('id')): ?>
+				let eMoney = 0;
+
+				$.ajax({
+					url: `<?= $_ENV['API_URL']; ?>/users/data`,
+					type: 'GET',
+					beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+					},
+					success: function(response) {
+						if (response.success) {
+							eMoney = response?.data?.e_money;
+						} else {
+							Swal.fire({
+								icon: 'error',
+								text: response.error
+							});
+						}
+					},
+					error: function(xhr, error, code) {
+						Swal.fire({
+							icon: 'error',
+							text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+						});
+					},
+					complete: function() {}
+				});
+
 				$('#form-donate').submit(function(e){
 					e.preventDefault();
+
 					if ($('#donate-amount').val() == "") {
 						Swal.fire({
 							icon: 'warning',
@@ -120,74 +148,155 @@
 						});
 						return
 					}
-					$.ajax({
-						url: "<?= $_ENV['API_URL']; ?>/transactions",
-						method: 'POST',
-						cache: false,
-						data: JSON.stringify({
-							"campaign_id": <?= $data['id']; ?>,
-							"user_id": <?= $this->session->userdata('id'); ?>,
-							"amount": parseInt($('#donate-amount').val()),
-							"comment": $('#donate-comment').val()
-						}),
-						contentType: "application/json",
-						dataType: 'json',
-						beforeSend: function(xhr) {
-							xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-							$('#btn-donate').html('PROCESSING...');
-							$('#btn-donate').prop('disabled', true);
-						},
-						success: function(response) {
-							$('#btn-donate').fadeOut(500);
-							snap.pay(response.data.payment_token, {
-								skipOrderSummary: true,
-								onSuccess: function(result) {
-									$('#form-donate').trigger('reset');
+
+					if (eMoney >= parseInt($('#donate-amount').val())) {
+						Swal.fire({
+							title: 'Want to Use e-Money?',
+							text: `You have e-money worth ${formatRupiah(eMoney)}, want to use it?`,
+							icon: 'info',
+							showCancelButton: true,
+							confirmButtonText: 'Yes',
+							cancelButtonText: 'No'
+						}).then((result) => {
+							if (result.isConfirmed) {
+								Swal.fire({
+									title: 'Transaction on Process',
+									text: `Please wait, your transaction is being processed...`,
+									icon: 'info',
+									showConfirmButton: false,
+									showCancelButton: false
+								});
+								eMoneyTransaction();
+							} else {
+								snapTransaction();
+							}
+						});
+					} else {
+						snapTransaction();
+					}
+
+					function eMoneyTransaction() {
+						$.ajax({
+							url: "<?= $_ENV['API_URL']; ?>/transactions/emoney",
+							method: 'POST',
+							cache: false,
+							data: JSON.stringify({
+								"campaign_id": <?= $data['id']; ?>,
+								"user_id": <?= $this->session->userdata('id'); ?>,
+								"amount": parseInt($('#donate-amount').val()),
+								"comment": $('#donate-comment').val()
+							}),
+							contentType: "application/json",
+							dataType: 'json',
+							beforeSend: function(xhr) {
+								xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+								$('#btn-donate').html('PROCESSING...');
+								$('#btn-donate').prop('disabled', true);
+								$('#btn-donate').fadeOut(500);
+							},
+							success: function(response) {
+								if (response.success) {
 									Swal.fire({
 										icon: 'success',
-										text: result?.status_message || "transaction successfully",
+										title: 'Success',
+										text: response.message,
 										showConfirmButton: false,
-										timer: 3000
+										showCancelButton: false
 									});
 									setTimeout(() => {
 										location.reload();
 									}, 2500);
-								},
-								onPending: function(result) {
-									$('#form-donate').trigger('reset');
-									Swal.fire({
-										icon: 'info',
-										text: result?.status_message || "transaction pending"
-									});
-								},
-								onError: function(result) {
-									$('#form-donate').trigger('reset');
+								} else {
 									Swal.fire({
 										icon: 'error',
-										text: result?.status_message[0] || "transaction error"
-									});
-								},
-								onClose: function() {
-									$('#form-donate').trigger('reset');
-									Swal.fire({
-										icon: 'warning',
-										text: "The payment snap popup closes, the payment transaction is canceled..."
+										text: response.error
 									});
 								}
-							});
-						},
-						error: function(xhr, error, code) {
-							Swal.fire({
-								icon: 'error',
-								text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-							});
-						},
-						complete: function() {
-							$('#btn-donate').removeAttr("disabled").fadeIn(500);
-							$('#btn-donate').prop('disabled', false);
-							$('#btn-donate').html('DONATE NOW');
-						}
-					});
+							},
+							error: function(xhr, error, code) {
+								Swal.fire({
+									icon: 'error',
+									text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+								});
+							},
+							complete: function() {
+								$('#btn-donate').removeAttr("disabled").fadeIn(500);
+								$('#btn-donate').prop('disabled', false);
+								$('#btn-donate').html('DONATE NOW');
+							}
+						});
+					}
+
+					function snapTransaction() {
+						$.ajax({
+							url: "<?= $_ENV['API_URL']; ?>/transactions",
+							method: 'POST',
+							cache: false,
+							data: JSON.stringify({
+								"campaign_id": <?= $data['id']; ?>,
+								"user_id": <?= $this->session->userdata('id'); ?>,
+								"amount": parseInt($('#donate-amount').val()),
+								"comment": $('#donate-comment').val()
+							}),
+							contentType: "application/json",
+							dataType: 'json',
+							beforeSend: function(xhr) {
+								xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+								$('#btn-donate').html('PROCESSING...');
+								$('#btn-donate').prop('disabled', true);
+							},
+							success: function(response) {
+								$('#btn-donate').fadeOut(500);
+								snap.pay(response.data.payment_token, {
+									skipOrderSummary: true,
+									onSuccess: function(result) {
+										$('#form-donate').trigger('reset');
+										Swal.fire({
+											icon: 'success',
+											text: result?.status_message || "transaction successfully",
+											showConfirmButton: false,
+											timer: 3000
+										});
+										setTimeout(() => {
+											location.reload();
+										}, 2500);
+									},
+									onPending: function(result) {
+										$('#form-donate').trigger('reset');
+										Swal.fire({
+											icon: 'info',
+											text: result?.status_message || "transaction pending"
+										});
+									},
+									onError: function(result) {
+										$('#form-donate').trigger('reset');
+										Swal.fire({
+											icon: 'error',
+											text: result?.status_message[0] || "transaction error"
+										});
+									},
+									onClose: function() {
+										$('#form-donate').trigger('reset');
+										Swal.fire({
+											icon: 'warning',
+											text: "The payment snap popup closes, the payment transaction is canceled..."
+										});
+									}
+								});
+							},
+							error: function(xhr, error, code) {
+								Swal.fire({
+									icon: 'error',
+									text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+								});
+							},
+							complete: function() {
+								$('#btn-donate').removeAttr("disabled").fadeIn(500);
+								$('#btn-donate').prop('disabled', false);
+								$('#btn-donate').html('DONATE NOW');
+							}
+						});
+					}
 				});
 			<?php else: ?>
 				$('#form-donate').submit(function(e){
