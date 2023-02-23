@@ -1090,13 +1090,11 @@
                             let set_reward = response?.data?.reward || "";
                             let set_winner_user_id = response?.data?.winner_user_id || "";
 
-                            console.log(response?.data);
-
                             $.ajax({
                                 url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${set_id}`,
                                 type: 'PUT',
                                 data: JSON.stringify({
-                                    campaign_id: parseInt(id),
+                                    campaign_id: parseInt(set_campaign_id),
                                     winner_user_id: parseInt(set_winner_user_id),
                                     is_reward_money: parseInt(set_is_reward_money),
                                     reward: set_reward,
