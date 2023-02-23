@@ -7,7 +7,7 @@
                        Wallet Management
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet.
+                        Page to get e-money balance information and withdraw e-money.
                     </div>
                 </div>
             </div>
