@@ -12103,19 +12103,19 @@ a:focus {
 }
 
 .bg-login-image {
-  background-image: url("https://i.pinimg.com/474x/25/7f/bc/257fbcd53f38dbfe680a59ea7751258e.jpg");
+  background-image: url("../img/left-auth.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background-image: url("https://i.pinimg.com/474x/25/7f/bc/257fbcd53f38dbfe680a59ea7751258e.jpg");
+  background-image: url("../img/left-auth.jpeg");
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background-image: url("https://i.pinimg.com/474x/25/7f/bc/257fbcd53f38dbfe680a59ea7751258e.jpg");
+  background-image: url("../img/left-auth.jpeg");
   background-position: center;
   background-size: cover;
 }
