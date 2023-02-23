@@ -92,7 +92,7 @@
 				<div id="demo" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<div class="box_review">
+							<div class="box_review card-shadow">
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
@@ -115,7 +115,7 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 							</div>
 						</div>
 						<div class="carousel-item">
-							<div class="box_review">
+							<div class="box_review card-shadow">
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
@@ -136,7 +136,7 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 							</div>
 						</div>
 						<div class="carousel-item">
-							<div class="box_review">
+							<div class="box_review card-shadow">
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
@@ -156,7 +156,7 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 							</div>
 						</div>
 						<div class="carousel-item">
-							<div class="box_review">
+							<div class="box_review card-shadow">
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
