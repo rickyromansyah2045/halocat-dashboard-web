@@ -855,6 +855,7 @@
 }
 
 #dd_images #custCarousel .carousel-indicators {
+    overflow: scroll;
     position: static;
     margin-top: 20px;
     margin-bottom: 10px;
