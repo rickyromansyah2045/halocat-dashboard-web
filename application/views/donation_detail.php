@@ -472,8 +472,7 @@
 							let winner = response.data.winner_user_id;
 
 							if (response.data.is_reward_money) {
-								// number format here
-								$("#reward").html(response.data.reward);
+								$("#reward").html(formatRupiah(response.data.reward));
 							} else {
 								$("#reward").html(response.data.reward);
 							}
