@@ -11,7 +11,7 @@
 		<div class="container paddingt100">
 			<div class="row">
 				<div class="col-lg-5">
-					<img src="https://i.pinimg.com/564x/75/78/c5/7578c533f1fef9d90d2e8eade020484b.jpg" class="img-about-team">
+					<img src="<?= base_url('assets/img/about.jpeg'); ?>" class="img-about-team">
 				</div>
 				<div class="col-lg-7">
 					<p class="desc-about">Despite the growing popularity of web donations, the process of making a donation can still be cumbersome, particularly for those who prefer to donate anonymously. Additionally, many donation platforms require personal information such as name, email, and address, which may discourage potential donors who value their privacy. Furthermore, the current pandemic has led to an increase in online donations, which has put a strain on many non-profit organizations that lack the resources to manage and process these donations efficiently.</p>
