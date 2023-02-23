@@ -7,7 +7,7 @@
                        Account Setting
                     </h1>
                     <div class="page-header-subtitle">
-                        Lorem ipsum dolor sit amet.
+                        Page for setting and update your account.
                     </div>
                 </div>
             </div>
