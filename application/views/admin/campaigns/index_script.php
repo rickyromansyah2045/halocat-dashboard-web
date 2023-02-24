@@ -267,7 +267,7 @@
                     data: "reward",
                     render: function(data, type, row) {
                         if ((row.is_reward_money)) {
-                            return `(Reward Are Money) ${data}`;
+                            return `(Reward Are Money) ${formatRupiah(data)}`;
                         }
                         return `(Reward Are Not Money) ${data}`;
                     }
