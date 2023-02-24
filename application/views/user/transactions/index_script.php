@@ -47,7 +47,7 @@
                 {
                     data: "campaign_id",
                     render: function(data, type, row) {
-                        return data;
+                        return `(ID ${data}) ${row.campaign_name}`;
                     }
                 },
                 {
