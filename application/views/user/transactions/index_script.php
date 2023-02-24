@@ -45,9 +45,9 @@
                     }
                 },
                 {
-                    data: "campaign_id",
+                    data: "campaign_name",
                     render: function(data, type, row) {
-                        return `(ID ${data}) ${row.campaign_name}`;
+                        return data;
                     }
                 },
                 {
