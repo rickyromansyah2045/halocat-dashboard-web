@@ -252,15 +252,15 @@
                     }
                 },
                 {
-                    data: "campaign_id",
+                    data: "campaign_name",
                     render: function(data, type, row) {
-                        return `(ID ${data}) ${row.campaign_name}`;
+                        return data;
                     }
                 },
                 {
-                    data: "winner_user_id",
+                    data: "winner_user_name",
                     render: function(data, type, row) {
-                        return `(ID ${data}) ${row.winner_user_name}`;
+                        return data;
                     }
                 },
                 {
