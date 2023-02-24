@@ -45,9 +45,9 @@
                     }
                 },
                 {
-                    data: "campaign_id",
+                    data: "campaign_name",
                     render: function(data, type, row) {
-                        return `(ID ${data}) ${row.campaign_name}`;
+                        return data;
                     }
                 },
                 {
@@ -56,7 +56,7 @@
                         if (data == "-1" || data == "0") {
                             return "Anonymous";
                         }
-                        return `(ID ${data}) ${row.user_name}`;
+                        return row.user_name;
                     }
                 },
                 {
