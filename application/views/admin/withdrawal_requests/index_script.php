@@ -77,17 +77,23 @@ $(document).ready(function() {
                                 Actions&nbsp;
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                <a class="dropdown-item" href="javascript:openModalViewMore(${data})">
+                                <a class="dropdown-item" href="javascript:approveWithdrawalRequest(${data})">
                                     <div class="dropdown-item-icon">
-                                        <i class="fa fa-eye fa-fw"></i>
+                                        <i class="fa fa-check fa-fw"></i>
                                     </div>
-                                    View More
+                                    Approve Request
                                 </a>
-                                <a class="dropdown-item" href="javascript:deleteTransaction(${data})">
+                                <a class="dropdown-item" href="javascript:rejectWithdrawalRequest(${data})">
+                                    <div class="dropdown-item-icon">
+                                        <i class="fa fa-times-circle fa-fw"></i>
+                                    </div>
+                                    Reject Request
+                                </a>
+                                <a class="dropdown-item" href="javascript:deleteWithdrawalRequest(${data})">
                                     <div class="dropdown-item-icon">
                                         <i class="fa fa-trash fa-fw"></i>
                                     </div>
-                                    Delete
+                                    Delete Data
                                 </a>
                             </div>
                         </span>
