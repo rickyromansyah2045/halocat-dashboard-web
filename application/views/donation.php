@@ -139,10 +139,6 @@
 					success: function(response) {
 						if (response.success) {
 							let data = response.data;
-							let img = '';
-							let tooltip = '';
-							let percentage = 0;
-							let description = '';
 
 							if (data.length >= limit) {
 								$('#wrapper-load-more').show();
@@ -152,7 +148,11 @@
 							}
 
 							for (let i = 0; i < data.length; i++) {
+								let img = '';
+								let tooltip = '';
 								let exclusive = '';
+								let percentage = 0;
+								let description = '';
 
 								if (data[i].images.length > 0) {
 									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
