@@ -161,11 +161,11 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel.search(this.value).draw();
+                    tabel2.search(this.value).draw();
                     empty = true;
                     }
                 }else{
-                    tabel.search(this.value).draw();
+                    tabel2.search(this.value).draw();
                     empty = false;
                 }
             }
