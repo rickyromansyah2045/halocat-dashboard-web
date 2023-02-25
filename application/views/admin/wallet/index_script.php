@@ -112,7 +112,7 @@ Bank Name: BCA
 Account Number: 6820686657
 Account Name: Muhammad Saleh Solahudin"></textarea>
                         </div>
-                        <button class="btn btn-primary btn-sm btn-block" type='submit'>Send Withdrawal Request</button></form>`);
+                        <button id="btn-withdraw" class="btn btn-primary btn-sm btn-block" type='submit'>Send Withdrawal Request</button></form>`);
 
                         initFormWithdraw();
                     } else {
@@ -156,19 +156,53 @@ Account Name: Muhammad Saleh Solahudin"></textarea>
                 return
             }
 
-            let code = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(JSON.stringify(userData)));
-            let text = encodeURIComponent(`[WITHDRAWAL REQUEST]
+            $.ajax({
+                url: "<?= $_ENV['API_URL']; ?>/users/withdraw",
+                type: 'POST',
+                data: JSON.stringify({
+                    amount: parseInt($('#amount').val()),
+                    note: $('#information').val()
+                }),
+                contentType: "application/json",
+                dataType: 'json',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    $('#btn-withdraw').html('Processing...');
+                    $('#btn-withdraw').prop('disabled', true);
+                },
+                success: function(response) {
+                    if (response.success) {
+                        let code = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(JSON.stringify(userData)));
+                        let text = encodeURIComponent(`*[WITHDRAWAL REQUEST]*
 
-Request Code:
+*REQUEST CODE:*
 ${code}
 
-Amount:
+*AMOUNT:*
 ${$('#amount').val()}
 
-Withdrawal Request Note/Information:
+*NOTE OR INFORMATION:*
 ${$('#information').val()}`);
 
-            location.href = `https://api.whatsapp.com/send/?phone=628974842870&text=${text}&type=phone_number&app_absent=0`;
+                        location.href = `https://api.whatsapp.com/send/?phone=628974842870&text=${text}&type=phone_number&app_absent=0`;
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            text: response.error
+                        });
+                    }
+                },
+                error: function(xhr, error, code) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                    });
+                },
+                complete: function() {
+                    $('#btn-withdraw').prop('disabled', false);
+                    $('#btn-withdraw').html('Create User');
+                }
+            });
         });
     }
 </script>
