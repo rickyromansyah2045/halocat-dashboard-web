@@ -284,7 +284,7 @@ ${$('#information').val()}`);
                 },
                 complete: function() {
                     $('#btn-withdraw').prop('disabled', false);
-                    $('#btn-withdraw').html('Create User');
+                    $('#btn-withdraw').html('Send Withdrawal Request');
                 }
             });
         });
