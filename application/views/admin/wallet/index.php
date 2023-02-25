@@ -58,7 +58,6 @@
                                     <th>Amount</th>
                                     <th>Note</th>
                                     <th>Date and Time</th>
-                                    <th style="width: 95px;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -80,7 +79,6 @@
                                     <th>Amount</th>
                                     <th>Note</th>
                                     <th>Date and Time</th>
-                                    <th style="width: 95px;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
