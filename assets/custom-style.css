@@ -159,8 +159,8 @@
 }
 
 .box_review {
-    width: 950px;
-    min-height: 410px;
+    width: 850px;
+    min-height: 250px;
     margin: auto;
     background: white;
     border: 1px solid #000000;
@@ -168,7 +168,7 @@
 }
 
 .sub_box_review {
-    padding: 50px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -197,20 +197,29 @@
 }
 
 .box_review_right {
-    width: 300px;
-    height: 302px;
-    background: #C0C0C0;
+    width: 250px;
+    height: 250px;
+    background: white;
     border: 1px solid #000000;
-    border-radius: 35px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box_judul_review {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 5px 0px;
+/*    padding: 5px 0px;*/
+}
+
+.txt_minute {
+    font-size: 10px;
+    color: #868383;
+    margin: 0px 0px 3px 0px;
 }
 
 .desription_review {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .row_list_donasi {
@@ -571,6 +580,10 @@
     display: flex;
 }
 
+.m0 {
+    margin:0px;
+}
+
 .logo_brand {
     width: 100%;
     border-radius: 50%;
@@ -601,6 +614,10 @@
 }
 
 .icon_review {
+    color: black;width: auto;
+}
+
+.icon_review:hover {
     color: black;width: auto;
 }
 

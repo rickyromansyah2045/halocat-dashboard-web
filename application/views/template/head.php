@@ -22,6 +22,52 @@
 	/* CSS untuk perangkat mobile home */
 	@media (max-width: 767px) {
 
+		.m_judul_left_review, .m_judul_right_review {
+			display: block;
+		}
+
+		.m_txt_judul_review {
+			margin: 0;
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		.m_txt_minute {
+			margin: 0;
+			font-size: 12px;
+		}
+
+		.m_judul_right_review {
+/*			height: 50px;*/
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		}
+
+		.m_judul_left_review {
+			width: 30%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+
+		.m_svg_icon_user {
+			width: 30px;
+		    border-radius: 50%;
+		    height: 30px;
+		    border: 1px solid black;
+		    padding: 3px;
+		}
+
+		.box_judul_review {
+			display: flex;
+			border-bottom: unset;
+			min-height: 50px;
+		}
+
+		.txt_judul_review, .txt_minute {
+			display: none;
+		}
 		/* Sesuaikan style header */
 		.jumbotron_header {
 			padding-top: 100px !important;
@@ -47,6 +93,7 @@
 
 		.btn_header{
 			width: 190px;
+			margin: auto;
 		}
 		.padl45 {
 			visibility: hidden;
@@ -93,7 +140,8 @@
 
 		.box_review  {
 			width: 250px;
-			height: 300px;
+			height: 250px;
+			overflow: hidden;
 		}
 
 		.txt_judul_review {
@@ -101,13 +149,14 @@
 		}
 
 		.box_review_right {
-			width: auto;
+			display: none;
+/*			width: auto;*/
 			/* height: 200px; */
-			visibility: hidden;
+/*			visibility: hidden;*/
 		}
 
 		.txt_description_review {
-			font-size: 15px;
+			font-size: 14px;
 		}
 	}
 </style>

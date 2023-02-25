@@ -96,20 +96,25 @@
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
-											<p class="txt_judul_review">Berita tentang Sambo</p>
+											<p class="txt_judul_review">Good People</p>
+											<p class="txt_minute">a minute ago...</p>
+
+											<div class="m_judul_left_review dn">
+												<svg class="m_svg_icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+
+												<i class="fa-thin fa-user"></i>
+											</div>
+											<div class="m_judul_right_review dn">
+												<p class="m_txt_judul_review">Good People</p>
+												<p class="m_txt_minute">a minute ago...</p>
+											</div>
 										</div>
 										<div class="desription_review">
-											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
-rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
-Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
-rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
-Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+											<p class="txt_description_review">Bismillahirrahmanirrahim, may it be useful. May my parents, myself and those who read this always be healthy, have their sustenance and always be happy in the world and in the world, Aamiin</p>
 										</div>
 									</div>
 									<div class="box_review_right">
-
+										<svg width="50%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
 									</div>
 								</div>
 							</div>
@@ -119,18 +124,25 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
-											<p class="txt_judul_review">Berita tentang Real Madrid</p>
+											<p class="txt_judul_review">Good People</p>
+											<p class="txt_minute">2 minutes ago...</p>
+
+											<div class="m_judul_left_review dn">
+												<svg class="m_svg_icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+
+												<i class="fa-thin fa-user"></i>
+											</div>
+											<div class="m_judul_right_review dn">
+												<p class="m_txt_judul_review">Good People</p>
+												<p class="m_txt_minute">2 minutes ago...</p>
+											</div>
 										</div>
 										<div class="desription_review">
-											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
-rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
-Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio. Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+											<p class="txt_description_review">Oh my God.. Hopefully, you can get pregnant again soon after the child dies and miscarriages. Aamiin...</p>
 										</div>
 									</div>
 									<div class="box_review_right">
-
+										<svg width="50%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
 									</div>
 								</div>
 							</div>
@@ -140,37 +152,25 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 								<div class="sub_box_review">
 									<div class="box_review_left">
 										<div class="box_judul_review">
-											<p class="txt_judul_review">Berita tentang Liverpool</p>
+											<p class="txt_judul_review">Good People</p>
+											<p class="txt_minute">3 minutes ago...</p>
+
+											<div class="m_judul_left_review dn">
+												<svg class="m_svg_icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+
+												<i class="fa-thin fa-user"></i>
+											</div>
+											<div class="m_judul_right_review dn">
+												<p class="m_txt_judul_review">Good People</p>
+												<p class="m_txt_minute">3 minutes ago...</p>
+											</div>
 										</div>
 										<div class="desription_review">
-											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
-rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
-Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
+											<p class="txt_description_review">God gives peace, joy and hope to this elderly2. In the name of the Lord Jesus. Amen.</p>
 										</div>
 									</div>
 									<div class="box_review_right">
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="box_review card-shadow">
-								<div class="sub_box_review">
-									<div class="box_review_left">
-										<div class="box_judul_review">
-											<p class="txt_judul_review">Berita tentang Hotelmurah</p>
-										</div>
-										<div class="desription_review">
-											<p class="txt_description_review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius
-rutrum turpis, nec convallis elit ornare quis. Curabitur et fringilla lacus.
-Etiam id metus non sapien egestas viverra. Nam interdum libero ligula,
-ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.</p>
-										</div>
-									</div>
-									<div class="box_review_right">
-
+										<svg width="50%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
 									</div>
 								</div>
 							</div>
