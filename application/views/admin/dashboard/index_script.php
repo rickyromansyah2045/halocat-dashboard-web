@@ -32,8 +32,8 @@
                                 Congrats! you are the chosen (winner) to get the rewards from the exclusive campaign.
                                 <ul class="mb-0">
                                     <li>Link campaign: <a href="<?= site_url('donate'); ?>/${data[i].campaign_id}">click this for go to the campaign link</a>.</li>
-                                    <li>Reward: ${reward}.</li>
-                                    <li>Reward status: ${rewardStatus}.</li>
+                                    <li>Reward: <b>${reward}</b>.</li>
+                                    <li>Reward status: <b>${rewardStatus}</b>.</li>
                                 </ul>
                             </li>`);
                         }
