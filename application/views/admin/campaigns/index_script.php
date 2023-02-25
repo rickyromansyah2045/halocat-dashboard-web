@@ -1,10 +1,10 @@
 <script>
-    var tabel;
-    var tabelWinnersExclusiveCampaigns;
+    var table;
+    var tableWinnersExclusiveCampaigns;
     var showModalManageImage = true;
 
     $(document).ready(function() {
-        tabel = $('#dataTable_theCloud').DataTable({
+        table = $('#dataTable_theCloud').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -199,17 +199,17 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                        tabel.search(this.value).draw();
+                        table.search(this.value).draw();
                         empty = true;
                     }
                 } else {
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = false;
                 }
             }
         });
 
-        tabelWinnersExclusiveCampaigns = $('#dataTable_theCloud_exclusive_campaigns').DataTable({
+        tableWinnersExclusiveCampaigns = $('#dataTable_theCloud_exclusive_campaigns').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -317,11 +317,11 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                        tabelWinnersExclusiveCampaigns.search(this.value).draw();
+                        tableWinnersExclusiveCampaigns.search(this.value).draw();
                         empty = true;
                     }
                 } else {
-                    tabelWinnersExclusiveCampaigns.search(this.value).draw();
+                    tableWinnersExclusiveCampaigns.search(this.value).draw();
                     empty = false;
                 }
             }
@@ -386,8 +386,8 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        tabel.ajax.reload(null, false);
-                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                        table.ajax.reload(null, false);
+                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                         Swal.fire({
                             icon: 'success',
                             title: 'Success',
@@ -478,8 +478,8 @@
             },
             success: function(response) {
                 if (response.success) {
-                    tabel.ajax.reload(null, false);
-                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                    table.ajax.reload(null, false);
+                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -529,8 +529,8 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            tabel.ajax.reload(null, false);
-                            tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                            table.ajax.reload(null, false);
+                            tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',
@@ -645,7 +645,7 @@
             success: function(response) {
                 if (response.success) {
                     showModalManageImage = false;
-                    tabel.ajax.reload();
+                    table.ajax.reload();
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -698,7 +698,7 @@
                     success: function(response) {
                         if (response.success) {
                             showModalManageImage = false;
-                            tabel.ajax.reload();
+                            table.ajax.reload();
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',
@@ -759,8 +759,8 @@
             },
             success: function(response) {
                 if (response.success) {
-                    tabel.ajax.reload(null, false);
-                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                    table.ajax.reload(null, false);
+                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -826,8 +826,8 @@
                                 },
                                 success: function(response) {
                                     if (response.success) {
-                                        tabel.ajax.reload(null, false);
-                                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                                        table.ajax.reload(null, false);
+                                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                                         Swal.fire({
                                             icon: 'success',
                                             title: 'Success',
@@ -936,8 +936,8 @@
             },
             success: function(response) {
                 if (response.success) {
-                    tabel.ajax.reload(null, false);
-                    tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                    table.ajax.reload(null, false);
+                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -1107,8 +1107,8 @@
                                 },
                                 success: function(response) {
                                     if (response.success) {
-                                        tabel.ajax.reload(null, false);
-                                        tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                                        table.ajax.reload(null, false);
+                                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                                         Swal.fire({
                                             icon: 'success',
                                             title: 'Success',
@@ -1171,8 +1171,8 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            tabel.ajax.reload(null, false);
-                            tabelWinnersExclusiveCampaigns.ajax.reload(null, false);
+                            table.ajax.reload(null, false);
+                            tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',
