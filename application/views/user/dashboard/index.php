@@ -32,10 +32,36 @@
                                     <br>
                                     <a href="<?= site_url('user/transactions'); ?>"><?= site_url('user/transactions'); ?></a>
                                 </p>
-                                <p class="text-gray-700 mb-0">
+                                <p class="text-gray-700 mb-2">
                                     If you want to setting your account, please go to the following link:
                                     <br>
                                     <a href="<?= site_url('user/settings'); ?>"><?= site_url('user/settings'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    If you want to know your e-money balance, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/wallet'); ?>"><?= site_url('user/wallet'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    If you want to see your e-money flow history, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/wallet'); ?>"><?= site_url('user/wallet'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-0">
+                                    If you want to withdraw your e-money balance, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('user/wallet'); ?>"><?= site_url('user/wallet'); ?></a>
+                                </p>
+                                <hr>
+                                <p class="text-gray-700 mb-2">
+                                    If you want to donate, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('donations'); ?>"><?= site_url('donations'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    If you want to know about The Cloud Donation, please go to the following link:
+                                    <br>
+                                    <a href="<?= site_url('about'); ?>"><?= site_url('about'); ?></a>
                                 </p>
                                 <div id="reward-notification"></div>
                             </div>
