@@ -71,24 +71,32 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
+                        let additionalActions = '';
+
+                        if (row.status == "pending") {
+                            additionalActions = `
+                                <a class="dropdown-item" href="javascript:approveWithdrawalRequest(${data})">
+                                    <div class="dropdown-item-icon">
+                                        <i class="fa fa-check fa-fw"></i>
+                                    </div>
+                                    Approve Request
+                                </a>
+                                <a class="dropdown-item" href="javascript:rejectWithdrawalRequest(${data})">
+                                    <div class="dropdown-item-icon">
+                                        <i class="fa fa-times-circle fa-fw"></i>
+                                    </div>
+                                    Reject Request
+                                </a>
+                            `;
+                        }
+
                         return `
                             <span class="dropdown">
                                 <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Actions&nbsp;
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="javascript:approveWithdrawalRequest(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-check fa-fw"></i>
-                                        </div>
-                                        Approve Request
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:rejectWithdrawalRequest(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-times-circle fa-fw"></i>
-                                        </div>
-                                        Reject Request
-                                    </a>
+                                    ${additionalActions}
                                     <a class="dropdown-item" href="javascript:deleteWithdrawalRequest(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
