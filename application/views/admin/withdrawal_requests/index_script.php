@@ -128,8 +128,13 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/?/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/users/withdrawal/${id}`,
                     type: 'PUT',
+                    data: JSON.stringify({
+                        status: "approved"
+                    }),
+                    contentType: "application/json",
+                    dataType: 'json',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
                     },
@@ -176,8 +181,13 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/?/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/users/withdrawal/${id}`,
                     type: 'PUT',
+                    data: JSON.stringify({
+                        status: "rejected"
+                    }),
+                    contentType: "application/json",
+                    dataType: 'json',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
                     },
