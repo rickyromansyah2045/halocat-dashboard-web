@@ -43,8 +43,8 @@
 }
 
 .box_txt_jumbotron {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .jumbotron_header {
-    padding:50px;
+    padding: 50px;
     border-radius: 0px;
     height: 500px;
     background-color: transparent;
@@ -209,7 +209,7 @@
 
 .box_judul_review {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-/*    padding: 5px 0px;*/
+    /*    padding: 5px 0px;*/
 }
 
 .txt_minute {
@@ -256,7 +256,7 @@
 .card_img_donasi {
     border-radius: 15px !important;
     border: 2px solid whitesmoke;
-    height: 250px; 
+    height: 250px;
     object-fit: cover;
 }
 
@@ -400,7 +400,7 @@
 
 /* About */
 .jhabout {
-/*    padding:50px;*/
+    /*    padding:50px;*/
     border-radius: 0px;
     height: 250px;
     background-color: transparent;
@@ -518,7 +518,7 @@
 }
 
 .box_footer_menu {
-    padding:20px 0px;
+    padding: 20px 0px;
 }
 
 .head_menu_footer {
@@ -527,7 +527,8 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
-    color: #FFFFFF;margin: 0px 0px 20px 0px;
+    color: #FFFFFF;
+    margin: 0px 0px 20px 0px;
 }
 
 .box_sub_menu_footer {
@@ -581,10 +582,15 @@
 }
 
 .m0 {
-    margin:0px;
+    margin: 0px;
 }
 
 .logo_brand {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.logo_brand_footer {
     width: 100%;
     border-radius: 50%;
 }
@@ -614,11 +620,13 @@
 }
 
 .icon_review {
-    color: black;width: auto;
+    color: black;
+    width: auto;
 }
 
 .icon_review:hover {
-    color: black;width: auto;
+    color: black;
+    width: auto;
 }
 
 .fs55 {
@@ -642,7 +650,7 @@
 }
 
 .pb20 {
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
 .mxh125 {
@@ -654,7 +662,7 @@
 }
 
 .box_ex_campaign {
-    font-size: 17px; 
+    font-size: 17px;
     margin-top: -7.5px !important;
 }
 
@@ -709,6 +717,7 @@
 .clr_btn_donate {
     background-color: #FF872E !important;
 }
+
 /*### end all ###*/
 
 
@@ -793,7 +802,8 @@
 }
 
 .dl_btn_search {
-    width: 100%;font-family: 'Poppins';
+    width: 100%;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -806,6 +816,7 @@
     text-transform: uppercase;
     border: unset;
 }
+
 /*### end donation list ###*/
 
 
@@ -902,7 +913,7 @@
     flex-wrap: wrap;
 }
 
-.row.display-flex > [class*='col-'] {
+.row.display-flex>[class*='col-'] {
     margin-top: 10px;
     margin-bottom: 35px;
     display: flex;
@@ -910,7 +921,7 @@
 }
 
 .navbar-shadow {
-    box-shadow: 0px 1px 5px rgba(0,0,0,.75);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .75);
 }
 
 #dd_images .carousel-inner img {
@@ -927,7 +938,7 @@
     margin-bottom: 10px;
 }
 
-#dd_images #custCarousel .carousel-indicators > li {
+#dd_images #custCarousel .carousel-indicators>li {
     width: auto;
     height: auto;
 }
@@ -998,16 +1009,19 @@
 }
 
 .box_footer {
-    background-color: transparent; 
-    margin: 0; 
-    padding: 0; 
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
     padding-top: 10px;
 }
 
 .link_menu {
-    margin-right: 0; padding-right: 0;
-    margin-right: 0; padding-right: 0;
-    margin-right: 0; padding-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-right: 0;
+    padding-right: 0;
 }
 
 .meet-our-team-header {
@@ -1033,27 +1047,34 @@
     .footer_home * {
         text-align: center !important;
     }
+
     .box_footer_description {
         display: block;
     }
+
     .txt_footer_brand {
         margin-top: 20px;
     }
+
     .footer_description_2 {
         margin-bottom: 0;
         margin-right: 0 !important;
     }
+
     .head_menu_footer {
         margin-top: 30px;
         margin-bottom: 10px;
     }
+
     .wrapper-link_socmed_footer {
         margin-top: 20px;
     }
-    .footer_home > .container {
+
+    .footer_home>.container {
         padding-top: 50px !important;
         padding-bottom: 50px !important;
     }
+
     .img-about-team {
         display: block;
         max-width: 100%;
@@ -1061,6 +1082,7 @@
         margin: 0 auto;
         margin-bottom: 20px;
     }
+
     .desc-about {
         text-align: center;
     }
@@ -1070,6 +1092,7 @@
     .navbar-nav a {
         text-align: center;
     }
+
     .txt_sub_meet_our_team {
         text-align: center !important;
     }
