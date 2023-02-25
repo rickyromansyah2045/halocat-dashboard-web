@@ -29,17 +29,21 @@
                     <div class="nav-link-icon"><i data-feather="dollar-sign"></i></div>
                     Transactions
                 </a>
-                <a class="nav-link" href="<?= site_url('admin/logs/activity'); ?>">
-                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                    Activity Logs
+                <a class="nav-link" href="<?= site_url('admin/withdrawal-requests'); ?>">
+                    <div class="nav-link-icon"><i data-feather="upload"></i></div>
+                    Withdrawal Requests
+                </a>
+                <a class="nav-link" href="<?= site_url('admin/wallet'); ?>">
+                    <div class="nav-link-icon"><i data-feather="pocket"></i></div>
+                    Wallet Management
                 </a>
                 <a class="nav-link" href="<?= site_url('admin/settings'); ?>">
                     <div class="nav-link-icon"><i data-feather="settings"></i></div>
                     Account Setting
                 </a>
-                <a class="nav-link" href="<?= site_url('admin/wallet'); ?>">
-                    <div class="nav-link-icon"><i data-feather="pocket"></i></div>
-                    Wallet Management
+                <a class="nav-link" href="<?= site_url('admin/logs/activity'); ?>">
+                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                    Activity Logs
                 </a>
                 <div class="sidenav-menu-heading">Front Page Menu</div>
                 <a class="nav-link" href="<?= site_url(); ?>">
