@@ -103,7 +103,7 @@
                             <input class="form-control" id="amount" type="number" max="${response?.data?.e_money}">
                         </div>
                         <div class="form-group">
-                            <label for="information">Withdrawal Information</label>
+                            <label for="information">Withdrawal Request Note/Information</label>
                             <textarea class="form-control" rows="8" style="padding-bottom: 24px;" id="information" placeholder="[EXAMPLE]
 
 Hi, i want to make a withdrawal to my bank account, here is my bank account information:
@@ -112,7 +112,7 @@ Bank Name: BCA
 Account Number: 6820686657
 Account Name: Muhammad Saleh Solahudin"></textarea>
                         </div>
-                        <button class="btn btn-primary btn-sm btn-block" type='submit'>Send Request Withdrawal</button></form>`);
+                        <button class="btn btn-primary btn-sm btn-block" type='submit'>Send Withdrawal Request</button></form>`);
 
                         initFormWithdraw();
                     } else {
@@ -157,7 +157,7 @@ Account Name: Muhammad Saleh Solahudin"></textarea>
             }
 
             let code = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(JSON.stringify(userData)));
-            let text = encodeURIComponent(`[REQUEST WITHDRAWAL]
+            let text = encodeURIComponent(`[WITHDRAWAL REQUEST]
 
 Request Code:
 ${code}
@@ -165,7 +165,7 @@ ${code}
 Amount:
 ${$('#amount').val()}
 
-Information:
+Withdrawal Request Note/Information:
 ${$('#information').val()}`);
 
             location.href = `https://api.whatsapp.com/send/?phone=628974842870&text=${text}&type=phone_number&app_absent=0`;

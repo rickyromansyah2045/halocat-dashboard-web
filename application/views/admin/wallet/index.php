@@ -40,7 +40,7 @@
         </div>
         <div class="col-md-6">
             <div class="card mb-4">
-                <div class="card-header">Form Withdrawal</div>
+                <div class="card-header">Form Withdrawal Request</div>
                 <div id="card-body-withdrawal" class="card-body"></div>
             </div>
         </div>
