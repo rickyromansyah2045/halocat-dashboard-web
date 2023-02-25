@@ -44,14 +44,49 @@
                 <div id="card-body-withdrawal" class="card-body"></div>
             </div>
         </div>
+        <div class="col-12 mb-4"><hr></div>
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-header">Your E-Money Flow Data</div>
+                <div class="card-body">
+                    <div class="datatable">
+                        <table class="table table-bordered table-hover" id="dataTable_theCloud" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45px;">No</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                    <th>Note</th>
+                                    <th>Date and Time</th>
+                                    <th style="width: 95px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-header">Data Withdrawal Requests</div>
+                <div class="card-body">
+                    <div class="datatable">
+                        <table class="table table-bordered table-hover" id="dataTable_theCloud_2" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45px;">No</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                    <th>Note</th>
+                                    <th>Date and Time</th>
+                                    <th style="width: 95px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
