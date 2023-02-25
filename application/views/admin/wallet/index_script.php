@@ -1,8 +1,92 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     var userData;
+    var tabel;
 
     $(function(){
+        tabel = $('#dataTable_theCloud').DataTable({
+            order: [],
+            stateSave: false,
+            processing: true,
+            serverSide: true,
+            responsive: true,
+            pageLength: 20,
+            searchDelay: 500,
+            language: {
+                lengthMenu: "_MENU_"
+            },
+            ajax: {
+                url: "<?= $_ENV['API_URL']; ?>/datatables/flow/emoney",
+                type: 'GET',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                },
+                error: function(xhr, error, code) {
+                    $('#dataTable_theCloud_processing').hide();
+                    $('#dataTable_theCloud > tbody').html(`<tr><td colspan="5" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
+                }
+            },
+            columnDefs: [{
+                targets: [0],
+                searchable: false,
+                orderable: false
+            }],
+            lengthMenu: [
+                [10, 20, 50, 100, 200, 500],
+                [10, 20, 50, 100, 200, 500]
+            ],
+            drawCallback: function(_) {
+                $('.dataTables_filter input').attr('placeholder','Type and enter...');
+            },
+            initComplete: function(_, _) {},
+            columns: [
+                {
+                    data: "no",
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                },
+                {
+                    data: "status",
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                },
+                {
+                    data: "amount",
+                    render: function(data, type, row) {
+                        return formatRupiah(data);
+                    }
+                },
+                {
+                    data: "note",
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                },
+                {
+                    data: "created_at",
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                }
+            ]
+        });
+
+        $('.dataTables_filter input').unbind().bind('keyup',function(e) {
+            if (e.keyCode == 13 || this.value == '') {
+                if (this.value == '') {
+                    if (!empty) {
+                    tabel.search(this.value).draw();
+                    empty = true;
+                    }
+                }else{
+                    tabel.search(this.value).draw();
+                    empty = false;
+                }
+            }
+        });
+
         $.ajax({
             url: `<?= $_ENV['API_URL']; ?>/users/data`,
             type: 'GET',
