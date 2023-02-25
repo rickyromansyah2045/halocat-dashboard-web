@@ -276,17 +276,17 @@
 					success: function(response) {
 						if (response.success) {
 							let data = response.data;
-							let img = '';
-							let tooltip = '';
-							let percentage = 0;
-							let description = '';
 
 							if (data.length >= 9) {
 								$('#btn-see-all').show();
 							}
 
 							for (let i = 0; i < data.length; i++) {
+								let img = '';
+								let tooltip = '';
 								let exclusive = '';
+								let percentage = 0;
+								let description = '';
 
 								if (data[i].images.length > 0) {
 									img = `<img data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" alt="">`;
