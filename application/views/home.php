@@ -4,10 +4,10 @@
 	<body>
 		<header class="header_box">
 			<?php $this->load->view('template/menu'); ?>
-			<div class="jumbotron jumbotron_header" style="padding-top: 150px;">
+			<div class="jumbotron jumbotron_header paddingt150">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 maxw564" style="display: flex; justify-content: center; flex-direction: column;">
+						<div class="col-md-6 maxw564 box_txt_jumbotron">
 							<p class="txt_header1">Set Aside Your Money to Help Others Who Are In Need!</p>
 							<p class="txt_header2">Help others who need your help, make others happy with your help, show your kindness to others, always contribute to spreading goodness in this world! Lets make a change!</p>
 							<a href="#list-donation" class="btn_header">
@@ -29,9 +29,9 @@
 				</div>
 				<div class="list_donasi">
 					<div class="row display-flex" id="wrapper-list_donation"></div>
-					<div class="row_show_all_donasi" style="margin-top: 10px;">
-						<div id="btn-see-all" style="display: none;">
-							<a href="<?= site_url('donations'); ?>" style="display: block !important; width: 100%;">
+					<div class="row_show_all_donasi mt10">
+						<div id="btn-see-all dn">
+							<a href="<?= site_url('donations'); ?>" class="db wfull">
 								<button class="btn_see_all_donasi">
 									see all donation list
 								</button>
@@ -45,7 +45,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<div class="d-flex justify-content-center" style="font-size: 55px;">
+						<div class="d-flex justify-content-center fs55">
 							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
 								<i class="fa fa-donate fa-fw"></i>
 							</div>
@@ -54,7 +54,7 @@
 						<p class="txt_judul_ringkas_donasi2">total donation</p>
 					</div>
 					<div class="col-md-3">
-						<div class="d-flex justify-content-center" style="font-size: 55px;">
+						<div class="d-flex justify-content-center fs55">
 							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
 								<i class="fa fa-check-double fa-fw"></i>
 							</div>
@@ -63,7 +63,7 @@
 						<p class="txt_judul_ringkas_donasi2">donation completed</p>
 					</div>
 					<div class="col-md-3">
-						<div class="d-flex justify-content-center" style="font-size: 55px;">
+						<div class="d-flex justify-content-center fs55">
 							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
 								<i class="fa fa-handshake fa-fw"></i>
 							</div>
@@ -72,7 +72,7 @@
 						<p class="txt_judul_ringkas_donasi2">total transaction</p>
 					</div>
 					<div class="col-md-3">
-						<div class="d-flex justify-content-center" style="font-size: 55px;">
+						<div class="d-flex justify-content-center fs55">
 							<div class="img_ringkas_donasi d-flex justify-content-center align-items-center">
 								<i class="fa fa-users fa-fw"></i>
 							</div>
@@ -176,12 +176,12 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 							</div>
 						</div>
 					</div>
-					<a class="carousel-control-prev" data-target="#demo" data-slide="prev" style="color: black;width: auto;">
+					<a class="carousel-control-prev icon_review" data-target="#demo" data-slide="prev">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
 						 	<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
 						</svg>
 					</a>
-					<a class="carousel-control-next" data-target="#demo" data-slide="next" style="color: black;width: auto;">
+					<a class="carousel-control-next icon_review" data-target="#demo" data-slide="next">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
 						  	<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 						</svg>
@@ -289,9 +289,9 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 								let exclusive = '';
 
 								if (data[i].images.length > 0) {
-									img = `<img data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" alt="">`;
+									img = `<img data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" alt="">`;
 								} else {
-									img = `<img data-src="<?= base_url('assets/img/default_image.png'); ?>" class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" alt="">`;
+									img = `<img data-src="<?= base_url('assets/img/default_image.png'); ?>" class="card-img-top card_img_donasi" alt="">`;
 								}
 
 								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
@@ -304,20 +304,20 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 								}
 
 								if (data[i].is_exclusive) {
-									exclusive = `<hr><div style="font-size: 17px; margin-top: -7.5px !important;" class="mt-0 mb-2">
-										<span class="badge badge-dark" style="display: block;">EXCLUSIVE CAMPAIGN</span>
+									exclusive = `<hr><div class="mt-0 mb-2 box_ex_campaign">
+										<span class="badge badge-dark db">EXCLUSIVE CAMPAIGN</span>
 									</div>`;
 								}
 
 								$('#wrapper-list_donation').append(`<div class="col-md-6 col-lg-4">
-									<div class="card col_list_donasi" style="height: 100%;">
+									<div class="card col_list_donasi hfull">
 										${img}
 										<div class="card-body pad0">
 											<p class="txt_judul_donasi" style="cursor: help;"${tooltip}>${data[i].short_description}</p>
 											<p class="txt_sub_judul_donasi">${description}</p>
 											${exclusive}
 										</div>
-										<div class="card-footer" style="background-color: transparent; margin: 0; padding: 0; padding-top: 10px;">
+										<div class="card-footer box_footer">
 											<div class="progress mb10">
 												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${percentage}%"></div>
 											</div>
@@ -325,7 +325,7 @@ ut lacinia sapien  porttitor ac. Praesent vel orci lectus. Etiam et nulla odio.<
 												<p class="txt_progres_percent">${percentage}%</p>
 												<p class="txt_progres_nominal">${formatRupiah(data[i].goal_amount)}</p>
 											</div>
-											<hr style="margin-top: -5px;">
+											<hr class="mtm5">
 											<a href="<?= site_url('donate'); ?>/${data[i].id}" target="_blank">
 												<button class="btn_submit_donasi">
 													donate

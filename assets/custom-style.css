@@ -42,6 +42,12 @@
     margin-bottom: 0px;
 }
 
+.box_txt_jumbotron {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column;
+}
+
 .sub_headline_judul {
     font-family: 'Poppins';
     font-style: normal;
@@ -241,6 +247,8 @@
 .card_img_donasi {
     border-radius: 15px !important;
     border: 2px solid whitesmoke;
+    height: 250px; 
+    object-fit: cover;
 }
 
 .mb10 {
@@ -580,6 +588,42 @@
     padding-top: 100px;
 }
 
+.paddingt150 {
+    padding-top: 150px;
+}
+
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+.icon_review {
+    color: black;width: auto;
+}
+
+.fs55 {
+    font-size: 55px;
+}
+
+.wfull {
+    width: 100%;
+}
+
+.hfull {
+    height: 100%;
+}
+
+.mtm5 {
+    margin-top: -5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
 .pb20 {
     padding-bottom:20px;
 }
@@ -590,6 +634,11 @@
 
 .mt190 {
     margin-top: 190px;
+}
+
+.box_ex_campaign {
+    font-size: 17px; 
+    margin-top: -7.5px !important;
 }
 
 .all_judul_header {
@@ -929,6 +978,19 @@
     line-height: 125%;
     text-align: justify;
     color: #000000;
+}
+
+.box_footer {
+    background-color: transparent; 
+    margin: 0; 
+    padding: 0; 
+    padding-top: 10px;
+}
+
+.link_menu {
+    margin-right: 0; padding-right: 0;
+    margin-right: 0; padding-right: 0;
+    margin-right: 0; padding-right: 0;
 }
 
 .meet-our-team-header {
