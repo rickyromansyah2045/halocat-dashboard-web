@@ -15,13 +15,13 @@
 			<ul class="navbar-nav mr0">
 				<?php if ($this->session->has_userdata('id')): ?>
 					<?php if ($this->session->userdata('role') == "user"): ?>
-						<a class="nav-link nav_link_menu link_menu" href="<?= site_url('user/dashboard'); ?>">User Area</a>
+						<a class="nav-link nav_link_menu" href="<?= site_url('user/dashboard'); ?>">User Area</a>
 					<?php else: ?>
-						<a class="nav-link nav_link_menu link_menu" href="<?= site_url('admin/dashboard'); ?>">Admin Area</a>
+						<a class="nav-link nav_link_menu" href="<?= site_url('admin/dashboard'); ?>">Admin Area</a>
 					<?php endif; ?>
 				<?php else: ?>
 					<a class="nav-link nav_link_menu" href="<?= site_url('auth/register'); ?>">Register</a>
-					<a class="nav-link nav_link_menu link_menu" href="<?= site_url('auth/login'); ?>">Login</a>
+					<a class="nav-link nav_link_menu" href="<?= site_url('auth/login'); ?>">Login</a>
 				<?php endif; ?>
 			</ul>
 		</div>
