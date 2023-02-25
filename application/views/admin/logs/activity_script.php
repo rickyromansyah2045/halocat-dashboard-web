@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function() {
-        var tabel = $('#dataTable_theCloud').DataTable({
+        var table = $('#dataTable_theCloud').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -79,18 +79,18 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = true;
                     }
                 }else{
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = false;
                 }
             }
         });
 
         setTimeout(() => {
-            tabel.order([4, 'DESC']).draw();
+            table.order([4, 'DESC']).draw();
         }, 1000);
     });
 </script>

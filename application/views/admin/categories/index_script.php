@@ -1,8 +1,8 @@
 <script>
-    var tabel;
+    var table;
 
     $(document).ready(function() {
-        tabel = $('#dataTable_theCloud').DataTable({
+        table = $('#dataTable_theCloud').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -83,11 +83,11 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                        tabel.search(this.value).draw();
+                        table.search(this.value).draw();
                         empty = true;
                     }
                 }else{
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = false;
                 }
             }
@@ -110,7 +110,7 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        tabel.ajax.reload(null, false);
+                        table.ajax.reload(null, false);
                         Swal.fire({
                             icon: 'success',
                             title: 'Success',
@@ -187,7 +187,7 @@
             },
             success: function(response) {
                 if (response.success) {
-                    tabel.ajax.reload(null, false);
+                    table.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -237,7 +237,7 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            tabel.ajax.reload(null, false);
+                            table.ajax.reload(null, false);
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',

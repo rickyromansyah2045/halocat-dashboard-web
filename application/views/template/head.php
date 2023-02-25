@@ -79,7 +79,7 @@
 		}
 
 		.navbar-toggler {
-			margin-right: 10px;
+			margin-right: 20px;
 		}
 
 		.header_box {
@@ -157,6 +157,15 @@
 
 		.txt_description_review {
 			font-size: 14px;
+		}
+
+		.card-img-top {
+			width: 100% !important;
+			height: 150px !important;
+		}
+
+		.meet-our-team-header {
+			margin-bottom: 50px;
 		}
 	}
 </style>
