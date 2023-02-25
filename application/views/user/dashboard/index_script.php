@@ -33,7 +33,7 @@
                                 <ul class="mb-0">
                                     <li>Link campaign: <a href="<?= site_url('donate'); ?>/${data[i].campaign_id}">click this for go to the campaign link</a>.</li>
                                     <li>Reward: ${reward}.</li>
-                                    <li>Reward Status: ${rewardStatus}.</li>
+                                    <li>Reward status: ${rewardStatus}.</li>
                                 </ul>
                             </li>`);
                         }
