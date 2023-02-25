@@ -93,4 +93,13 @@ class Admin extends CI_Controller
 
 		$this->load->view('admin/base', $data);
 	}
+
+	public function withdrawal_requests()
+	{
+		$data['title'] = "Withdrawal Requests";
+		$data['content'] = $this->load->view('admin/withdrawal_requests/index', $data, TRUE);
+		$data['custom_script'] = $this->load->view('admin/withdrawal_requests/index_script', NULL, TRUE);
+
+		$this->load->view('admin/base', $data);
+	}
 }
