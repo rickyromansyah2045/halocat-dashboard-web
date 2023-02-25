@@ -167,5 +167,32 @@
 		.meet-our-team-header {
 			margin-bottom: 50px;
 		}
+
+		.txt_header2 {
+			font-size: 15px !important;
+			margin-top: 10px;
+		}		
+		.dl_box_search {
+			margin: 0 auto !important; 
+		}
+
+		.img_ringkas_donasi {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+		}
+
+		.logo_brand_footer {
+			margin: auto;
+    		width: 100%;
+    		border-radius: 50%;
+		}
+
+		.btn_header{
+			text-align: center;
+			margin: auto;
+			display: flex;
+			margin-top: 70px;
+		}
 	}
 </style>
