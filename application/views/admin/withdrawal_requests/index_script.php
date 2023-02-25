@@ -53,7 +53,7 @@ $(document).ready(function() {
             {
                 data: "amount",
                 render: function(data, type, row) {
-                    return data;
+                    return formatRupiah(data);
                 }
             },
             {
