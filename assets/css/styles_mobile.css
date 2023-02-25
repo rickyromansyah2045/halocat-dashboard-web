@@ -177,4 +177,8 @@
         display: flex;
         margin-top: 70px;
     }
+
+    .box_list_faq {
+        height: 60px;
+    }
 }
