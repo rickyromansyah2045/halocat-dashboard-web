@@ -1,11 +1,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     var userData;
-    var tabel;
-    var tabel2;
+    var table;
+    var table2;
 
     $(function(){
-        tabel = $('#dataTable_theCloud').DataTable({
+        table = $('#dataTable_theCloud').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -78,17 +78,17 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = true;
                     }
                 }else{
-                    tabel.search(this.value).draw();
+                    table.search(this.value).draw();
                     empty = false;
                 }
             }
         });
 
-        tabel2 = $('#dataTable_theCloud_2').DataTable({
+        table2 = $('#dataTable_theCloud_2').DataTable({
             order: [],
             stateSave: false,
             processing: true,
@@ -161,11 +161,11 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    tabel2.search(this.value).draw();
+                    table2.search(this.value).draw();
                     empty = true;
                     }
                 }else{
-                    tabel2.search(this.value).draw();
+                    table2.search(this.value).draw();
                     empty = false;
                 }
             }
