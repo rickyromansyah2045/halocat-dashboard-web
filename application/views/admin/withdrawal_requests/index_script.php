@@ -125,7 +125,6 @@
             icon: 'warning',
             showCancelButton: true,
             showLoaderOnConfirm: true,
-            confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
@@ -173,7 +172,7 @@
             icon: 'warning',
             showCancelButton: true,
             showLoaderOnConfirm: true,
-            confirmButtonColor: '#d33',
+            confirmButtonColor: '#f4a100',
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
