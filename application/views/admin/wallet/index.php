@@ -44,5 +44,15 @@
                 <div id="card-body-withdrawal" class="card-body"></div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">Your E-Money Flow Data</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">Data Withdrawal Requests</div>
+            </div>
+        </div>
     </div>
 </div>
