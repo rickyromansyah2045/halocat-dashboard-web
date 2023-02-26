@@ -30,7 +30,7 @@
 				<div class="list_donasi">
 					<div class="row display-flex" id="wrapper-list_donation"></div>
 					<div class="row_show_all_donasi mt10">
-						<div id="btn-see-all dn">
+						<div id="btn-see-all" class="dn">
 							<a href="<?= site_url('donations'); ?>" class="db wfull">
 								<button class="btn_see_all_donasi">
 									see all donation list
