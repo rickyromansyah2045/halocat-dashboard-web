@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="btn-create-submit" class="btn btn-orange" type="submit">Create Category</button>
+                    <button id="btn-create-submit" class="btn btn-orange" type="submit">Submit</button>
                     <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
                 </div>
             </form>
