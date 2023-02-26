@@ -350,6 +350,8 @@
 						}
 					},
 					error: function(xhr, error, code) {
+						let errorMsg = xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+						$('#wrapper-list_donation').html(`<div class="col-12"><h3 class="text-center">${errorMsg}</h3></div>`);
 						console.log(xhr, error, code);
 					}
 				});
