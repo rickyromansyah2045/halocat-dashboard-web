@@ -65,7 +65,21 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
-                        return "-";
+                        return `
+                            <span class="dropdown">
+                                <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Actions&nbsp;
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
+                                    <a class="dropdown-item" href="javascript:deleteCompanyCashFlow(${data})">
+                                        <div class="dropdown-item-icon">
+                                            <i class="fa fa-trash fa-fw"></i>
+                                        </div>
+                                        Delete
+                                    </a>
+                                </div>
+                            </span>
+                        `;
                     }
                 }
             ]
@@ -136,4 +150,52 @@
             }
         });
     });
+
+    function deleteCompanyCashFlow(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            showLoaderOnConfirm: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            preConfirm: () => {
+                return $.ajax({
+                    url: `<?= $_ENV['API_URL']; ?>/company/cashflow/${id}`,
+                    type: 'DELETE',
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            table.ajax.reload(null, false);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: response.error
+                            });
+                        }
+                    },
+                    error: function(xhr, error, code) {
+                        Swal.fire({
+                            icon: 'error',
+                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                        });
+                    },
+                    complete: function() {}
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {}
+        })
+    }
 </script>
