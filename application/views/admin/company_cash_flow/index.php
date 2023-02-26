@@ -7,8 +7,13 @@
                         Company Cash Flow
                     </h1>
                     <div class="page-header-subtitle">
-                        You can find company cash flow history and manage company cash flow on this page.
+                        You can find and manage company cash flow on this page.
                     </div>
+                </div>
+                <div class="col-12 col-xl-auto mt-4">
+                    <button class="btn btn-orange p-3" type="button" data-toggle="modal" data-target="#modal-create">
+                        <i class="fa fa-plus fa-fw"></i>&nbsp;Create Company Cash Flow
+                    </button>
                 </div>
             </div>
         </div>
