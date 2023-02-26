@@ -270,6 +270,8 @@
 					}
 				});
 
+				$('#wrapper-list_donation').html(`<div class="col-12"><h1 class="text-center"><i class="fa fa-spinner fa-pulse"></i></h1></div>`);
+
 				$.ajax({
 					url: "<?= $_ENV['API_URL']; ?>/campaigns?status=active&limit=9&order_by=id&order_type=DESC",
 					type: 'GET',
@@ -277,9 +279,16 @@
 						if (response.success) {
 							let data = response.data;
 
+							if (data.length == 0) {
+								$('#wrapper-list_donation').html('<div class="col-12"><h2 class="text-center">THERE IS CURRENTLY NO ONGOING DONATION CAMPAIGN</h2></div>');
+								return;
+							}
+
 							if (data.length >= 9) {
 								$('#btn-see-all').show();
 							}
+
+							$('#wrapper-list_donation').html('');
 
 							for (let i = 0; i < data.length; i++) {
 								let img = '';
