@@ -64,12 +64,8 @@
 
 				// reduce repeat request
 				if (gSearch == $('#filter-search').val() && gSortBy == $('#filter-sort_by').val() && gCategory == $('#filter-category_id').val()) {
-					let wrapperHTML = $('#wrapper-list_donation').html();
-					$('#wrapper-list_donation').html('');
-					$('#wrapper-list_donation').html(`<div class="col-12"><h1 class="text-center"><i class="fa fa-spinner fa-pulse"></i></h1></div>`);
 					setTimeout(() => {
 						$('#btn-search').removeAttr('disabled').removeClass('disabled').html("SEARCH").css("cursor", "pointer");
-						$('#wrapper-list_donation').html(wrapperHTML);
 					}, 100);
 					return;
 				}
