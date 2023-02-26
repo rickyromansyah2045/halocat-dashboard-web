@@ -31,13 +31,49 @@
                             <th style="width: 45px;">No</th>
                             <th>Amount</th>
                             <th>Note</th>
-                            <th>Status</th>
+                            <th>Type</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="modal-create-label" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Company Cash Flow</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form id="form-create">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="status">Type</label>
+                        <select class="form-control" id="status">
+                            <option value="in">IN</option>
+                            <option value="out">OUT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input class="form-control" id="amount" type="number" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note/Information</label>
+                        <textarea class="form-control" id="note" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-create-submit" class="btn btn-orange" type="submit">Create Category</button>
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
