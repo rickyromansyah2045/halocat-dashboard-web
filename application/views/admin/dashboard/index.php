@@ -28,5 +28,59 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header">Website Activity</div>
+                <div class="card-body">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header">Transaction Activity</div>
+                <div class="card-body">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">Transaction Status</div>
+                <div class="card-body">
+                    <div class="chart-pie"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">Company Income</div>
+                <div class="card-body">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">Company Expenses</div>
+                <div class="card-body">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header">New User Registration</div>
+                <div class="card-body">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
     </div>
 </div>
