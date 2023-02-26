@@ -29,6 +29,10 @@
                     <div class="nav-link-icon"><i data-feather="dollar-sign"></i></div>
                     Transactions
                 </a>
+                <a class="nav-link" href="<?= site_url('admin/company-cash-flow'); ?>">
+                    <div class="nav-link-icon"><i data-feather="repeat"></i></div>
+                    Company Cash Flow
+                </a>
                 <a class="nav-link" href="<?= site_url('admin/withdrawal-requests'); ?>">
                     <div class="nav-link-icon"><i data-feather="upload"></i></div>
                     Withdrawal Requests
