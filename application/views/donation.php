@@ -62,6 +62,18 @@
 
 				$('#btn-search').html('<i class="fa fa-spinner fa-pulse"></i> SEARCHING ...').addClass('disabled').attr('disabled', 'disabled').css("cursor", "wait");
 
+				// reduce repeat request
+				if (gSearch == $('#filter-search').val() && gSortBy == $('#filter-sort_by').val() && gCategory == $('#filter-category_id').val()) {
+					let wrapperHTML = $('#wrapper-list_donation').html();
+					$('#wrapper-list_donation').html('');
+					$('#wrapper-list_donation').html(`<div class="col-12"><h1 class="text-center"><i class="fa fa-spinner fa-pulse"></i></h1></div>`);
+					setTimeout(() => {
+						$('#btn-search').removeAttr('disabled').removeClass('disabled').html("SEARCH").css("cursor", "pointer");
+						$('#wrapper-list_donation').html(wrapperHTML);
+					}, 100);
+					return;
+				}
+
 				// reset
 				gSearch = "";
 				gCategory = "";
@@ -131,6 +143,7 @@
 
 				if (offset == 0) {
 					$('#wrapper-list_donation').html('');
+					$('#wrapper-list_donation').html(`<div class="col-12"><h1 class="text-center"><i class="fa fa-spinner fa-pulse"></i></h1></div>`);
 				}
 
 				$.ajax({
@@ -139,6 +152,14 @@
 					success: function(response) {
 						if (response.success) {
 							let data = response.data;
+
+							if (offset == 0) {
+								$('#wrapper-list_donation').html('');
+
+								if (data.length == 0) {
+									$('#wrapper-list_donation').html(`<div class="col-12"><h2 class="text-center">NO RESULT FOUND</h2></div>`);
+								}
+							}
 
 							if (data.length >= limit) {
 								$('#wrapper-load-more').show();
