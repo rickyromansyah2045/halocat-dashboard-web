@@ -26,7 +26,12 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event){
 });
 
 var lazyLoadImages = document.querySelectorAll('img[data-src]');
+
 window.onscroll = function() {
+    runLazyLoading();
+}
+
+window.onresize = function() {
     runLazyLoading();
 }
 
