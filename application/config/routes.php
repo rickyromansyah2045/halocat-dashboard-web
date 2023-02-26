@@ -58,4 +58,5 @@ $route['donations'] = "front/donation";
 $route['donate/(:any)'] = "front/donation_detail/$1";
 
 $route['admin/logs/activity'] = "admin/logs_activity";
+$route['admin/company-cash-flow'] = "admin/company_cash_flow";
 $route['admin/withdrawal-requests'] = "admin/withdrawal_requests";
