@@ -86,7 +86,7 @@
                         table.search(this.value).draw();
                         empty = true;
                     }
-                }else{
+                } else {
                     table.search(this.value).draw();
                     empty = false;
                 }

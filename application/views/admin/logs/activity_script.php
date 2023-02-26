@@ -79,10 +79,10 @@
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
-                    table.search(this.value).draw();
-                    empty = true;
+                        table.search(this.value).draw();
+                        empty = true;
                     }
-                }else{
+                } else {
                     table.search(this.value).draw();
                     empty = false;
                 }
