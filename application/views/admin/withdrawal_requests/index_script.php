@@ -71,6 +71,10 @@
                 {
                     data: "id",
                     render: function(data, type, row) {
+                        if (row.status == "approved") {
+                            return "-";
+                        }
+
                         let additionalActions = '';
 
                         if (row.status == "pending") {
@@ -242,7 +246,7 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/?/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/users/withdrawal/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
