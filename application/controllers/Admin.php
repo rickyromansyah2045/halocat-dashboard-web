@@ -102,4 +102,13 @@ class Admin extends CI_Controller
 
 		$this->load->view('admin/base', $data);
 	}
+
+	public function company_cash_flow()
+	{
+		$data['title'] = "Company Cash Flow";
+		$data['content'] = $this->load->view('admin/company_cash_flow/index', $data, TRUE);
+		$data['custom_script'] = $this->load->view('admin/company_cash_flow/index_script', NULL, TRUE);
+
+		$this->load->view('admin/base', $data);
+	}
 }
