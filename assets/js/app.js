@@ -54,7 +54,7 @@ function runLazyLoading() {
 
 function inView(e) {
     var r = e.getBoundingClientRect();
-    return (r.top >= 0 && r.left >= 0 && r.bottom <= ((window.innerHeight || document.documentElement.clientHeight)) && r.right <= (window.innerWidth || document.documentElement.clientWidth));
+    return (r.top >= 0 - 300 && r.left >= 0 && (r.bottom <= ((window.innerHeight || document.documentElement.clientHeight)) + 300) && r.right <= (window.innerWidth || document.documentElement.clientWidth));
 }
 
 function cli() {
