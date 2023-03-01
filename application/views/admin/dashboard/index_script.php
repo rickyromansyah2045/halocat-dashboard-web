@@ -65,7 +65,7 @@
             success: function(response) {
                 if (response.success) {
                     let data = response.data;
-
+                    console.log(data);
                 } else {
                     Swal.fire({
                         icon: 'error',
