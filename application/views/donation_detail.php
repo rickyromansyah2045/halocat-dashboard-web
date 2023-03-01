@@ -80,7 +80,7 @@
 									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write your words, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
 								</div>
 								<div class="form-group mb20">
-									<input id="donate-amount" type="number" class="form-control" placeholder="Enter the amount you want to donate">
+									<input id="donate-amount" class="form-control" placeholder="Enter the amount you want to donate">
 								</div>
 								<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
 							</form>
@@ -107,35 +107,12 @@
 		<?php $this->load->view('template/footer'); ?>
 		<?php $this->load->view('template/script'); ?>
 		<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?= $_ENV['MIDTRANS_CLIENT_KEY']; ?>"></script>
+		<script src="<?= base_url('assets/inputmask/dist/jquery.inputmask.js'); ?>"></script>
 		<script>
-
-			/* For Input Rupiah/IDR Format */
-			var format_rupiah = document.getElementById('donate-amount');
 			
-			format_rupiah.addEventListener('keyup', function(e)
-			{
-				format_rupiah.value = formatRupiah(this.value, 'Rp. ');
-			});
-    
-			function formatRupiah(angka, prefix)
-			{
-				var number_string = angka.replace(/[^,\d]/g, '').toString(),
-					split    = number_string.split(','),
-					sisa     = split[0].length % 3,
-					rupiah     = split[0].substr(0, sisa),
-					ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
-					
-				if (ribuan) {
-					separator = sisa ? '.' : '';
-					rupiah += separator + ribuan.join('.');
-				}
-				
-				rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-				return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-			}
-			/* End Function for format rupiah/IDR */
-
-
+			// Ubah Alias
+			$("#donate-amount").inputmask({ alias: "currency"});
+			
 			let offset = 0;
 
 			<?php if ($this->session->has_userdata('id')): ?>
@@ -177,7 +154,10 @@
 						return
 					}
 
-					if (eMoney >= parseInt($('#donate-amount').val())) {
+					var amountMidtrans = $('#donate-amount').val()
+					var	amounts = amountMidtrans.replace(",", "")
+
+					if (eMoney >= parseInt(amounts)) {
 						Swal.fire({
 							title: 'Want to Use e-Money?',
 							text: `You have e-money worth ${formatRupiah(eMoney)}, want to use it?`,
@@ -204,6 +184,9 @@
 					}
 
 					function eMoneyTransaction() {
+						var amountMidtrans = $('#donate-amount').val()
+						var	amounts = amountMidtrans.replace(",", "")
+						
 						$.ajax({
 							url: "<?= $_ENV['API_URL']; ?>/transactions/emoney",
 							method: 'POST',
@@ -211,7 +194,7 @@
 							data: JSON.stringify({
 								"campaign_id": <?= $data['id']; ?>,
 								"user_id": <?= $this->session->userdata('id'); ?>,
-								"amount": parseInt($('#donate-amount').val()),
+								"amount": parseInt(amounts),
 								"comment": $('#donate-comment').val()
 							}),
 							contentType: "application/json",
@@ -256,6 +239,9 @@
 					}
 
 					function snapTransaction() {
+						var amountMidtrans = $('#donate-amount').val()
+						var	amounts = amountMidtrans.replace(",", "")
+
 						$.ajax({
 							url: "<?= $_ENV['API_URL']; ?>/transactions",
 							method: 'POST',
@@ -263,7 +249,7 @@
 							data: JSON.stringify({
 								"campaign_id": <?= $data['id']; ?>,
 								"user_id": <?= $this->session->userdata('id'); ?>,
-								"amount": parseInt($('#donate-amount').val()),
+								"amount": parseInt(amounts),
 								"comment": $('#donate-comment').val()
 							}),
 							contentType: "application/json",
@@ -328,6 +314,8 @@
 				});
 			<?php else: ?>
 				$('#form-donate').submit(function(e){
+					var amountMidtrans = $('#donate-amount').val()
+					var	amounts = amountMidtrans.replace(",", "")
 					e.preventDefault();
 					if ($('#donate-amount').val() == "") {
 						Swal.fire({
@@ -342,7 +330,7 @@
 						cache: false,
 						data: JSON.stringify({
 							"campaign_id": <?= $data['id']; ?>,
-							"amount": parseInt($('#donate-amount').val()),
+							"amount": parseInt(amounts),
 							"comment": $('#donate-comment').val()
 						}),
 						contentType: "application/json",
