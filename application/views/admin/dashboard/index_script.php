@@ -55,5 +55,31 @@
             },
             complete: function() {}
         });
+
+        $.ajax({
+            url: `<?= $_ENV['API_URL']; ?>/admin/dashboard/chart?chart=website_activity`,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    let data = response.data;
+
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.error
+                    });
+                }
+            },
+            error: function(xhr, error, code) {
+                Swal.fire({
+                    icon: 'error',
+                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
+                });
+            },
+            complete: function() {}
+        });
     });
 </script>
