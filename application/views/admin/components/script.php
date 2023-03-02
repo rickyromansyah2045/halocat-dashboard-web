@@ -27,4 +27,13 @@
             { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
         ).format(money);
     }
+
+    function formatRupiahWithK(money) {
+        money = money.replace("K", "")
+        money = new Intl.NumberFormat('id-ID',
+            { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
+        ).format(money);
+
+        return money + "K"
+    }
 </script>
