@@ -28,58 +28,65 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">Website Activity</div>
-                <div class="card-body">
-                    <div class="chart-bar"><canvas id="chartWebsiteActivity" width="100%" height="50"></canvas></div>
-                </div>
-                <div class="card-footer small text-muted">Updated <span id="chartWebsiteActivity-date"></span> at <span id="chartWebsiteActivity-time"></span></div>
-            </div>
+        <div id="loading-text" class="col-12 text-center">
+            Loading Dashboard Data...
         </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">New User Registration</div>
-                <div class="card-body">
-                    <div class="chart-bar"><canvas id="chartNewUserRegistration" width="100%" height="50"></canvas></div>
+    </div>
+    <div id="charts" style="display: none;">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Website Activity</div>
+                    <div class="card-body">
+                        <div class="chart-bar"><canvas id="chartWebsiteActivity" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartWebsiteActivity-date"></span> at <span id="chartWebsiteActivity-time"></span></div>
                 </div>
-                <div class="card-footer small text-muted">Updated <span id="chartNewUserRegistration-date"></span> at <span id="chartNewUserRegistration-time"></span></div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">Transaction Activity</div>
-                <div class="card-body">
-                    <div class="chart-bar"><canvas id="chartTransactions" width="100%" height="50"></canvas></div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">New User Registration</div>
+                    <div class="card-body">
+                        <div class="chart-bar"><canvas id="chartNewUserRegistration" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartNewUserRegistration-date"></span> at <span id="chartNewUserRegistration-time"></span></div>
                 </div>
-                <div class="card-footer small text-muted">Updated <span id="chartTransactions-date"></span> at <span id="chartTransactions-time"></span></div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">Transaction Status</div>
-                <div class="card-body">
-                    <div class="chart-pie"><canvas id="chartStatusTransactions" width="100%" height="50"></canvas></div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Transaction Activity</div>
+                    <div class="card-body">
+                        <div class="chart-bar"><canvas id="chartTransactions" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartTransactions-date"></span> at <span id="chartTransactions-time"></span></div>
                 </div>
-                <div class="card-footer small text-muted">Updated <span id="chartStatusTransactions-date"></span> at <span id="chartStatusTransactions-time"></span></div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">Company Income</div>
-                <div class="card-body">
-                    <div class="chart-bar"><canvas id="chartCashFlowIncome" width="100%" height="50"></canvas></div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Transaction Status</div>
+                    <div class="card-body">
+                        <div class="chart-pie"><canvas id="chartStatusTransactions" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartStatusTransactions-date"></span> at <span id="chartStatusTransactions-time"></span></div>
                 </div>
-                <div class="card-footer small text-muted">Updated <span id="chartCashFlowIncome-date"></span> at <span id="chartCashFlowIncome-time"></span></div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card mb-4">
-                <div class="card-header">Company Expense</div>
-                <div class="card-body">
-                    <div class="chart-bar"><canvas id="chartCashFlowExpanse" width="100%" height="50"></canvas></div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Company Income</div>
+                    <div class="card-body">
+                        <div class="chart-bar"><canvas id="chartCashFlowIncome" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartCashFlowIncome-date"></span> at <span id="chartCashFlowIncome-time"></span></div>
                 </div>
-                <div class="card-footer small text-muted">Updated <span id="chartCashFlowExpanse-date"></span> at <span id="chartCashFlowExpanse-time"></span></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Company Expense</div>
+                    <div class="card-body">
+                        <div class="chart-bar"><canvas id="chartCashFlowExpanse" width="100%" height="50"></canvas></div>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <span id="chartCashFlowExpanse-date"></span> at <span id="chartCashFlowExpanse-time"></span></div>
+                </div>
             </div>
         </div>
     </div>
