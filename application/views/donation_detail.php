@@ -80,7 +80,8 @@
 									<textarea id="donate-comment" class="form-control dd_textarea" id="exampleFormControlTextarea1" rows="4" placeholder="Write your words, can be for encouragement or positive words" style="padding-bottom: 32px;"></textarea>
 								</div>
 								<div class="form-group mb20">
-									<input id="donate-amount" class="form-control" placeholder="Enter the amount you want to donate">
+									<label for="donate-amount">Enter the amount you want to donate:</label>
+									<input id="donate-amount" class="form-control" autocomplete="off">
 								</div>
 								<button id="btn-donate" type="submit" class="dl_btn_search clr_btn_donate">DONATE NOW</button>
 							</form>
