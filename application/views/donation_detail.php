@@ -112,7 +112,11 @@
 		<script>
 
 			// Ubah Alias
-			$("#donate-amount").inputmask({ alias: "currency", digits: 0});
+			$("#donate-amount").inputmask({
+				alias: "currency",
+				groupSeparator: ".",
+				digits: 0
+			});
 
 			let offset = 0;
 
