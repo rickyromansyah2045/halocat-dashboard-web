@@ -29,7 +29,7 @@
             </div>
         </div>
         <div id="loading-text" class="col-12 text-center">
-            Loading Dashboard Data...
+            <i class="fa fa-pulse fa-spinner"></i> Loading Dashboard Data...
         </div>
     </div>
     <div id="charts" style="display: none;">
