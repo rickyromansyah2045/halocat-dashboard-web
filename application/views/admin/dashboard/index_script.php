@@ -186,7 +186,7 @@
                     caretPadding: 10,
                     callbacks: {
                         label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
                             return `${datasetLabel}: ${tooltipItem.yLabel}`;
                         }
                     }
@@ -285,7 +285,7 @@
                     caretPadding: 10,
                     callbacks: {
                         label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
                             return `${datasetLabel}: ${tooltipItem.yLabel}`;
                         }
                     }
@@ -376,7 +376,7 @@
                     caretPadding: 10,
                     callbacks: {
                         label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
                             return `${datasetLabel}: ${tooltipItem.yLabel}`;
                         }
                     }
@@ -475,7 +475,7 @@
                     caretPadding: 10,
                     callbacks: {
                         label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
                             return `${datasetLabel}: ${tooltipItem.yLabel}`;
                         }
                     }
@@ -574,7 +574,7 @@
                     caretPadding: 10,
                     callbacks: {
                         label: function(tooltipItem, chart) {
-                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
                             return `${datasetLabel}: ${tooltipItem.yLabel}`;
                         }
                     }
@@ -614,10 +614,18 @@
                     xPadding: 15,
                     yPadding: 15,
                     displayColors: false,
-                    caretPadding: 10
+                    caretPadding: 10,
+                    callbacks: {
+                        label: function(tooltipItem, chart) {
+                            let label = chart.labels[tooltipItem.index] || "";
+                            let data = chart.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || "";
+                            return `${label}: ${formatRupiah(data)}`;
+                        }
+                    }
                 },
                 legend: {
-                    display: true
+                    display: true,
+                    position: "bottom"
                 },
                 cutoutPercentage: 35
             }
