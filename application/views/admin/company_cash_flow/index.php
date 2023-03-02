@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group">
                         <label for="amount">Amount</label>
-                        <input class="form-control" id="amount" type="number" placeholder="">
+                        <input class="form-control" id="amount" data-type="number" type="text" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="note">Note/Information</label>
