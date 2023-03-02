@@ -294,5 +294,96 @@
 
         $("#chartTransactions-date").html(chartDataTransactions.date);
         $("#chartTransactions-time").html(chartDataTransactions.time);
+
+        let chartNewUserRegistration = new Chart(document.getElementById("chartNewUserRegistration"), {
+            type: "bar",
+            data: {
+                labels: [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                datasets: [{
+                    label: "Website Activity",
+                    backgroundColor: "rgba(0, 97, 242, 1)",
+                    hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+                    borderColor: "#4e73df",
+                    data: JSON.parse(chartDataNewUserRegistration.content),
+                    maxBarThickness: 25
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        time: {
+                            unit: "month"
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            padding: 5,
+                            callback: function(value, index, values) {
+                                return value;
+                            }
+                        },
+                        gridLines: {
+                            color: "rgb(234, 236, 244)",
+                            zeroLineColor: "rgb(234, 236, 244)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    titleMarginBottom: 10,
+                    titleFontColor: "#6e707e",
+                    titleFontSize: 14,
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: "#dddfeb",
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                    callbacks: {
+                        label: function(tooltipItem, chart) {
+                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
+                            return `${datasetLabel}: ${tooltipItem.yLabel}`;
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#chartNewUserRegistration-date").html(chartDataNewUserRegistration.date);
+        $("#chartNewUserRegistration-time").html(chartDataNewUserRegistration.time);
     });
 </script>
