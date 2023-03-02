@@ -110,13 +110,15 @@
 		<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?= $_ENV['MIDTRANS_CLIENT_KEY']; ?>"></script>
 		<script src="<?= base_url('assets/inputmask/dist/jquery.inputmask.js'); ?>"></script>
 		<script>
-
-			// Ubah Alias
 			$("#donate-amount").inputmask({
-				alias: "currency",
-				groupSeparator: ".",
-				digits: 0
-			});
+				alias: 'numeric',
+				groupSeparator: '.',
+				autoGroup: true,
+				digits: 0,
+				digitsOptional: false,
+				prefix: 'Rp ',
+				autoUnmask: true
+			}).attr('autocomplete', 'off');
 
 			let offset = 0;
 
