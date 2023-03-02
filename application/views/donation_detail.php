@@ -159,8 +159,8 @@
 						return
 					}
 
-					var amountMidtrans = $('#donate-amount').val()
-					var	amounts = amountMidtrans.replace(",", "")
+					var amountMidtrans = $('#donate-amount').val();
+					var	amounts = amountMidtrans.replace(".", "");
 
 					if (eMoney >= parseInt(amounts)) {
 						Swal.fire({
@@ -189,8 +189,8 @@
 					}
 
 					function eMoneyTransaction() {
-						var amountMidtrans = $('#donate-amount').val()
-						var	amounts = amountMidtrans.replace(",", "")
+						var amountMidtrans = $('#donate-amount').val();
+						var	amounts = amountMidtrans.replace(".", "");
 
 						$.ajax({
 							url: "<?= $_ENV['API_URL']; ?>/transactions/emoney",
@@ -244,8 +244,8 @@
 					}
 
 					function snapTransaction() {
-						var amountMidtrans = $('#donate-amount').val()
-						var	amounts = amountMidtrans.replace(",", "")
+						var amountMidtrans = $('#donate-amount').val();
+						var	amounts = amountMidtrans.replace(".", "");
 
 						$.ajax({
 							url: "<?= $_ENV['API_URL']; ?>/transactions",
@@ -319,8 +319,8 @@
 				});
 			<?php else: ?>
 				$('#form-donate').submit(function(e){
-					var amountMidtrans = $('#donate-amount').val()
-					var	amounts = amountMidtrans.replace(",", "")
+					var amountMidtrans = $('#donate-amount').val();
+					var	amounts = amountMidtrans.replace(".", "");
 					e.preventDefault();
 					if ($('#donate-amount').val() == "") {
 						Swal.fire({
