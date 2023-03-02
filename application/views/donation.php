@@ -172,9 +172,9 @@
 								let description = '';
 
 								if (data[i].images.length > 0) {
-									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="">`;
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" alt="Image ${data[i].short_description}">`;
 								} else {
-									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= base_url('assets/img/default_image.png'); ?>" alt="">`;
+									img = `<img class="card-img-top card_img_donasi" style="height: 250px; object-fit: cover;" src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= base_url('assets/img/default_image.png'); ?>" alt="Image ${data[i].short_description}">`;
 								}
 
 								if (data[i].is_exclusive) {
