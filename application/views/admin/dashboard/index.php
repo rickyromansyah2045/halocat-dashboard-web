@@ -68,18 +68,18 @@
             <div class="card mb-4">
                 <div class="card-header">Company Income</div>
                 <div class="card-body">
-                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                    <div class="chart-bar"><canvas id="chartCashFlowIncome" width="100%" height="50"></canvas></div>
                 </div>
-                <div class="card-footer small text-muted">Updated yesterday at ?</div>
+                <div class="card-footer small text-muted">Updated <span id="chartCashFlowIncome-date"></span> at <span id="chartCashFlowIncome-time"></span></div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card mb-4">
                 <div class="card-header">Company Expense</div>
                 <div class="card-body">
-                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                    <div class="chart-bar"><canvas id="chartCashFlowExpanse" width="100%" height="50"></canvas></div>
                 </div>
-                <div class="card-footer small text-muted">Updated yesterday at ?</div>
+                <div class="card-footer small text-muted">Updated <span id="chartCashFlowExpanse-date"></span> at <span id="chartCashFlowExpanse-time"></span></div>
             </div>
         </div>
     </div>
