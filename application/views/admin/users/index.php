@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="e_money">E-Money Balance</label>
-                        <input class="form-control" id="e_money" type="number" placeholder="">
+                        <input class="form-control" id="e_money" data-type="number" type="text" placeholder="">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -120,7 +120,7 @@
                     </div>
                     <div class="form-group">
                         <label for="e_money">E-Money Balance</label>
-                        <input class="form-control" id="edit-e_money" type="number" placeholder="">
+                        <input class="form-control" id="edit-e_money" data-type="number" type="text" placeholder="">
                     </div>
                 </div>
                 <div class="modal-footer">
