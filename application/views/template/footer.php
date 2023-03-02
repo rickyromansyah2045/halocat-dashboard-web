@@ -4,7 +4,7 @@
             <div class="col-xl-6">
                 <div class="box_footer_description">
                     <a class="navbar-brand" href="<?= site_url(); ?>">
-                        <img class="logo_brand_footer" src="<?= base_url('assets/img/logo.png')?>">
+                        <img class="logo_brand_footer" src="<?= base_url('assets/img/logo.png')?>" alt="Logo The Cloud Donation">
                     </a>
                     <p class="txt_footer_brand">the cloud donation.</p>
                 </div>

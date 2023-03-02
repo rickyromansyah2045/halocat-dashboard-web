@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="<?= site_url(); ?>">
-			<img class="logo_brand" src="<?= base_url('assets/img/logo.png')?>">
+			<img class="logo_brand" src="<?= base_url('assets/img/logo.png')?>" alt="Logo The Cloud Donation">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
