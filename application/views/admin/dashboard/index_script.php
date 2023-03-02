@@ -444,6 +444,10 @@
                         ticks: {
                             padding: 5,
                             callback: function(value, index, values) {
+                                if (value > 1000) {
+                                    value = value.toString().slice(0, -3) + "K"
+                                    return formatRupiahWithK(value);
+                                }
                                 return value;
                             }
                         },
@@ -543,6 +547,10 @@
                         ticks: {
                             padding: 5,
                             callback: function(value, index, values) {
+                                if (value > 1000) {
+                                    value = value.toString().slice(0, -3) + "K"
+                                    return formatRupiahWithK(value);
+                                }
                                 return value;
                             }
                         },
@@ -619,6 +627,12 @@
                         label: function(tooltipItem, chart) {
                             let label = chart.labels[tooltipItem.index] || "";
                             let data = chart.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || "";
+
+                            if (parseInt(data) > 1000) {
+                                data = data.toString().slice(0, -3) + "K"
+                                return `${label}: ${formatRupiahWithK(data)}`;
+                            }
+
                             return `${label}: ${formatRupiah(data)}`;
                         }
                     }
