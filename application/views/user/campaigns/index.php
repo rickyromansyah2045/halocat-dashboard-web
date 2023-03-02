@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Goal Amount</label>
-                                <input class="form-control" id="goal_amount" type="number" placeholder="">
+                                <input class="form-control" id="goal_amount" data-type="number" type="text" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">End of Campaign Date</label>
@@ -227,7 +227,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Goal Amount</label>
-                                <input class="form-control" id="edit-goal_amount" type="number" placeholder="">
+                                <input class="form-control" id="edit-goal_amount" data-type="number" type="text" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">End of Campaign Date</label>
