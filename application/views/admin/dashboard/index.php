@@ -46,7 +46,7 @@
                 <div class="card-footer small text-muted">Updated <span id="chartNewUserRegistration-date"></span> at <span id="chartNewUserRegistration-time"></span></div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <div class="card mb-4">
                 <div class="card-header">Transaction Activity</div>
                 <div class="card-body">
@@ -55,7 +55,7 @@
                 <div class="card-footer small text-muted">Updated <span id="chartTransactions-date"></span> at <span id="chartTransactions-time"></span></div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             <div class="card mb-4">
                 <div class="card-header">Transaction Status</div>
                 <div class="card-body">
