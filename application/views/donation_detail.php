@@ -14,7 +14,7 @@
 							<div class="carousel-inner dd_highlight_img">
 								<?php for ($i = 0; $i < count($data['images']); $i++): ?>
 									<div class="carousel-item<?= $i == 0 ? " active" : ""; ?>">
-										<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" alt="">
+										<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" alt="Image <?= $data['title']; ?>">
 									</div>
 								<?php endfor; ?>
 							</div>
@@ -22,7 +22,7 @@
 								<?php for ($i = 0; $i < count($data['images']); $i++): ?>
 									<li class="list-inline-item<?= $i == 0 ? " active" : ""; ?>">
 										<a id="carousel-selector-<?= $i; ?>" class="selected" data-slide-to="<?= $i; ?>" data-target="#custCarousel">
-											<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" class="box_list_highlight">
+											<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= "{$_ENV['API_BASE']}/{$data['images'][$i]['file_location']}"; ?>" class="box_list_highlight"  alt="Image <?= $data['title']; ?>">
 										</a>
 									</li>
 								<?php endfor; ?>
@@ -31,7 +31,7 @@
 						<hr>
 					<?php else: ?>
 						<div class="dd_highlight_img mb-4">
-							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= count($data["images"]) == 0 ? base_url('assets/img/default_image_small.png') : "{$_ENV['API_BASE']}/{$data['images'][0]['file_location']}"; ?>" class="highlight_img" alt="">
+							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= count($data["images"]) == 0 ? base_url('assets/img/default_image_small.png') : "{$_ENV['API_BASE']}/{$data['images'][0]['file_location']}"; ?>" class="highlight_img" alt="Image <?= $data['title']; ?>">
 						</div>
 					<?php endif; ?>
 					<div class="dd_description_donasi">
@@ -109,10 +109,10 @@
 		<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<?= $_ENV['MIDTRANS_CLIENT_KEY']; ?>"></script>
 		<script src="<?= base_url('assets/inputmask/dist/jquery.inputmask.js'); ?>"></script>
 		<script>
-			
+
 			// Ubah Alias
 			$("#donate-amount").inputmask({ alias: "currency", digits: 0});
-			
+
 			let offset = 0;
 
 			<?php if ($this->session->has_userdata('id')): ?>
@@ -186,7 +186,7 @@
 					function eMoneyTransaction() {
 						var amountMidtrans = $('#donate-amount').val()
 						var	amounts = amountMidtrans.replace(",", "")
-						
+
 						$.ajax({
 							url: "<?= $_ENV['API_URL']; ?>/transactions/emoney",
 							method: 'POST',
