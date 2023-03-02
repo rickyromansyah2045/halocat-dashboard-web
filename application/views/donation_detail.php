@@ -293,7 +293,7 @@
 										$('#form-donate').trigger('reset');
 										Swal.fire({
 											icon: 'warning',
-											text: "The payment snap popup closes, the payment transaction is canceled..."
+											text: "The payment snap popup closed, the payment transaction is canceled..."
 										});
 									}
 								});
@@ -373,7 +373,7 @@
 									$('#form-donate').trigger('reset');
 									Swal.fire({
 										icon: 'warning',
-										text: "The payment snap popup closes, the payment transaction is canceled..."
+										text: "The payment snap popup closed, the payment transaction is canceled..."
 									});
 								}
 							});
