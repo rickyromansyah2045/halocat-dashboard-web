@@ -582,7 +582,7 @@
                             $('#images-collapse').append(`
                                 <div class="collapse${(i == 0 ? ' show' : '')}" id="imgCollapse-${i+1}">
                                     <div class="wrapper-campaign-image">
-                                        <img src="<?= str_replace('/api/v1', '', $_ENV['API_URL']); ?>/${images[i].file_location}" alt="campaign image" class="mw-100">
+                                        <img src="<?= str_replace('/api/v1', '', $_ENV['API_URL']); ?>/${images[i].file_location}" alt="Campaign Image" class="mw-100">
                                     </div>
                                     <div class="mt-2">
                                         <button class="btn btn-danger btn-sm btn-block" type="button" onclick="deleteImage(${images[i].id})">Delete This Image</button>
