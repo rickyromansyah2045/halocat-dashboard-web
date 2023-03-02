@@ -15,7 +15,7 @@
 							</a>
 						</div>
 						<div class="col-md-6 padl45">
-							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= base_url('assets/img/home-hero.jpeg'); ?>" class="img_home_page">
+							<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= base_url('assets/img/home-hero.jpeg'); ?>" class="img_home_page" alt="The Cloud Donation - Hero Image">
 						</div>
 					</div>
 				</div>
@@ -298,9 +298,9 @@
 								let description = '';
 
 								if (data[i].images.length > 0) {
-									img = `<img data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" alt="">`;
+									img = `<img data-src="<?= $_ENV['API_BASE']; ?>/${data[i].images[0].file_location}" class="card-img-top card_img_donasi" alt="Image ${data[i].short_description}">`;
 								} else {
-									img = `<img data-src="<?= base_url('assets/img/default_image.png'); ?>" class="card-img-top card_img_donasi" alt="">`;
+									img = `<img data-src="<?= base_url('assets/img/default_image.png'); ?>" class="card-img-top card_img_donasi" alt="Image ${data[i].short_description}">`;
 								}
 
 								percentage = Math.round((data[i].current_amount / data[i].goal_amount) * 100);
