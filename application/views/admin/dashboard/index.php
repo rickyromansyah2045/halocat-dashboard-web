@@ -59,9 +59,9 @@
             <div class="card mb-4">
                 <div class="card-header">Transaction Status</div>
                 <div class="card-body">
-                    <div class="chart-pie"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                    <div class="chart-pie"><canvas id="chartStatusTransactions" width="100%" height="50"></canvas></div>
                 </div>
-                <div class="card-footer small text-muted">Updated yesterday at ?</div>
+                <div class="card-footer small text-muted">Updated <span id="chartStatusTransactions-date"></span> at <span id="chartStatusTransactions-time"></span></div>
             </div>
         </div>
         <div class="col-lg-6">

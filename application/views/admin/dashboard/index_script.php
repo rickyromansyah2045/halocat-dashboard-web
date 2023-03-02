@@ -103,6 +103,7 @@
         let chartDataTransactions = generateChartData("transactions");
         let chartDataCashFlowIncome = generateChartData("cash_flow_income");
         let chartDataCashFlowExpanse = generateChartData("cash_flow_expanse");
+        let chartDataStatusTransactions = generateChartData("status_transactions");
         let chartDataNewUserRegistration = generateChartData("new_user_registration");
 
         let chartWebsiteActivity = new Chart(document.getElementById("chartWebsiteActivity"), {
@@ -583,5 +584,46 @@
 
         $("#chartCashFlowExpanse-date").html(chartDataCashFlowExpanse.date);
         $("#chartCashFlowExpanse-time").html(chartDataCashFlowExpanse.time);
+
+        let chartStatusTransactions = new Chart(document.getElementById("chartStatusTransactions"), {
+            type: "pie",
+            data: {
+                labels: ["Paid", "Pending", "Cancelled"],
+                datasets: [{
+                    data: JSON.parse(chartDataStatusTransactions.content),
+                    backgroundColor: [
+                        "teal",
+                        "silver",
+                        "red",
+                    ],
+                    hoverBackgroundColor: [
+                        "darkseagreen",
+                        "whitesmoke",
+                        "maroon",
+                    ],
+                    hoverBorderColor: "whitesmoke"
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: "#dddfeb",
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true
+                },
+                cutoutPercentage: 35
+            }
+        });
+
+        $("#chartStatusTransactions-date").html(chartDataStatusTransactions.date);
+        $("#chartStatusTransactions-time").html(chartDataStatusTransactions.time);
     });
 </script>
