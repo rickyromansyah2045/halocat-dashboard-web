@@ -83,9 +83,9 @@
                 <div class="card mb-4">
                     <div class="card-header">Company Expense</div>
                     <div class="card-body">
-                        <div class="chart-bar"><canvas id="chartCashFlowExpanse" width="100%" height="50"></canvas></div>
+                        <div class="chart-bar"><canvas id="chartCashFlowExpense" width="100%" height="50"></canvas></div>
                     </div>
-                    <div class="card-footer small text-muted">Updated <span id="chartCashFlowExpanse-date"></span> at <span id="chartCashFlowExpanse-time"></span></div>
+                    <div class="card-footer small text-muted">Updated <span id="chartCashFlowExpense-date"></span> at <span id="chartCashFlowExpense-time"></span></div>
                 </div>
             </div>
         </div>

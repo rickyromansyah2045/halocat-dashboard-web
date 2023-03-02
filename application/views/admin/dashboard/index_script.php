@@ -46,7 +46,7 @@
         let chartDataWebsiteActivity = generateChartData("website_activity");
         let chartDataTransactions = generateChartData("transactions");
         let chartDataCashFlowIncome = generateChartData("cash_flow_income");
-        let chartDataCashFlowExpanse = generateChartData("cash_flow_expanse");
+        let chartDataCashFlowExpense = generateChartData("cash_flow_expense");
         let chartDataStatusTransactions = generateChartData("status_transactions");
         let chartDataNewUserRegistration = generateChartData("new_user_registration");
 
@@ -434,7 +434,7 @@
         $("#chartCashFlowIncome-date").html(chartDataCashFlowIncome.date);
         $("#chartCashFlowIncome-time").html(chartDataCashFlowIncome.time);
 
-        let chartCashFlowExpanse = new Chart(document.getElementById("chartCashFlowExpanse"), {
+        let chartCashFlowExpense = new Chart(document.getElementById("chartCashFlowExpense"), {
             type: "line",
             data: {
                 labels: [
@@ -464,7 +464,7 @@
                     pointHoverBorderColor: "rgba(0, 97, 242, 1)",
                     pointHitRadius: 10,
                     pointBorderWidth: 2,
-                    data: JSON.parse(chartDataCashFlowExpanse.content)
+                    data: JSON.parse(chartDataCashFlowExpense.content)
                 }]
             },
             options: {
@@ -534,8 +534,8 @@
             }
         });
 
-        $("#chartCashFlowExpanse-date").html(chartDataCashFlowExpanse.date);
-        $("#chartCashFlowExpanse-time").html(chartDataCashFlowExpanse.time);
+        $("#chartCashFlowExpense-date").html(chartDataCashFlowExpense.date);
+        $("#chartCashFlowExpense-time").html(chartDataCashFlowExpense.time);
 
         let chartStatusTransactions = new Chart(document.getElementById("chartStatusTransactions"), {
             type: "pie",
