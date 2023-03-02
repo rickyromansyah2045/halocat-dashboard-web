@@ -184,7 +184,7 @@
                     if ((response?.data?.e_money || 0) > 0) {
                         $('#card-body-withdrawal').html(`<form id="form-withdraw"><div class="form-group">
                             <label for="amount">Amount</label>
-                            <input class="form-control" id="amount" type="number" max="${response?.data?.e_money}">
+                            <input class="form-control" id="amount" data-type="number" type="text">
                         </div>
                         <div class="form-group">
                             <label for="information">Withdrawal Request Note/Information</label>
@@ -199,6 +199,7 @@ Account Name: Muhammad Saleh Solahudin"></textarea>
                         <button id="btn-withdraw" class="btn btn-primary btn-sm btn-block" type='submit'>Send Withdrawal Request</button></form>`);
 
                         initFormWithdraw();
+                        inputMask();
                     } else {
                         $('#card-body-withdrawal').html("<p class='mb-0'><b>Info:</b><br>Can not withdraw because your balance is 0.</p>");
                     }
