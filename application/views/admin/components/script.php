@@ -7,6 +7,7 @@
 <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" crossorigin="anonymous"></script>
 <script src="<?= base_url('assets/js/sweetalert/sweetalert2.all.min.js'); ?>"></script>
+<script src="<?= base_url('assets/inputmask/dist/jquery.inputmask.js'); ?>"></script>
 
 <?= @$custom_script; ?>
 
@@ -36,4 +37,18 @@
 
         return money + "K"
     }
+
+    function inputMask() {
+        $("input[data-type=number]").inputmask({
+            alias: 'numeric',
+            groupSeparator: '.',
+            autoGroup: true,
+            digits: 0,
+            digitsOptional: false,
+            prefix: 'Rp ',
+            autoUnmask: true
+        }).attr('autocomplete', 'off');
+    }
+
+    inputMask();
 </script>
