@@ -233,6 +233,14 @@ Account Name: Muhammad Saleh Solahudin"></textarea>
                 return
             }
 
+            if ($('#amount').val() > userData.e_money) {
+                Swal.fire({
+                    icon: 'warning',
+                    text: "The amount cannot be higher than your e-money balance!"
+                });
+                return
+            }
+
             if ($('#information').val() == "") {
                 Swal.fire({
                     icon: 'warning',
