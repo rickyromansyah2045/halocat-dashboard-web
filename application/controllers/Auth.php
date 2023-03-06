@@ -38,7 +38,7 @@ class Auth extends CI_Controller
 		$this->load->view('auth/forgot_password', $data);
 	}
 
-	public function proses_login()
+	public function process_login()
 	{
 		$data = $this->input->post();
 
