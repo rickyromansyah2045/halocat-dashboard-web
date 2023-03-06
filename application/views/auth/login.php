@@ -25,7 +25,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= site_url('auth/forgot_password'); ?>">Forgot Password?</a>
+                                    <a class="small" href="<?= site_url('auth/forgot-password'); ?>">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
                                     <a class="small" href="<?= site_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
