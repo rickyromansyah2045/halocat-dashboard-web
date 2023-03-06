@@ -56,7 +56,7 @@
         var password = $('#password').val();
 
         if (email != "" && password != "") {
-            proses_login(email, password)
+            process_login(email, password)
         } else {
             if (email == "") {
                 Swal.fire({
@@ -73,10 +73,10 @@
         }
     }
 
-    function proses_login(email, password) {
+    function process_login(email, password) {
         $.ajax({
             type: 'POST',
-            url: '<?= base_url("auth/proses_login")?>',
+            url: '<?= base_url("auth/process_login")?>',
             dataType: 'JSON',
             beforeSend: function() {
                 $('#btn_login').prop('disabled', true);
