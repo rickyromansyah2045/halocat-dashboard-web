@@ -15,10 +15,10 @@
                                 </div>
                                 <form id="form-reset-password" class="user">
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
+                                        <input type="email" class="form-control form-control-user" id="email" placeholder="Enter Email Address..." required>
                                     </div>
-                                    <button class="btn btn-primary btn-user btn-block">
-                                        Reset Password
+                                    <button id="btn-reset-password" type="submit" class="btn btn-primary btn-user btn-block">
+                                        Request Reset Password
                                     </button>
                                 </form>
                                 <hr>
@@ -43,11 +43,64 @@
 
 <?php $this->load->view('auth/footer_auth'); ?>
 <script>
-    $('#form-reset-password').submit(function(e){
+    // $('#form-reset-password').submit(function(e){
+    //     e.preventDefault();
+    //     Swal.fire({
+    //         icon: 'info',
+    //         html: "Sorry, the password reset process hasn't been completed, if you really want to reset your password, you can contact the following WhatsApp (WhatsApp/text only): <a href='https://wa.me/628974848270' target='_blank'>+628974848270</a>.<br><br>Thank you very much for understanding!"
+    //     });
+    // });
+
+    $("#form-reset-password").submit(function(e) {
         e.preventDefault();
-        Swal.fire({
-            icon: 'info',
-            html: "Sorry, the password reset process hasn't been completed, if you really want to reset your password, you can contact the following WhatsApp (WhatsApp/text only): <a href='https://wa.me/628974848270' target='_blank'>+628974848270</a>.<br><br>Thank you very much for understanding!"
-        });
+        verifikasi_data();
     });
+
+    function verifikasi_data() {
+        var email = $('#email').val();
+
+        if (email != "") {
+            processRequest(email)
+        } else {
+            Swal.fire({
+                icon: 'error',
+                text: 'Email cannot be empty'
+            })
+        }
+    }
+
+    function processRequest(email) {
+        $.ajax({
+            type: 'POST',
+            url: '<?= base_url("auth/request_forgot_password")?>',
+            dataType: 'JSON',
+            beforeSend: function() {
+                $('#btn-reset-password').prop('disabled', true);
+                $('#btn-reset-password').html('Processing...');
+            },
+            complete: function() {
+                $('#btn-reset-password').prop('disabled', false);
+                $('#btn-reset-password').html('Request Reset Password');
+            },
+            data: {
+                email: email
+            },
+            success: function (result) {
+                if (result.status == true) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Request Success',
+                        text: result.message
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: result.error
+                    });
+                }
+            }
+        });
+    }
 </script>
