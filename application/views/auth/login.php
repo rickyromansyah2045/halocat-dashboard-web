@@ -61,13 +61,13 @@
             if (email == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("Email Tidak Boleh Kosong")
+                    text: ("Email Cannot Be Empty")
                 })
             }
             if (password == "") {
                 Swal.fire({
                     icon: 'error',
-                    text: ("Password Tidak Boleh Kosong")
+                    text: ("Password Cannot Be Empty")
                 })
             }
         }
