@@ -55,10 +55,10 @@
 <script>
     $("#form-register").submit(function(e){
         e.preventDefault();
-        verifikasi_data();
+        data_verification();
     });
 
-    function verifikasi_data() {
+    function data_verification() {
         var firstname = $('#firstname').val();
         var lastname = $('#lastname').val();
         var email = $('#email').val();
