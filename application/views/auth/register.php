@@ -65,7 +65,7 @@
         var password = $('#password').val();
 
         if (email != "" && password != "" && firstname != "" && lastname != "") {
-            proses_register(firstname, lastname, email, password);
+            process_register(firstname, lastname, email, password);
         } else {
             if (firstname == "") {
                 Swal.fire({
@@ -94,10 +94,10 @@
         }
     }
 
-    function proses_register(firstname, lastname, email, password) {
+    function process_register(firstname, lastname, email, password) {
         $.ajax({
             type: 'POST',
-            url: '<?= base_url("auth/proses_register")?>',
+            url: '<?= base_url("auth/process_register")?>',
             dataType: 'JSON',
             beforeSend: function() {
                 $('#btn_register').prop('disabled', true);
