@@ -53,10 +53,10 @@
 
     $("#form-reset-password").submit(function(e) {
         e.preventDefault();
-        verifikasi_data();
+        data_verification();
     });
 
-    function verifikasi_data() {
+    function data_verification() {
         var email = $('#email').val();
 
         if (email != "") {
