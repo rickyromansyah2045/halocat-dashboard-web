@@ -48,10 +48,10 @@
 <script>
     $("#form-login").submit(function(e) {
         e.preventDefault();
-        verifikasi_data();
+        data_verification();
     });
 
-    function verifikasi_data() {
+    function data_verification() {
         var email = $('#email').val();
         var password = $('#password').val();
 
