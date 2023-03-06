@@ -19,6 +19,15 @@
         <div class="card-header">Update Your Account</div>
         <div class="card-body">
             <div class="col-10">
+                <?php if ($this->input->get('forgot-password', TRUE) === 'true'): ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        Request forgot password sucessfully, please change your password!
+                    </div>
+                <?php endif; ?>
                 <form id="update-account">
                     <div class="form-group">
                         <label for="email">Email Address</label>
