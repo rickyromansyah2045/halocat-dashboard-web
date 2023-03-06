@@ -36,10 +36,10 @@
 
     $('#update-account').submit(function(e){
         e.preventDefault();
-        verifikasi_data();
+        data_verification();
     });
 
-    function verifikasi_data() {
+    function data_verification() {
         var name = $('#name').val();
         var email = $('#email').val();
         var password = $('#password').val();
