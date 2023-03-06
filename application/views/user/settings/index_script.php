@@ -45,7 +45,7 @@
         var password = $('#password').val();
 
         if (email != "" && name != "") {
-            proses_update(name, email, password);
+            process_update(name, email, password);
         } else {
             if (name == "") {
                 Swal.fire({
@@ -62,7 +62,7 @@
         }
     }
 
-    function proses_update(name, email, password) {
+    function process_update(name, email, password) {
         let object = {
             email: $('#email').val(),
             name: $('#name').val()
