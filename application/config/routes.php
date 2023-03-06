@@ -57,6 +57,9 @@ $route['about'] = "front/about";
 $route['donations'] = "front/donation";
 $route['donate/(:any)'] = "front/donation_detail/$1";
 
+$route['auth/forgot-password'] = "auth/forgot_password";
+$route['auth/forgot-password/(:any)'] = "auth/process_forgot_password/$1";
+
 $route['admin/logs/activity'] = "admin/logs_activity";
 $route['admin/company-cash-flow'] = "admin/company_cash_flow";
 $route['admin/withdrawal-requests'] = "admin/withdrawal_requests";
