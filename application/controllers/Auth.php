@@ -122,7 +122,7 @@ class Auth extends CI_Controller
 		}
 	}
 
-	public function proses_register()
+	public function process_register()
 	{
 		$data = $this->input->post();
 
