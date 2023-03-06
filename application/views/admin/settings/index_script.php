@@ -26,6 +26,12 @@
             },
             complete: function() {}
         });
+
+        <?php if ($this->input->get('forgot-password', TRUE) === 'true'): ?>
+          let uri = window.location.toString();
+          let clean_uri = uri.substring(0,uri.indexOf("?"));
+          window.history.replaceState({},document.title,clean_uri);
+        <?php endif; ?>
     });
 
     $('#update-account').submit(function(e){
