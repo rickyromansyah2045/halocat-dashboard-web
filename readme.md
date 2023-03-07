@@ -31,7 +31,6 @@ If you really want to run it yourself on your local machine, you can follow thes
 2. ```
     mv thecloud-ci ~/Path/To/Local/Apache/Server
     ```
-
     example:
 
     ```
