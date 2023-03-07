@@ -105,7 +105,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">a minute ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -132,7 +131,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">2 minutes ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -159,7 +157,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">3 minutes ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -185,7 +182,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">3 minutes ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -216,7 +212,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">3 minutes ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -247,7 +242,6 @@
 											</div>
 											<div class="m_judul_right_review dn">
 												<p class="m_txt_judul_review">Good People</p>
-												<p class="m_txt_minute">3 minutes ago...</p>
 											</div>
 										</div>
 										<div class="desription_review">
@@ -256,6 +250,36 @@
 											</p>
 											<p class="txt_description_review mb-0">
 												The help provided by these people made me feel very moved. They understood that I was going through a hard time and gave me what they could to help me. They set aside the money for me through the cloud donation's website.
+											</p>
+										</div>
+									</div>
+									<div class="box_review_right">
+										<svg width="50%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="box_review card-shadow">
+								<div class="sub_box_review">
+									<div class="box_review_left">
+										<div class="box_judul_review">
+											<p class="txt_judul_review">Good People</p>
+
+											<div class="m_judul_left_review dn">
+												<svg class="m_svg_icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+												<i class="fa-thin fa-user"></i>
+											</div>
+											<div class="m_judul_right_review dn">
+												<p class="m_txt_judul_review">Good People</p>
+											</div>
+										</div>
+										<div class="desription_review">
+											<p class="txt_description_review">
+												I live in poverty and often feel starving. Don't have enough food to meet my daily needs. However, in the most difficult circumstances, many people came to provide assistance to me and people who were in the same situation through the cloud donation's website.
+											</p>
+											<p class="txt_description_review mb-0">
+												Thanks to the help of many people, I was able to overcome hunger and see the future more optimistically. I am heartfelt grateful to everyone who has helped me and I promise to always try to help others who are in the same situation.
 											</p>
 										</div>
 									</div>
