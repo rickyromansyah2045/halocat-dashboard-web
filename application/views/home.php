@@ -331,6 +331,46 @@
 							</div>
 						</div>
 					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading12" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+							<p class="txt_judul_faq">Can I donate using the e-money balance I have?</p>
+						</div>
+						<div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
+							<div class="card-body">
+								Yes you can use your e-money balance to make a donation, make sure you log in first
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading13" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+							<p class="txt_judul_faq">Can I deactivate my account?</p>
+						</div>
+						<div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordion">
+							<div class="card-body">
+								Yes, you can, please contact +628974842870 (text/whatsapp only)
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading14" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+							<p class="txt_judul_faq">Can I create a campaign without having to register first?</p>
+						</div>
+						<div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
+							<div class="card-body">
+								Yes, you can, please contact +628974842870 (text/whatsapp only)
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading15" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+							<p class="txt_judul_faq">What is an exclusive campaign?</p>
+						</div>
+						<div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#accordion">
+							<div class="card-body">
+								Exclusive Campaign is a special and special campaign where after the campaign is completed or reaches the target, users who are registered and donate to the campaign will get the opportunity to get rewards
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
