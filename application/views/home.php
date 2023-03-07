@@ -258,15 +258,59 @@
 						</div>
 					</div>
 					<div class="card mb5">
-						<div class="card-header box_list_faq" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-							<p class="txt_judul_faq">How do I make my campaign an exclusive campaign?</p>
+						<div class="card-header box_list_faq" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+							<p class="txt_judul_faq">After my campaign is finished where will the funds be transferred?</p>
 						</div>
-						<div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+						<div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+							<div class="card-body">
+								The funds will automatically go to your e-money balance, you can see your e-money balance on the wallet management page
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+							<p class="txt_judul_faq">How do I withdraw my e-money balance?</p>
+						</div>
+						<div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
+							<div class="card-body">
+								You can simply fill in the withdrawal request on the Wallet Management page, make sure the amount and information are appropriate and clear
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading9" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+							<p class="txt_judul_faq">How do I donate?</p>
+						</div>
+						<div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
-									<li>Exclusive campaigns can only be made by our team</li>
-									<li>Our team will randomly choose an interesting campaign to be regulated as an exclusive campaign</li>
+									<li>
+										If you do not have an account you can go directly to the list of donations page then select the campaign you want to donate and click donate now, after that please enter your aphorisms for the campaign then enter the amount you want to donate, after that click the donate now button and do the next direction of the popup that will appear
+									</li>
+									<li>
+										If you have an account please login first after login you will be directed to the User Area, in your User Area please select the list of donations menu in the sidebar to go to the list of donations page then select the campaign you want to donate and click donate now, after that please enter your aphorisms for the campaign then enter the amount you want to donate,  After that click the Donate Now button and do the next direction of the popup that will appear
+									</li>
 								</ol>
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading10" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+							<p class="txt_judul_faq">What is e-money?</p>
+						</div>
+						<div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
+							<div class="card-body">
+								E-Money is a balance that can be used to donate or disbursed into cash
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading11" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+							<p class="txt_judul_faq">Can I deposit to get my e-money balance?</p>
+						</div>
+						<div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
+							<div class="card-body">
+								No, you cannot deposit to get e-money balance
 							</div>
 						</div>
 					</div>
