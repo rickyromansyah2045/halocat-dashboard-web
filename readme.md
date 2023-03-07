@@ -33,7 +33,7 @@ If you really want to run it yourself on your local machine, you can follow thes
 
     example:
 
-    mv thecloud-ci ~/Applications/MAMP/htdocs && ~/Applications/MAMP/htdocs
+    mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
     ```
 
 3. ```
