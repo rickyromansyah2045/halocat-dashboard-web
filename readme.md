@@ -30,11 +30,8 @@ If you really want to run it yourself on your local machine, you can follow thes
 
 2. ```
     mv thecloud-ci ~/Path/To/Local/Server && cd ~/Path/To/Local/Server
-
-    example:
-
-    mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
     ```
+    > example: mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
 
 3. ```
     composer install
