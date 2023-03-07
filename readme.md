@@ -24,6 +24,12 @@ If you really want to run it yourself on your local machine, you can follow thes
 ?
 
 ## Tech Stack
+- HTML5
+- CSS3
+- JavaScript
+- jQuery & Ajax
+- Bootstrap Version 4
+- PHP With CodeIgniter Version 3
 
 ## Alibaba Cloud Products Used
 - ApsaraDB For PolarDB
