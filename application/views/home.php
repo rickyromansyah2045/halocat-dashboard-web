@@ -197,12 +197,12 @@
 				<div id="accordion">
 					<div class="card mb5">
 						<div class="card-header box_list_faq" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<p class="txt_judul_faq">faq</p>
+							<p class="txt_judul_faq">What currency used on the Cloud donation website?</p>
 						</div>
 
 						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 							<div class="card-body">
-								faq pertama
+								The currency used is Indonesia Rupiah, we are using local symbol: <b>Rp (Rupiah)</b>.
 							</div>
 						</div>
 					</div>
