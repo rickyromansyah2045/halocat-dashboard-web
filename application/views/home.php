@@ -232,11 +232,18 @@
 					</div>
 					<div class="card mb5">
 						<div class="card-header box_list_faq" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-							<p class="txt_judul_faq">faq</p>
+							<p class="txt_judul_faq">How do I make my own campaign?</p>
 						</div>
 						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
 							<div class="card-body">
-								faq keempat
+								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
+									<li>You first register at The Cloud Donation</li>
+									<li>You Login to the User Area</li>
+									<li>Select the Campaigs menu</li>
+									<li>Click the Create New Campaign button</li>
+									<li>Fill in the New Campaign Form</li>
+									<li>Submit and wait for confirmation from our team</li>
+								</ol>
 							</div>
 						</div>
 					</div>
