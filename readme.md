@@ -45,6 +45,9 @@ If you really want to run it yourself on your local machine, you can follow thes
     ```
     > **The original .env file is in the submission folder that we have sent**. You can also get the original .env file by chatting to the following WhatsApp: https://wa.me/628974842870.
 
+5. Start Your Apache Local Server
+6. Open Your Browser And Point Your Website on URL Bar
+
 ## Tech Stack
 - Apache (For Local Development)
 - Nginx
