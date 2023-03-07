@@ -261,7 +261,7 @@
 												I had difficulty in coping with the medical needs I was facing. My health condition requires expensive treatment, and I feel limited in meeting this need. However, many people came to help me and provide financial support for my medical needs.
 											</p>
 											<p class="txt_description_review mb-0">
-												The help I received made me feel helped and more optimistic in the face of difficult medical conditions. I feel moved by the kindness of the people who pay attention to my situation. They gave me hope and confidence that I could continue to fight against the challenges at hand.
+												The help I received made me feel helped and more optimistic in the face of difficult medical conditions. I feel moved by the kindness of the people who pay attention to my situation.
 											</p>
 										</div>
 									</div>
