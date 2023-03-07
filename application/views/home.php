@@ -264,7 +264,7 @@
 						<div id="collapseFive" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
-									<li>What can make exclusive campaigns is only our team</li>
+									<li>Exclusive campaigns can only be made by our team</li>
 									<li>Our team will randomly choose an interesting campaign to be regulated as an exclusive campaign</li>
 								</ol>
 							</div>
