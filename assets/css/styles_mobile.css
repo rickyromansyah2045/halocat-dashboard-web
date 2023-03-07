@@ -121,8 +121,9 @@
     }
 
     .box_review {
-        width: 250px;
-        height: 250px;
+        text-align: justify;
+        width: 350px;
+        min-height: 250px;
         overflow: hidden;
     }
 
