@@ -24,6 +24,13 @@ You can immediately see the project we have made in the following links:
 - Login Page: https://thedonation.cloud/auth/login
 - Forgot Password Page: https://thedonation.cloud/auth/forgot-password
 
+## CMS (User Area) Useful Links
+
+- User Campaigns Data: https://thedonation.cloud/user/campaigns
+- User Transactions Data: https://thedonation.cloud/user/transactions
+- User Account Settings: https://thedonation.cloud/user/settings
+- User Wallet Management: https://thedonation.cloud/user/wallet
+
 ## How To Run On Local Machine
 
 Requirements:
