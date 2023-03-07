@@ -18,14 +18,40 @@ You can immediately see the project we have made in the following links:
 ## How To Run On Local Machine
 
 Requirements:
-?
+
+- PHP Version 7.0+ And Below Version 8.0
+- Composer 2.5+
 
 If you really want to run it yourself on your local machine, you can follow these steps:
-?
+
+1. ```git
+    git clone https://github.com/ZihxS/thecloud-ci.git
+    ```
+
+2. ```
+    mv thecloud-ci ~/Path/To/Local/Apache/Server
+    ```
+
+    example:
+
+    ```
+    mv thecloud-ci ~/Applications/MAMP/htdocs
+    ```
+
+3. ```
+    composer install
+    ```
+
+4. ```
+    cp .env.example .env
+    ```
+    > **The original .env file is in the submission folder that we have sent**. You can also get the original .env file by chatting to the following WhatsApp: https://wa.me/628974842870.
 
 ## Tech Stack
-- HTML5
-- CSS3
+- Apache (For Local Development)
+- Nginx
+- HTML
+- CSS
 - JavaScript
 - jQuery & Ajax
 - Bootstrap Version 4
