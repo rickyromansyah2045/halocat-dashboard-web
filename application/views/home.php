@@ -371,6 +371,36 @@
 							</div>
 						</div>
 					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading16" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+							<p class="txt_judul_faq">What are the Exclusive Campaign Rewards?</p>
+						</div>
+						<div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
+							<div class="card-body">
+								Exclusive Campaign Rewards Can Be E-Money or Goods
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading17" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+							<p class="txt_judul_faq">If I donate in the exclusive campaign but do not use the registered account, can I have the opportunity to get a reward?</p>
+						</div>
+						<div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
+							<div class="card-body">
+								No, only registered users can only get the opportunity to get rewards from the Exclusive Campaign
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading18" data-toggle="collapse" data-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+							<p class="txt_judul_faq">If I transact or donate can I see my transaction history?</p>
+						</div>
+						<div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordion">
+							<div class="card-body">
+								Yes you can see in the User Area of the Transactions menu
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
