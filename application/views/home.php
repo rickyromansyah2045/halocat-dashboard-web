@@ -208,11 +208,15 @@
 					</div>
 					<div class="card mb5">
 						<div class="card-header box_list_faq" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							<p class="txt_judul_faq">faq</p>
+							<p class="txt_judul_faq">Why do you have to make a donation at The Cloud Donation?</p>
 						</div>
 						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 							<div class="card-body">
-								faq kedua
+								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
+									<li>You can donate without having to create an account first</li>
+									<li>You can easily donate here</li>
+									<li>You can have the opportunity to get a prize if donating in an exclusive campaign</li>
+								</ol>
 							</div>
 						</div>
 					</div>
