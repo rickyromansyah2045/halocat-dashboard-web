@@ -15,6 +15,15 @@ You can immediately see the project we have made in the following links:
 - FE: https://thedonation.cloud (this repository)
 - BE: https://be.thedonation.cloud
 
+## Another Useful Links
+
+- Home Page: https://thedonation.cloud
+- List of Donations or Campaigns Page: https://thedonation.cloud/donations
+- About Page: https://thedonation.cloud/about
+- Register Page: https://thedonation.cloud/auth/register
+- Login Page: https://thedonation.cloud/auth/login
+- Forgot Password Page: https://thedonation.cloud/auth/forgot-password
+
 ## How To Run On Local Machine
 
 Requirements:
