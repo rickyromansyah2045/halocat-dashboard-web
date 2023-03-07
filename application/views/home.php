@@ -258,10 +258,10 @@
 						</div>
 					</div>
 					<div class="card mb5">
-						<div class="card-header box_list_faq" id="heading6" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						<div class="card-header box_list_faq" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
 							<p class="txt_judul_faq">How do I make my campaign an exclusive campaign?</p>
 						</div>
-						<div id="collapseFive" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+						<div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
 									<li>Exclusive campaigns can only be made by our team</li>
