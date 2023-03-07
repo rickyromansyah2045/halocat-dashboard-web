@@ -213,9 +213,9 @@
 						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
-									<li>You can donate without having to create an account first</li>
-									<li>You can easily donate here</li>
-									<li>You can have the opportunity to get a prize if donating in an exclusive campaign</li>
+									<li>You can donate without having to create an account first.</li>
+									<li>You can easily donate here.</li>
+									<li>You can have the opportunity to get a prize if donating in an exclusive campaign.</li>
 								</ol>
 							</div>
 						</div>
@@ -226,7 +226,7 @@
 						</div>
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 							<div class="card-body">
-								Yes, you can make your own donation campaign
+								Yes, you can make your own donation campaign.
 							</div>
 						</div>
 					</div>
@@ -237,12 +237,12 @@
 						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
-									<li>You first register at The Cloud Donation</li>
-									<li>You Login to the User Area</li>
-									<li>Select the Campaigs menu</li>
-									<li>Click the Create New Campaign button</li>
-									<li>Fill in the New Campaign Form</li>
-									<li>Submit and wait for confirmation from our team</li>
+									<li>You first register at The Cloud Donation (<a href="<?= site_url('auth/register'); ?>"><?= site_url('auth/register'); ?></a>).</li>
+									<li>You Login to the User Area (<a href="<?= site_url('auth/login'); ?>"><?= site_url('auth/login'); ?></a>).</li>
+									<li>Select the Campaigs menu (<a href="<?= site_url('user/campaigns'); ?>"><?= site_url('user/campaigns'); ?></a>).</li>
+									<li>Click the "Create New Campaign" button.</li>
+									<li>Fill in the New Campaign Form.</li>
+									<li>Submit and wait for confirmation from our team.</li>
 								</ol>
 							</div>
 						</div>
@@ -253,7 +253,7 @@
 						</div>
 						<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
 							<div class="card-body">
-								You don't need to pay if you want to make your own donation campaign at The Cloud Donation, but you will be charged an admin fee of the funds collected from the campaign that you made at the end of the campaign
+								You don't need to pay if you want to make your own donation campaign at The Cloud Donation, but you will be charged an admin fee of the funds collected from the campaign that you made at the end of the campaign.
 							</div>
 						</div>
 					</div>
@@ -263,7 +263,7 @@
 						</div>
 						<div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
 							<div class="card-body">
-								The funds will automatically go to your e-money balance, you can see your e-money balance on the wallet management page
+								The funds will automatically go to your e-money balance, you can see your e-money balance on the wallet management page (<a href="<?= site_url('user/wallet'); ?>"><?= site_url('user/wallet'); ?></a>).</li>
 							</div>
 						</div>
 					</div>
@@ -273,7 +273,7 @@
 						</div>
 						<div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
 							<div class="card-body">
-								You can simply fill in the withdrawal request on the Wallet Management page, make sure the amount and information are appropriate and clear
+								You can simply fill in the withdrawal request on the Wallet Management page (<a href="<?= site_url('user/wallet'); ?>"><?= site_url('user/wallet'); ?></a>), make sure the amount and information are appropriate and clear.
 							</div>
 						</div>
 					</div>
@@ -285,10 +285,10 @@
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
 									<li>
-										If you do not have an account you can go directly to the list of donations page then select the campaign you want to donate and click donate now, after that please enter your aphorisms for the campaign then enter the amount you want to donate, after that click the donate now button and do the next direction of the popup that will appear
+										If you do not have an account you can go directly to the list of donations page (<a href="<?= site_url('donations'); ?>"><?= site_url('donations'); ?></a>) then select the campaign you want to donate and click "donate now", after that please enter your aphorisms for the campaign then enter the amount you want to donate, after that click the "donate now" button and do the next direction of the popup that will appear.
 									</li>
 									<li>
-										If you have an account please login first after login you will be directed to the User Area, in your User Area please select the list of donations menu in the sidebar to go to the list of donations page then select the campaign you want to donate and click donate now, after that please enter your aphorisms for the campaign then enter the amount you want to donate,  After that click the Donate Now button and do the next direction of the popup that will appear
+										If you have an account please login first (<a href="<?= site_url('auth/login'); ?>"><?= site_url('auth/login'); ?></a>) after login you will be directed to the User Area, in your User Area please select the list of donations menu in the sidebar to go to the list of donations  (<a href="<?= site_url('donations'); ?>"><?= site_url('donations'); ?></a>) then select the campaign you want to donate and click "donate now", after that please enter your aphorisms for the campaign then enter the amount you want to donate,  After that click the "Donate Now" button and do the next direction of the popup that will appear.
 									</li>
 								</ol>
 							</div>
@@ -300,7 +300,7 @@
 						</div>
 						<div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
 							<div class="card-body">
-								E-Money is a balance that can be used to donate or disbursed into cash
+								E-Money is a balance that can be used to donate or disbursed into cash.
 							</div>
 						</div>
 					</div>
@@ -310,7 +310,7 @@
 						</div>
 						<div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
 							<div class="card-body">
-								No, you cannot deposit to get e-money balance
+								No, you cannot deposit to get e-money balance.
 							</div>
 						</div>
 					</div>
@@ -322,10 +322,10 @@
 							<div class="card-body">
 								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
 									<li>
-										E-Money balance will increase if you get a reward from an exclusive campaign whose reward is in the form of cash
+										E-Money balance will increase if you get a reward from an exclusive campaign whose reward is in the form of cash.
 									</li>
 									<li>
-										The e-money balance will also increase if you have a campaign and the campaign is completed or reaches its target
+										The e-money balance will also increase if you have a campaign and the campaign is completed or reaches the target.
 									</li>
 								</ol>
 							</div>
@@ -337,7 +337,7 @@
 						</div>
 						<div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
 							<div class="card-body">
-								Yes you can use your e-money balance to make a donation, make sure you log in first
+								Yes you can use your e-money balance to make a donation, make sure you log in first.
 							</div>
 						</div>
 					</div>
@@ -347,7 +347,7 @@
 						</div>
 						<div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordion">
 							<div class="card-body">
-								Yes, you can, please contact +628974842870 (text/whatsapp only)
+								Yes, you can, please contact +628974842870 (text/whatsapp only).
 							</div>
 						</div>
 					</div>
@@ -357,7 +357,7 @@
 						</div>
 						<div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
 							<div class="card-body">
-								Yes, you can, please contact +628974842870 (text/whatsapp only)
+								Yes, you can, please contact +628974842870 (text/whatsapp only).
 							</div>
 						</div>
 					</div>
@@ -367,7 +367,7 @@
 						</div>
 						<div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#accordion">
 							<div class="card-body">
-								Exclusive Campaign is a special and special campaign where after the campaign is completed or reaches the target, users who are registered and donate to the campaign will get the opportunity to get rewards
+								Exclusive Campaign is a special campaign where after the campaign is completed or reaches the target, users who are registered and donate to the campaign will get the opportunity to get rewards.
 							</div>
 						</div>
 					</div>
@@ -377,7 +377,7 @@
 						</div>
 						<div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
 							<div class="card-body">
-								Exclusive Campaign Rewards Can Be E-Money or Goods
+								Exclusive Campaign Rewards Can Be E-Money or Goods.
 							</div>
 						</div>
 					</div>
@@ -387,7 +387,7 @@
 						</div>
 						<div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
 							<div class="card-body">
-								No, only registered users can only get the opportunity to get rewards from the Exclusive Campaign
+								No, only registered users can only get the opportunity to get rewards from the Exclusive Campaign.
 							</div>
 						</div>
 					</div>
@@ -397,7 +397,7 @@
 						</div>
 						<div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordion">
 							<div class="card-body">
-								Yes you can see in the User Area of the Transactions menu
+								Yes you can see in the User Area of the Transactions menu (<a href="<?= site_url('user/transactions'); ?>"><?= site_url('user/transactions'); ?></a>).
 							</div>
 						</div>
 					</div>
