@@ -26,10 +26,26 @@ You can immediately see the project we have made in the following links:
 
 ## CMS (User Area) Useful Links
 
+- User Dashboard: https://thedonation.cloud/user/dashboard
 - User Campaigns Data: https://thedonation.cloud/user/campaigns
 - User Transactions Data: https://thedonation.cloud/user/transactions
 - User Account Settings: https://thedonation.cloud/user/settings
 - User Wallet Management: https://thedonation.cloud/user/wallet
+- Logout: https://thedonation.cloud/auth/logout
+
+## CMS (Admin Area) Useful Links
+
+- Admin Dashboard: https://thedonation.cloud/admin/dashboard
+- Data Users: https://thedonation.cloud/admin/users
+- Data Categories: https://thedonation.cloud/admin/categories
+- Data Campaigns & Winners Exclusive Campaigns: https://thedonation.cloud/admin/campaigns
+- Data Transactions: https://thedonation.cloud/admin/campaigns
+- Data Company Cash Flow: https://thedonation.cloud/admin/company-cash-flow
+- Data Withdrawal Requests: https://thedonation.cloud/admin/withdrawal-requests
+- Admin Account Settings: https://thedonation.cloud/admin/settings
+- Admin Wallet Management: https://thedonation.cloud/admin/wallet
+- Data Activity Logs: https://thedonation.cloud/admin/logs/activity
+- Logout: https://thedonation.cloud/auth/logout
 
 ## How To Run On Local Machine
 
