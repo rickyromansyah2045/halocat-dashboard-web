@@ -29,11 +29,11 @@ If you really want to run it yourself on your local machine, you can follow thes
     ```
 
 2. ```
-    mv thecloud-ci ~/Path/To/Local/Apache/Server
+    mv thecloud-ci ~/Path/To/Local/Apache/Server && cd ~/Path/To/Local/Apache/Server
 
     example:
 
-    mv thecloud-ci ~/Applications/MAMP/htdocs
+    mv thecloud-ci ~/Applications/MAMP/htdocs && ~/Applications/MAMP/htdocs
     ```
 
 3. ```
