@@ -249,11 +249,24 @@
 					</div>
 					<div class="card mb5">
 						<div class="card-header box_list_faq" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-							<p class="txt_judul_faq">faq</p>
+							<p class="txt_judul_faq">Do I have to pay if I want to make my own donation campaign?</p>
 						</div>
 						<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
 							<div class="card-body">
-								faq kelima
+								You don't need to pay if you want to make your own donation campaign at The Cloud Donation, but you will be charged an admin fee of the funds collected from the campaign that you made at the end of the campaign
+							</div>
+						</div>
+					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading6" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+							<p class="txt_judul_faq">How do I make my campaign an exclusive campaign?</p>
+						</div>
+						<div id="collapseFive" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+							<div class="card-body">
+								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
+									<li>What can make exclusive campaigns is only our team</li>
+									<li>Our team will randomly choose an interesting campaign to be regulated as an exclusive campaign</li>
+								</ol>
 							</div>
 						</div>
 					</div>
