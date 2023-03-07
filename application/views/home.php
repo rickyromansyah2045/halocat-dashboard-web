@@ -222,11 +222,11 @@
 					</div>
 					<div class="card mb5">
 						<div class="card-header box_list_faq" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							<p class="txt_judul_faq">faq</p>
+							<p class="txt_judul_faq">Can I make a donation campaign?</p>
 						</div>
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 							<div class="card-body">
-								faq ketiga
+								Yes, you can make your own donation campaign
 							</div>
 						</div>
 					</div>
