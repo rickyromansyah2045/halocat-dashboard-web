@@ -314,6 +314,23 @@
 							</div>
 						</div>
 					</div>
+					<div class="card mb5">
+						<div class="card-header box_list_faq" id="heading12" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+							<p class="txt_judul_faq">How do I get an e-money balance?</p>
+						</div>
+						<div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
+							<div class="card-body">
+								<ol style="padding-left: 20px; padding-right: 20px; margin-bottom: 0;">
+									<li>
+										E-Money balance will increase if you get a reward from an exclusive campaign whose reward is in the form of cash
+									</li>
+									<li>
+										The e-money balance will also increase if you have a campaign and the campaign is completed or reaches its target
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
