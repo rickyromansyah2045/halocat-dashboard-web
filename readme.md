@@ -1,3 +1,59 @@
-# TCD (CI PROJECT FILES)
+# The Cloud Donation - FE
 
-TCD (CI PROJECT FILES)
+This github repository is the frontend application for The Cloud Donation's website.
+
+## About The Cloud Donation
+
+The Cloud Donation proposes a cloud-based donation platform that leverages the latest technologies to simplify the donation process and provide increased anonymity and security for donors. The platform will allow donors to make a donation anonymously without the need for personal information. Donors will be able to choose from various payment options, including credit card, bank transfer, or mobile payment. The platform will be designed to be user-friendly, secure, and easily accessible on any device.
+
+By leveraging cloud technologies and innovative features, the platform can help bridge the gap between donors and non-profit organizations, enabling more effective and efficient charitable giving.
+
+## Useful Links
+
+You can immediately see the project we have made in the following links:
+
+- FE: https://thedonation.cloud (this repository)
+- BE: https://be.thedonation.cloud
+
+## How To Run On Local Machine
+
+Requirements:
+?
+
+If you really want to run it yourself on your local machine, you can follow these steps:
+?
+
+## Tech Stack
+
+## Alibaba Cloud Products Used
+- ApsaraDB For PolarDB
+- DMS For Manage PolarDB
+- Domain (**thedonation.cloud**)
+- Simple Application Server
+    - 4vCPUs - 16GB Memory - System Disk 400GB ESSD - Indonesia (Jakarta)
+    - Instance ID：36fcbb610e3d4c3c814be5a3b5422daf
+    - Image Information: Ubuntu 20.04
+    - Expires on: May 21, 2023 at 23:00:00
+
+## PolarDB Feature Used
+
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/hot-row-optimization
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/parallel-query-parallel-query
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/fast-query-cache
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/left-join-elimination
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/join-condition-pushdown
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/ptrc
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/enable-binary-logging
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/ddl-asynchronous-i-or-o
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/recycle-bin
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/statement-concurrency-control
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/thread-pool
+- https://www.alibabacloud.com/help/en/database-autonomy-service/latest/automatic-sql-optimization
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/prevent-long-running-transactions-on-read-only-nodes-from-blocking-ddl-operations
+- https://www.alibabacloud.com/help/en/polardb-for-mysql/latest/view-the-execution-status-of-ddl-statements-and-metadata-locking
+
+## Contacts
+
+- https://www.linkedin.com/in/muhammad-saleh-solahudin-8444171b2 or https://wa.me/628974842870
+- https://www.linkedin.com/in/ricky-romansyah-47831518b
+- https://www.linkedin.com/in/rifkihimawan
