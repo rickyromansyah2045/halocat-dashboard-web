@@ -100,6 +100,7 @@
                         ticks: {
                             min: 0,
                             padding: 5,
+                            precision: 0,
                             callback: function(value, index, values) {
                                 return value;
                             }
@@ -290,6 +291,7 @@
                         ticks: {
                             min: 0,
                             padding: 5,
+                            precision: 0,
                             callback: function(value, index, values) {
                                 return value;
                             }
