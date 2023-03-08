@@ -97,6 +97,7 @@ If you really want to run it yourself on your local machine, you can follow thes
     - Instance ID：36fcbb610e3d4c3c814be5a3b5422daf
     - Image Information: Ubuntu 20.04
     - Expires on: May 21, 2023 at 23:00:00
+- Direct Mail (email service)
 
 ## PolarDB Feature Used
 
