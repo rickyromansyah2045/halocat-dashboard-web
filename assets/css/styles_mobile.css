@@ -179,4 +179,8 @@
     .box_list_faq {
         height: 60px;
     }
+
+    .txt_judul_faq {
+        font-size: 12px;
+    }
 }
