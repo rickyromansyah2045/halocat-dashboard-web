@@ -802,7 +802,8 @@
 				digits: 0,
 				digitsOptional: false,
 				prefix: 'Rp ',
-				autoUnmask: true
+				autoUnmask: true,
+                rightAlign: false
 			}).attr('autocomplete', 'off');
         } else {
             $('#set-to-exclusive-reward').attr('type', 'text');
