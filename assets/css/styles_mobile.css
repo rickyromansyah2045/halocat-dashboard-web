@@ -177,10 +177,12 @@
     }
 
     .box_list_faq {
-        height: 60px;
+        padding: 20px;
+        height: auto;
     }
 
     .txt_judul_faq {
         font-size: 12px;
+        line-height: unset;
     }
 }
