@@ -321,7 +321,7 @@ class Auth extends CI_Controller
 
 			$this->session->set_userdata($session);
 
-			if ($session == "user") {
+			if ($session['role'] == "user") {
 				echo "<script>
 					alert(`{$result['message']}`);
 					window.location.href = `".site_url("user/settings?forgot-password=true")."`;
