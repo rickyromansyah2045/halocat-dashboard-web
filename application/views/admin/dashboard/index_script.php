@@ -198,6 +198,7 @@
                     yAxes: [{
                         ticks: {
                             padding: 5,
+                            precision: 0,
                             callback: function(value, index, values) {
                                 return value;
                             }
@@ -389,6 +390,7 @@
                     yAxes: [{
                         ticks: {
                             padding: 5,
+                            precision: 0,
                             callback: function(value, index, values) {
                                 if (value > 1000) {
                                     value = value.toString().slice(0, -3) + "K"
@@ -492,6 +494,7 @@
                     yAxes: [{
                         ticks: {
                             padding: 5,
+                            precision: 0,
                             callback: function(value, index, values) {
                                 if (value > 1000) {
                                     value = value.toString().slice(0, -3) + "K"
