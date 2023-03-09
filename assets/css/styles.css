@@ -23089,3 +23089,7 @@ pre[class*=language-] {
 .swal2-container.swal2-center>.swal2-popup {
   margin-right: 0 !important;
 }
+
+table.dataTable {
+  min-height: 150px;
+}
