@@ -794,9 +794,19 @@
 
     $('#set-to-exclusive-is_reward_money').change(function(){
         if ($(this).val() == "1") {
-            $('#set-to-exclusive-reward').attr('type', 'number');
+            $('#set-to-exclusive-reward').attr('type', 'text');
+            $("#set-to-exclusive-reward").inputmask({
+				alias: 'numeric',
+				groupSeparator: '.',
+				autoGroup: true,
+				digits: 0,
+				digitsOptional: false,
+				prefix: 'Rp ',
+				autoUnmask: true
+			}).attr('autocomplete', 'off');
         } else {
             $('#set-to-exclusive-reward').attr('type', 'text');
+            $("#set-to-exclusive-reward").unmask();
         }
     });
 
