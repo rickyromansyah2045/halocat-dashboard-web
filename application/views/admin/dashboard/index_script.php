@@ -260,7 +260,7 @@
                     "Dec"
                 ],
                 datasets: [{
-                    label: "Website Activity",
+                    label: "New User Registration",
                     backgroundColor: "rgba(0, 97, 242, 1)",
                     hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
                     borderColor: "#4e73df",
@@ -352,7 +352,7 @@
                     "Dec"
                 ],
                 datasets: [{
-                    label: "Transaction Activity",
+                    label: "Company Income",
                     lineTension: 0.3,
                     backgroundColor: "rgba(0, 97, 242, 0.05)",
                     borderColor: "rgba(0, 97, 242, 1)",
@@ -456,7 +456,7 @@
                     "Dec"
                 ],
                 datasets: [{
-                    label: "Transaction Activity",
+                    label: "Company Expense",
                     lineTension: 0.3,
                     backgroundColor: "rgba(0, 97, 242, 0.05)",
                     borderColor: "rgba(0, 97, 242, 1)",
