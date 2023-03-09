@@ -574,7 +574,7 @@
 												<p class="txt_progres_nominal">${formatRupiah(data[i].goal_amount)}</p>
 											</div>
 											<hr class="mtm5">
-											<a href="<?= site_url('donate'); ?>/${data[i].id}" target="_blank">
+											<a href="<?= site_url('donate'); ?>/${data[i].id}">
 												<button class="btn_submit_donasi">
 													donate
 												</button>
