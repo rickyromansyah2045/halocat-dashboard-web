@@ -920,9 +920,20 @@
 
     $('#edit-exclusive-is_reward_money').change(function(){
         if ($(this).val() == "1") {
-            $('#edit-exclusive-reward').attr('type', 'number');
+            $('#edit-exclusive-reward').attr('type', 'text');
+            $("#edit-exclusive-reward").inputmask({
+				alias: 'numeric',
+				groupSeparator: '.',
+				autoGroup: true,
+				digits: 0,
+				digitsOptional: false,
+				prefix: 'Rp ',
+				autoUnmask: true,
+                rightAlign: false
+			}).attr('autocomplete', 'off');
         } else {
             $('#edit-exclusive-reward').attr('type', 'text');
+            $("#edit-exclusive-reward").inputmask('remove').val("");
         }
     });
 
