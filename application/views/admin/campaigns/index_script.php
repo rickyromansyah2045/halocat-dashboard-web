@@ -806,7 +806,7 @@
 			}).attr('autocomplete', 'off');
         } else {
             $('#set-to-exclusive-reward').attr('type', 'text');
-            $("#set-to-exclusive-reward").unmask();
+            $("#set-to-exclusive-reward").inputmask('remove').val("");
         }
     });
 
