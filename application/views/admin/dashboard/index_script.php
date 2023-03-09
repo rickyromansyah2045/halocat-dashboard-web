@@ -428,7 +428,7 @@
                     callbacks: {
                         label: function(tooltipItem, chart) {
                             let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
-                            return `${datasetLabel}: ${tooltipItem.yLabel}`;
+                            return `${datasetLabel}: ${formatRupia(tooltipItem.yLabel)}`;
                         }
                     }
                 }
@@ -532,7 +532,7 @@
                     callbacks: {
                         label: function(tooltipItem, chart) {
                             let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
-                            return `${datasetLabel}: ${tooltipItem.yLabel}`;
+                            return `${datasetLabel}: ${formatRupia(tooltipItem.yLabel)}`;
                         }
                     }
                 }
