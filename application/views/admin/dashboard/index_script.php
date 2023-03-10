@@ -1,5 +1,52 @@
 <script>
     $(function(){
+        $.ajax({
+            url: "<?= $_ENV['API_URL']; ?>/admin/dashboard/statistics",
+            type: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
+            },
+            success: function(response) {
+                if (response.success) {
+                    let data = response.data;
+                    $('#statistics-campaigns').html(`
+                        Total: <b>${data.total_donation}</b>
+                        <br>
+                        Running: <b>${data.total_donation - data.donation_completed}</b>
+                        <br>
+                        Completed: <b>${data.donation_completed}</b>
+                    `);
+
+                    $('#statistics-transactions').html(`
+                        Total: <b>${data.total_transaction}</b>
+                        <br>
+                        Success: <b>${data.total_transaction_success}</b>
+                        <br>
+                        Another Status: <b>${data.total_transaction - data.total_transaction_success}</b>
+                    `);
+
+                    $('#statistics-withdrawal_requests').html(`
+                        Total: <b>${data.total_withdrawal_requests}</b>
+                        <br>
+                        Pending: <b>${data.total_withdrawal_requests - data.total_withdrawal_requestes_processed}</b>
+                        <br>
+                        Processed: <b>${data.total_withdrawal_requestes_processed}</b>
+                    `);
+
+                    $('#statistics-user_registered').html(`
+                        Total: <b>${data.user_registered}</b>
+                        <br>
+                        User Role: <b>${data.user_registered - data.user_admin_registered}</b>
+                        <br>
+                        Admin Role: <b>${data.user_admin_registered}</b>
+                    `);
+                }
+            },
+            error: function(xhr, error, code) {
+                console.log(xhr, error, code);
+            }
+        });
+
         function generateChartData(name) {
             let responseGenerateChartData = {
                 content: "[0,0,0,0,0,0,0,0,0,0]",
@@ -652,7 +699,7 @@
             },
             complete: function() {
                 $("#loading-text").hide();
-                $("#charts").fadeIn();
+                $("#dashboard-summary").fadeIn();
             }
         });
     });
