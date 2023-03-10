@@ -26,19 +26,19 @@ class Short_Link extends CI_Controller
             case '5': // public repo backend
                 redirect("https://github.com/WeAreAmazingTeam/tcd-backend");
                 break;
-            case '6': // proof that using alibaba cloud polardb
+            case '6': // proof using alibaba cloud polardb
                 redirect("assets/img/proof/polardb.png");
                 break;
-            case '7': // proof that using alibaba cloud simple application server
+            case '7': // proof using alibaba cloud simple application server
                 redirect("assets/img/proof/sas.png");
                 break;
-            case '8': // proof that using alibaba cloud dms
+            case '8': // proof using alibaba cloud dms
                 redirect("assets/img/proof/dms.png");
                 break;
-            case '9': // proof that using alibaba cloud domain
+            case '9': // proof using alibaba cloud domain
                 redirect("assets/img/proof/domain.png");
                 break;
-            case '10': // proof that using alibaba cloud direct mail
+            case '10': // proof using alibaba cloud direct mail
                 redirect("assets/img/proof/dm.png");
                 break;
             default:
