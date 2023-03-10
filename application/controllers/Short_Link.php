@@ -41,7 +41,7 @@ class Short_Link extends CI_Controller
             case '10': // proof using alibaba cloud direct mail
                 redirect("assets/img/proof/dm.png");
                 break;
-            case '11': // midtrans payment simulator
+            case '11': // midtrans payment simulator sandbox
                 redirect("https://simulator.sandbox.midtrans.com/assets/index.html");
                 break;
             default:
