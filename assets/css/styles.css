@@ -23091,7 +23091,7 @@ pre[class*=language-] {
 }
 
 .table-responsive {
-  min-height: 150px;
+  min-height: 140px;
 }
 
 table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
