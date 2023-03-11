@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Short_Link extends CI_Controller
+class Short_link extends CI_Controller
 {
 	public function __construct()
     {
@@ -74,7 +74,7 @@ class Short_Link extends CI_Controller
             case '21': // yt manage campaigns
                 redirect("https://youtu.be/kdnM-LM5Ofg");
                 break;
-            case '22': // yt manage exclusive campaigns
+            case '22': // yt manage winners exclusive campaigns
                 redirect("https://youtu.be/l_hPhQxhnfU");
                 break;
             case '23': // yt manage transactions
