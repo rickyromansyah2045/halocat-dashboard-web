@@ -1,5 +1,6 @@
 # The Cloud Donation - FE
 
+![The Cloud Donation](docs/images/the_cloud_donation.png)
 This github repository is the frontend application for The Cloud Donation's website.
 
 ## About The Cloud Donation
