@@ -24,8 +24,10 @@
 		<section id="list-donation">
 			<div class="container">
 				<div class="headline_donasi">
-					<p class="txt_list_donasi">List of Donations</p>
-					<span class="txt_sub_list_donasi">Find a donation campaign for you today, spread kindness to them</span>
+					<center>
+						<p class="headline_judul">List of Donations</p>
+						<span class="sub_headline_judul">Find a donation campaign for you today, spread kindness to them</span>
+					</center>
 				</div>
 				<div class="list_donasi">
 					<div class="row display-flex" id="wrapper-list_donation"></div>

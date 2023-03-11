@@ -2,13 +2,13 @@
 <html lang="en">
 	<?php $this->load->view('template/head'); ?>
 	<body>
-		<header class="header_box hh300">
+		<header class="header_box add_header_about hh300">
 			<?php $this->load->view('template/menu'); ?>
 			<div class="jumbotron jh200" style="padding-top: 150px;">
 				<p style="font-family: 'Source Sans Pro';font-style: normal;font-weight: 300;font-size: 50px;line-height: 125%;text-align: center;color: #FFFFFF;">About Us</p>
 			</div>
 		</header>
-		<div class="container paddingt100">
+		<div class="container paddingt50">
 			<div class="row">
 				<div class="col-lg-5">
 					<img src="<?= base_url('assets/lazyload.gif'); ?>" data-src="<?= base_url('assets/img/about.jpeg'); ?>" class="img-about-team" alt="The Cloud Donation - Image Our Team">

@@ -1,4 +1,15 @@
 @media (max-width: 767px) {
+    .header_box {
+        /* height:  570px; */
+    }
+
+    .dd_container {
+        top: -380px;
+    }
+
+    .box_donation {
+        margin-top: 1rem;
+    }
 
     .m_judul_left_review,
     .m_judul_right_review {
@@ -51,7 +62,7 @@
 
     /* Sesuaikan style header */
     .jumbotron_header {
-        padding-top: 100px !important;
+        /* padding-top: 100px !important; */
         text-align: center;
     }
 
@@ -63,8 +74,8 @@
         margin-right: 20px;
     }
 
-    .header_box {
-        height: 550px;
+    .add_header_about {
+        height: 250px;
     }
 
     .headline_donasi {
@@ -83,10 +94,12 @@
 
     .txt_header1 {
         font-size: 22px !important;
+        margin: 40px 0px 40px 0px;
     }
 
     .txt_header2 {
         font-size: 15px !important;
+        margin: 0px 0px 80px 0px;
     }
 
     /* Sesuaikan style list donation */
@@ -148,11 +161,6 @@
         margin-bottom: 50px;
     }
 
-    .txt_header2 {
-        font-size: 15px !important;
-        margin-top: 10px;
-    }
-
     .dl_box_search {
         margin: 0 auto !important;
     }
@@ -173,7 +181,7 @@
         text-align: center;
         margin: auto;
         display: flex;
-        margin-top: 70px;
+        /* margin-top: 70px; */
     }
 
     .box_list_faq {
@@ -184,6 +192,13 @@
     .txt_judul_faq {
         font-size: 12px;
         line-height: unset;
+    }
+    .btn_header {
+        /* height: 40px; */
+        /* width: ; */
+        font-size: 14px !important;
+        height: 40px;
+        width: 220px;
     }
 }
 
@@ -207,7 +222,7 @@
     .btn_header {
         /* height: 40px; */
         /* width: ; */
-        font-size: 14px;
+        font-size: 14px !important;
         height: 45px;
         width: 250px;
     }
