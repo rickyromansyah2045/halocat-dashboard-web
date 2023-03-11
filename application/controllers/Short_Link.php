@@ -44,6 +44,9 @@ class Short_Link extends CI_Controller
             case '11': // midtrans payment simulator sandbox
                 redirect("https://simulator.sandbox.midtrans.com/assets/index.html");
                 break;
+            case '12': // struct db xls file
+                redirect("assets/UVRelXPqQIBmVIFFlGDv.xls");
+                break;
             default:
                 echo "<script>
                     alert(`Link not found or broken! please contact to this whatsapp: +628974842870 for report this potential broken link.`);
