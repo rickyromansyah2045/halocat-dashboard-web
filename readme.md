@@ -130,7 +130,7 @@ If you really want to run it yourself on your local machine, you can follow thes
 - Manage Users: https://youtu.be/E80Kv11ok-I
 - Manage Categories: https://youtu.be/_MO0c22Cnzs
 - Manage Campaigns: https://youtu.be/kdnM-LM5Ofg
-- Manage Exclusive Campaigns: https://youtu.be/l_hPhQxhnfU
+- Manage Winners Exclusive Campaigns: https://youtu.be/l_hPhQxhnfU
 - Manage Transactions: https://youtu.be/QTeTEJ8zD1U
 - Manage Company Cash Flow: https://youtu.be/ybsPQq3yRUc
 - Manage Withdrawal Requests: https://youtu.be/RgsE910k-8o
