@@ -186,3 +186,33 @@
         line-height: unset;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1281px) { 
+    .box_review {
+        width: 85%;
+    }
+    
+    .box_review_left {
+        width: 60%;
+    }
+
+    .box_review_right {
+        width: 35%;
+    }
+
+    .jumbotron_header {
+        /* padding-top: 150px; */
+    }
+
+    .btn_header {
+        /* height: 40px; */
+        /* width: ; */
+        font-size: 14px;
+        height: 45px;
+        width: 250px;
+    }
+
+    .txt_header1 {
+        font-size: 35px;
+    }
+}
