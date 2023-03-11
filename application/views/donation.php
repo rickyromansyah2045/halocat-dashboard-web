@@ -35,7 +35,7 @@
 				</form>
 			</div>
 		</header>
-		<div class="container mt190" style="min-height: 80vh;">
+		<div class="container mt190" style="min-height: 80vh;margin-top: 290px;">
 			<div class="list_donasi">
 				<div class="row display-flex" id="wrapper-list_donation"></div>
 				<div id="wrapper-load-more" class="row_show_all_donasi" style="margin-top: 10px; display: none;">
