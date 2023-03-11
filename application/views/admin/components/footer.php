@@ -3,9 +3,7 @@
         <div class="row">
             <div class="col-md-6 small">Copyright &copy; The Cloud <?= date('Y'); ?></div>
             <div class="col-md-6 text-md-right small">
-                <a href="#!">Privacy Policy</a>
-                &middot;
-                <a href="#!">Terms &amp; Conditions</a>
+                Created by Saleh, Ricky and Rifki.
             </div>
         </div>
     </div>
