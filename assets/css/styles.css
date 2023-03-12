@@ -23100,6 +23100,18 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
 
 @media (max-width: 767px) {
   footer.footer {
-      text-align: center;
+    text-align: center;
+  }
+
+  .page-header-content .row {
+    justify-content: center !important;
+  }
+
+  .page-header-title, .page-header-subtitle {
+    justify-content: center !important;
+  }
+
+  .page-header-content .col-12 {
+    text-align: center !important;
   }
 }
