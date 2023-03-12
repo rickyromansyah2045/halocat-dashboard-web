@@ -25,6 +25,7 @@ You can immediately see the project we have made in the following links:
 - Register Page: https://thedonation.cloud/auth/register
 - Login Page: https://thedonation.cloud/auth/login
 - Forgot Password Page: https://thedonation.cloud/auth/forgot-password
+- For Do Mock Payment If Donate With Payment Gateway: https://thedonation.cloud/shortlink/11
 
 ## CMS (User Area) Useful Links
 
