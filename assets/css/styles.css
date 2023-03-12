@@ -23097,3 +23097,9 @@ pre[class*=language-] {
 table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
   border-bottom-width: 1px !important;
 }
+
+@media (max-width: 767px) {
+  footer.footer {
+      text-align: center;
+  }
+}
