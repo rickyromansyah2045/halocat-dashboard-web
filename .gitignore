@@ -20,3 +20,5 @@ application/logs/*
 demo___*
 ACCOUNTS_FOR_JURY.txt
 GITHUB_A*
+
+composer.lock
