@@ -272,7 +272,7 @@ Account Name: Muhammad Saleh Solahudin"></textarea>
 ${code}
 
 *AMOUNT:*
-${$('#amount').val()}
+${formatRupiah($('#amount').val())}
 
 *NOTE OR INFORMATION:*
 ${$('#information').val()}`);
