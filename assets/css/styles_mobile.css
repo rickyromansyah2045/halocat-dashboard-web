@@ -3,14 +3,6 @@
         margin-top: 290px;
     }
 
-    .header_box {
-        /* height:  570px; */
-    }
-
-    .dd_container {
-        /* top: -380px; */
-    }
-
     .box_donation {
         margin-top: 1rem;
     }
@@ -32,7 +24,6 @@
     }
 
     .m_judul_right_review {
-        /*			height: 50px;*/
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,7 +57,6 @@
 
     /* Sesuaikan style header */
     .jumbotron_header {
-        /* padding-top: 100px !important; */
         text-align: center;
     }
 
@@ -185,7 +175,6 @@
         text-align: center;
         margin: auto;
         display: flex;
-        /* margin-top: 70px; */
     }
 
     .box_list_faq {
@@ -198,8 +187,6 @@
         line-height: unset;
     }
     .btn_header {
-        /* height: 40px; */
-        /* width: ; */
         font-size: 14px !important;
         height: 40px;
         width: 220px;
@@ -219,13 +206,7 @@
         width: 35%;
     }
 
-    .jumbotron_header {
-        /* padding-top: 150px; */
-    }
-
     .btn_header {
-        /* height: 40px; */
-        /* width: ; */
         font-size: 14px !important;
         height: 45px;
         width: 250px;
