@@ -18,7 +18,7 @@
     <div class="card mb-4">
         <div class="card-header">Update Your Account</div>
         <div class="card-body">
-            <div class="col-10">
+            <div class="col-12 col-md-10">
                 <?php if ($this->input->get('forgot-password', TRUE) === 'true'): ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
