@@ -59,20 +59,20 @@ Requirements:
 If you really want to run it yourself on your local machine, you can follow these steps:
 
 1. ```git
-    git clone https://github.com/ZihxS/thecloud-ci.git
+   git clone https://github.com/ZihxS/thecloud-ci.git
     ```
 2. ```
-    mv thecloud-ci ~/Path/To/Local/Server && cd ~/Path/To/Local/Server
+   mv thecloud-ci ~/Path/To/Local/Server && cd ~/Path/To/Local/Server
     ```
     **example**:
    ```
-    mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
+   mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
     ```
 3. ```
-    composer install
+   composer install
     ```
 4. ```
-    cp .env.example .env
+   cp .env.example .env
     ```
     > **The original .env file is in the submission folder that we have sent**. You can also get the original .env file by chatting to the following WhatsApp: https://wa.me/628974842870.
 5. Start Your Local Server
