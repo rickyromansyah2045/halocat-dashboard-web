@@ -1,4 +1,8 @@
 @media (max-width: 767px) {
+    .mt290 {
+        margin-top: 290px;
+    }
+
     .header_box {
         /* height:  570px; */
     }
@@ -202,11 +206,11 @@
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1281px) { 
+@media only screen and (min-width: 769px) and (max-width: 1281px) {
     .box_review {
         width: 85%;
     }
-    
+
     .box_review_left {
         width: 60%;
     }
