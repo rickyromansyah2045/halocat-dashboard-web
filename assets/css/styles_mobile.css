@@ -1,4 +1,8 @@
 @media (max-width: 767px) {
+    .link_socmed_footer {
+        margin: 12px 5px 12px 5px;
+    }
+
     .mt290 {
         margin-top: 290px;
     }
