@@ -63,11 +63,11 @@ If you really want to run it yourself on your local machine, you can follow thes
    git clone https://github.com/ZihxS/thecloud-ci.git
     ```
 2. ```
-   mv thecloud-ci ~/Path/To/Local/Server && cd ~/Path/To/Local/Server
+   mv thecloud-ci /Path/To/Local/Server && cd /Path/To/Local/Server
     ```
     **example**:
    ```
-   mv thecloud-ci ~/Applications/MAMP/htdocs && cd ~/Applications/MAMP/htdocs
+   mv thecloud-ci /Applications/MAMP/htdocs/thecloud-ci && cd /Applications/MAMP/htdocs/thecloud-ci
     ```
 3. ```
    composer install
