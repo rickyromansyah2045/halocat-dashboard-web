@@ -24,12 +24,12 @@ class Auth extends CI_Controller
 		$this->load->view('auth/login', $data);
 	}
 
-	public function register()
-	{
-		$data['title'] = "Register";
+	// public function register()
+	// {
+	// 	$data['title'] = "Register";
 
-		$this->load->view('auth/register', $data);
-	}
+	// 	$this->load->view('auth/register', $data);
+	// }
 
 	public function forgot_password()
 	{
@@ -82,19 +82,22 @@ class Auth extends CI_Controller
 		if (@$result['success']) {
 			$data_response = [
 				'message' => $result['message'],
-				'status' => $result['success']
+				'status' => $result['success'],
+				'role' => $result['data']['role']
 			];
 
-			$session = [
-				'id' => $result['data']['id'],
-				'name' => $result['data']['name'],
-				'email' => $result['data']['email'],
-				'token' => $result['data']['token'],
-				'role' => @$result['data']['role'] == "" ? "user" : @$result['data']['role']
-			];
-
-			$this->session->set_userdata($session);
-
+			if($result['data']['role'] == 'admin' OR $result['data']['role'] == 'Admin' OR $result['data']['role'] == 'ADMIN'){
+				$session = [
+					'id' => $result['data']['id'],
+					'name' => $result['data']['name'],
+					'email' => $result['data']['email'],
+					'token' => $result['data']['token'],
+					// 'role' => @$result['data']['role'] == "" ? "user" : @$result['data']['role']
+					'role' => @$result['data']['role']
+				];
+	
+				$this->session->set_userdata($session);	
+			}
 			echo json_encode($data_response);
 		} else {
 			if (isset($result['message'])) {

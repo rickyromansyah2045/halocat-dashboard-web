@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Set Aside Your Money to Help Others Who Are In Need! - The Cloud Donation">
     <meta name="author" content="M Saleh Solahudin, Ricky Romansyah, M Rifki Hikmawan">
-    <title>Admin Area - <?= $title ?> - The Cloud</title>
+    <title>Admin Area - <?= $title ?> - Halocat</title>
     <link href="<?= base_url('assets/favicon.ico'); ?>" rel="shortcut icon" type="image/x-icon">
     <link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/custom.css'); ?>" rel="stylesheet">

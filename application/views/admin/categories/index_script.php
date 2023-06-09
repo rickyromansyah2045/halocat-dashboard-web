@@ -96,7 +96,7 @@
         $('#form-create').submit(function(e){
             e.preventDefault();
             $.ajax({
-                url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+                url: "<?= $_ENV['API_URL']; ?>/contents/categories",
                 type: 'POST',
                 data: JSON.stringify({
                     category: $('#category').val()
@@ -146,7 +146,7 @@
     function openFormUpdateCategory(id) {
         $('#modal-edit').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/categories/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -173,7 +173,7 @@
     $('#form-edit').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${$('#edit-id').val()}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/categories/${$('#edit-id').val()}`,
             type: 'PUT',
             data: JSON.stringify({
                 category: $('#edit-category').val()
@@ -230,7 +230,7 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/contents/categories/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");

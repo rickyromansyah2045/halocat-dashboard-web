@@ -28,12 +28,9 @@
                                     <a class="small" href="<?= site_url('auth/forgot-password'); ?>">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="<?= site_url('auth/register'); ?>">Don't have an account? Create an Account!</a>
+                                    <!-- <a class="small" href="<?= site_url('auth/register'); ?>">Don't have an account? Create an Account!</a> -->
                                 </div>
                                 <hr>
-                                <div class="text-center">
-                                    <a class="small" href="<?= site_url(); ?>">← Or Back to Home Page</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,17 +89,25 @@
             },
             success: function (result) {
                 if (result.status == true) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Login Success',
-                        text: 'Please wait, you will be redirect.',
-                        showConfirmButton: false,
-                        timer: 3000
+                    if(result.role == 'user' || result.role == ''){
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Sorry This Dashboard For Admin Only',
+                        text: (result.error)
                     });
-                    setTimeout(() => {
-                        location.href = "<?= site_url('user/dashboard'); ?>";
-                    }, 1000);
+                    }else{
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Login Success',
+                            text: 'Please wait, you will be redirect.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        setTimeout(() => {
+                            location.href = "<?= site_url('user/dashboard'); ?>";
+                        }, 1000);
+                    }
                 } else {
                     Swal.fire({
                         icon: 'error',

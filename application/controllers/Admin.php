@@ -25,7 +25,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = "Dashboard";
 		$data['content'] = $this->load->view('admin/dashboard/index', NULL, TRUE);
-		$data['custom_script'] = $this->load->view('admin/dashboard/index_script', NULL, TRUE);
+		// $data['custom_script'] = $this->load->view('admin/dashboard/index_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
@@ -48,21 +48,12 @@ class Admin extends CI_Controller
 		$this->load->view('admin/base', $data);
 	}
 
-    public function campaigns()
+    public function contents()
 	{
-		$data['title'] = "Campaigns";
+		$data['title'] = "Contents";
 		$data['content'] = $this->load->view('admin/campaigns/index', NULL, TRUE);
 		$data['custom_script'] = $this->load->view('admin/campaigns/index_script', NULL, TRUE);
 
-
-		$this->load->view('admin/base', $data);
-	}
-
-	public function transactions()
-	{
-		$data['title'] = "Transactions";
-		$data['content'] = $this->load->view('admin/transactions/index', NULL, TRUE);
-		$data['custom_script'] = $this->load->view('admin/transactions/index_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}
@@ -85,30 +76,5 @@ class Admin extends CI_Controller
 		$this->load->view('admin/base', $data);
 	}
 
-	public function wallet()
-	{
-		$data['title'] = "Wallet Management";
-		$data['content'] = $this->load->view('admin/wallet/index', $data, TRUE);
-		$data['custom_script'] = $this->load->view('admin/wallet/index_script', NULL, TRUE);
-
-		$this->load->view('admin/base', $data);
-	}
-
-	public function withdrawal_requests()
-	{
-		$data['title'] = "Withdrawal Requests";
-		$data['content'] = $this->load->view('admin/withdrawal_requests/index', $data, TRUE);
-		$data['custom_script'] = $this->load->view('admin/withdrawal_requests/index_script', NULL, TRUE);
-
-		$this->load->view('admin/base', $data);
-	}
-
-	public function company_cash_flow()
-	{
-		$data['title'] = "Company Cash Flow";
-		$data['content'] = $this->load->view('admin/company_cash_flow/index', $data, TRUE);
-		$data['custom_script'] = $this->load->view('admin/company_cash_flow/index_script', NULL, TRUE);
-
-		$this->load->view('admin/base', $data);
-	}
+	
 }

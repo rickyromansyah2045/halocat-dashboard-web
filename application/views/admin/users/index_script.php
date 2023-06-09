@@ -25,7 +25,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 5],
+                targets: [0, 4],
                 searchable: false,
                 orderable: false
             }],
@@ -60,12 +60,6 @@
                     data: "role",
                     render: function(data, type, row) {
                         return data;
-                    }
-                },
-                {
-                    data: "e_money",
-                    render: function(data, type, row) {
-                        return formatRupiah(data);
                     }
                 },
                 {
@@ -120,8 +114,7 @@
                     name: $('#name').val(),
                     email: $('#email').val(),
                     password: $('#password').val(),
-                    role: $('#role').val(),
-                    e_money: parseFloat($('#e_money').val())
+                    role: $('#role').val()
                 }),
                 contentType: "application/json",
                 dataType: 'json',
@@ -179,7 +172,6 @@
                     $("#edit-email").val(response?.data?.email || "");
                     $("#edit-name").val(response?.data?.name || "");
                     $("#edit-role").val(response?.data?.role || "");
-                    $("#edit-e_money").val(response?.data?.e_money || 0);
                 } else {
                     $('#modal-edit').modal('hide');
                     Swal.fire({
@@ -204,7 +196,6 @@
         let object = {
             email: $('#edit-email').val(),
             name: $('#edit-name').val(),
-            e_money: parseFloat($('#edit-e_money').val()),
             role: $('#edit-role').val()
         };
 

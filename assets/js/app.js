@@ -1,6 +1,6 @@
 let navOuterHeight = $('nav').outerHeight();
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(window).scrollTop() > 10) {
         $('nav').addClass('navbar-shadow');
     } else {
@@ -12,14 +12,14 @@ function renderTooltip() {
     $('[data-toggle="tooltip"]').tooltip()
 }
 
-$('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event){
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname){
+$('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length){
+        if (target.length) {
             event.preventDefault();
             $('html, body').animate({
-                scrollTop: target.offset().top-navOuterHeight+25
+                scrollTop: target.offset().top - navOuterHeight + 25
             }, 1000);
         }
     }
@@ -27,11 +27,11 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event){
 
 var lazyLoadImages = document.querySelectorAll('img[data-src]');
 
-window.onscroll = function() {
+window.onscroll = function () {
     runLazyLoading();
 }
 
-window.onresize = function() {
+window.onresize = function () {
     runLazyLoading();
 }
 
@@ -41,8 +41,8 @@ function lazyLoading() {
 }
 
 function runLazyLoading() {
-    for (var i=0; i < lazyLoadImages.length; i++) {
-        if (inView(lazyLoadImages[i])){
+    for (var i = 0; i < lazyLoadImages.length; i++) {
+        if (inView(lazyLoadImages[i])) {
             if (lazyLoadImages[i].getAttribute('data-src')) {
                 lazyLoadImages[i].src = lazyLoadImages[i].getAttribute('data-src');
                 lazyLoadImages[i].removeAttribute('data-src');
@@ -58,12 +58,12 @@ function inView(e) {
 }
 
 function cli() {
-    lazyLoadImages = Array.prototype.filter.call(lazyLoadImages, function(e){
+    lazyLoadImages = Array.prototype.filter.call(lazyLoadImages, function (e) {
         return e.getAttribute('data-src');
     });
 }
 
-$(function() {
+$(function () {
     renderTooltip();
     lazyLoading();
 });

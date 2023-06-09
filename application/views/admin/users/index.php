@@ -31,7 +31,6 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>E-Money Balance</th>
                             <th style="width: 95px;">Actions</th>
                         </tr>
                     </thead>
@@ -72,10 +71,7 @@
                             <option value="admin">Admin</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="e_money">E-Money Balance</label>
-                        <input class="form-control" id="e_money" data-type="number" type="text" placeholder="">
-                    </div>
+                
                 </div>
                 <div class="modal-footer">
                     <button id="btn-create-submit" class="btn btn-orange" type="submit">Create User</button>
@@ -118,10 +114,7 @@
                             <option value="admin">Admin</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="e_money">E-Money Balance</label>
-                        <input class="form-control" id="edit-e_money" data-type="number" type="text" placeholder="">
-                    </div>
+                   
                 </div>
                 <div class="modal-footer">
                     <button id="btn-edit-submit" class="btn btn-orange" type="submit">Update</button>

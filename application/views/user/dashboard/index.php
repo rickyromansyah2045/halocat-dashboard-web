@@ -19,8 +19,8 @@
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="px-4 mb-4 mb-xl-0 mb-xxl-4">
-                                <h1 class="text-primary">Welcome to The Cloud Donations!</h1>
-                                <p class="text-gray-700 mb-2">Set Aside Your Money to Help Others Who Are In Need!</p>
+                                <h1 class="text-primary">Welcome to Halocat!</h1>
+                                <p class="text-gray-700 mb-2">Love Your Cat !</p>
                                 <hr>
                                 <p class="text-gray-700 mb-2">
                                     If you want to see your campaign data, please go to the following link:

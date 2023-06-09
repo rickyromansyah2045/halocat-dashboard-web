@@ -16,7 +16,6 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 
-.env
 demo___*
 ACCOUNTS_FOR_JURY.txt
 GITHUB_A*

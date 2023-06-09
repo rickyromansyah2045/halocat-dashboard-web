@@ -39,15 +39,6 @@ class User extends CI_Controller
 		$this->load->view('user/base', $data);
 	}
 
-    public function transactions()
-	{
-		$data['title'] = "Transactions";
-		$data['content'] = $this->load->view('user/transactions/index', NULL, TRUE);
-		$data['custom_script'] = $this->load->view('user/transactions/index_script', NULL, TRUE);
-
-		$this->load->view('user/base', $data);
-	}
-
     public function settings()
 	{
 		$data['title'] = "Account Setting";
@@ -57,12 +48,4 @@ class User extends CI_Controller
 		$this->load->view('user/base', $data);
 	}
 
-	public function wallet()
-	{
-		$data['title'] = "Wallet Management";
-		$data['content'] = $this->load->view('user/wallet/index', $data, TRUE);
-		$data['custom_script'] = $this->load->view('user/wallet/index_script', NULL, TRUE);
-
-		$this->load->view('user/base', $data);
-	}
 }

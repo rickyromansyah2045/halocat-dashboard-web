@@ -7,7 +7,7 @@
                         Categories
                     </h1>
                     <div class="page-header-subtitle">
-                        You can find and manage campaign categories on this page.
+                        You can find and manage content categories on this page.
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">

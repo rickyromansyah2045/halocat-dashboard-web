@@ -1,6 +1,5 @@
 <script>
     var table;
-    var tableWinnersExclusiveCampaigns;
     var showModalManageImage = true;
 
     $(document).ready(function() {
@@ -16,7 +15,7 @@
                 lengthMenu: "_MENU_"
             },
             ajax: {
-                url: "<?= $_ENV['API_URL']; ?>/admin/datatables/campaigns",
+                url: "<?= $_ENV['API_URL']; ?>/admin/datatables/contents",
                 type: 'GET',
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -27,7 +26,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 7],
+                targets: [0, 4],
                 searchable: false,
                 orderable: false
             }],
@@ -53,33 +52,12 @@
                     }
                 },
                 {
-                    data: "goal_amount",
-                    render: function(data, type, row) {
-                        return formatRupiah(data);
-                    }
-                },
-                {
-                    data: "current_amount",
-                    render: function(data, type, row) {
-                        return formatRupiah(data);
-                    }
-                },
-                {
                     data: "total_image",
                     render: function(data, type, row) {
                         if (data == 0) {
                             return "-";
                         }
                         return `${data} images`;
-                    }
-                },
-                {
-                    data: "is_exclusive",
-                    render: function(data, type, row) {
-                        if (data == "1") {
-                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
-                        }
-                        return `<span class="badge badge-pill badge-dark">No</span>`;
                     }
                 },
                 {
@@ -130,32 +108,6 @@
                             `;
                         }
 
-                        let html_exclusive = '';
-
-                        if (row?.is_exclusive || false) {
-                            html_exclusive = `<div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:openFormEditExclusive(${data})">
-                                    <div class="dropdown-item-icon">
-                                        <i class="fa fa-pen fa-fw"></i>
-                                    </div>
-                                    Edit Exclusive
-                                </a>
-                                <a class="dropdown-item" href="javascript:deleteExclusive(${data})">
-                                    <div class="dropdown-item-icon">
-                                        <i class="fa fa-trash fa-fw"></i>
-                                    </div>
-                                    Remove Exclusive
-                                </a>
-                            <div class="dropdown-divider"></div>`;
-                        } else {
-                            html_exclusive = `<a class="dropdown-item" href="javascript:openFormSetToExclusive(${data})">
-                                <div class="dropdown-item-icon">
-                                    <i class="fa fa-gift fa-fw"></i>
-                                </div>
-                                Set To Exclusive
-                            </a>`;
-                        }
-
                         return `
                             <span class="dropdown">
                                 <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -168,7 +120,6 @@
                                         </div>
                                         View More
                                     </a>
-                                    ${html_exclusive}
                                     <a class="dropdown-item" href="javascript:openFormManageImages(${data})">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-image fa-fw"></i>
@@ -209,124 +160,6 @@
             }
         });
 
-        tableWinnersExclusiveCampaigns = $('#dataTable_theCloud_exclusive_campaigns').DataTable({
-            order: [],
-            stateSave: false,
-            processing: true,
-            serverSide: true,
-            responsive: true,
-            pageLength: 20,
-            searchDelay: 500,
-            language: {
-                lengthMenu: "_MENU_"
-            },
-            ajax: {
-                url: "<?= $_ENV['API_URL']; ?>/admin/datatables/campaigns/exclusive",
-                type: 'GET',
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                },
-                error: function(xhr, error, code) {
-                    $('#dataTable_theCloud_exclusive_campaigns_processing').hide();
-                    $('#dataTable_theCloud_exclusive_campaigns > tbody').html(`<tr><td colspan="6" class="dataTables_empty">${(xhr?.responseJSON?.message || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`)}</td></tr>`);
-                }
-            },
-            columnDefs: [{
-                targets: [0, 5],
-                searchable: false,
-                orderable: false
-            }],
-            lengthMenu: [
-                [10, 20, 50, 100, 200, 500],
-                [10, 20, 50, 100, 200, 500]
-            ],
-            drawCallback: function(_) {
-                $('.dataTables_filter input').attr('placeholder','Type and enter...');
-            },
-            initComplete: function(_, _) {},
-            columns: [
-                {
-                    data: "no",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "campaign_name",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "winner_user_name",
-                    render: function(data, type, row) {
-                        return data;
-                    }
-                },
-                {
-                    data: "reward",
-                    render: function(data, type, row) {
-                        if ((row.is_reward_money)) {
-                            return `(Reward Are Money) ${formatRupiah(data)}`;
-                        }
-                        return `(Reward Are Not Money) ${data}`;
-                    }
-                },
-                {
-                    data: "is_paid_off",
-                    render: function(data, type, row) {
-                        if (data == "1") {
-                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
-                        }
-                        return `<span class="badge badge-pill badge-dark">No, Please Process!</span>`;
-                    }
-                },
-                {
-                    data: "id",
-                    render: function(data, type, row) {
-                        if (row.is_paid_off == "1") {
-                            return "-";
-                        }
-                        return `
-                            <span class="dropdown">
-                                <button class="btn btn-dark btn-sm dropdown-toggle" id="dropdownNoAnimation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Actions&nbsp;
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownNoAnimation">
-                                    <a class="dropdown-item" href="javascript:setAsPaidOff(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-check fa-fw"></i>
-                                        </div>
-                                        Set as Paid Off
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:deleteWinner(${data})">
-                                        <div class="dropdown-item-icon">
-                                            <i class="fa fa-trash fa-fw"></i>
-                                        </div>
-                                        Delete
-                                    </a>
-                                </div>
-                            </span>
-                        `;
-                    }
-                }
-            ]
-        });
-
-        $('#dataTable_theCloud_exclusive_campaigns_wrapper .dataTables_filter input').unbind().bind('keyup',function(e) {
-            if (e.keyCode == 13 || this.value == '') {
-                if (this.value == '') {
-                    if (!empty) {
-                        tableWinnersExclusiveCampaigns.search(this.value).draw();
-                        empty = true;
-                    }
-                } else {
-                    tableWinnersExclusiveCampaigns.search(this.value).draw();
-                    empty = false;
-                }
-            }
-        });
-
         $.ajax({
             url: "<?= $_ENV['API_URL']; ?>/users",
             type: 'GET',
@@ -347,7 +180,7 @@
         });
 
         $.ajax({
-            url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+            url: "<?= $_ENV['API_URL']; ?>/contents/categories",
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -365,7 +198,7 @@
         $('#form-create').submit(function(e){
             e.preventDefault();
             $.ajax({
-                url: "<?= $_ENV['API_URL']; ?>/campaigns",
+                url: "<?= $_ENV['API_URL']; ?>/contents",
                 type: 'POST',
                 data: JSON.stringify({
                     user_id: parseInt($('#user_id').val()),
@@ -387,7 +220,6 @@
                 success: function(response) {
                     if (response.success) {
                         table.ajax.reload(null, false);
-                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                         Swal.fire({
                             icon: 'success',
                             title: 'Success',
@@ -423,7 +255,7 @@
     function openFormUpdateCampaign(id) {
         $('#modal-edit').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -433,7 +265,6 @@
                     $("#edit-finished_at").val(moment(response?.data?.finished_at || "").format("YYYY-MM-DD"));
                     $("#edit-category_id").val(response?.data?.category_id || "");
                     $("#edit-title").val(response?.data?.title || "");
-                    $("#edit-goal_amount").val(response?.data?.goal_amount || "");
                     $("#edit-short_description").val(response?.data?.short_description || "");
                     $("#edit-description").val(response?.data?.description || "");
                 } else {
@@ -457,7 +288,7 @@
     $('#form-edit').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${$('#edit-id').val()}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${$('#edit-id').val()}`,
             type: 'PUT',
             data: JSON.stringify({
                 user_id: parseInt($('#edit-user_id').val()),
@@ -467,7 +298,6 @@
                 title: $('#edit-title').val(),
                 short_description: $('#edit-short_description').val(),
                 description: $('#edit-description').val(),
-                goal_amount: parseInt($('#edit-goal_amount').val()),
             }),
             contentType: "application/json",
             dataType: 'json',
@@ -479,7 +309,6 @@
             success: function(response) {
                 if (response.success) {
                     table.ajax.reload(null, false);
-                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -522,7 +351,7 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -530,7 +359,6 @@
                     success: function(response) {
                         if (response.success) {
                             table.ajax.reload(null, false);
-                            tableWinnersExclusiveCampaigns.ajax.reload(null, false);
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Success',
@@ -563,7 +391,7 @@
     function openFormManageImages(id) {
         $('#modal-manage-images').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -571,7 +399,7 @@
                     let images = response?.data?.images || {};
                     $('#wrapper-button-images, #images-collapse').html('');
                     if (images.length == 0) {
-                        $('#wrapper-button-images').append(`This campaign does not have any images yet.`);
+                        $('#wrapper-button-images').append(`This content does not have any images yet.`);
                     } else {
                         for (let i = 0; i < images.length; i++) {
                             $('#wrapper-button-images').append(`
@@ -631,7 +459,7 @@
     $('#form-add-image').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/images`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/images`,
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -690,7 +518,7 @@
             confirmButtonText: 'Yes',
             preConfirm: () => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/images/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/contents/images/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -733,268 +561,12 @@
             if (result.isConfirmed) {}
         })
     }
-
-    function openFormSetToExclusive(id) {
-        $('#modal-set-to-exclusive').modal('show');
-        $('#set-to-exclusive-campaign_id').val(id);
-        $('#set-to-exclusive-is_reward_money').trigger('change');
-    }
-
-    $('#form-set-to-exclusive').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: "<?= $_ENV['API_URL']; ?>/campaigns/exclusive",
-            type: 'POST',
-            data: JSON.stringify({
-                campaign_id: parseInt($('#set-to-exclusive-campaign_id').val()),
-                is_reward_money: parseInt($('#set-to-exclusive-is_reward_money').val()),
-                reward: $('#set-to-exclusive-reward').val()
-            }),
-            contentType: "application/json",
-            dataType: 'json',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                $('#btn-set-to-exclusive-submit').html('Processing...');
-                $('#btn-set-to-exclusive-submit').prop('disabled', true);
-            },
-            success: function(response) {
-                if (response.success) {
-                    table.ajax.reload(null, false);
-                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: response.message,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
-                    $('#modal-set-to-exclusive').modal('hide');
-                    setTimeout(() => {
-                        $('#form-set-to-exclusive').trigger('reset');
-                    }, 2500);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: response.error
-                    });
-                }
-            },
-            error: function(xhr, error, code) {
-                Swal.fire({
-                    icon: 'error',
-                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                });
-            },
-            complete: function() {
-                $('#btn-set-to-exclusive-submit').prop('disabled', false);
-                $('#btn-set-to-exclusive-submit').html('Set to Exclusive Campaign');
-            }
-        });
-    });
-
-    $('#set-to-exclusive-is_reward_money').change(function(){
-        if ($(this).val() == "1") {
-            $('#set-to-exclusive-reward').attr('type', 'text');
-            $("#set-to-exclusive-reward").inputmask({
-				alias: 'numeric',
-				groupSeparator: '.',
-				autoGroup: true,
-				digits: 0,
-				digitsOptional: false,
-				prefix: 'Rp ',
-				autoUnmask: true,
-                rightAlign: false
-			}).attr('autocomplete', 'off');
-        } else {
-            $('#set-to-exclusive-reward').attr('type', 'text');
-            $("#set-to-exclusive-reward").inputmask('remove').val("");
-        }
-    });
-
-    function deleteExclusive(id) {
-        $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
-            type: 'GET',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-            },
-            success: function(response) {
-                if (response.success) {
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        showLoaderOnConfirm: true,
-                        confirmButtonColor: '#d33',
-                        confirmButtonText: 'Yes',
-                        preConfirm: () => {
-                            return $.ajax({
-                                url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${response?.data?.id || "0"}`,
-                                type: 'DELETE',
-                                beforeSend: function(xhr) {
-                                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                                },
-                                success: function(response) {
-                                    if (response.success) {
-                                        table.ajax.reload(null, false);
-                                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
-                                        Swal.fire({
-                                            icon: 'success',
-                                            title: 'Success',
-                                            text: response.message,
-                                            showConfirmButton: false,
-                                            timer: 3000
-                                        });
-                                    } else {
-                                        Swal.fire({
-                                            icon: 'error',
-                                            text: response.error
-                                        });
-                                    }
-                                },
-                                error: function(xhr, error, code) {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                                    });
-                                },
-                                complete: function() {}
-                            });
-                        },
-                        allowOutsideClick: () => !Swal.isLoading()
-                    }).then((result) => {
-                        if (result.isConfirmed) {}
-                    })
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: response.error
-                    });
-                }
-            },
-            error: function(xhr, error, code) {
-                Swal.fire({
-                    icon: 'error',
-                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                });
-            },
-            complete: function() {}
-        });
-    }
-
-    function openFormEditExclusive(id) {
-        $('#modal-edit-exclusive').modal('show');
-        $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/campaign/${id}`,
-            type: 'GET',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-            },
-            success: function(response) {
-                if (response.success) {
-                    $("#edit-exclusive-id").val(response?.data?.id || "");
-                    $("#edit-exclusive-campaign_id").val(response?.data?.campaign_id || "");
-                    $("#edit-exclusive-is_reward_money").val(response?.data?.is_reward_money?.toString() || "").trigger('change');
-                    $("#edit-exclusive-reward").val(response?.data?.reward || "");
-                    $("#edit-exclusive-winner_user_id").val(response?.data?.winner_user_id || "");
-                    $("#edit-exclusive-is_paid_off").val(response?.data?.is_paid_off || "");
-                } else {
-                    $('#modal-edit-exclusive').modal('hide');
-                    Swal.fire({
-                        icon: 'error',
-                        text: response.error
-                    });
-                }
-            },
-            error: function(xhr, error, code) {
-                $('#modal-edit-exclusive').modal('hide');
-                Swal.fire({
-                    icon: 'error',
-                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                });
-            },
-            complete: function() {}
-        });
-    }
-
-    $('#edit-exclusive-is_reward_money').change(function(){
-        if ($(this).val() == "1") {
-            $('#edit-exclusive-reward').attr('type', 'text');
-            $("#edit-exclusive-reward").inputmask({
-				alias: 'numeric',
-				groupSeparator: '.',
-				autoGroup: true,
-				digits: 0,
-				digitsOptional: false,
-				prefix: 'Rp ',
-				autoUnmask: true,
-                rightAlign: false
-			}).attr('autocomplete', 'off');
-        } else {
-            $('#edit-exclusive-reward').attr('type', 'text');
-            $("#edit-exclusive-reward").inputmask('remove').val("");
-        }
-    });
-
-    $('#form-edit-exclusive').submit(function(e){
-        e.preventDefault();
-        $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${$('#edit-exclusive-id').val()}`,
-            type: 'PUT',
-            data: JSON.stringify({
-                campaign_id: parseInt($('#edit-exclusive-campaign_id').val()),
-                winner_user_id: parseInt($('#edit-exclusive-winner_user_id').val()),
-                is_reward_money: parseInt($('#edit-exclusive-is_reward_money').val()),
-                reward: $('#edit-exclusive-reward').val(),
-                is_paid_off: parseInt($('#edit-exclusive-is_paid_off').val())
-            }),
-            contentType: "application/json",
-            dataType: 'json',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                $('#btn-edit-exclusive-submit').html('Processing...');
-                $('#btn-edit-exclusive-submit').prop('disabled', true);
-            },
-            success: function(response) {
-                if (response.success) {
-                    table.ajax.reload(null, false);
-                    tableWinnersExclusiveCampaigns.ajax.reload(null, false);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: response.message,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
-                    $('#modal-edit-exclusive').modal('hide');
-                    setTimeout(() => {
-                        $('#form-edit-exclusive').trigger('reset');
-                    }, 2500);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: response.error
-                    });
-                }
-            },
-            error: function(xhr, error, code) {
-                Swal.fire({
-                    icon: 'error',
-                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                });
-            },
-            complete: function() {
-                $('#btn-edit-exclusive-submit').prop('disabled', false);
-                $('#btn-edit-exclusive-submit').html('Edit Data Exclusive');
-            }
-        });
-    });
+    
 
     function openModalViewMore(id) {
         $('#modal-view-more').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -1004,14 +576,11 @@
                     $("#view-more-title").html(response?.data?.title || "-");
                     $("#view-more-short_description").html(response?.data?.short_description || "-");
                     $("#view-more-description").html(response?.data?.description || "-");
-                    $("#view-more-goal_amount").html(formatRupiah(response?.data?.goal_amount) || 0);
-                    $("#view-more-current_amount").html(formatRupiah(response?.data?.current_amount) || 0);
-                    $("#view-more-donor_count").html(response?.data?.donor_count || 0);
                     $("#view-more-finished_at").html(moment(response?.data?.finished_at || "").format('DD/MM/YYYY'));
                     $("#view-more-status").html(status);
 
                     if (status == "active" || status == "finished") {
-                        $('#view-more-live-link').html(`, click this link for see campaign live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see campaign live preview</a>.`);
+                        // $('#view-more-live-link').html(`, click this link for see content live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see content live preview</a>.`);
                     }
 
                     setUser(response?.data?.user_id);
@@ -1065,7 +634,7 @@
 
     function setCategory(id) {
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/categories/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -1087,140 +656,5 @@
             },
             complete: function() {}
         });
-    }
-
-    function setAsPaidOff(id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            showLoaderOnConfirm: true,
-            confirmButtonText: 'Yes',
-            preConfirm: () => {
-                return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${id}`,
-                    type: 'GET',
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            let set_id = response?.data?.id || "";
-                            let set_campaign_id = response?.data?.campaign_id || "";
-                            let set_is_reward_money = response?.data?.is_reward_money?.toString() || "";
-                            let set_reward = response?.data?.reward || "";
-                            let set_winner_user_id = response?.data?.winner_user_id || "";
-
-                            $.ajax({
-                                url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${set_id}`,
-                                type: 'PUT',
-                                data: JSON.stringify({
-                                    campaign_id: parseInt(set_campaign_id),
-                                    winner_user_id: parseInt(set_winner_user_id),
-                                    is_reward_money: parseInt(set_is_reward_money),
-                                    reward: set_reward,
-                                    is_paid_off: parseInt(1)
-                                }),
-                                contentType: "application/json",
-                                dataType: 'json',
-                                beforeSend: function(xhr) {
-                                    xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                                },
-                                success: function(response) {
-                                    if (response.success) {
-                                        table.ajax.reload(null, false);
-                                        tableWinnersExclusiveCampaigns.ajax.reload(null, false);
-                                        Swal.fire({
-                                            icon: 'success',
-                                            title: 'Success',
-                                            text: response.message,
-                                            showConfirmButton: false,
-                                            timer: 3000
-                                        });
-                                    } else {
-                                        Swal.fire({
-                                            icon: 'error',
-                                            text: response.error
-                                        });
-                                    }
-                                },
-                                error: function(xhr, error, code) {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                                    });
-                                },
-                                complete: function() {}
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                text: response.error
-                            });
-                        }
-                    },
-                    error: function(xhr, error, code) {
-                        Swal.fire({
-                            icon: 'error',
-                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                        });
-                    },
-                    complete: function() {}
-                });
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-            if (result.isConfirmed) {}
-        })
-    }
-
-    function deleteWinner(id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            showLoaderOnConfirm: true,
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Yes',
-            preConfirm: () => {
-                return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/exclusive/${id}`,
-                    type: 'DELETE',
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            table.ajax.reload(null, false);
-                            tableWinnersExclusiveCampaigns.ajax.reload(null, false);
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: response.message,
-                                showConfirmButton: false,
-                                timer: 3000
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                text: response.error
-                            });
-                        }
-                    },
-                    error: function(xhr, error, code) {
-                        Swal.fire({
-                            icon: 'error',
-                            text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                        });
-                    },
-                    complete: function() {}
-                });
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-            if (result.isConfirmed) {}
-        })
     }
 </script>
