@@ -1,5 +1,5 @@
 <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
-    <a class="navbar-brand" href="<?= base_url('admin/dashboard'); ?>">The Cloud Donation</a>
+    <a class="navbar-brand" href="<?= base_url('admin/dashboard'); ?>">Halocat</a>
     <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle"><i data-feather="menu"></i></button>
     <ul class="navbar-nav align-items-center ml-auto">
         <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
@@ -13,10 +13,6 @@
                     </div>
                 </h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url('user/wallet'); ?>">
-                    <div class="dropdown-item-icon"><i data-feather="pocket"></i></div>
-                    Wallet Management
-                </a>
                 <a class="dropdown-item" href="<?= base_url('user/settings'); ?>">
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                     Account Setting

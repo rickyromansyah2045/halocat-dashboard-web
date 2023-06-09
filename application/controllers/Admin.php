@@ -51,8 +51,8 @@ class Admin extends CI_Controller
     public function contents()
 	{
 		$data['title'] = "Contents";
-		$data['content'] = $this->load->view('admin/campaigns/index', NULL, TRUE);
-		$data['custom_script'] = $this->load->view('admin/campaigns/index_script', NULL, TRUE);
+		$data['content'] = $this->load->view('admin/contents/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('admin/contents/index_script', NULL, TRUE);
 
 
 		$this->load->view('admin/base', $data);

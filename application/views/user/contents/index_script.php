@@ -15,7 +15,7 @@
                 lengthMenu: "_MENU_"
             },
             ajax: {
-                url: "<?= $_ENV['API_URL']; ?>/datatables/campaigns",
+                url: "<?= $_ENV['API_URL']; ?>/datatables/contents",
                 type: 'GET',
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -26,7 +26,7 @@
                 }
             },
             columnDefs: [{
-                targets: [0, 7],
+                targets: [0, 4],
                 searchable: false,
                 orderable: false
             }],
@@ -52,33 +52,12 @@
                     }
                 },
                 {
-                    data: "goal_amount",
-                    render: function(data, type, row) {
-                        return formatRupiah(data);
-                    }
-                },
-                {
-                    data: "current_amount",
-                    render: function(data, type, row) {
-                        return formatRupiah(data);
-                    }
-                },
-                {
                     data: "total_image",
                     render: function(data, type, row) {
                         if (data == 0) {
                             return "-";
                         }
                         return `${data} images`;
-                    }
-                },
-                {
-                    data: "is_exclusive",
-                    render: function(data, type, row) {
-                        if (data == "1") {
-                            return `<span class="badge badge-pill badge-orange">Yes</span>`;
-                        }
-                        return `<span class="badge badge-pill badge-dark">No</span>`;
                     }
                 },
                 {
@@ -176,7 +155,7 @@
         });
 
         $.ajax({
-            url: "<?= $_ENV['API_URL']; ?>/campaigns/categories",
+            url: "<?= $_ENV['API_URL']; ?>/contents/categories",
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -194,7 +173,7 @@
         $('#form-create').submit(function(e){
             e.preventDefault();
             $.ajax({
-                url: "<?= $_ENV['API_URL']; ?>/campaigns",
+                url: "<?= $_ENV['API_URL']; ?>/contents",
                 type: 'POST',
                 data: JSON.stringify({
                     user_id: parseInt($('#user_id').val()),
@@ -252,13 +231,13 @@
         if (status == "active") {
             Swal.fire({
                 icon: 'warning',
-                text: 'This campaign is in progress, you cannot change this campaign, if you want to change this campaign you can contact our team.'
+                text: 'This content is in progress, you cannot change this content, if you want to change this content you can contact our team.'
             });
             return;
         }
         $('#modal-edit').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -268,7 +247,6 @@
                     $("#edit-finished_at").val(moment(response?.data?.finished_at || "").format("YYYY-MM-DD"));
                     $("#edit-category_id").val(response?.data?.category_id || "");
                     $("#edit-title").val(response?.data?.title || "");
-                    $("#edit-goal_amount").val(response?.data?.goal_amount || "");
                     $("#edit-short_description").val(response?.data?.short_description || "");
                     $("#edit-description").val(response?.data?.description || "");
                 } else {
@@ -302,7 +280,6 @@
                 title: $('#edit-title').val(),
                 short_description: $('#edit-short_description').val(),
                 description: $('#edit-description').val(),
-                goal_amount: parseInt($('#edit-goal_amount').val()),
             }),
             contentType: "application/json",
             dataType: 'json',
@@ -349,7 +326,7 @@
         if (status == "active") {
             Swal.fire({
                 icon: 'warning',
-                text: 'This campaign is in progress, you cannot delete this campaign, if you want to change this campaign you can contact our team.'
+                text: 'This content is in progress, you cannot delete this content, if you want to change this content you can contact our team.'
             });
             return;
         }
@@ -363,7 +340,7 @@
             confirmButtonText: 'Yes',
             preConfirm: (login) => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -403,7 +380,7 @@
     function openFormManageImages(id) {
         $('#modal-manage-images').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -471,7 +448,7 @@
     $('#form-add-image').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/images`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/images`,
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -530,7 +507,7 @@
             confirmButtonText: 'Yes',
             preConfirm: (login) => {
                 return $.ajax({
-                    url: `<?= $_ENV['API_URL']; ?>/campaigns/images/${id}`,
+                    url: `<?= $_ENV['API_URL']; ?>/contents/images/${id}`,
                     type: 'DELETE',
                     beforeSend: function(xhr) {
                         xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -577,7 +554,7 @@
     function openModalViewMore(id) {
         $('#modal-view-more').modal('show');
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {
@@ -587,9 +564,6 @@
                     $("#view-more-title").html(response?.data?.title || "-");
                     $("#view-more-short_description").html(response?.data?.short_description || "-");
                     $("#view-more-description").html(response?.data?.description || "-");
-                    $("#view-more-goal_amount").html(formatRupiah(response?.data?.goal_amount) || 0);
-                    $("#view-more-current_amount").html(formatRupiah(response?.data?.current_amount) || 0);
-                    $("#view-more-donor_count").html(response?.data?.donor_count || 0);
                     $("#view-more-finished_at").html(moment(response?.data?.finished_at || "").format('DD/MM/YYYY'));
                     $("#view-more-status").html(status);
 
@@ -618,7 +592,7 @@
 
     function setCategory(id) {
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/categories/${id}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/categories/${id}`,
             type: 'GET',
             success: function(response) {
                 if (response.success) {

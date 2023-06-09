@@ -30,11 +30,11 @@ class User extends CI_Controller
 		$this->load->view('user/base', $data);
 	}
 
-    public function campaigns()
+    public function contents()
 	{
-		$data['title'] = "Campaigns";
-		$data['content'] = $this->load->view('user/campaigns/index', NULL, TRUE);
-		$data['custom_script'] = $this->load->view('user/campaigns/index_script', NULL, TRUE);
+		$data['title'] = "Contents";
+		$data['content'] = $this->load->view('user/contents/index', NULL, TRUE);
+		$data['custom_script'] = $this->load->view('user/contents/index_script', NULL, TRUE);
 
 		$this->load->view('user/base', $data);
 	}
