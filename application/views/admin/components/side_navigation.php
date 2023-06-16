@@ -29,10 +29,10 @@
                     <div class="nav-link-icon"><i data-feather="settings"></i></div>
                     Account Setting
                 </a>
-                <a class="nav-link" href="<?= site_url('admin/logs/activity'); ?>">
+                <!-- <a class="nav-link" href="<?= site_url('admin/logs/activity'); ?>">
                     <div class="nav-link-icon"><i data-feather="activity"></i></div>
                     Activity Logs
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="sidenav-footer">
