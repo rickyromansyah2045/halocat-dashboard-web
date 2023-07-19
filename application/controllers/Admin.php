@@ -25,7 +25,6 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = "Dashboard";
 		$data['content'] = $this->load->view('admin/dashboard/index', NULL, TRUE);
-		// $data['custom_script'] = $this->load->view('admin/dashboard/index_script', NULL, TRUE);
 
 		$this->load->view('admin/base', $data);
 	}

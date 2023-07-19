@@ -94,8 +94,8 @@
 .txt_header1 {
     font-family: 'Source Sans Pro';
     font-style: normal;
-    font-weight: 300;
-    font-size: 50px;
+    font-weight: 400;
+    font-size: 70px;
     line-height: 125%;
     margin-bottom: 22px;
 }
@@ -335,6 +335,13 @@
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 0px;
+}
+
+.txt_judul_ringkas_donasi3 {
+    font-family: 'Poppins';
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 .txt_judul_ringkas_donasi2 {
@@ -960,8 +967,8 @@
     margin-bottom: 18px;
     font-family: 'Source Sans Pro';
     font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 16px;
     line-height: 125%;
     text-align: justify;
     color: #000000;
@@ -1010,6 +1017,7 @@ img {
     0% {
         background-color: hsl(200, 20%, 80%);
     }
+
     100% {
         background-color: hsl(200, 20%, 95%);
     }

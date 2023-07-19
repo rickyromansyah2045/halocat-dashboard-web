@@ -29,6 +29,9 @@
                                     <a class="small" href="<?= site_url('auth/login'); ?>">Already have an account? Login!</a>
                                 </div>
                                 <hr>
+                                <div class="text-center">
+                                    <a class="small" href="<?= site_url(); ?>">← Or Back to Home Page</a>
+                                </div>
                             </div>
                         </div>
                     </div>

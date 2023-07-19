@@ -181,7 +181,6 @@
                     title: $('#title').val(),
                     short_description: $('#short_description').val(),
                     description: $('#description').val(),
-                    goal_amount: parseInt($('#goal_amount').val()),
                     finished_at: $('#finished_at').val(),
                     status: 'waiting confirmation'
                 }),
