@@ -13,6 +13,12 @@
                     </div>
                     Contents
                 </a>
+                <a class="nav-link" href="<?= site_url('user/chat'); ?>">
+                    <div class="nav-link-icon">
+                        <i data-feather="message-square"></i>
+                    </div>
+                    Chat Dokter
+                </a>
                 <a class="nav-link" href="<?= site_url('user/settings'); ?>">
                     <div class="nav-link-icon"><i data-feather="settings"></i></div>
                     Account Setting

@@ -53,7 +53,7 @@
 							</div>
 						</div>
 						<p class="txt_judul_ringkas_donasi2 mt-3">Harga Langganan Terjangkau</p>
-						<p class="txt_judul_ringkas_donasi3" id="statistics-total_donation">Mulai dari 20 ribu aja kamu bisa langsung konsultasi online dengan dokter hewan</p>
+						<p class="txt_judul_ringkas_donasi3" id="statistics-total_donation-">Mulai dari 20 ribu aja kamu bisa langsung konsultasi online dengan dokter hewan</p>
 					</div>
 					<div class="col-md-3">
 						<div class="d-flex justify-content-center fs55">
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 						<p class="txt_judul_ringkas_donasi2 mt-3">Dokter Hewan Berpengalaman</p>
-						<p class="txt_judul_ringkas_donasi3" id="statistics-donation_completed">Yang pastinya siap membantumu dan hewan kesayanganmu</p>
+						<p class="txt_judul_ringkas_donasi3" id="statistics-donation_completed-">Yang pastinya siap membantumu dan hewan kesayanganmu</p>
 					</div>
 					<div class="col-md-3">
 						<div class="d-flex justify-content-center fs55">
@@ -71,7 +71,7 @@
 							</div>
 						</div>
 						<p class="txt_judul_ringkas_donasi2 mt-3">Memberikan yang Terbaik</p>
-						<p class="txt_judul_ringkas_donasi3" id="statistics-total_transaction">Hanya pelayanan terbaik untukmu dan hewan kesayanganmu</p>
+						<p class="txt_judul_ringkas_donasi3" id="statistics-total_transaction-">Hanya pelayanan terbaik untukmu dan hewan kesayanganmu</p>
 					</div>
 					<div class="col-md-3">
 						<div class="d-flex justify-content-center fs55">
@@ -80,7 +80,7 @@
 							</div>
 						</div>
 						<p class="txt_judul_ringkas_donasi2 mt-3">Komunitas Pecinta Kucing</p>
-						<p class="txt_judul_ringkas_donasi3" id="statistics-user_registered">Kami memiliki komunitas sesama pecinta kucing di Telegram</p>
+						<p class="txt_judul_ringkas_donasi3" id="statistics-user_registered-">Kami memiliki komunitas sesama pecinta kucing di Telegram</p>
 					</div>
 				</div>
 			</div>

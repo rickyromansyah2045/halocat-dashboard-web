@@ -28,13 +28,13 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="loading-text" class="col-12 text-center">
+        <div id="loading-text" class="col-12 text-center">
             <i class="fa fa-pulse fa-spinner"></i> Loading Dashboard Data...
-        </div> -->
+        </div>
     </div>
     <div id="dashboard-summary" style="display: none;">
         <div class="row">
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-6 col-md-6 mb-4">
                 <div class="card border-top-0 border-bottom-0 border-right-0 border-left-lg border-primary h-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-6 col-md-6 mb-4">
                 <div class="card border-top-0 border-bottom-0 border-right-0 border-left-lg border-primary h-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-6">
                 <div class="card mb-4">
                     <div class="card-header">Website Activity</div>
@@ -78,6 +78,6 @@
                     <div class="card-footer small text-muted">Updated <span id="chartNewUserRegistration-date"></span> at <span id="chartNewUserRegistration-time"></span></div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
