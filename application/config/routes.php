@@ -50,7 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'front';
-$route['404_override'] = 'pages/e404';
+// $route['404_override'] = 'pages/e404';
+$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['about'] = "front/about";
@@ -61,3 +62,8 @@ $route['auth/forgot-password'] = "auth/forgot_password";
 $route['auth/forgot-password/(:any)'] = "auth/process_forgot_password/$1";
 
 $route['admin/logs/activity'] = "admin/logs_activity";
+
+// $route['send-message']              = "user/send_text_message";
+// $route['chat-attachment/upload']    = "user/send_text_message";
+// $route['get-chat-history-vendor']   = "user/get_chat_history_by_vendor";
+// $route['chat-clear']                = "user/chat_clear_client_cs";

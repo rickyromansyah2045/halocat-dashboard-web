@@ -13,7 +13,9 @@ class Admin extends CI_Controller
 
         if ($this->session->userdata('role') == "user") {
             redirect('user/dashboard');
-        }
+        } else if ($this->session->userdata('role') == "dokter"){
+            redirect('dokter/dashboard');
+		}
 	}
 
 	public function index()

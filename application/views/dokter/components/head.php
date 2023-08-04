@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Halocat">
     <meta name="author" content="Ricky Romansyah">
-    <title>Dokter Area - <?= $title ?> - Halocat</title>
+    <title>User Area - <?= $title ?> - Halocat</title>
     <link href="<?= base_url('assets/favicon.ico'); ?>" rel="shortcut icon" type="image/x-icon">
     <link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous">

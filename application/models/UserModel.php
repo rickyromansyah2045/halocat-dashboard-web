@@ -60,4 +60,72 @@ class UserModel extends CI_Model {
 
     }
 
+    public function GetUserData()
+
+	{  
+
+ 		$this->db->select('*');
+
+		$this->db->from($this->User);
+
+		$this->db->where("id",$this->session->userdata('id'));
+
+		$this->db->limit(1);
+
+  		$query = $this->db->get();
+
+ 		if ($query) {
+
+			 return $query->row_array();
+
+		 } else {
+
+			 return false;
+
+		 }
+
+   	}
+
+	   public function GetName($id)
+
+	   {  
+   
+			$this->db->select('id,name');
+   
+		   $this->db->from($this->User);
+   
+		   $this->db->where("id",$id);
+   
+		   $this->db->limit(1);
+   
+			 $query = $this->db->get();
+   
+		   $res = $query->row_array();
+   
+			return $res['name'];
+   
+   
+		}
+
+		public function PictureUrlById($id)
+
+		{  
+
+			$this->db->select('id');
+
+			$this->db->from($this->User);
+
+			$this->db->where("id",$id);
+
+			$this->db->limit(1);
+
+			$query = $this->db->get();
+
+			$res = $query->row_array();
+
+
+			return base_url("assets/img/avatar.svg");
+
+		}
+
 }
