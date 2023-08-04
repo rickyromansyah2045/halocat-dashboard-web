@@ -4,10 +4,10 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
-                        Buat Konten
+                        Contents
                     </h1>
                     <div class="page-header-subtitle">
-                        Dokter Bisa Membuat Konten di Sini
+                        You can find and manage contents on this page.
                     </div>
                 </div>
                 <div class="col-12 col-xl-auto mt-4">
@@ -19,6 +19,7 @@
         </div>
     </div>
 </header>
+
 <div class="container mt-n10">
     <div class="card mb-4">
         <div class="card-header">Data Contents</div>
@@ -55,8 +56,19 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="user_id">Select User</label>
+                                <select class="form-control" id="user_id"></select>
+                            </div>
+                            <div class="form-group">
                                 <label for="category_id">Select Category</label>
                                 <select class="form-control" id="category_id"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Status</label>
+                                <select class="form-control" id="status">
+                                    <option value="active">Active</option>
+                                    <option value="waiting confirmation">Waiting Confirmation</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="">End of Content Date</label>
@@ -74,7 +86,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Long Description</label>
-                                <textarea class="form-control" id="description" rows="7" style="padding-bottom: 22px;"></textarea>
+                                <textarea class="form-control" id="description" rows="14" style="padding-bottom: 16px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -98,6 +110,10 @@
                 </button>
             </div>
             <div class="modal-body">
+                <p>
+                    <b>Content By:</b><br>
+                    <span id="view-more-campaign_by"></span>
+                </p>
                 <p>
                     <b>Category:</b><br>
                     <span id="view-more-category"></span>
@@ -163,7 +179,7 @@
                 </button>
             </div>
             <form id="form-add-image">
-                <input type="hidden" name="campaign_id" id="add-image-campaign_id">
+                <input type="hidden" name="content_id" id="add-image-campaign_id">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="file">Image</label>
@@ -198,7 +214,6 @@
             <form id="form-edit">
                 <input id="edit-id" type="hidden">
                 <input id="edit-user_id" type="hidden">
-                <input id="edit-status" type="hidden">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -206,7 +221,13 @@
                                 <label for="category_id">Select Category</label>
                                 <select class="form-control" id="edit-category_id"></select>
                             </div>
-                          
+                            <div class="form-group">
+                                <label for="">Status</label>
+                                <select class="form-control" id="edit-status">
+                                    <option value="active">Active</option>
+                                    <option value="waiting confirmation">Waiting Confirmation</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="">End of Content Date</label>
                                 <input class="form-control" id="edit-finished_at" type="date" placeholder="">

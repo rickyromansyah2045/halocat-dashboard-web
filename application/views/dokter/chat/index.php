@@ -42,10 +42,10 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
-                       Chat Dokter
+                       Chat Pasien
                     </h1>
                     <div class="page-header-subtitle">
-                        Halaman Chat Dokter
+                        Halaman Chat Pasien
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
 
 <div class="container mt-n10">
     <div class="card mb-4">
-        <div class="card-header">Chat Dokter Kucing</div>
+        <div class="card-header">Chat Pasien Kucing</div>
         <div class="card-body">
           <div class="col-12 col-md-10">
               <div class="content-wrapper"> 
@@ -173,7 +173,6 @@
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!-- <script src="<?=base_url('assets/js/chat.js');?>"></script>  -->
 <script>
 
 $(function () {
@@ -209,7 +208,7 @@ $(function () {
         form_data.append('receiver_id', receiver_id);
 
         $.ajax({
-            url: '<?= base_url("user/send_text_message")?>',
+            url: '<?= base_url("dokter/send_text_message")?>',
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -231,7 +230,7 @@ $(function () {
         var receiver_id = $('#ReciverId_txt').val();
         $.ajax({
             //dataType : "json",
-            url: '<?= base_url("user/chat_clear_client_cs?receiver_id=")?>' + receiver_id,
+            url: '<?= base_url("dokter/chat_clear_client_cs?receiver_id=")?>' + receiver_id,
             // url: 'chat-clear?receiver_id=' + receiver_id,
             success: function (data) {
                 GetChatHistory(receiver_id);
@@ -310,7 +309,7 @@ function sendTxtMessage(message) {
             dataType: "json",
             type: 'post',
             data: { messageTxt: messageTxt, receiver_id: receiver_id },
-            url: '<?= base_url("user/send_text_message")?>',
+            url: '<?= base_url("dokter/send_text_message")?>',
             success: function (data) {
                 GetChatHistory(receiver_id)
             },
@@ -332,7 +331,7 @@ function sendTxtMessage(message) {
 function GetChatHistory(receiver_id) {
     $.ajax({
         //dataType : "json",
-        url: '<?= base_url("user/get_chat_history_by_vendor?receiver_id=")?>' + receiver_id,
+        url: '<?= base_url("dokter/get_chat_history_by_vendor?receiver_id=")?>' + receiver_id,
         success: function (data) {
             $('#dumppy').html(data);
             ScrollDown();
