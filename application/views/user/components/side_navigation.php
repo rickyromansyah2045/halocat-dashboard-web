@@ -3,29 +3,23 @@
         <div class="sidenav-menu">
             <div class="nav accordion" id="accordionSidenav">
                 <div class="sidenav-menu-heading">Main Menu</div>
-                <a class="nav-link" href="<?= site_url('dokter/dashboard'); ?>">
+                <a class="nav-link" href="<?= site_url('user/dashboard'); ?>">
                     <div class="nav-link-icon"><i data-feather="home"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="<?= site_url('dokter/categories'); ?>">
-                    <div class="nav-link-icon">
-                        <i data-feather="tag"></i>
-                    </div>
-                    Categories
-                </a>
-                <a class="nav-link" href="<?= site_url('dokter/contents'); ?>">
+                <a class="nav-link" href="<?= site_url('user/contents'); ?>">
                     <div class="nav-link-icon">
                         <i data-feather="gift"></i>
                     </div>
                     Contents
                 </a>
-                <a class="nav-link" href="<?= site_url('dokter/chat'); ?>">
+                <a class="nav-link" href="<?= site_url('user/chat'); ?>">
                     <div class="nav-link-icon">
                         <i data-feather="message-square"></i>
                     </div>
-                    Chat Pasien
+                    Chat Dokter
                 </a>
-                <a class="nav-link" href="<?= site_url('dokter/settings'); ?>">
+                <a class="nav-link" href="<?= site_url('user/settings'); ?>">
                     <div class="nav-link-icon"><i data-feather="settings"></i></div>
                     Account Setting
                 </a>

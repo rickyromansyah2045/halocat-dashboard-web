@@ -269,7 +269,7 @@
     $('#form-edit').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/campaigns/${$('#edit-id').val()}`,
+            url: `<?= $_ENV['API_URL']; ?>/contents/${$('#edit-id').val()}`,
             type: 'PUT',
             data: JSON.stringify({
                 user_id: parseInt($('#edit-user_id').val()),
@@ -387,7 +387,7 @@
                     let images = response?.data?.images || {};
                     $('#wrapper-button-images, #images-collapse').html('');
                     if (images.length == 0) {
-                        $('#wrapper-button-images').append(`This campaign does not have any images yet.`);
+                        $('#wrapper-button-images').append(`This content does not have any images yet.`);
                     } else {
                         for (let i = 0; i < images.length; i++) {
                             $('#wrapper-button-images').append(`
@@ -567,7 +567,7 @@
                     $("#view-more-status").html(status);
 
                     if (status == "active" || status == "finished") {
-                        $('#view-more-live-link').html(`, click this link for see campaign live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see campaign live preview</a>.`);
+                        $('#view-more-live-link').html(`, click this link for see content live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see content live preview</a>.`);
                     }
 
                     setCategory(response?.data?.category_id);

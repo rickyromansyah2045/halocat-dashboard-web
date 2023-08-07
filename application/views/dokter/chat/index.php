@@ -34,6 +34,21 @@
 .spiner .fa-spin { font-size:24px;}
 .attachmentImgCls{ width:450px; margin-left: -25px; cursor:pointer; }
 </style>
+
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/bootstrap/dist/css/bootstrap.min.css"> -->
+<!-- Font Awesome -->
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/font-awesome/css/font-awesome.min.css"> -->
+<!-- Ionicons -->
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/Ionicons/css/ionicons.min.css"> -->
+<!-- Theme style -->
+<link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/AdminLTE.min.css">
+
+<!-- Google Font -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/skins/_all-skins.min.css"> -->
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/plugins/pace/pace.min.css"> -->
+
  
 
 <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
@@ -59,7 +74,7 @@
         <div class="card-header">Chat Pasien Kucing</div>
         <div class="card-body">
           <div class="col-12 col-md-10">
-              <div class="content-wrapper"> 
+              <!-- <div class="content-wrapper">  -->
   
         <!-- Content Header (Page header) -->
 
@@ -166,7 +181,7 @@
                 <!-- /.row --> 
                 </section>
             <!-- /.content --> 
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

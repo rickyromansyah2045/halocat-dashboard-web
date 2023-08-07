@@ -163,7 +163,7 @@
                 </button>
             </div>
             <form id="form-add-image">
-                <input type="hidden" name="campaign_id" id="add-image-campaign_id">
+                <input type="hidden" name="content_id" id="add-image-campaign_id">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="file">Image</label>
