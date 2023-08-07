@@ -17,7 +17,7 @@
 					<?php if ($this->session->userdata('role') == "user"): ?>
 						<a class="nav-link nav_link_menu" href="<?= site_url('user/dashboard'); ?>">User Area</a>
 					<?php else: ?>
-						<a class="nav-link nav_link_menu" href="<?= site_url('admin/dashboard'); ?>">Admin Area</a>
+						<a class="nav-link nav_link_menu" href="<?= site_url('admin/dashboard'); ?>"><?= ucfirst($this->session->userdata('role')); ?> Area</a>
 					<?php endif; ?>
 				<?php else: ?>
 					<a class="nav-link nav_link_menu" href="<?= site_url('auth/register'); ?>">Register</a>

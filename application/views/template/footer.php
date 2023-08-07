@@ -29,7 +29,7 @@
                             <a class="link_menu_footer" href="<?= site_url(); ?>">Beranda</a>
                             <a class="link_menu_footer" href="<?= site_url('contents'); ?>">Artikel</a>
                             <a class="link_menu_footer" href="<?= site_url('about'); ?>">Tentang Kami</a>
-                            <a class="link_menu_footer" href="<?= site_url('admin/dashboard'); ?>">Admin Area</a>
+                            <a class="link_menu_footer" href="<?= site_url('admin/dashboard'); ?>"><?= ucfirst($this->session->userdata('role')); ?> Area</a>
                             <a class="link_menu_footer" href="<?= site_url('auth/logout'); ?>">Logout</a>
                         <?php endif; ?>
                     <?php else: ?>

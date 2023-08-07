@@ -15,7 +15,7 @@
                 lengthMenu: "_MENU_"
             },
             ajax: {
-                url: "<?= $_ENV['API_URL']; ?>/admin/datatables/contents",
+                url: "<?= $_ENV['API_URL']; ?>/datatables/contents",
                 type: 'GET',
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
@@ -97,12 +97,6 @@
                                             </div>
                                             Manage Images
                                         </a>
-                                        <a class="dropdown-item" href="javascript:deleteCampaign(${data})">
-                                            <div class="dropdown-item-icon">
-                                                <i class="fa fa-trash fa-fw"></i>
-                                            </div>
-                                            Delete
-                                        </a>
                                     </div>
                                 </span>
                             `;
@@ -126,13 +120,13 @@
                                         </div>
                                         Manage Images
                                     </a>
-                                    <a class="dropdown-item" href="javascript:openFormUpdateCampaign(${data})">
+                                    <a class="dropdown-item" href="javascript:openFormUpdateCampaign(${data}, '${row.status}')">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-pen fa-fw"></i>
                                         </div>
                                         Edit Data
                                     </a>
-                                    <a class="dropdown-item" href="javascript:deleteCampaign(${data})">
+                                    <a class="dropdown-item" href="javascript:deleteCampaign(${data}, '${row.status}')">
                                         <div class="dropdown-item-icon">
                                             <i class="fa fa-trash fa-fw"></i>
                                         </div>
@@ -146,7 +140,7 @@
             ]
         });
 
-        $('#dataTable_theCloud_wrapper .dataTables_filter input').unbind().bind('keyup',function(e) {
+        $('.dataTables_filter input').unbind().bind('keyup',function(e) {
             if (e.keyCode == 13 || this.value == '') {
                 if (this.value == '') {
                     if (!empty) {
@@ -157,25 +151,6 @@
                     table.search(this.value).draw();
                     empty = false;
                 }
-            }
-        });
-
-        $.ajax({
-            url: "<?= $_ENV['API_URL']; ?>/users",
-            type: 'GET',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-            },
-            success: function(response) {
-                if (response.success) {
-                    let data = response.data;
-                    for (let i = 0; i < data.length; i++) {
-                        $("#user_id").append(`<option value="${data[i].id}">${data[i].name} (${data[i].email})</option>`);
-                    }
-                }
-            },
-            error: function(xhr, error, code) {
-                console.log(xhr, error, code);
             }
         });
 
@@ -206,9 +181,8 @@
                     title: $('#title').val(),
                     short_description: $('#short_description').val(),
                     description: $('#description').val(),
-                    goal_amount: parseInt($('#goal_amount').val()),
                     finished_at: $('#finished_at').val(),
-                    status: $('#status').val()
+                    status: 'active'
                 }),
                 contentType: "application/json",
                 dataType: 'json',
@@ -252,7 +226,14 @@
         });
     });
 
-    function openFormUpdateCampaign(id) {
+    function openFormUpdateCampaign(id, status) {
+        // if (status == "active") {
+        //     Swal.fire({
+        //         icon: 'warning',
+        //         text: 'This content is in progress, you cannot change this content, if you want to change this content you can contact our team.'
+        //     });
+        //     return;
+        // }
         $('#modal-edit').modal('show');
         $.ajax({
             url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
@@ -340,7 +321,14 @@
         });
     });
 
-    function deleteCampaign(id) {
+    function deleteCampaign(id, status) {
+        // if (status == "active") {
+        //     Swal.fire({
+        //         icon: 'warning',
+        //         text: 'This content is in progress, you cannot delete this content, if you want to change this content you can contact our team.'
+        //     });
+        //     return;
+        // }
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -349,7 +337,7 @@
             showLoaderOnConfirm: true,
             confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
-            preConfirm: () => {
+            preConfirm: (login) => {
                 return $.ajax({
                     url: `<?= $_ENV['API_URL']; ?>/contents/${id}`,
                     type: 'DELETE',
@@ -516,7 +504,7 @@
             showLoaderOnConfirm: true,
             confirmButtonColor: '#d33',
             confirmButtonText: 'Yes',
-            preConfirm: () => {
+            preConfirm: (login) => {
                 return $.ajax({
                     url: `<?= $_ENV['API_URL']; ?>/contents/images/${id}`,
                     type: 'DELETE',
@@ -561,7 +549,6 @@
             if (result.isConfirmed) {}
         })
     }
-    
 
     function openModalViewMore(id) {
         $('#modal-view-more').modal('show');
@@ -580,10 +567,9 @@
                     $("#view-more-status").html(status);
 
                     if (status == "active" || status == "finished") {
-                        // $('#view-more-live-link').html(`, click this link for see content live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see content live preview</a>.`);
+                        $('#view-more-live-link').html(`, click this link for see content live preview: <a href="<?= base_url('donate'); ?>/${id}" target="_blank">see content live preview</a>.`);
                     }
 
-                    setUser(response?.data?.user_id);
                     setCategory(response?.data?.category_id);
                 } else {
                     $('#modal-view-more').modal('hide');
@@ -598,35 +584,6 @@
                     icon: 'error',
                     text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
                 });
-            },
-            complete: function() {}
-        });
-    }
-
-    function setUser(id) {
-        $.ajax({
-            url: `<?= $_ENV['API_URL']; ?>/users/${id}`,
-            type: 'GET',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer <?= $this->session->userdata('token'); ?>");
-            },
-            success: function(response) {
-                if (response.success) {
-                    $("#view-more-campaign_by").html(response?.data?.name);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: response.error
-                    });
-                    $("#view-more-campaign_by").html("-");
-                }
-            },
-            error: function(xhr, error, code) {
-                Swal.fire({
-                    icon: 'error',
-                    text: xhr?.responseJSON?.error || `${error}, ${(code == "" ? "internal server error or API is down!" : code)}`
-                });
-                $("#view-more-campaign_by").html("-");
             },
             complete: function() {}
         });
