@@ -3,7 +3,8 @@
   width: 70px;
 }
 .direct-chat-img {
-  width: 70px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .fileDiv {
@@ -30,24 +31,14 @@
     color: #fff;
 	text-align: right;
 }
-.spiner{}
+
+/* .spiner{} */
 .spiner .fa-spin { font-size:24px;}
 .attachmentImgCls{ width:450px; margin-left: -25px; cursor:pointer; }
 </style>
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/bootstrap/dist/css/bootstrap.min.css"> -->
-<!-- Font Awesome -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/font-awesome/css/font-awesome.min.css"> -->
-<!-- Ionicons -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/Ionicons/css/ionicons.min.css"> -->
-<!-- Theme style -->
-<link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/AdminLTE.min.css">
 
-<!-- Google Font -->
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/skins/_all-skins.min.css"> -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/plugins/pace/pace.min.css"> -->
-  
+<link rel="stylesheet" href= <?= base_url('assets/dist/css/AdminLTE.min.css'); ?>>
+<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/AdminLTE.min.css"> -->
 
 <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
     <div class="container">
@@ -110,11 +101,12 @@
                                 <?php 
                                   $obj=&get_instance();
                                   $obj->load->model('UserModel');
-                                  $user=$obj->UserModel->GetUserData();
+                                  $profile_url = $obj->UserModel->PictureUrl();
+                                  $user        = $obj->UserModel->GetUserData();
                                 ?>
                                
-                                    <input type="hidden" id="Sender_Name" value="<?=$user['name'];?>">
-                                    <input type="hidden" class="img_chat" id="Sender_ProfilePic" value="<?= base_url("assets/img/avatar.svg"); ?>">
+                                  <input type="hidden" id="Sender_Name" value="<?=$user['name'];?>">
+                                  <input type="hidden" class="img_chat" id="Sender_ProfilePic" value="<?=$profile_url;?>">
 
                                   <input type="hidden" id="ReciverId_txt">
                                     <input type="text" name="message" placeholder="Type Message ..." class="form-control message">
@@ -136,14 +128,14 @@
                           <!-- USERS LIST -->
                           <div class="box box-danger">
                             <div class="box-header with-border">
-                              <h3 class="box-title"><?=$strsubTitle;?></h3>
+                              <h3 class="box-title"><?=$title;?></h3>
 
                               <div class="box-tools pull-right">
-                                <span class="label label-danger"><?=$strsubTitle;?></span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
+                                <span class="label label-danger"><?=count($vendorslist);?> <?=$strsubTitle;?></span>
+                                <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button> -->
+                                <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                </button> -->
                               </div>
                             </div>
                             <!-- /.box-header -->
@@ -154,7 +146,7 @@
                                 foreach($vendorslist as $v):
                               ?>
                                     <li class="selectVendor" id="<?=$v['id'];?>" title="<?=$v['name'];?>">
-                                      <img src="<?= base_url("assets/img/avatar.svg"); ?>" alt="<?=$v['name'];?>" title="<?=$v['name'];?>">
+                                      <img src="<?=$v['picture_url'];?>" alt="<?=$v['name'];?>" title="<?=$v['name'];?>">
                                       <a class="users-list-name" href="#"><?=$v['name'];?></a>
                                       <!-- <span class="users-list-date">Yesterday</span> -->
                                     </li>

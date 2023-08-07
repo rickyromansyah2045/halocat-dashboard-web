@@ -28,6 +28,11 @@
                                     <a href="<?= site_url('user/contents'); ?>"><?= site_url('user/contents'); ?></a>
                                 </p>
                                 <p class="text-gray-700 mb-2">
+                                    Jika Anda ingin menghubungi dokter, silahkan kunjungi tautan berikut:
+                                    <br>
+                                    <a href="<?= site_url('user/chat'); ?>"><?= site_url('user/chat'); ?></a>
+                                </p>
+                                <p class="text-gray-700 mb-2">
                                     Jika Anda ingin mengatur akun Anda, silakan buka tautan berikut:
                                     <br>
                                     <a href="<?= site_url('user/settings'); ?>"><?= site_url('user/settings'); ?></a>
@@ -43,6 +48,7 @@
                                     <br>
                                     <a href="<?= site_url('about'); ?>"><?= site_url('about'); ?></a>
                                 </p>
+                                
                                 <div id="reward-notification"></div>
                             </div>
                         </div>

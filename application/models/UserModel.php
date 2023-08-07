@@ -111,7 +111,7 @@ class UserModel extends CI_Model {
 
 		{  
 
-			$this->db->select('id');
+			$this->db->select('id,picture_url');
 
 			$this->db->from($this->User);
 
@@ -123,9 +123,42 @@ class UserModel extends CI_Model {
 
 			$res = $query->row_array();
 
+			if(!empty($res['picture_url'])){
+
+				return base_url('uploads/profiles/'.$res['picture_url']);
+	
+			}else{
+
+				return base_url("assets/img/avatar.svg");
+			}
+		}
+
+		public function PictureUrl()
+
+	{  
+
+ 		$this->db->select('id,picture_url');
+
+		$this->db->from($this->User);
+
+		$this->db->where("id",$this->session->userdata('id'));
+
+		$this->db->limit(1);
+
+  		$query = $this->db->get();
+
+		$res = $query->row_array();
+
+		if(!empty($res['picture_url'])){
+
+			return base_url('uploads/profiles/'.$res['picture_url']);
+
+		}else{
 
 			return base_url("assets/img/avatar.svg");
 
 		}
+
+   	}
 
 }

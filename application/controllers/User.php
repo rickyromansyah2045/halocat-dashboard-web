@@ -7,7 +7,6 @@ class User extends CI_Controller
     {
         parent::__construct();
 		$this->load->model(array('ChatModel','UserModel'));
-		// $this->SeesionModel->not_logged_in();
 		$this->load->helper('string');
 
         if ($this->session->has_userdata('id') == null) {
@@ -61,9 +60,9 @@ class User extends CI_Controller
 		
 		if($this->session->userdata('role') == "user"){
 			$list = $this->UserModel->DoktersList();
-			$data['title']		 = 'Chat Dokter';
+			$data['title']		 = 'Pilih Dokter';
 			$data['strsubTitle'] = 'Dokter';
-			$data['chatTitle']	 = 'Pilih Dokter Untuk di Chat';
+			$data['chatTitle']	 = 'Chat Dokter Sekarang';
 		}else{
 			$list = $this->UserModel->UserList();
 			$data['title']		 = 'Chat Client';
@@ -75,8 +74,9 @@ class User extends CI_Controller
 		foreach($list as $u){
 			$vendorslist[]=
 			[
-				'id' 	=>  $u['id'],
-				'name' 	=> 	$u['name'],
+				'id' 			=> $u['id'],
+				'name' 			=> $u['name'],
+				'picture_url'	=> $this->UserModel->PictureUrlById($u['id']),
 			];
 		}
 		$data['vendorslist']=$vendorslist;
