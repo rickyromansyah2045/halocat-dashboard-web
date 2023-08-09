@@ -11,6 +11,13 @@
 				<a class="nav-link nav_link_menu" href="<?= site_url(); ?>">Beranda</a>
 				<a class="nav-link nav_link_menu" href="<?= site_url('contents'); ?>">List Artikel</a>
 				<a class="nav-link nav_link_menu" href="<?= site_url('about'); ?>">Tentang Kami</a>
+				<?php if ($this->session->has_userdata('id')): ?>
+					<?php if ($this->session->userdata('role') == "user"): ?>
+						<a class="nav-link" style="" href="<?= site_url('user/chat'); ?>">Chat Dokter</a>
+					<?php endif; ?>
+				<?php else: ?>
+					<a class="nav-link" style="" href="<?= site_url('user/chat'); ?>">Chat Dokter</a>
+				<?php endif; ?>
 			</ul>
 			<ul class="navbar-nav mr0">
 				<?php if ($this->session->has_userdata('id')): ?>

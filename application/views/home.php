@@ -26,7 +26,7 @@
 				<div class="headline_donasi">
 					<center>
 						<p class="headline_judul">List Artikel</p>
-						<span class="sub_headline_judul">Temukan Konten tentang kucing untuk Anda hari ini</span>
+						<span class="sub_headline_judul">Temukan artikel tentang kucing untuk Anda hari ini</span>
 					</center>
 				</div>
 				<div class="list_donasi">
@@ -35,7 +35,7 @@
 						<div id="btn-see-all" class="dn">
 							<a href="<?= site_url('contents'); ?>" class="db wfull">
 								<button class="btn_see_all_donasi">
-									see all content list
+									lihat semua list artikel
 								</button>
 							</a>
 						</div>
