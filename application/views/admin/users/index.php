@@ -69,6 +69,7 @@
                         <select class="form-control" id="role">
                             <option value="user">User</option>
                             <option value="admin">Admin</option>
+                            <option value="dokter">Dokter</option>
                         </select>
                     </div>
                 

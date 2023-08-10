@@ -81,19 +81,26 @@ class Dokter extends CI_Controller
 				array_push($cart, $listChat);
 			}
 
-			$list		 		 = $this->UserModel->UserList($cart);
+			if(!empty($cart)){
+				$list		 		 = $this->UserModel->UserList($cart);
+
+				$vendorslist=[];
+				foreach($list as $u){
+					$vendorslist[]=
+					[
+						'id' 	=>  $u['id'],
+						'name' 	=> 	$u['name'],
+					];
+				}
+				
+				$data['vendorslist']=$vendorslist;
+				
+			}else{
+				// nothing
+			}
+
 		}
 
-		$vendorslist=[];
-		foreach($list as $u){
-			$vendorslist[]=
-			[
-				'id' 	=>  $u['id'],
-				'name' 	=> 	$u['name'],
-			];
-		}
-		
-		$data['vendorslist']=$vendorslist;
 		$data['title']		 = 'Chat Pasien';
 		$data['strsubTitle'] = 'Pasien';
 		$data['chatTitle']	 = 'Pasien yang chat';
