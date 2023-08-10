@@ -69,15 +69,19 @@ class Dokter extends CI_Controller
 		$data['chatTitle']	 = '';
 		
 		if($this->session->userdata('role') == "user"){
-			$list = $this->UserModel->DoktersList();
+			$list 				 = $this->UserModel->DoktersList();
 			$data['title']		 = 'Chat Dokter';
 			$data['strsubTitle'] = 'Dokter';
 			$data['chatTitle']	 = 'Pilih Dokter Untuk di Chat';
 		}else{
-			$list = $this->UserModel->UserList();
-			$data['title']		 = 'Chat Pasien';
-			$data['strsubTitle'] = 'Pasient';
-			$data['chatTitle']	 = 'Pasien yang menghubungi';
+			$listChat	 		 = $this->UserModel->ChatUsertoDokter();
+			$cart = array();
+			foreach ($listChat as $key => $value) {
+				$listChat = $value['sender_id'];
+				array_push($cart, $listChat);
+			}
+
+			$list		 		 = $this->UserModel->UserList($cart);
 		}
 
 		$vendorslist=[];
@@ -88,7 +92,11 @@ class Dokter extends CI_Controller
 				'name' 	=> 	$u['name'],
 			];
 		}
+		
 		$data['vendorslist']=$vendorslist;
+		$data['title']		 = 'Chat Pasien';
+		$data['strsubTitle'] = 'Pasien';
+		$data['chatTitle']	 = 'Pasien yang chat';
 
 		$data['content'] = $this->load->view('dokter/chat/index', $data, TRUE);
 		$data['custom_script'] = $this->load->view('dokter/chat/index_script', NULL, TRUE);

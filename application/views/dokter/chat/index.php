@@ -3,7 +3,8 @@
   width: 70px;
 }
 .direct-chat-img {
-  width: 70px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .fileDiv {
@@ -35,19 +36,7 @@
 .attachmentImgCls{ width:450px; margin-left: -25px; cursor:pointer; }
 </style>
 
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/bootstrap/dist/css/bootstrap.min.css"> -->
-<!-- Font Awesome -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/font-awesome/css/font-awesome.min.css"> -->
-<!-- Ionicons -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/components/Ionicons/css/ionicons.min.css"> -->
-<!-- Theme style -->
 <link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/AdminLTE.min.css">
-
-<!-- Google Font -->
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/dist/css/skins/_all-skins.min.css"> -->
-<!-- <link rel="stylesheet" href="http://localhost/Chat-application/public/plugins/pace/pace.min.css"> -->
 
  
 
@@ -86,7 +75,7 @@
                           <!-- DIRECT CHAT -->
                           <div class="box box-warning direct-chat direct-chat-primary">
                             <div class="box-header with-border">
-                              <h3 class="box-title" id="ReciverName_txt"><?=$chatTitle;?></h3>
+                              <h3 class="box-title" id="ReciverName_txt"><?=$title;?></h3>
 
                               <div class="box-tools pull-right">
                                 <span data-toggle="tooltip" title="Clear Chat" class="ClearChat"><i class="fa fa-comments"></i></span>
@@ -138,14 +127,14 @@
                           <!-- USERS LIST -->
                           <div class="box box-danger">
                             <div class="box-header with-border">
-                              <h3 class="box-title"><?=$strsubTitle;?></h3>
+                              <h3 class="box-title"><?=$chatTitle;?></h3>
 
                               <div class="box-tools pull-right">
-                                <span class="label label-danger"><?=$strsubTitle;?></span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
+                                <span class="label label-danger"><?= count($vendorslist); ?> <?=$strsubTitle;?></span>
+                                <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button> -->
+                                <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                </button> -->
                               </div>
                             </div>
                             <!-- /.box-header -->

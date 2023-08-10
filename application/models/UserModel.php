@@ -40,17 +40,33 @@ class UserModel extends CI_Model {
 
    	}
 
-    public function UserList() 
+	   public function ChatUsertoDokter()
+
+	   {  
+   
+			$this->db->select('sender_id');
+   
+		   $this->db->from("chat");
+   
+		   $this->db->where("receiver_id",$this->session->userdata('id'));
+   
+		   $this->db->group_by('sender_id');
+   
+		   $query = $this->db->get();
+		   $res = $query->result_array();
+
+		   return $res;
+   
+		}
+
+    public function UserList($id) 
 
     {  
-
         $this->db->select('id,name');
 
         $this->db->from($this->User);
 
-        $this->db->where("role","user");
-
-        $this->db->where("deleted_at IS NULL");
+        $this->db->where_in("id",$id);
 
         $query = $this->db->get();
 
